@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="img/fav_icon.png" type="image/x-icon">
 </head>
 <body>
-  <header id="topo">
+  <header id="topo" class="flex">
     <div class="container header-inner">
       <a href="#topo" class="brand" aria-label="Diamantina Trekking - Início">
         <span class="brand-text">DIAMANTINA/TREKKING</span>
@@ -30,8 +30,8 @@
               role="button" tabindex="0"
               aria-haspopup="menu" aria-expanded="false"
               aria-controls="langMenu" title="Selecionar idioma">
-            <img src="img/brasil-flag.png" alt="Idioma atual: Português (BR)">
-            <img src="img/arrow-down.png" alt="">
+            <img src="img/flag-br.png" alt="Idioma atual: Português (BR)">
+            <img class="lang-caret" src="img/arrow-down.png" alt="">
           </div>
 
           <ul id="langMenu" class="lang-menu" role="menu" aria-label="Selecionar idioma">
@@ -47,7 +47,7 @@
             </li>
             <li role="none">
               <a role="menuitem" href="#" data-lang="pt" class="active">
-                <img src="img/brasil-flag.png" alt=""> Português (BR)
+                <img src="img/flag-br.png" alt=""> Português (BR)
               </a>
             </li>
           </ul>
@@ -55,5 +55,28 @@
       </div>
     </div>
   </header>
+
+  <section id="inicio" class="inicio">
+    <div class="inicio-bg" aria-hidden="true">
+      <img src="img/chapada-img-bg.png" alt="">
+    </div>
+
+    <div class="inicio-content flex container">
+      <h1>
+        Descubra a Chapada Diamantina<br>
+        <span class="h1-sub">com segurança e emoção</span>
+      </h1>
+      <p class="inicio-lead">
+        Trilhas guiadas, travessias e experiências autênticas nos vales da chapada
+      </p>
+
+      <div class="inicio-actions flex">
+        <a href="#roteiros" class="btn btn-primary">Conheça os roteiros</a>
+        <a href="#contato" class="btn btn-ghost">Fale conosco</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
 </body>
 </html>

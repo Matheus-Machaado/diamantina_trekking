@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diamantina Tekking</title>
+  <title>Diamantina Trekking</title>
   <meta name="description" content="Trilhas guiadas, travessias e experiências autênticas na Chapada Diamantina com segurança e emoção.">
   <link rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" href="img/fav_icon.png" type="image/x-icon">
@@ -57,9 +57,18 @@
   </header>
 
   <section id="inicio" class="inicio">
-    <div class="inicio-bg" aria-hidden="true">
-      <img src="img/chapada-img-bg.png" alt="">
-    </div>
+    <picture class="inicio-bg" aria-hidden="true">
+      <!-- Se puder, coloque WebP primeiro (opcional). Mantive só PNG abaixo: -->
+      <source
+        srcset="
+          img/hero-1280.png 1280w,
+          img/hero-1920.png 1920w,
+          img/hero-2560.png 2560w,
+          img/hero-3840.png 3840w"
+        sizes="100vw"
+        type="image/png">
+      <img src="img/hero-1920.png" alt="" loading="eager" fetchpriority="high">
+    </picture>
 
     <div class="inicio-content flex container">
       <h1>
@@ -73,6 +82,220 @@
       <div class="inicio-actions flex">
         <a href="#roteiros" class="btn btn-primary">Conheça os roteiros</a>
         <a href="#contato" class="btn btn-ghost">Fale conosco</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="estilos" class="estilos">
+    <div class="container">
+      <div class="section-title-sub">
+        <h2 class="section-title">SUA AVENTURA, SEU ESTILO</h2>
+        <p class="section-sub">
+          Do passeio leve à expedição: escolha seu ritmo e a Diamantina Trekking cuida do resto
+        </p>
+      </div>
+
+      <div class="estilos-grid">
+        <article class="estilos-card">
+          <img src="img/icons/familia-icon.png" alt="">
+          <h3 class="estilos-card-title">PARA FAMÍLIA</h3>
+          <p class="estilos-card-text">
+            Passeios leves e seguros para todas as idades. Trilhas curtas, cachoeiras acessíveis e diversão garantida.
+          </p>
+          <a href="#roteiros" class="btn btn-primary">Ver Roteiros</a>
+        </article>
+
+        <article class="estilos-card">
+          <img src="img/icons/explorador-icon.png" alt="">
+          <h3 class="estilos-card-title">PURA AVENTURA</h3>
+          <p class="estilos-card-text">
+            Trilhas intensas, mirantes épicos e rapel. Desafios com equipe local e segurança em primeiro lugar.
+          </p>
+          <a href="#roteiros" class="btn btn-primary">Ver Roteiros</a>
+        </article>
+        
+        <article class="estilos-card">
+          <div class="estilos-card__icon">
+            <img src="img/icons/medalha-icon.png" alt="">
+          </div>
+          <h3 class="estilos-card-title">EXPERIÊNCIA PRIVATIVA</h3>
+          <p class="estilos-card-text">
+            Roteiro sob medida, guia exclusivo e horários flexíveis para viver a Chapada no seu próprio ritmo.
+          </p>
+          <a href="#roteiros" class="btn btn-primary">Ver Roteiros</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="roteiros" class="roteiros">
+    <div class="container">
+      <div class="section-title-sub">
+        <h2 class="section-title">ROTEIROS NA CHAPADA</h2>
+        <p class="section-sub">Trilhas, cachoeiras e mirantes: viva a Chapada por inteiro</p>
+      </div>
+
+      <div class="roteiros-grid">
+        <article class="roteiro-card">
+          <div class="roteiro-card-img">
+            <img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
+          </div>
+          <div class="roteiro-card-body">
+            <h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
+            <div class="roteiro-card-line">
+              <span>Sobre o Roteiro</span>
+              <button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+                <img src="img/icons/mais-icon-card.png" alt="">
+              </button>
+            </div>
+            <p class="roteiro-desc">
+              Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio. Subida curta e panorâmica, ideal para todas as idades.
+            </p>
+            <div class="roteiro-meta">
+              <span class="roteiro-meta-left">
+                <img src="img/icons/raio-icon.png" alt="">
+                1 Dia
+              </span>
+              <span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+            </div>
+            <a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+          </div>
+        </article>
+
+        <article class="roteiro-card">
+          <div class="roteiro-card-img">
+            <img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
+          </div>
+          <div class="roteiro-card-body">
+            <h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
+            <div class="roteiro-card-line">
+              <span>Sobre o Roteiro</span>
+              <button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+                <img src="img/icons/mais-icon-card.png" alt="">
+              </button>
+            </div>
+            <p class="roteiro-desc">
+              Trilha curta e segura, mirante com vista incrível dos vales e chapadões. Indicado para todos os níveis.
+            </p>
+            <div class="roteiro-meta">
+              <span class="roteiro-meta-left">
+                <img src="img/icons/raio-icon.png" alt="">
+                1 Dia
+              </span>
+              <span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+            </div>
+            <a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+          </div>
+        </article>
+
+        <article class="roteiro-card">
+          <div class="roteiro-card-img">
+            <img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
+          </div>
+          <div class="roteiro-card-body">
+            <h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
+            <div class="roteiro-card-line">
+              <span>Sobre o Roteiro</span>
+              <button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+                <img src="img/icons/mais-icon-card.png" alt="">
+              </button>
+            </div>
+            <p class="roteiro-desc">
+              Inclui paradas fotográficas e interpretação ambiental pelo guia local. Excelente para fim de tarde.
+            </p>
+            <div class="roteiro-meta">
+              <span class="roteiro-meta-left">
+                <img src="img/icons/raio-icon.png" alt="">
+                1 Dia
+              </span>
+              <span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+            </div>
+            <a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+          </div>
+        </article>
+
+        <article class="roteiro-card">
+          <div class="roteiro-card-img">
+            <img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
+          </div>
+          <div class="roteiro-card-body">
+            <h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
+            <div class="roteiro-card-line">
+              <span>Sobre o Roteiro</span>
+              <button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+                <img src="img/icons/mais-icon-card.png" alt="">
+              </button>
+            </div>
+            <p class="roteiro-desc">
+              Percurso curto com subidas moderadas. Visual 360° no cume, perfeito para contemplar o pôr do sol.
+            </p>
+            <div class="roteiro-meta">
+              <span class="roteiro-meta-left">
+                <img src="img/icons/raio-icon.png" alt="">
+                1 Dia
+              </span>
+              <span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+            </div>
+            <a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+          </div>
+        </article>
+
+        <article class="roteiro-card">
+          <div class="roteiro-card-img">
+            <img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
+          </div>
+          <div class="roteiro-card-body">
+            <h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
+            <div class="roteiro-card-line">
+              <span>Sobre o Roteiro</span>
+              <button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+                <img src="img/icons/mais-icon-card.png" alt="">
+              </button>
+            </div>
+            <p class="roteiro-desc">
+              Saídas diárias em grupo ou privativo. Inclui seguro aventura e acompanhamento de guia credenciado.
+            </p>
+            <div class="roteiro-meta">
+              <span class="roteiro-meta-left">
+                <img src="img/icons/raio-icon.png" alt="">
+                1 Dia
+              </span>
+              <span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+            </div>
+            <a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+          </div>
+        </article>
+
+        <article class="roteiro-card">
+          <div class="roteiro-card-img">
+            <img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
+          </div>
+          <div class="roteiro-card-body">
+            <h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
+            <div class="roteiro-card-line">
+              <span>Sobre o Roteiro</span>
+              <button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+                <img src="img/icons/mais-icon-card.png" alt="">
+              </button>
+            </div>
+            <p class="roteiro-desc">
+              Recomendações: calçado fechado, água e corta-vento leve. Transporte opcional a combinar.
+            </p>
+            <div class="roteiro-meta">
+              <span class="roteiro-meta-left">
+                <img src="img/icons/raio-icon.png" alt="">
+                1 Dia
+              </span>
+              <span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+            </div>
+            <a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+          </div>
+        </article>
+      </div>
+
+
+      <div class="roteiros-cta">
+        <a href="#" class="btn btn-cta">Ver Todos os Roteiros</a>
       </div>
     </div>
   </section>

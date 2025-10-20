@@ -1,8 +1,20 @@
+@font-face{
+  font-family: "Handpack";
+  src: url("fonts/handpack-sans.otf")   format("opentype");
+  font-weight: 400;   
+  font-style: normal;
+  font-display: swap;    
+}
+
+
 :root {
   --brand: #2F7D4C;
   --brand-700: #1E5E3B;
+  --text-green: #0F3B2E;
   --bg-soft: #EFEFEF;
   --hover-btn: #7f8581;
+  --line-light: #dfe7e2;
+  --cta: #E85C5E;
 }
 
 * {
@@ -23,14 +35,14 @@
 .container {
   width: 100%;
   max-width: 1120px;
+  padding: 25px;
 }
 
 header{
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;   /* novo: põe o header no topo */
+  z-index: 1000;
   background-color: var(--brand-700);
   font-size: 18px;
 }
@@ -40,13 +52,13 @@ header{
   align-items: center;
   justify-content: space-between;
   color: white;
-  padding: 25px 0;
 }
 
 .header-inner .brand {
-  color: #ffff;
+  color: whitef;
   font-weight: bold;
   font-size: 20px;
+  color: white;
 }
 
 .site-nav {width: 45%;}
@@ -58,7 +70,7 @@ header{
 
 .site-nav ul li a {
   position: relative;
-  color: #fff;
+  color: white;
   padding-bottom: 2px;        
   text-decoration: none;
 }
@@ -70,7 +82,7 @@ header{
   bottom: -2px;            
   width: 100%;
   height: 2px;                
-  background: #fff;        
+  background: white;        
   transform: scaleX(0);       
   transform-origin: left;     
   transition: transform .25s ease;
@@ -83,15 +95,24 @@ header{
 }
 
 .btn {
-  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: .2s ease-in-out;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 8px 10px;
 }
 
-.btn:hover {background-color: var(--hover-btn);}
+.btn:hover {
+  background-color: var(--hover-btn);
+}
 
-.btn-contato {background-color: var(--brand);}
+.btn-contato {
+  background-color: var(--brand);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 5px 10px;
+}
 
 .contato-lingua {gap: 15px;}
 
@@ -135,7 +156,7 @@ header{
 .lang-menu li a{
   display: flex; align-items: center; gap: 10px;
   padding: 15px;
-  color: #fff;
+  color: white;
   transition: .2s ease-in-out;
 }
 .lang-menu li a img{ width: 20px; height: 14px; border-radius: 2px; object-fit: cover; }
@@ -146,45 +167,51 @@ header{
 .lang-menu li a.active::after{
   content:"";
   position:absolute; left:14px; right:14px; bottom:6px;
-  height:2px; background:#fff; opacity:.9;
+  height:2px; background:white; opacity:.9;
 }
 
 section {
+  padding: 25px 50px;
   position: relative;
   min-height: min(86vh, 780px);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: white;
   text-align: center;
 }
 
-.inicio-bg{ 
-  position: absolute; 
-  inset: 0; 
-  z-index: -2; 
-}
-
-.inicio-bg img{
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover;
-  display: block;
-}
-
-.inicio-content {
+section .container{
+  display: flex;
   flex-direction: column;
-  gap: 20px;
+}
+
+.inicio-bg{ 
+  position:absolute; 
+  inset:0; 
+  z-index:-2; 
+  display:block; 
+}
+
+.inicio-bg img{ 
+  width:100%; 
+  height:100%; 
+  object-fit:cover; 
+  display:block; 
+}
+
+.inicio-content{
+  gap: 15px;
 }
 
 .inicio h1{ 
   font-weight: bold;
-  font-size: 56px;
-  text-shadow: 0 2px 18px rgba(0,0,0,.28);
+  font-size: 60px;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.445);
 }
 
 .inicio-lead{
-  font-size: 23px;
+  font-size: 25px;
 }
 
 .inicio-actions{
@@ -193,23 +220,275 @@ section {
   margin-top: 25px;
 }
 
-.inicio-actions .btn {
-  font-size: 23px;
-}
-
 .btn-primary{
   background: var(--brand);
-  color:#fff; 
+  color:white; 
   border:2px solid transparent;
 }
 
 .btn-ghost{
-  background: #fff;
+  background: white;
   color:var(--brand);
   border:2px solid var(--brand);
 }
-.btn-ghost:hover{ background: rgba(255,255,255,.1); }
+.btn-ghost:hover{ 
+  color: white;
+  border:2px solid var(--hover-btn);
+}
 
 @media (max-width: 560px){
-  .hero__actions .btn{ width: 100%; max-width: 360px; }
+  .inicio-actionss .btn{ 
+    width: 100%; max-width: 360px; }
+}
+
+.estilos {
+  min-height: auto;
+}
+
+.estilos .container, .roteiros .container{
+  gap: 50px;
+}
+
+.section-title-sub{
+  display: inline-flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--text-green);
+  position: relative;
+  padding-bottom: 12px;     
+  border-bottom: 0;        
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: center;      
+  text-align: center;
+}
+
+.section-title-sub::after{
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 3px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--text-green) 0 16px,   
+    transparent 16px 25px     
+  );
+}
+
+.section-title-sub h2{
+  font-family: "Handpack", Arial, sans-serif;
+  font-size: 28px;
+}
+
+.section-title-sub p{
+  font-size: 25px;
+}
+
+.estilos-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-items: center;
+}
+
+.estilos-card{
+  width: 300px;
+  max-width: 100%;
+  height: 330px;
+  background: var(--bg-soft);
+  border: 1px solid #e1ebe5;
+  border-radius: 12px;
+  padding: 25px 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--text-green);
+}
+
+.estilos-card-title{
+  font-family: "Handpack", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.estilos-card-text{
+  color: #314b3f;
+  font-size: 18px;
+  line-height: 20px;
+  min-height: 60px;          
+}
+
+.estilos-card .btn, .roteiro-btn{
+  width: 100%;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 8px 10px;
+}
+
+.estilos-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0,0,0,.10);
+  transition: .18s ease;
+}
+
+.roteiros {
+  background: var(--bg-soft);
+  color: var(--text-green);
+  min-height: auto;
+  padding: 60px 0 70px;
+}
+
+.roteiros-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .roteiros-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .roteiros-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.roteiro-card {
+  background: white;
+  border: 1px solid #e3e8e5;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-green);
+  transition: .2s ease-in-out;
+}
+
+.roteiro-card-img {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.roteiro-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.roteiro-card-body {
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.roteiro-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.roteiro-card-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0 6px;
+  border-bottom: 2px solid var(--line-light);
+  border-top: 2px solid var(--line-light);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.roteiro-card { will-change: transform; }
+
+.roteiro-toggle {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roteiro-toggle img {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.roteiro-desc {
+  height: 0;
+  overflow: hidden;
+  transition: height .34s cubic-bezier(.2,.7,.2,1);
+  font-size: 15px;
+  line-height: 20px;
+  color: #3a5247;
+  text-align: justify;
+}
+
+.roteiro-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2a463b;
+}
+
+.roteiro-meta-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.roteiro-meta-left img {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.roteiro-meta-right {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.roteiro-meta-right small {
+  font-size: 12px;
+  color: #6a7b73;
+}
+
+.roteiro-meta-right b {
+  font-size: 18px;
+}
+
+.roteiros-cta {
+  display: flex;
+  justify-content: center;
+
+}
+
+.btn-cta {
+  background: var(--cta);
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
 }

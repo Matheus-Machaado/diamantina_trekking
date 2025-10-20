@@ -55,3 +55,96 @@ const langMenu = (() => {
 
   return { show, hide, toggle, state, elements:{ toggleEl, listEl } };
 })();
+
+(function () {
+  const grid = document.querySelector('.roteiros-grid');
+  if (!grid) return;
+
+  function flipLayout(mutate) {
+    const els = Array.from(grid.children);
+    const first = new Map(els.map(el => [el, el.getBoundingClientRect()]));
+
+    mutate();                                // aplica a mudança (abre/fecha)
+
+    const last = new Map(els.map(el => [el, el.getBoundingClientRect()]));
+    els.forEach(el => {
+      const f = first.get(el);
+      const l = last.get(el);
+      const dx = f.left - l.left;
+      const dy = f.top - l.top;
+
+      if (dx || dy) {
+        el.style.transform = `translate(${dx}px, ${dy}px)`;
+        el.style.transition = 'transform 0s';
+        // força o frame inicial
+        void el.offsetWidth;
+        // anima até o destino
+        el.style.transition = 'transform 340ms cubic-bezier(.2,.7,.2,1)';
+        el.style.transform = 'translate(0, 0)';
+      }
+    });
+
+    function cleanup(e) {
+      if (e.propertyName !== 'transform') return;
+      els.forEach(el => {
+        el.style.transition = '';
+        el.style.transform = '';
+      });
+      grid.removeEventListener('transitionend', cleanup, true);
+    }
+    grid.addEventListener('transitionend', cleanup, true);
+  }
+
+  document.querySelectorAll('.roteiro-card').forEach(card => {
+    const row  = card.querySelector('.roteiro-card-line');
+    const btn  = card.querySelector('.roteiro-toggle');
+    const icon = btn ? btn.querySelector('img') : null;
+    const desc = card.querySelector('.roteiro-desc');
+    if (!row || !desc) return;
+
+    row.setAttribute('tabindex', '0');
+
+    function openDesc() {
+      // mede a altura final
+      desc.style.height = 'auto';
+      const h = desc.scrollHeight;
+      desc.style.height = '0px';
+      void desc.offsetHeight;
+
+      flipLayout(() => {
+        desc.style.height = h + 'px';
+        card.classList.add('is-open');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+        if (icon) icon.src = 'img/icons/menos-icon-card.png';
+      });
+
+      desc.addEventListener('transitionend', function onEnd() {
+        // trava em auto depois de expandir
+        if (card.classList.contains('is-open')) desc.style.height = 'auto';
+        desc.removeEventListener('transitionend', onEnd);
+      });
+    }
+
+    function closeDesc() {
+      const h = desc.scrollHeight;
+      desc.style.height = h + 'px';
+      void desc.offsetHeight;
+
+      flipLayout(() => {
+        desc.style.height = '0px';
+        card.classList.remove('is-open');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+        if (icon) icon.src = 'img/icons/mais-icon-card.png';
+      });
+    }
+
+    function toggle() {
+      card.classList.contains('is-open') ? closeDesc() : openDesc();
+    }
+
+    row.addEventListener('click', toggle);
+    row.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+})();

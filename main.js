@@ -64,8 +64,7 @@ const langMenu = (() => {
     const els = Array.from(grid.children);
     const first = new Map(els.map(el => [el, el.getBoundingClientRect()]));
 
-    mutate();                                // aplica a mudança (abre/fecha)
-
+    mutate();                                
     const last = new Map(els.map(el => [el, el.getBoundingClientRect()]));
     els.forEach(el => {
       const f = first.get(el);
@@ -75,10 +74,8 @@ const langMenu = (() => {
 
       if (dx || dy) {
         el.style.transform = `translate(${dx}px, ${dy}px)`;
-        el.style.transition = 'transform 0s';
-        // força o frame inicial
+        el.style.transition = 'transform 0s';l
         void el.offsetWidth;
-        // anima até o destino
         el.style.transition = 'transform 340ms cubic-bezier(.2,.7,.2,1)';
         el.style.transform = 'translate(0, 0)';
       }
@@ -105,7 +102,6 @@ const langMenu = (() => {
     row.setAttribute('tabindex', '0');
 
     function openDesc() {
-      // mede a altura final
       desc.style.height = 'auto';
       const h = desc.scrollHeight;
       desc.style.height = '0px';
@@ -119,7 +115,6 @@ const langMenu = (() => {
       });
 
       desc.addEventListener('transitionend', function onEnd() {
-        // trava em auto depois de expandir
         if (card.classList.contains('is-open')) desc.style.height = 'auto';
         desc.removeEventListener('transitionend', onEnd);
       });
@@ -147,4 +142,70 @@ const langMenu = (() => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
     });
   });
+})();
+
+(function(){
+  const section = document.getElementById('guia');
+  if(!section) return;
+
+  const nums = Array.from(section.querySelectorAll('.guia-stats .num'));
+  if(!nums.length) return;
+
+  nums.forEach(el => {
+    const raw = el.textContent.trim();
+    const m = raw.match(/([\D]*?)([\d.,]+)(.*)/); 
+    const prefix = m ? m[1] : '';
+    const numStr = m ? m[2] : '0';
+    const suffix = m ? m[3] : '';
+    const decimals = numStr.includes(',') ? (numStr.split(',')[1] || '').length : 0;
+    const target = parseFloat(numStr.replace(/\./g,'').replace(',', '.')) || 0;
+
+    el.dataset.prefix = prefix;
+    el.dataset.suffix = suffix;
+    el.dataset.decimals = String(decimals);
+    el.dataset.target = String(target);
+
+    el.textContent = prefix + (0).toLocaleString('pt-BR', {
+      minimumFractionDigits: decimals, maximumFractionDigits: decimals
+    }) + suffix;
+  });
+
+  const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function animateCount(el, duration=2000){
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    const target = parseFloat(el.dataset.target || '0');
+    if (prefersReduce) {
+      el.textContent = prefix + target.toLocaleString('pt-BR', {
+        minimumFractionDigits: decimals, maximumFractionDigits: decimals
+      }) + suffix;
+      return;
+    }
+    let startTs;
+    function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+    function step(ts){
+      if(!startTs) startTs = ts;
+      const p = Math.min((ts - startTs) / duration, 1);
+      const val = target * easeOutCubic(p);
+      el.textContent = prefix + val.toLocaleString('pt-BR', {
+        minimumFractionDigits: decimals, maximumFractionDigits: decimals
+      }) + suffix;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  let ran = false;
+  const io = new IntersectionObserver((entries) => {
+    const e = entries[0];
+    if(!ran && e.isIntersecting){
+      ran = true;
+      nums.forEach(el => animateCount(el));
+      io.disconnect();
+    }
+  }, { root: null, threshold: 0.4 });
+
+  io.observe(section);
 })();

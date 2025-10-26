@@ -1,356 +1,606 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diamantina Trekking</title>
-  <meta name="description" content="Trilhas guiadas, travessias e experiências autênticas na Chapada Diamantina com segurança e emoção.">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="shortcut icon" href="img/fav_icon.png" type="image/x-icon">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Diamantina Trekking</title>
+	<meta name="description" content="Trilhas guiadas, travessias e experiências autênticas na Chapada Diamantina com segurança e emoção.">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="shortcut icon" href="img/fav_icon.png" type="image/x-icon">
+	<link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
-  <header id="topo" class="flex">
-    <div class="container header-inner">
-      <a href="#topo" class="brand" aria-label="Diamantina Trekking - Início">
-        <span class="brand-text">DIAMANTINA/TREKKING</span>
-      </a>
-      <nav class="site-nav">
-        <ul class="flex">
-          <li><a href="#topo">Início</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#roteiros">Roteiros </a></li>
-          <li><a href="#depoimentos">Depoimentos</a></li>
-          <li><a href="#perguntas">Perguntas</a></li>
-        </ul>
-      </nav>
-      <div class="contato-lingua flex">
-        <div class="btn-contato btn">Contato</div>
-        <div class="lang-dropdown">
-          <div id="langTrigger" class="lingua-slect flex"
-              role="button" tabindex="0"
-              aria-haspopup="menu" aria-expanded="false"
-              aria-controls="langMenu" title="Selecionar idioma">
-            <img src="img/flag-br.png" alt="Idioma atual: Português (BR)">
-            <img class="lang-caret" src="img/arrow-down.png" alt="">
-          </div>
+	<header id="topo" class="flex">
+		<div class="container header-inner">
+			<a href="#topo" class="brand" aria-label="Diamantina Trekking - Início">
+				<span class="brand-text">DIAMANTINA/TREKKING</span>
+			</a>
+			<nav class="site-nav">
+				<ul class="flex">
+					<li><a href="#topo">Início</a></li>
+					<li><a href="#sobre">Sobre</a></li>
+					<li><a href="#roteiros">Roteiros</a></li>
+					<li><a href="#depoimentos">Depoimentos</a></li>
+					<li><a href="#perguntas">Perguntas</a></li>
+				</ul>
+			</nav>
+			<div class="contato-lingua flex">
+				<div class="btn-contato btn">Contato</div>
+				<div class="lang-dropdown">
+					<div id="langTrigger" class="lingua-slect flex" role="button" tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu" title="Selecionar idioma">
+						<img src="img/flag-br.png" alt="Idioma atual: Português (BR)">
+						<i class="bx bx-chevron-down lang-caret" aria-hidden="true"></i>
+					</div>
+					<ul id="langMenu" class="lang-menu" role="menu" aria-label="Selecionar idioma">
+						<li role="none">
+							<a role="menuitem" href="#" data-lang="en">
+								<img src="img/flag-gb.png" alt=""> English (GB)
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="#" data-lang="fr">
+								<img src="img/flag-fr.png" alt=""> Français (FR)
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="#" data-lang="pt" class="active">
+								<img src="img/flag-br.png" alt=""> Português (BR)
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
 
-          <ul id="langMenu" class="lang-menu" role="menu" aria-label="Selecionar idioma">
-            <li role="none">
-              <a role="menuitem" href="#" data-lang="en">
-                <img src="img/flag-gb.png" alt=""> English (GB)
-              </a>
-            </li>
-            <li role="none">
-              <a role="menuitem" href="#" data-lang="fr">
-                <img src="img/flag-fr.png" alt=""> Français (FR)
-              </a>
-            </li>
-            <li role="none">
-              <a role="menuitem" href="#" data-lang="pt" class="active">
-                <img src="img/flag-br.png" alt=""> Português (BR)
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
+	<section id="inicio" class="inicio">
+		<picture class="inicio-bg" aria-hidden="true">
+			<source srcset="img/hero-1280.png 1280w, img/hero-1920.png 1920w, img/hero-2560.png 2560w, img/hero-3840.png 3840w" sizes="100vw" type="image/png">
+			<img src="img/hero-1920.png" alt="" loading="eager" fetchpriority="high">
+		</picture>
 
-  <section id="inicio" class="inicio">
-    <picture class="inicio-bg" aria-hidden="true">
-      <!-- Se puder, coloque WebP primeiro (opcional). Mantive só PNG abaixo: -->
-      <source
-        srcset="
-          img/hero-1280.png 1280w,
-          img/hero-1920.png 1920w,
-          img/hero-2560.png 2560w,
-          img/hero-3840.png 3840w"
-        sizes="100vw"
-        type="image/png">
-      <img src="img/hero-1920.png" alt="" loading="eager" fetchpriority="high">
-    </picture>
+		<div class="inicio-content flex container">
+			<h1>
+				Descubra a Chapada Diamantina<br>
+				<span class="h1-sub">com segurança e emoção</span>
+			</h1>
+			<p class="inicio-lead">
+				Trilhas guiadas, travessias e experiências autênticas nos vales da chapada
+			</p>
+			<div class="inicio-actions flex">
+				<a href="#roteiros" class="btn btn-primary">Conheça os roteiros</a>
+				<a href="#contato" class="btn btn-ghost">Fale conosco</a>
+			</div>
+		</div>
+	</section>
 
-    <div class="inicio-content flex container">
-      <h1>
-        Descubra a Chapada Diamantina<br>
-        <span class="h1-sub">com segurança e emoção</span>
-      </h1>
-      <p class="inicio-lead">
-        Trilhas guiadas, travessias e experiências autênticas nos vales da chapada
-      </p>
+	<section id="estilos" class="estilos">
+		<div class="container">
+			<div class="section-title-sub">
+				<h2 class="section-title">SUA AVENTURA, SEU ESTILO</h2>
+				<p class="section-sub">Do passeio leve à expedição: escolha seu ritmo e a Diamantina Trekking cuida do resto</p>
+			</div>
 
-      <div class="inicio-actions flex">
-        <a href="#roteiros" class="btn btn-primary">Conheça os roteiros</a>
-        <a href="#contato" class="btn btn-ghost">Fale conosco</a>
-      </div>
-    </div>
-  </section>
+			<div class="estilos-grid">
+				<article class="estilos-card">
+					<img src="img/icons/familia-icon.png" alt="">
+					<h3 class="estilos-card-title">PARA FAMÍLIA</h3>
+					<p class="estilos-card-text">
+						Passeios leves e seguros para todas as idades. Trilhas curtas, cachoeiras acessíveis e diversão garantida.
+					</p>
+					<a href="#roteiros" class="btn btn-primary">Ver Roteiros</a>
+				</article>
 
-  <section id="estilos" class="estilos">
-    <div class="container">
-      <div class="section-title-sub">
-        <h2 class="section-title">SUA AVENTURA, SEU ESTILO</h2>
-        <p class="section-sub">
-          Do passeio leve à expedição: escolha seu ritmo e a Diamantina Trekking cuida do resto
-        </p>
-      </div>
+				<article class="estilos-card">
+					<img src="img/icons/explorador-icon.png" alt="">
+					<h3 class="estilos-card-title">PURA AVENTURA</h3>
+					<p class="estilos-card-text">
+						Trilhas intensas, mirantes épicos e rapel. Desafios com equipe local e segurança em primeiro lugar.
+					</p>
+					<a href="#roteiros" class="btn btn-primary">Ver Roteiros</a>
+				</article>
 
-      <div class="estilos-grid">
-        <article class="estilos-card">
-          <img src="img/icons/familia-icon.png" alt="">
-          <h3 class="estilos-card-title">PARA FAMÍLIA</h3>
-          <p class="estilos-card-text">
-            Passeios leves e seguros para todas as idades. Trilhas curtas, cachoeiras acessíveis e diversão garantida.
-          </p>
-          <a href="#roteiros" class="btn btn-primary">Ver Roteiros</a>
-        </article>
+				<article class="estilos-card">
+					<div class="estilos-card__icon">
+						<img src="img/icons/medalha-icon.png" alt="">
+					</div>
+					<h3 class="estilos-card-title">EXPERIÊNCIA PRIVATIVA</h3>
+					<p class="estilos-card-text">
+						Roteiro sob medida, guia exclusivo e horários flexíveis para viver a Chapada no seu próprio ritmo.
+					</p>
+					<a href="#roteiros" class="btn btn-primary">Ver Roteiros</a>
+				</article>
+			</div>
+		</div>
+	</section>
 
-        <article class="estilos-card">
-          <img src="img/icons/explorador-icon.png" alt="">
-          <h3 class="estilos-card-title">PURA AVENTURA</h3>
-          <p class="estilos-card-text">
-            Trilhas intensas, mirantes épicos e rapel. Desafios com equipe local e segurança em primeiro lugar.
-          </p>
-          <a href="#roteiros" class="btn btn-primary">Ver Roteiros</a>
-        </article>
-        
-        <article class="estilos-card">
-          <div class="estilos-card__icon">
-            <img src="img/icons/medalha-icon.png" alt="">
-          </div>
-          <h3 class="estilos-card-title">EXPERIÊNCIA PRIVATIVA</h3>
-          <p class="estilos-card-text">
-            Roteiro sob medida, guia exclusivo e horários flexíveis para viver a Chapada no seu próprio ritmo.
-          </p>
-          <a href="#roteiros" class="btn btn-primary">Ver Roteiros</a>
-        </article>
-      </div>
-    </div>
-  </section>
+	<section id="roteiros" class="roteiros">
+		<div class="container">
+			<div class="section-title-sub">
+				<h2 class="section-title">ROTEIROS NA CHAPADA</h2>
+				<p class="section-sub">Trilhas, cachoeiras e mirantes: viva a Chapada por inteiro</p>
+			</div>
 
-  <section id="roteiros" class="roteiros">
-    <div class="container">
-      <div class="section-title-sub">
-        <h2 class="section-title">ROTEIROS NA CHAPADA</h2>
-        <p class="section-sub">Trilhas, cachoeiras e mirantes: viva a Chapada por inteiro</p>
-      </div>
+			<div class="roteiros-grid">
+				<article class="roteiro-card">
+					<div class="roteiro-card-img">
+						<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
+					</div>
+					<div class="roteiro-card-body">
+						<h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
+						<div class="roteiro-card-line">
+							<span>Sobre o Roteiro</span>
+							<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+								<i class="bx bx-plus" aria-hidden="true"></i>
+							</button>
+						</div>
+						<p class="roteiro-desc">
+							Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio. Subida curta e panorâmica, ideal para todas as idades.
+						</p>
+						<div class="roteiro-meta">
+							<span class="roteiro-meta-left">
+								<i class="bx bxs-bolt" aria-hidden="true"></i>
+								1 Dia
+							</span>
+							<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+						</div>
+						<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+					</div>
+				</article>
 
-      <div class="roteiros-grid">
-        <article class="roteiro-card">
-          <div class="roteiro-card-img">
-            <img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
-          </div>
-          <div class="roteiro-card-body">
-            <h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
-            <div class="roteiro-card-line">
-              <span>Sobre o Roteiro</span>
-              <button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
-                <img src="img/icons/mais-icon-card.png" alt="">
-              </button>
-            </div>
-            <p class="roteiro-desc">
-              Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio. Subida curta e panorâmica, ideal para todas as idades.
-            </p>
-            <div class="roteiro-meta">
-              <span class="roteiro-meta-left">
-                <img src="img/icons/raio-icon.png" alt="">
-                1 Dia
-              </span>
-              <span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
-            </div>
-            <a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
-          </div>
-        </article>
+				<article class="roteiro-card">
+					<div class="roteiro-card-img">
+						<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
+					</div>
+					<div class="roteiro-card-body">
+						<h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
+						<div class="roteiro-card-line">
+							<span>Sobre o Roteiro</span>
+							<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+								<i class="bx bx-plus" aria-hidden="true"></i>
+							</button>
+						</div>
+						<p class="roteiro-desc">
+							Trilha curta e segura, mirante com vista incrível dos vales e chapadões. Indicado para todos os níveis.
+						</p>
+						<div class="roteiro-meta">
+							<span class="roteiro-meta-left">
+								<i class="bx bxs-bolt" aria-hidden="true"></i>
+								1 Dia
+							</span>
+							<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+						</div>
+						<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+					</div>
+				</article>
 
-        <article class="roteiro-card">
-          <div class="roteiro-card-img">
-            <img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
-          </div>
-          <div class="roteiro-card-body">
-            <h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
-            <div class="roteiro-card-line">
-              <span>Sobre o Roteiro</span>
-              <button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
-                <img src="img/icons/mais-icon-card.png" alt="">
-              </button>
-            </div>
-            <p class="roteiro-desc">
-              Trilha curta e segura, mirante com vista incrível dos vales e chapadões. Indicado para todos os níveis.
-            </p>
-            <div class="roteiro-meta">
-              <span class="roteiro-meta-left">
-                <img src="img/icons/raio-icon.png" alt="">
-                1 Dia
-              </span>
-              <span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
-            </div>
-            <a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
-          </div>
-        </article>
+				<article class="roteiro-card">
+					<div class="roteiro-card-img">
+						<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
+					</div>
+					<div class="roteiro-card-body">
+						<h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
+						<div class="roteiro-card-line">
+							<span>Sobre o Roteiro</span>
+							<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+								<i class="bx bx-plus" aria-hidden="true"></i>
+							</button>
+						</div>
+						<p class="roteiro-desc">
+							Inclui paradas fotográficas e interpretação ambiental pelo guia local. Excelente para fim de tarde.
+						</p>
+						<div class="roteiro-meta">
+							<span class="roteiro-meta-left">
+								<i class="bx bxs-bolt" aria-hidden="true"></i>
+								1 Dia
+							</span>
+							<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+						</div>
+						<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+					</div>
+				</article>
 
-        <article class="roteiro-card">
-          <div class="roteiro-card-img">
-            <img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
-          </div>
-          <div class="roteiro-card-body">
-            <h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
-            <div class="roteiro-card-line">
-              <span>Sobre o Roteiro</span>
-              <button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
-                <img src="img/icons/mais-icon-card.png" alt="">
-              </button>
-            </div>
-            <p class="roteiro-desc">
-              Inclui paradas fotográficas e interpretação ambiental pelo guia local. Excelente para fim de tarde.
-            </p>
-            <div class="roteiro-meta">
-              <span class="roteiro-meta-left">
-                <img src="img/icons/raio-icon.png" alt="">
-                1 Dia
-              </span>
-              <span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
-            </div>
-            <a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
-          </div>
-        </article>
+				<article class="roteiro-card">
+					<div class="roteiro-card-img">
+						<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
+					</div>
+					<div class="roteiro-card-body">
+						<h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
+						<div class="roteiro-card-line">
+							<span>Sobre o Roteiro</span>
+							<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+								<i class="bx bx-plus" aria-hidden="true"></i>
+							</button>
+						</div>
+						<p class="roteiro-desc">
+							Percurso curto com subidas moderadas. Visual 360° no cume, perfeito para contemplar o pôr do sol.
+						</p>
+						<div class="roteiro-meta">
+							<span class="roteiro-meta-left">
+								<i class="bx bxs-bolt" aria-hidden="true"></i>
+								1 Dia
+							</span>
+							<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+						</div>
+						<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+					</div>
+				</article>
 
-        <article class="roteiro-card">
-          <div class="roteiro-card-img">
-            <img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
-          </div>
-          <div class="roteiro-card-body">
-            <h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
-            <div class="roteiro-card-line">
-              <span>Sobre o Roteiro</span>
-              <button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
-                <img src="img/icons/mais-icon-card.png" alt="">
-              </button>
-            </div>
-            <p class="roteiro-desc">
-              Percurso curto com subidas moderadas. Visual 360° no cume, perfeito para contemplar o pôr do sol.
-            </p>
-            <div class="roteiro-meta">
-              <span class="roteiro-meta-left">
-                <img src="img/icons/raio-icon.png" alt="">
-                1 Dia
-              </span>
-              <span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
-            </div>
-            <a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
-          </div>
-        </article>
+				<article class="roteiro-card">
+					<div class="roteiro-card-img">
+						<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
+					</div>
+					<div class="roteiro-card-body">
+						<h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
+						<div class="roteiro-card-line">
+							<span>Sobre o Roteiro</span>
+							<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+								<i class="bx bx-plus" aria-hidden="true"></i>
+							</button>
+						</div>
+						<p class="roteiro-desc">
+							Saídas diárias em grupo ou privativo. Inclui seguro aventura e acompanhamento de guia credenciado.
+						</p>
+						<div class="roteiro-meta">
+							<span class="roteiro-meta-left">
+								<i class="bx bxs-bolt" aria-hidden="true"></i>
+								1 Dia
+							</span>
+							<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+						</div>
+						<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+					</div>
+				</article>
 
-        <article class="roteiro-card">
-          <div class="roteiro-card-img">
-            <img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
-          </div>
-          <div class="roteiro-card-body">
-            <h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
-            <div class="roteiro-card-line">
-              <span>Sobre o Roteiro</span>
-              <button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
-                <img src="img/icons/mais-icon-card.png" alt="">
-              </button>
-            </div>
-            <p class="roteiro-desc">
-              Saídas diárias em grupo ou privativo. Inclui seguro aventura e acompanhamento de guia credenciado.
-            </p>
-            <div class="roteiro-meta">
-              <span class="roteiro-meta-left">
-                <img src="img/icons/raio-icon.png" alt="">
-                1 Dia
-              </span>
-              <span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
-            </div>
-            <a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
-          </div>
-        </article>
+				<article class="roteiro-card">
+					<div class="roteiro-card-img">
+						<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
+					</div>
+					<div class="roteiro-card-body">
+						<h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
+						<div class="roteiro-card-line">
+							<span>Sobre o Roteiro</span>
+							<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+								<i class="bx bx-plus" aria-hidden="true"></i>
+							</button>
+						</div>
+						<p class="roteiro-desc">
+							Recomendações: calçado fechado, água e corta-vento leve. Transporte opcional a combinar.
+						</p>
+						<div class="roteiro-meta">
+							<span class="roteiro-meta-left">
+								<i class="bx bxs-bolt" aria-hidden="true"></i>
+								1 Dia
+							</span>
+							<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+						</div>
+						<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+					</div>
+				</article>
+			</div>
 
-        <article class="roteiro-card">
-          <div class="roteiro-card-img">
-            <img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
-          </div>
-          <div class="roteiro-card-body">
-            <h3 class="roteiro-card-title">Morro do Pai Inacio - Por do Sol</h3>
-            <div class="roteiro-card-line">
-              <span>Sobre o Roteiro</span>
-              <button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
-                <img src="img/icons/mais-icon-card.png" alt="">
-              </button>
-            </div>
-            <p class="roteiro-desc">
-              Recomendações: calçado fechado, água e corta-vento leve. Transporte opcional a combinar.
-            </p>
-            <div class="roteiro-meta">
-              <span class="roteiro-meta-left">
-                <img src="img/icons/raio-icon.png" alt="">
-                1 Dia
-              </span>
-              <span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
-            </div>
-            <a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
-          </div>
-        </article>
-      </div>
+			<div class="roteiros-cta">
+				<a href="#" class="btn btn-cta">Ver Todos os Roteiros</a>
+			</div>
+		</div>
+	</section>
 
+	<section id="guia" class="guia">
+		<div class="container">
+			<div class="guia-grid">
+				<div class="guia-copy">
+					<h2 class="guia-title">COM QUEM VOU EXPLORAR A CHAPADA?</h2>
+					<p class="guia-p">
+						Você será acompanhado por Rodrigo, guia nativo que cresceu explorando as trilhas da Chapada
+						Diamantina.
+					</p>
+					<p class="guia-p">
+						Ele une conhecimento profundo do roteiro à paixão pela região, tornando sua caminhada muito mais do
+						que um passeio: uma verdadeira imersão na cultura, natureza e essência da Chapada.
+					</p>
+					<div class="guia-social">
+						<a class="guia-social-btn" href="#" aria-label="Instagram">
+							<img src="img/icons/instagram-icon.png" alt="">
+						</a>
+						<a class="guia-social-btn" href="#" aria-label="Facebook">
+							<img src="img/icons/facebook-icon.png" alt="">
+						</a>
+					</div>
+				</div>
 
-      <div class="roteiros-cta">
-        <a href="#" class="btn btn-cta">Ver Todos os Roteiros</a>
-      </div>
-    </div>
-  </section>
+				<div class="guia-media">
+					<div class="guia-photo">
+						<img src="img/rodrigo-guia.png" alt="Rodrigo, guia local na Chapada Diamantina">
+					</div>
+					<ul class="guia-stats">
+						<li>
+							<span class="num">+500</span>
+							<span class="label">trilhas conduzidas</span>
+						</li>
+						<li>
+							<span class="num">+10</span>
+							<span class="label">anos guiando</span>
+						</li>
+						<li>
+							<span class="num">2</span>
+							<span class="label">línguas (português e inglês)</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
 
-  <section id="guia" class="guia">
-    <div class="container">
-      <div class="guia-grid">
-        <div class="guia-copy">
-          <h2 class="guia-title">COM QUEM VOU EXPLORAR A CHAPADA?</h2>
+	<section id="depoimentos" class="depo">
+		<div class="container">
+			<div class="section-title-sub">
+				<h2 class="section-title">MEMÓRIAS INESQUECÍVEIS</h2>
+				<p class="section-sub">Paisagens que marcam, experiências que ficam.</p>
+			</div>
 
-          <p class="guia-p">
-            Você será acompanhado por Rodrigo, guia nativo que cresceu explorando as trilhas da Chapada
-            Diamantina.
-          </p>
+			<div class="depo-wrapper">
+				<button class="depo-nav left" aria-label="Anterior">
+					<i class="bx bx-chevron-down" aria-hidden="true"></i>
+				</button>
 
-          <p class="guia-p">
-            Ele une conhecimento profundo do roteiro à paixão pela região, tornando sua caminhada muito mais do
-            que um passeio: uma verdadeira imersão na cultura, natureza e essência da Chapada.
-          </p>
+				<div class="depo-viewport">
+					<ul class="depo-track">
+						<li class="depo-card">
+							<div class="depo-card-head">
+								<h3>Matheus Machado</h3>
+								<time datetime="2025-09-20">20/09/2025</time>
+							</div>
+							<p>
+								Nossa, foi incrível! A Chapada Diamantina superou todas as expectativas.
+								Atendimento perfeito, já indiquei pra vários amigos e quero voltar em breve!
+							</p>
+						</li>
 
-          <div class="guia-social">
-            <a class="guia-social-btn" href="#" aria-label="Instagram">
-              <img src="img/icons/instagram-icon.png" alt="">
-            </a>
-            <a class="guia-social-btn" href="#" aria-label="Facebook">
-              <img src="img/icons/facebook-icon.png" alt="">
-            </a>
-          </div>
-        </div>
+						<li class="depo-card">
+							<div class="depo-card-head">
+								<h3>Larissa Nogueira</h3>
+								<time datetime="2025-08-12">12/08/2025</time>
+							</div>
+							<p>
+								Guias excelentes, trilhas seguras e paisagens únicas. Experiência completa do início ao fim!
+							</p>
+						</li>
 
-        <div class="guia-media">
-          <div class="guia-photo">
-            <img src="img/rodrigo-guia.png" alt="Rodrigo, guia local na Chapada Diamantina">
-          </div>
+						<li class="depo-card">
+							<div class="depo-card-head">
+								<h3>Felipe Souza</h3>
+								<time datetime="2025-07-03">03/07/2025</time>
+							</div>
+							<p>
+								Organização impecável. O pôr do sol no Pai Inácio foi algo que nunca vou esquecer!
+							</p>
+						</li>
 
-          <ul class="guia-stats">
-            <li>
-              <span class="num">+500</span>
-              <span class="label">trilhas conduzidas</span>
-            </li>
-            <li>
-              <span class="num">+10</span>
-              <span class="label">anos guiando</span>
-            </li>
-            <li>
-              <span class="num">2</span>
-              <span class="label">línguas (português e inglês)</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+						<li class="depo-card">
+							<div class="depo-card-head">
+								<h3>Ana Paula</h3>
+								<time datetime="2025-06-18">18/06/2025</time>
+							</div>
+							<p>
+								Roteiro privativo sob medida, deu pra curtir no nosso ritmo. Recomendo demais!
+							</p>
+						</li>
 
+						<li class="depo-card">
+							<div class="depo-card-head">
+								<h3>João Victor</h3>
+								<time datetime="2025-05-10">10/05/2025</time>
+							</div>
+							<p>
+								Equipe muito atenciosa e preparada. Já planejando a próxima travessia!
+							</p>
+						</li>
 
-  <script src="main.js"></script>
+						<li class="depo-card">
+							<div class="depo-card-head">
+								<h3>Bruna Ferreira</h3>
+								<time datetime="2025-04-22">22/04/2025</time>
+							</div>
+							<p>
+								Experiência autêntica, com muita história e natureza. Vale cada minuto.
+							</p>
+						</li>
+					</ul>
+				</div>
+
+				<button class="depo-nav right" aria-label="Próximo">
+					<i class="bx bx-chevron-down" aria-hidden="true"></i>
+				</button>
+			</div>
+
+			<div class="depo-dots" aria-label="Paginação de depoimentos"></div>
+
+			<div class="depo-stars" aria-hidden="true">
+				<i class="bx bxs-star"></i>
+				<i class="bx bxs-star"></i>
+				<i class="bx bxs-star"></i>
+				<i class="bx bxs-star"></i>
+				<i class="bx bxs-star"></i>
+			</div>
+		</div>
+	</section>
+
+	<section id="roteiro-destaque" class="rd">
+		<div class="container">
+		<div class="rd-grid">
+			<div class="rd-media">
+			<div class="rd-viewport">
+				<ul class="rd-track">
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 1"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 2"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 3"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 4"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 5"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 6"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 7"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 8"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 9"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 10"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 11"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 12"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 13"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 14"></li>
+				<li class="rd-slide"><img src="img/roteiros/marimbus/marimbus-imagem1.png" alt="Marimbus e Roncador - Foto 15"></li>
+				</ul>
+			</div>
+
+			<div class="depo-dots rd-dots" aria-label="Navegação do carrossel"></div>
+
+			<div class="rd-sharebar">
+				<p class="rd-sharecopy">Compartilha essa jornada com alguém especial!</p>
+				<div class="rd-share">
+				<a class="rd-share-btn" href="#" aria-label="Compartilhar por WhatsApp">
+					<img src="img/icons/whatsapp-icon.png" alt="">
+				</a>
+				<a class="rd-share-btn" href="#" aria-label="Copiar link">
+					<img src="img/icons/link-icon.png" alt="">
+				</a>
+				</div>
+			</div>
+			</div>
+
+			<div class="rd-copy">
+			<h2 class="rd-title">MARIMBUS E RONCADOR</h2>
+			<p class="rd-text">Um dia inteiro de aventura na Chapada! Partimos de Lençóis às 8h30 rumo ao Remanso, e de lá navegamos em canoas pelos Marimbus, o “mini Pantanal da Chapada”, cercado por natureza viva e paisagens alagadas únicas. Na Fazenda Santo Antônio, um casarão do século XIX, saboreamos um almoço caseiro antes de seguir para as Cachoeiras do Roncador, onde piscinas naturais e lajedos rosados garantem uma tarde de banho e diversão. Encerramos com uma trilha de 4 km pela mata atlântica até o retorno.<br>Tudo incluso: guia, transporte, remadores, taxas e almoço.<br>Tá esperando o quê pra embarcar nessa?</p>
+			<a href="#" class="btn btn-cta rd-cta">Quero viver essa aventura</a>
+			</div>
+		</div>
+		</div>
+	</section>
+	
+	<section id="politicas" class="ppc" aria-labelledby="ppc-title">
+		<div class="container">
+			<div class="ppc-grid">
+				<h2 id="ppc-title" class="ppc-title">Políticas de pagamento<br>e cancelamento:</h2>
+				<ul class="ppc-list">
+					<li>
+						<i class="bx bxs-check" aria-hidden="true"></i>
+						<span>30% do valor total via PIX ou transferência e o restante no 1º dia de roteiro;</span>
+					</li>
+					<li>
+						<i class="bx bxs-check" aria-hidden="true"></i>
+						<span>Parcelamento no PIX: uma parcela a cada mês até a data da viagem;</span>
+					</li>
+					<li>
+						<i class="bx bxs-check" aria-hidden="true"></i>
+						<span>Cartão de crédito ou débito à vista sem juros;</span>
+					</li>
+					<li>
+						<i class="bx bxs-check" aria-hidden="true"></i>
+						<span>Parcelamento no cartão de crédito com juros (consultar);</span>
+					</li>
+					<li>
+						<i class="bx bxs-check" aria-hidden="true"></i>
+						<span>Em caso de cancelamento, os 30% da reserva não são reembolsáveis.</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="perguntas" class="faq">
+		<div class="container">
+			<div class="section-title-sub">
+				<h2 class="section-title faq-heading">PERGUNTAS FREQUENTES</h2>
+				<p class="section-sub">Tirando todas as suas dúvidas</p>
+			</div>
+
+			<ul class="faq-list">
+				<li class="faq-item">
+					<button class="faq-q" type="button" aria-expanded="false">
+						<span class="faq-q-text">Precisa ser muito bem condicionado para fazer esse roteiro? quem pode fazer?</span>
+						<i class="bx bx-plus" aria-hidden="true"></i>
+					</button>
+					<div class="faq-a">
+						<p>Não precisa ser nenhum atleta. Pedimos apenas que você seja ativo fisicamente, pratique atividades com alguma regularidade e curta natureza e caminhada. Em alguns dias podemos fazer até 18km, mas sempre no seu ritmo e com apoio do guia.</p>
+					</div>
+				</li>
+
+				<li class="faq-item">
+					<button class="faq-q" type="button" aria-expanded="false">
+						<span class="faq-q-text">O que está incluso no valor do roteiro?</span>
+						<i class="bx bx-plus" aria-hidden="true"></i>
+					</button>
+					<div class="faq-a">
+						<p>Guias credenciados, transporte durante o roteiro, taxas de acesso, equipamentos de segurança quando necessário e seguro aventura. Alimentação conforme cada roteiro.</p>
+					</div>
+				</li>
+
+				<li class="faq-item">
+					<button class="faq-q" type="button" aria-expanded="false">
+						<span class="faq-q-text">Posso fazer o passeio em formato privativo?</span>
+						<i class="bx bx-plus" aria-hidden="true"></i>
+					</button>
+					<div class="faq-a">
+						<p>Sim. Temos experiências privativas com horários flexíveis e ajustes de ritmo. É só avisar no contato que montamos tudo sob medida.</p>
+					</div>
+				</li>
+
+				<li class="faq-item">
+					<button class="faq-q" type="button" aria-expanded="false">
+						<span class="faq-q-text">Como funciona o cancelamento e reembolso?</span>
+						<i class="bx bx-plus" aria-hidden="true"></i>
+					</button>
+					<div class="faq-a">
+						<p>Em caso de cancelamento, a taxa de reserva de 30% não é reembolsável. O restante segue nossa política informada no momento da contratação.</p>
+					</div>
+				</li>
+
+				<li class="faq-item">
+					<button class="faq-q" type="button" aria-expanded="false">
+						<span class="faq-q-text">Quais itens essenciais devo levar?</span>
+						<i class="bx bx-plus" aria-hidden="true"></i>
+					</button>
+					<div class="faq-a">
+						<p>Tênis ou bota adequada, garrafa de água, protetor solar, chapéu/boné e um corta-vento leve. A lista completa é enviada após a reserva.</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<footer class="site-footer">
+		<div class="container foot-grid">
+			<div class="foot-brand">
+				<img src="img/logo-footer.png" alt="Diamantina Trekking">
+			</div>
+
+			<nav class="foot-nav" aria-label="Links do site">
+			<ul>
+				<li><a href="#topo">Início</a></li>
+				<li><a href="#sobre">Sobre</a></li>
+				<li><a href="#roteiros">Roteiros</a></li>
+				<li><a href="#depoimentos">Depoimentos</a></li>
+			</ul>
+			</nav>
+
+			<div class="foot-contacts">
+				<a class="foot-tel" href="tel:+557598440434">+55 75 9844-0434</a>
+				<a class="foot-mail" href="mailto:diamantinatrekking@gmail.com">diamantinatrekking@gmail.com</a>
+
+				<div class="foot-social">
+					<a class="ft-social-btn" href="#" aria-label="Instagram">
+						<img src="img/icons/instagram-white-icon.png" alt="">
+					</a>
+					<a class="ft-social-btn" href="#" aria-label="Facebook">
+						<img src="img/icons/facebook-white-icon.png" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="container foot-bottom">
+			<hr class="foot-sep">
+			<p class="foot-copy">© Diamantina Trekking 2025 – Todos os direitos reservados.</p>
+			<p class="foot-author">Desenvolvido por Matheus Machado</p>
+		</div>
+	</footer>
+
+	<script src="main.js"></script>
 </body>
 </html>

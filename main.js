@@ -423,3 +423,63 @@ const langMenu = (() => {
 		}
 	});
 })();
+
+(function () {
+	const floatAnchor = document.querySelector('.zap-float');
+	const DEFAULT_ZAP =
+		'https://wa.me/557598440434?text=' +
+		encodeURIComponent('Olá Diamantina Trekking! Quero um atendimento online.');
+
+	const ZAP_URL = (floatAnchor && floatAnchor.getAttribute('href')) || DEFAULT_ZAP;
+
+	if (floatAnchor) {
+		floatAnchor.setAttribute('href', ZAP_URL);
+		floatAnchor.setAttribute('target', '_blank');
+		floatAnchor.setAttribute('rel', 'noopener');
+	}
+
+	document.querySelectorAll('[data-zap="link"]').forEach((el) => {
+		if (el.tagName.toLowerCase() === 'a') {
+			el.setAttribute('href', ZAP_URL);
+			el.setAttribute('target', '_blank');
+			el.setAttribute('rel', 'noopener');
+		} else {
+			const openZap = () => window.open(ZAP_URL, '_blank', 'noopener');
+			el.addEventListener('click', openZap);
+			el.setAttribute('role', 'link');
+			el.setAttribute('tabindex', '0');
+			el.addEventListener('keydown', (e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					openZap();
+				}
+			});
+		}
+	});
+})();
+
+(function(){
+	const io = new IntersectionObserver((entries, obs) => {
+		entries.forEach((entry) => {
+			if (!entry.isIntersecting) return;
+
+			const el = entry.target;
+			const delay = parseInt(el.getAttribute('data-reveal-delay') || '0', 10);
+			if (delay) el.style.transitionDelay = `${delay}ms`;
+
+			if (el.hasAttribute('data-reveal-stagger')) {
+				[...el.children].forEach((child, i) => {
+					child.style.setProperty('--stagger-index', i);
+				});
+			}
+
+			el.classList.add('is-revealed');
+			obs.unobserve(el); 
+		});
+	}, {
+		threshold: 0.18,
+		rootMargin: '0px 0px -8% 0px'
+	});
+
+	document.querySelectorAll('[data-reveal], [data-reveal-stagger]').forEach((el) => io.observe(el));
+})();

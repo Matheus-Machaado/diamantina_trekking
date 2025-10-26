@@ -25,7 +25,7 @@
 				</ul>
 			</nav>
 			<div class="contato-lingua flex">
-				<div class="btn-contato btn">Contato</div>
+				<a class="btn-contato btn" data-zap="link">Contato</a>
 				<div class="lang-dropdown">
 					<div id="langTrigger" class="lingua-slect flex" role="button" tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu" title="Selecionar idioma">
 						<img src="img/flag-br.png" alt="Idioma atual: Português (BR)">
@@ -59,23 +59,23 @@
 			<img src="img/hero-1920.png" alt="" loading="eager" fetchpriority="high">
 		</picture>
 
-		<div class="inicio-content flex container">
+		<div class="inicio-content flex container" data-reveal="fade">
 			<h1>
 				Descubra a Chapada Diamantina<br>
 				<span class="h1-sub">com segurança e emoção</span>
 			</h1>
 			<p class="inicio-lead">
-				Trilhas guiadas, travessias e experiências autênticas nos vales da chapada
+				Trilhas guiadas, travessias e experiências autênticas nos vales da Chapada
 			</p>
 			<div class="inicio-actions flex">
 				<a href="#roteiros" class="btn btn-primary">Conheça os roteiros</a>
-				<a href="#contato" class="btn btn-ghost">Fale conosco</a>
+				<a class="btn btn-ghost" data-zap="link">Fale conosco</a>
 			</div>
 		</div>
 	</section>
 
 	<section id="estilos" class="estilos">
-		<div class="container">
+		<div class="container" data-reveal="fade-zoom">
 			<div class="section-title-sub">
 				<h2 class="section-title">SUA AVENTURA, SEU ESTILO</h2>
 				<p class="section-sub">Do passeio leve à expedição: escolha seu ritmo e a Diamantina Trekking cuida do resto</p>
@@ -115,8 +115,8 @@
 	</section>
 
 	<section id="roteiros" class="roteiros">
-		<div class="container">
-			<div class="section-title-sub">
+		<div class="container" data-reveal="fade-up">
+			<div class="section-title-sub" data-reveal="fade">
 				<h2 class="section-title">ROTEIROS NA CHAPADA</h2>
 				<p class="section-sub">Trilhas, cachoeiras e mirantes: viva a Chapada por inteiro</p>
 			</div>
@@ -286,10 +286,10 @@
 	</section>
 
 	<section id="guia" class="guia">
-		<div class="container">
+		<div class="container" data-reveal="fade-right">
 			<div class="guia-grid">
-				<div class="guia-copy">
-					<h2 class="guia-title">COM QUEM VOU EXPLORAR A CHAPADA?</h2>
+				<div class="guia-copy" data-reveal="fade-right">
+					<h2 class="guia-title" data-reveal="fade-left">COM QUEM VOU EXPLORAR A CHAPADA?</h2>
 					<p class="guia-p">
 						Você será acompanhado por Rodrigo, guia nativo que cresceu explorando as trilhas da Chapada
 						Diamantina.
@@ -333,12 +333,12 @@
 
 	<section id="depoimentos" class="depo">
 		<div class="container">
-			<div class="section-title-sub">
+			<div class="section-title-sub" data-reveal="fade-zoom">
 				<h2 class="section-title">MEMÓRIAS INESQUECÍVEIS</h2>
 				<p class="section-sub">Paisagens que marcam, experiências que ficam.</p>
 			</div>
 
-			<div class="depo-wrapper">
+			<div class="depo-wrapper" data-reveal="fade-up">
 				<button class="depo-nav left" aria-label="Anterior">
 					<i class="bx bx-chevron-down" aria-hidden="true"></i>
 				</button>
@@ -426,7 +426,7 @@
 	</section>
 
 	<section id="roteiro-destaque" class="rd">
-		<div class="container">
+		<div class="container" data-reveal="fade-up">
 		<div class="rd-grid">
 			<div class="rd-media">
 			<div class="rd-viewport">
@@ -474,7 +474,7 @@
 	</section>
 	
 	<section id="politicas" class="ppc" aria-labelledby="ppc-title">
-		<div class="container">
+		<div class="container" data-reveal="fade-blur">
 			<div class="ppc-grid">
 				<h2 id="ppc-title" class="ppc-title">Políticas de pagamento<br>e cancelamento:</h2>
 				<ul class="ppc-list">
@@ -503,7 +503,7 @@
 		</div>
 	</section>
 
-	<section id="perguntas" class="faq">
+	<section id="perguntas" class="faq" data-reveal="fade-down">
 		<div class="container">
 			<div class="section-title-sub">
 				<h2 class="section-title faq-heading">PERGUNTAS FREQUENTES</h2>
@@ -580,7 +580,7 @@
 			</nav>
 
 			<div class="foot-contacts">
-				<a class="foot-tel" href="tel:+557598440434">+55 75 9844-0434</a>
+				<a class="foot-tel" data-zap="link">+55 75 9844-0434</a>
 				<a class="foot-mail" href="mailto:diamantinatrekking@gmail.com">diamantinatrekking@gmail.com</a>
 
 				<div class="foot-social">
@@ -596,10 +596,17 @@
 
 		<div class="container foot-bottom">
 			<hr class="foot-sep">
-			<p class="foot-copy">© Diamantina Trekking 2025 – Todos os direitos reservados.</p>
+			<p class="foot-copy">© Diamantina Trekking 2025 - Todos os direitos reservados.</p>
 			<p class="foot-author">Desenvolvido por Matheus Machado</p>
 		</div>
 	</footer>
+
+	<a href="https://wa.me/557598440434?text=Ol%C3%A1%20Diamantina%20Trekking!%20Quero%20um%20atendimento%20online."
+		class="zap-float" target="_blank" rel="noopener"
+		aria-label="Atendimento Online pelo WhatsApp">
+		<img src="img/icons/whatsapp-white-icon.png" alt="" class="zap-float__icon">
+		<span class="zap-float__label">Atendimento Online</span>
+	</a>
 
 	<script src="main.js"></script>
 </body>

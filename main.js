@@ -56,6 +56,245 @@ const langMenu = (() => {
 	return { show, hide, toggle, state, elements:{ toggleEl, listEl } };
 })();
 
+(function(){
+	const btn = document.getElementById('navToggle');
+	const nav = document.getElementById('siteMenu');
+	const backdrop = document.getElementById('navBackdrop');
+	if(!btn || !nav || !backdrop) return;
+
+	const header = document.querySelector('header');
+	const headerInner = document.querySelector('.header-inner');
+	const contatoWrap = document.querySelector('.contato-lingua');
+	const contatoBtn = contatoWrap ? contatoWrap.querySelector('.btn-contato') : null;
+	const slot = nav.querySelector('.nav-cta-slot');
+	const topbar = nav.querySelector('.nav-topbar');
+	const mql = window.matchMedia('(max-width: 980px)');
+
+	function syncHeaderVars(){
+		const h = header ? header.offsetHeight : 0;
+		document.documentElement.style.setProperty('--header-h', h ? (h + 'px') : null);
+		document.documentElement.style.setProperty('--nav-topbar-h', h ? (h + 'px') : null);
+	}
+	syncHeaderVars();
+	window.addEventListener('resize', syncHeaderVars);
+	window.addEventListener('load', syncHeaderVars);
+
+	let lastFocus = null;
+
+	function focusables(scope){
+		return [...scope.querySelectorAll(`
+			a[href],
+			button:not([disabled]),
+			[tabindex]:not([tabindex="-1"]),
+			select, textarea, input
+		`)].filter(el => el.offsetParent !== null);
+	}
+
+	function moveToggleIntoNav(){
+		if(topbar && btn.parentElement !== topbar){
+			topbar.appendChild(btn);
+			btn.classList.add('inside-nav');
+		}
+	}
+	function moveToggleBack(){
+		if(btn.parentElement !== headerInner){
+			headerInner.appendChild(btn);
+			btn.classList.remove('inside-nav');
+		}
+	}
+
+	function moveContatoToNav(){
+		if(!contatoBtn || !slot) return;
+		if(!slot.contains(contatoBtn)){
+			slot.appendChild(contatoBtn);
+			contatoBtn.classList.add('btn-cta-nav');
+		}
+	}
+	function moveContatoBack(){
+		if(!contatoBtn || !contatoWrap) return;
+		if(!contatoWrap.contains(contatoBtn)){
+			contatoWrap.insertBefore(contatoBtn, contatoWrap.firstChild);
+			contatoBtn.classList.remove('btn-cta-nav');
+		}
+	}
+
+	function openNav(){
+		lastFocus = document.activeElement;
+		document.body.classList.add('nav-open');
+		nav.classList.add('is-open');
+		backdrop.hidden = false;
+
+		btn.classList.add('is-open');
+		btn.setAttribute('aria-expanded','true');
+		btn.setAttribute('aria-label','Fechar menu de navegação');
+
+		moveToggleIntoNav();
+		moveContatoToNav();
+
+		const first = focusables(nav)[0];
+		if(first) first.focus();
+		document.addEventListener('keydown', onKeydown);
+		syncTopbarHeight();
+	}
+
+	function closeNav(){
+		document.body.classList.remove('nav-open');
+		nav.classList.remove('is-open');
+		backdrop.hidden = true;
+
+		btn.classList.remove('is-open');
+		btn.setAttribute('aria-expanded','false');
+		btn.setAttribute('aria-label','Abrir menu de navegação');
+
+		moveToggleBack();
+		moveContatoBack();
+
+		document.removeEventListener('keydown', onKeydown);
+		if(lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+	}
+
+	function onKeydown(e){
+		if(e.key === 'Escape'){ e.preventDefault(); closeNav(); return; }
+		if(e.key === 'Tab'){
+			const nodes = focusables(nav);
+			if(!nodes.length) return;
+			const first = nodes[0];
+			const last = nodes[nodes.length - 1];
+			if(e.shiftKey && document.activeElement === first){
+				e.preventDefault(); last.focus();
+			}else if(!e.shiftKey && document.activeElement === last){
+				e.preventDefault(); first.focus();
+			}
+		}
+	}
+
+	btn.addEventListener('click', () => {
+		nav.classList.contains('is-open') ? closeNav() : openNav();
+	});
+
+	backdrop.addEventListener('click', closeNav);
+	nav.addEventListener('click', (e)=>{ if(e.target.matches('a[href]')) closeNav(); });
+
+	mql.addEventListener?.('change', e => {
+		if(!e.matches){
+			closeNav();
+		}else{
+			moveToggleBack();
+			moveContatoBack();
+			syncTopbarHeight();
+		}
+	});
+})();
+
+(function(){
+	const header = document.querySelector('header');
+	const hero   = document.querySelector('#inicio');
+	if(!header || !hero) return;
+
+	let atHero = true;     
+	let lastY = window.pageYOffset || 0;
+	let lastDir = null;    
+	let raf = null;
+	let idleTimer = null;     
+	const IDLE_MS = 5000;
+	const DELTA_MIN = 4;         
+
+	function hasNavOpen(){
+		return document.body.classList.contains('nav-open');
+	}
+
+	function showHeader(){
+		header.classList.remove('is-hidden');
+	}
+
+	function hideHeader(){
+		if(atHero || hasNavOpen()) return;
+		header.classList.add('is-hidden');
+	}
+
+	function startIdle(){
+		clearIdle();
+		if(atHero || hasNavOpen()) return;
+		idleTimer = setTimeout(hideHeader, IDLE_MS);
+	}
+
+	function clearIdle(){
+		if(idleTimer){ clearTimeout(idleTimer); idleTimer = null; }
+	}
+
+	function setElevated(on){
+		header.classList.toggle('is-elevated', !!on);
+	}
+
+	const heroObs = new IntersectionObserver((entries)=>{
+		const e = entries[0];
+		atHero = e.isIntersecting && e.intersectionRatio > 0.35;
+		if(atHero){
+			showHeader();
+			setElevated(false);
+			clearIdle();
+		}else{
+			setElevated(true);
+		}
+	}, { threshold:[0,0.2,0.35,0.6,1] });
+	heroObs.observe(hero);
+
+	function onScroll(){
+		const y  = window.pageYOffset || 0;
+		const dy = y - lastY;
+
+		lastY = y;
+
+		if(hasNavOpen()){
+			showHeader();
+			clearIdle();
+			return;
+		}
+
+		if(atHero){
+			showHeader();
+			clearIdle();
+			return;
+		}
+
+		if(Math.abs(dy) < DELTA_MIN){
+		if(lastDir === 'up' && !header.classList.contains('is-hidden')){
+			startIdle();
+		}
+		return;
+		}
+
+		if(dy > 0){
+			lastDir = 'down';
+			clearIdle();
+			hideHeader();
+		}else{
+			lastDir = 'up';
+			showHeader();
+			startIdle();
+		}
+	}
+
+	window.addEventListener('scroll', ()=>{
+		if(raf) return;
+		raf = requestAnimationFrame(()=>{ raf = null; onScroll(); });
+	}, { passive: true });
+
+	const mo = new MutationObserver(()=>{
+		if(hasNavOpen()){
+			showHeader();
+			clearIdle();
+		}else{
+			onScroll();
+		}
+	});
+	mo.observe(document.body, { attributes:true, attributeFilter:['class'] });
+
+	showHeader();
+	setElevated(!hero.getBoundingClientRect ? true : false);
+})();
+
+
 (function () {
 	const grid = document.querySelector('.roteiros-grid');
 	if (!grid) return;

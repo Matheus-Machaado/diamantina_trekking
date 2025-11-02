@@ -15,15 +15,31 @@
 			<a href="#topo" class="brand" aria-label="Diamantina Trekking - Início">
 				<span class="brand-text">DIAMANTINA/TREKKING</span>
 			</a>
-			<nav class="site-nav">
+
+			<button id="navToggle"
+				class="nav-toggle"
+				type="button"
+				aria-label="Abrir menu de navegação"
+				aria-controls="siteMenu"
+				aria-expanded="false">
+				<span class="nav-toggle-bar"></span>
+				<span class="nav-toggle-bar"></span>
+				<span class="nav-toggle-bar"></span>
+				<i class="bx bx-x nav-toggle-x" aria-hidden="true"></i>
+			</button>
+
+			<nav class="site-nav" id="siteMenu">
+				<div class="nav-topbar"></div>
 				<ul class="flex">
-					<li><a href="#topo">Início</a></li>
+					<li><a href="#topo" aria-current="page">Início</a></li>
 					<li><a href="#sobre">Sobre</a></li>
 					<li><a href="#roteiros">Roteiros</a></li>
 					<li><a href="#depoimentos">Depoimentos</a></li>
 					<li><a href="#perguntas">Perguntas</a></li>
 				</ul>
+				<div class="nav-cta-slot"></div>
 			</nav>
+
 			<div class="contato-lingua flex">
 				<a class="btn-contato btn" data-zap="link">Contato</a>
 				<div class="lang-dropdown">
@@ -51,6 +67,8 @@
 				</div>
 			</div>
 		</div>
+
+		<div id="navBackdrop" class="site-nav-backdrop" hidden></div>
 	</header>
 
 	<section id="inicio" class="inicio">
@@ -101,7 +119,7 @@
 				</article>
 
 				<article class="estilos-card">
-					<div class="estilos-card__icon">
+					<div class="estilos-card-icon">
 						<img src="img/icons/medalha-icon.png" alt="">
 					</div>
 					<h3 class="estilos-card-title">EXPERIÊNCIA PRIVATIVA</h3>
@@ -604,8 +622,8 @@
 	<a href="https://wa.me/557598440434?text=Ol%C3%A1%20Diamantina%20Trekking!%20Quero%20um%20atendimento%20online."
 		class="zap-float" target="_blank" rel="noopener"
 		aria-label="Atendimento Online pelo WhatsApp">
-		<img src="img/icons/whatsapp-white-icon.png" alt="" class="zap-float__icon">
-		<span class="zap-float__label">Atendimento Online</span>
+		<img src="img/icons/whatsapp-white-icon.png" alt="" class="zap-float-icon">
+		<span class="zap-float-label">Atendimento Online</span>
 	</a>
 
 	<script src="main.js"></script>

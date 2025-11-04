@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Morro do Pai Inácio - Pôr do Sol | Diamantina Trekking</title>
+	<meta name="description" content="Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio. Subida curta e panorâmica, ideal para todas as idades."/>
+	<link rel="stylesheet" href="styles.css"/>
+	<link rel="stylesheet" href="roteiro-detalhe.css"/>
+	<link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet">
+	<link rel="shortcut icon" href="img/fav_icon.png" type="image/x-icon">
+</head>
+<body>
+	<!-- Cabeçalho padrão -->
+	<header id="topo" class="flex">
+		<div class="container header-inner">
+			<a href="index.html#inicio" class="brand" aria-label="Diamantina Trekking - Início">
+				<span class="brand-text">DIAMANTINA/TREKKING</span>
+			</a>
+
+			<button id="navToggle" class="nav-toggle" type="button" aria-label="Abrir menu de navegação" aria-controls="siteMenu" aria-expanded="false">
+				<i class="bx bx-menu icon-menu" aria-hidden="true"></i>
+				<i class="bx bx-x icon-close" aria-hidden="true"></i>
+			</button>
+
+			<nav class="site-nav" id="siteMenu">
+				<div class="nav-topbar"></div>
+				<ul class="flex">
+					<li><a href="index.html#inicio">Início</a></li>
+					<li><a href="index.html#guia">Sobre</a></li>
+					<li><a href="roteiros.html">Roteiros</a></li>
+					<li><a href="index.html#depoimentos">Depoimentos</a></li>
+					<li><a href="index.html#perguntas">Perguntas</a></li>
+				</ul>
+				<div class="nav-cta-slot"></div>
+			</nav>
+
+			<div class="contato-lingua flex">
+				<a class="btn-contato btn" data-zap="link">Contato</a>
+				<div class="lang-dropdown">
+					<div id="langTrigger" class="lingua-slect flex" role="button" tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu" title="Selecionar idioma">
+						<img src="img/flag-br.png" alt="Idioma atual: Português (BR)">
+						<i class="bx bx-chevron-down lang-caret" aria-hidden="true"></i>
+					</div>
+					<ul id="langMenu" class="lang-menu" role="menu" aria-label="Selecionar idioma">
+						<li role="none"><a role="menuitem" href="#" data-lang="en"><img src="img/flag-gb.png" alt=""> English (GB)</a></li>
+						<li role="none"><a role="menuitem" href="#" data-lang="fr"><img src="img/flag-fr.png" alt=""> Français (FR)</a></li>
+						<li role="none"><a role="menuitem" href="#" data-lang="pt" class="active"><img src="img/flag-br.png" alt=""> Português (BR)</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="navBackdrop" class="site-nav-backdrop" hidden></div>
+	</header>
+
+	<main>
+		<!-- Roteiro: layout esquerda (galeria) + direita (infos) -->
+		<section class="rp">
+			<div class="container rp-container" data-reveal="fade-up">
+
+				<div id="rpGrid" class="rp-grid" data-days="1" data-price="405" data-intensidade="leve">
+					<!-- GALERIA -->
+					<div class="rp-gallery">
+						<div class="rp-viewport">
+							<ul class="rp-track">
+								<li class="rp-slide"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Vista do Morro do Pai Inácio 1"></li>
+								<li class="rp-slide"><img src="img/roteiros/pai-inacio/imagem-2.png" alt="Vista do Morro do Pai Inácio 2"></li>
+								<li class="rp-slide"><img src="img/roteiros/pai-inacio/imagem-3.png" alt="Vista do Morro do Pai Inácio 3"></li>
+								<li class="rp-slide"><img src="img/roteiros/pai-inacio/imagem-4.png" alt="Vista do Morro do Pai Inácio 4"></li>
+							</ul>
+
+							<button class="rp-nav rp-prev" type="button" aria-label="Anterior">
+								<i class="bx bx-chevron-left" aria-hidden="true"></i>
+							</button>
+							<button class="rp-nav rp-next" type="button" aria-label="Próxima">
+								<i class="bx bx-chevron-right" aria-hidden="true"></i>
+							</button>
+						</div>
+
+						<div class="rp-thumbs">
+							<button class="rp-thumb is-active" data-index="0"><img src="img/roteiros/pai-inacio/imagem-1.png" alt=""></button>
+							<button class="rp-thumb" data-index="1"><img src="img/roteiros/pai-inacio/imagem-2.png" alt=""></button>
+							<button class="rp-thumb" data-index="2"><img src="img/roteiros/pai-inacio/imagem-3.png" alt=""></button>
+							<button class="rp-thumb" data-index="3"><img src="img/roteiros/pai-inacio/imagem-4.png" alt=""></button>
+						</div>
+
+						<div class="rp-sharebar rd-sharebar">
+							<p class="rd-sharecopy">Curtiu o roteiro? Compartilha essa jornada com alguém especial!</p>
+							<div class="rd-share">
+								<a class="rd-share-btn" href="#" aria-label="Compartilhar por WhatsApp"><img src="img/icons/whatsapp-icon.png" alt=""></a>
+								<a class="rd-share-btn" href="#" aria-label="Copiar link"><img src="img/icons/link-icon.png" alt=""></a>
+							</div>
+						</div>
+
+						<button id="rpDescBtn" class="btn btn-ghost rp-desc-btn" type="button">
+							<i class="bx bx-book-open" aria-hidden="true"></i> Ler Descrição
+						</button>
+					</div>
+
+					<!-- INFOS / RESERVA -->
+					<aside class="rp-side">
+						<h1 class="rp-title">Morro do Pai Inácio - Pôr do Sol</h1>
+						<p class="rp-lead">Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio. Uma subida curta e panorâmica revela chapadões a perder de vista e um mar de vales dourados pela luz da tarde. Uma experiência inesquecível e acessível, ideal para todas as idades.</p>
+
+						<div class="rp-meta">
+							<span class="rp-days"><i class="bx bxs-bolt" aria-hidden="true"></i> <b>1 Dia</b></span>
+							<span class="rp-price"><small>A partir de</small> <b>R$ 405,00</b></span>
+						</div>
+
+						<!-- Datas -->
+						<div class="rp-field">
+							<label class="rp-label"><i class="bx bx-calendar" aria-hidden="true"></i> Início e término</label>
+							<div class="rp-dates">
+								<input id="rpStart" class="rp-date" type="date" aria-label="Data de início">
+								<input id="rpEnd" class="rp-date" type="date" aria-label="Data de término">
+							</div>
+						</div>
+
+						<!-- Pessoas -->
+						<div class="rp-field rp-people">
+							<label class="rp-label"><i class="bx bx-user" aria-hidden="true"></i> Quantidade de pessoas</label>
+
+							<button id="rpPeopleToggle" class="rp-select" type="button" aria-expanded="false" aria-controls="rpPeoplePanel">
+								<span id="rpPeopleLabel">Selecione</span>
+								<i class="bx bx-chevron-down rp-caret" aria-hidden="true"></i>
+							</button>
+
+							<div id="rpPeoplePanel" class="rp-popover" hidden>
+								<div class="rp-counter">
+									<div class="rp-c-info">
+										<div class="rp-c-title">Pessoa</div>
+										<div class="rp-c-sub">De 05 a 90 anos</div>
+									</div>
+									<div class="rp-stepper">
+										<button id="rpMinus" class="rp-step" type="button" aria-label="Diminuir">–</button>
+										<input id="rpQty" class="rp-qty" type="text" inputmode="numeric" value="1" aria-label="Quantidade" />
+										<button id="rpPlus" class="rp-step" type="button" aria-label="Aumentar">+</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- CTA + Subtotal -->
+						<button id="rpSubmit" class="btn btn-cta rp-cta" type="button" disabled>Selecione data e quantidade de pessoas</button>
+						<div class="rp-subtotal">Subtotal: <b id="rpSubtotal">R$ 0,00</b></div>
+					</aside>
+				</div>
+
+				<!-- O que está incluso -->
+				<div class="rp-incluso">
+					<h2 class="rp-subtitle">O que está incluso</h2>
+					<ul class="rp-inc-list">
+						<li>
+							<img src="img/icons/pickup-icon.png" alt="">
+							<div><b>Saída Direto da Sua Hospedagem</b><span>Vamos te buscar onde estiver hospedado(a) em Lençóis.</span></div>
+						</li>
+						<li>
+							<img src="img/icons/meal-icon.png" alt="">
+							<div><b>Refeição no Roteiro</b><span>Inclui almoço ou lance, de acordo com a programação.</span></div>
+						</li>
+						<li>
+							<img src="img/icons/ticket-icon.png" alt="">
+							<div><b>Taxas de Entrada Inclusas</b><span>Ingressos e autorizações quando aplicável.</span></div>
+						</li>
+						<li>
+							<img src="img/icons/guide-icon.png" alt="">
+							<div><b>Guia Local Experiente</b><span>Condutor credenciado, segurança e interpretação ambiental.</span></div>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Descrição completa (abre por botão ou "Ver mais") -->
+				<article class="rp-about">
+					<h2 class="rp-subtitle">Sobre a atividade</h2>
+
+					<p class="rp-preview">
+						Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio. Uma subida curta e panorâmica a revela chapadões e vales dourados pela luz da tarde — ideal para amantes da natureza de todas as idades.
+						<button id="rpSeeMore" class="rp-see-more" type="button" aria-expanded="false">Ver mais <i class="bx bx-chevron-down"></i></button>
+					</p>
+
+					<div id="rpDesc" class="rp-desc">
+						<section>
+							<h3>Visão Geral</h3>
+							<ul>
+								<li>Local: Morro do Pai Inácio, município de Palmeiras, Bahia.</li>
+								<li>Tempo total do passeio: 1 dia (parte da tarde ao pôr do sol).</li>
+								<li>Retorno: logo após o pôr do sol, conforme horário do crepúsculo.</li>
+							</ul>
+						</section>
+
+						<section>
+							<h3>Trilha e Esforço Físico</h3>
+							<ul>
+								<li>Distância: ~1 km de caminhada (trechos inclinados).</li>
+								<li>Nível de dificuldade: <b>leve a moderado</b>. Não exige técnica de trekking.</li>
+								<li>Recomendado para famílias e iniciantes ativos.</li>
+							</ul>
+						</section>
+
+						<section>
+							<h3>O que esperar visualmente</h3>
+							<ul>
+								<li>Mirante com vista 360° para vales, chapadões e serras.</li>
+								<li>Céu dramático ao pôr do sol e fotos imperdíveis.</li>
+							</ul>
+						</section>
+
+						<section>
+							<h3>Regras e dicas úteis</h3>
+							<ul>
+								<li>Levar água, protetor solar, boné/chapéu e corta-vento leve.</li>
+								<li>Tênis aderente ou bota de trilha recomendado.</li>
+								<li>Chegar com antecedência para evitar filas na entrada.</li>
+							</ul>
+						</section>
+
+						<button id="rpSeeLess" class="rp-see-more up" type="button">Ver menos <i class="bx bx-chevron-up"></i></button>
+					</div>
+				</article>
+
+				<!-- Recomendações -->
+				<div class="rp-more">
+					<h2 class="rp-subtitle">Mais aventuras para explorar</h2>
+					<div class="roteiros-grid">
+						<article class="roteiro-card" data-intensidade="leve">
+							<div class="roteiro-card-img"><img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inácio - Pôr do Sol"></div>
+							<div class="roteiro-card-body">
+								<h3 class="roteiro-card-title">Morro do Pai Inácio - Pôr do Sol</h3>
+								<div class="roteiro-card-line"><span>Sobre o Roteiro</span><button class="roteiro-toggle" type="button" aria-expanded="false"><i class="bx bx-plus" aria-hidden="true"></i></button></div>
+								<p class="roteiro-desc">Trilha curta e segura com visual 360° no cume.</p>
+								<div class="roteiro-meta"><span class="roteiro-meta-left"><i class="bx bxs-bolt"></i>1 Dia</span><span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span></div>
+								<a href="roteiro-detalhe.html" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+							</div>
+						</article>
+
+						<article class="roteiro-card" data-intensidade="moderado">
+							<div class="roteiro-card-img"><img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Mirantes da Chapada"></div>
+							<div class="roteiro-card-body">
+								<h3 class="roteiro-card-title">Mirantes da Chapada</h3>
+								<div class="roteiro-card-line"><span>Sobre o Roteiro</span><button class="roteiro-toggle" type="button" aria-expanded="false"><i class="bx bx-plus" aria-hidden="true"></i></button></div>
+								<p class="roteiro-desc">Vistas épicas em diferentes mirantes da região.</p>
+								<div class="roteiro-meta"><span class="roteiro-meta-left"><i class="bx bxs-bolt"></i>1 Dia</span><span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 480,00</b></span></div>
+								<a href="roteiro-detalhe.html" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+							</div>
+						</article>
+
+						<article class="roteiro-card" data-intensidade="intenso">
+							<div class="roteiro-card-img"><img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Pico do Itobira"></div>
+							<div class="roteiro-card-body">
+								<h3 class="roteiro-card-title">Pico do Itobira</h3>
+								<div class="roteiro-card-line"><span>Sobre o Roteiro</span><button class="roteiro-toggle" type="button" aria-expanded="false"><i class="bx bx-plus" aria-hidden="true"></i></button></div>
+								<p class="roteiro-desc">Subida intensa com recompensa visual impressionante.</p>
+								<div class="roteiro-meta"><span class="roteiro-meta-left"><i class="bx bxs-bolt"></i>1 Dia</span><span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 690,00</b></span></div>
+								<a href="roteiro-detalhe.html" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+							</div>
+						</article>
+					</div>
+				</div>
+
+			</div>
+		</section>
+	</main>
+
+	<!-- Rodapé padrão -->
+	<footer class="site-footer">
+		<div class="container foot-grid">
+			<div class="foot-brand"><img src="img/logo-footer.png" alt="Diamantina Trekking"></div>
+			<nav class="foot-nav" aria-label="Links do site">
+				<ul>
+					<li><a href="index.html#inicio">Início</a></li>
+					<li><a href="index.html#guia">Sobre</a></li>
+					<li><a href="roteiros.html">Roteiros</a></li>
+					<li><a href="index.html#depoimentos">Depoimentos</a></li>
+				</ul>
+			</nav>
+			<div class="foot-contacts">
+				<a class="foot-tel" data-zap="link">+55 75 9844-0434</a>
+				<a class="foot-mail" href="mailto:diamantinatrekking@gmail.com">diamantinatrekking@gmail.com</a>
+				<div class="foot-social">
+					<a class="ft-social-btn" href="#" aria-label="Instagram"><img src="img/icons/instagram-white-icon.png" alt=""></a>
+					<a class="ft-social-btn" href="#" aria-label="Facebook"><img src="img/icons/facebook-white-icon.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+		<div class="container foot-bottom">
+			<hr class="foot-sep">
+			<p class="foot-copy">© Diamantina Trekking 2025 - Todos os direitos reservados.</p>
+			<p class="foot-author">Desenvolvido por Matheus Machado</p>
+		</div>
+	</footer>
+
+	<a href="https://wa.me/557598440434?text=Ol%C3%A1%20Diamantina%20Trekking!%20Quero%20um%20atendimento%20online."
+		class="zap-float" target="_blank" rel="noopener" aria-label="Atendimento Online pelo WhatsApp">
+		<img src="img/icons/whatsapp-white-icon.png" alt="" class="zap-float-icon">
+		<span class="zap-float-label">Atendimento Online</span>
+	</a>
+
+	<script src="main.js"></script>
+	<script src="roteiro-detalhe.js"></script>
+</body>
+</html>

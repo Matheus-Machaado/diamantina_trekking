@@ -10,18 +10,43 @@
 	const selectWrap=document.querySelector('.select-wrap');
 	if(!grid||!pager) return;
 
-	const cardsAll=[...grid.querySelectorAll('.roteiro-card')];
+	let cardsAll=[...grid.querySelectorAll('.roteiro-card')];
+	let ORDER={leve:0,moderado:1,intenso:2};
 
-	cardsAll.forEach(card=>{
-		const level=(card.dataset.intensidade||'').toLowerCase();
-		const slot=card.querySelector('.roteiro-card-img');
-		if(!slot||slot.querySelector('.intensity-badge')) return;
-		const text=level==='intenso'?'INTENSO':level==='moderado'?'MODERADO':'LEVE';
-		const badge=document.createElement('span');
-		badge.className='intensity-badge intensity-'+(level||'leve');
-		badge.innerHTML='<img src="img/icons/intensidade-icon.png" alt=""><span>'+text+'</span>';
-		slot.insertBefore(badge,slot.firstChild);
-	});
+	function sortCards(list){
+		return list
+			.map((el,idx)=>({el,idx,inten:(el.dataset.intensidade||'').toLowerCase()}))
+			.sort((a,b)=>{
+				const wa=(ORDER[a.inten]??99);
+				const wb=(ORDER[b.inten]??99);
+				if(wa!==wb) return wa-wb;
+				return a.idx-b.idx;
+			})
+			.map(x=>x.el);
+	}
+
+	function ensureBadges(){
+		cardsAll.forEach(card=>{
+			const level=(card.dataset.intensidade||'').toLowerCase();
+			const slot=card.querySelector('.roteiro-card-img');
+			if(!slot||slot.querySelector('.intensity-badge')) return;
+			const text=level==='intenso'?'INTENSO':level==='moderado'?'MODERADO':'LEVE';
+			const badge=document.createElement('span');
+			badge.className='intensity-badge intensity-'+(level||'leve');
+			badge.innerHTML='<img src="img/icons/intensidade-icon.png" alt=""><span>'+text+'</span>';
+			slot.insertBefore(badge,slot.firstChild);
+		});
+	}
+
+	function applyOrdering(key){
+		if(key==='intenso'){
+			ORDER={intenso:0,moderado:1,leve:2};
+		}else{
+			ORDER={leve:0,moderado:1,intenso:2};
+		}
+		cardsAll=sortCards(cardsAll);
+		cardsAll.forEach(card=>grid.appendChild(card));
+	}
 
 	const PER_PAGE=9;
 	let active=cardsAll;
@@ -111,6 +136,9 @@
 
 	function init(){
 		const url=new URL(location.href);
+		const ord=(url.searchParams.get('o')||'').toLowerCase();
+		applyOrdering(ord==='intenso'?'intenso':'');
+		ensureBadges();
 		const i=(url.searchParams.get('i')||'todos').toLowerCase();
 		const p=parseInt(url.searchParams.get('p')||'1',10);
 		if(filter) filter.value=(i==='leve'||i==='moderado'||i==='intenso')?i:'todos';
@@ -118,15 +146,24 @@
 		showPage(isNaN(p)?1:p);
 	}
 
-	if(filter){
-		filter.addEventListener('change',function(){ setFilter(this.value); });
-	}
-
 	if(filter&&selectWrap){
-		filter.addEventListener('focus',function(){ selectWrap.classList.add('is-open'); });
-		filter.addEventListener('blur',function(){ selectWrap.classList.remove('is-open'); });
-		filter.addEventListener('mousedown',function(){ selectWrap.classList.add('is-open'); });
-		filter.addEventListener('change',function(){ setTimeout(function(){ selectWrap.classList.remove('is-open'); },0); });
+		function openSel(){ selectWrap.classList.add('is-open'); }
+		function closeSel(){ selectWrap.classList.remove('is-open'); filter.blur(); }
+		filter.addEventListener('click',function(){
+			if(selectWrap.classList.contains('is-open')) closeSel(); else openSel();
+		});
+		filter.addEventListener('change',function(){
+			setFilter(this.value);
+			closeSel();
+		});
+		document.addEventListener('click',function(e){
+			if(!selectWrap.contains(e.target)) closeSel();
+		});
+		filter.addEventListener('keydown',function(e){
+			if(e.key==='Escape') closeSel();
+		});
+	}else if(filter){
+		filter.addEventListener('change',function(){ setFilter(this.value); });
 	}
 
 	window.addEventListener('keydown',e=>{
@@ -135,4 +172,5 @@
 	});
 
 	init();
+	window.rlistShowPage=showPage;
 })();

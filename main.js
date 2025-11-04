@@ -69,6 +69,9 @@ const langMenu = (() => {
 	const slot = nav.querySelector('.nav-cta-slot');
 	const topbar = nav.querySelector('.nav-topbar');
 	const mql = window.matchMedia('(max-width: 980px)');
+	const mqlMobile = window.matchMedia('(max-width: 560px)');
+
+	function isMobile(){ return mqlMobile.matches; }
 
 	function syncHeaderVars(){
 		const h = header ? header.offsetHeight : 0;
@@ -117,6 +120,9 @@ const langMenu = (() => {
 			contatoBtn.classList.remove('btn-cta-nav');
 		}
 	}
+	function syncContactPlacement(){
+		if(isMobile()) moveContatoToNav(); else moveContatoBack();
+	}
 
 	function openNav(){
 		lastFocus = document.activeElement;
@@ -129,12 +135,12 @@ const langMenu = (() => {
 		btn.setAttribute('aria-label','Fechar menu de navegação');
 
 		moveToggleIntoNav();
-		moveContatoToNav();
+		if(isMobile()) moveContatoToNav();
 
 		const first = focusables(nav)[0];
 		if(first) first.focus();
 		document.addEventListener('keydown', onKeydown);
-		syncTopbarHeight();
+		syncHeaderVars();
 	}
 
 	function closeNav(){
@@ -147,7 +153,7 @@ const langMenu = (() => {
 		btn.setAttribute('aria-label','Abrir menu de navegação');
 
 		moveToggleBack();
-		moveContatoBack();
+		if(!isMobile()) moveContatoBack();
 
 		document.removeEventListener('keydown', onKeydown);
 		if(lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
@@ -180,53 +186,53 @@ const langMenu = (() => {
 			closeNav();
 		}else{
 			moveToggleBack();
-			moveContatoBack();
-			syncTopbarHeight();
+			syncHeaderVars();
 		}
+		syncContactPlacement();
 	});
+	mqlMobile.addEventListener?.('change', syncContactPlacement);
+
+	syncContactPlacement();
 })();
 
 (function(){
 	const header = document.querySelector('header');
-	const hero   = document.querySelector('#inicio');
+	const hero = document.querySelector('#inicio');
 	if(!header || !hero) return;
 
-	let atHero = true;     
+	const mqlFixed = window.matchMedia('(max-width: 980px)');
+	let atHero = true;
 	let lastY = window.pageYOffset || 0;
-	let lastDir = null;    
+	let lastDir = null;
 	let raf = null;
-	let idleTimer = null;     
+	let idleTimer = null;
 	const IDLE_MS = 5000;
-	const DELTA_MIN = 4;         
+	const DELTA_MIN = 4;
 
 	function hasNavOpen(){
 		return document.body.classList.contains('nav-open');
 	}
-
 	function showHeader(){
 		header.classList.remove('is-hidden');
 	}
-
 	function hideHeader(){
 		if(atHero || hasNavOpen()) return;
 		header.classList.add('is-hidden');
 	}
-
 	function startIdle(){
 		clearIdle();
 		if(atHero || hasNavOpen()) return;
 		idleTimer = setTimeout(hideHeader, IDLE_MS);
 	}
-
 	function clearIdle(){
 		if(idleTimer){ clearTimeout(idleTimer); idleTimer = null; }
 	}
-
 	function setElevated(on){
 		header.classList.toggle('is-elevated', !!on);
 	}
 
 	const heroObs = new IntersectionObserver((entries)=>{
+		if(mqlFixed.matches){ showHeader(); setElevated(true); return; }
 		const e = entries[0];
 		atHero = e.isIntersecting && e.intersectionRatio > 0.35;
 		if(atHero){
@@ -240,9 +246,12 @@ const langMenu = (() => {
 	heroObs.observe(hero);
 
 	function onScroll(){
-		const y  = window.pageYOffset || 0;
+		if(mqlFixed.matches){
+			showHeader();
+			return;
+		}
+		const y = window.pageYOffset || 0;
 		const dy = y - lastY;
-
 		lastY = y;
 
 		if(hasNavOpen()){
@@ -250,20 +259,15 @@ const langMenu = (() => {
 			clearIdle();
 			return;
 		}
-
 		if(atHero){
 			showHeader();
 			clearIdle();
 			return;
 		}
-
 		if(Math.abs(dy) < DELTA_MIN){
-		if(lastDir === 'up' && !header.classList.contains('is-hidden')){
-			startIdle();
+			if(lastDir === 'up' && !header.classList.contains('is-hidden')) startIdle();
+			return;
 		}
-		return;
-		}
-
 		if(dy > 0){
 			lastDir = 'down';
 			clearIdle();
@@ -290,10 +294,14 @@ const langMenu = (() => {
 	});
 	mo.observe(document.body, { attributes:true, attributeFilter:['class'] });
 
-	showHeader();
-	setElevated(!hero.getBoundingClientRect ? true : false);
-})();
+	mqlFixed.addEventListener?.('change', ()=>{
+		showHeader();
+		onScroll();
+	});
 
+	showHeader();
+	setElevated(true);
+})();
 
 (function () {
 	const grid = document.querySelector('.roteiros-grid');
@@ -380,6 +388,42 @@ const langMenu = (() => {
 			if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
 		});
 	});
+})();
+
+(function(){
+	function applyIntensityBadges(scope){
+		const root=scope||document;
+		const cards=[...root.querySelectorAll('.roteiro-card')];
+		const levels=['leve','moderado','intenso'];
+		cards.forEach((card)=>{
+			let level=card.dataset.intensidade;
+			if(!level) level=levels[Math.floor(Math.random()*levels.length)];
+			card.dataset.intensidade=level;
+			const wrap=card.querySelector('.roteiro-card-img');
+			if(!wrap) return;
+			let b=wrap.querySelector('.intensity-badge');
+			if(!b){
+				b=document.createElement('span');
+				b.className='intensity-badge';
+				const ic=document.createElement('img');
+				ic.src='img/icons/intensidade-icon.png';
+				ic.alt='';
+				ic.setAttribute('aria-hidden','true');
+				const t=document.createElement('span');
+				t.className='intensity-text';
+				b.appendChild(ic);
+				b.appendChild(t);
+				wrap.appendChild(b);
+			}
+			b.classList.remove('intensity-leve','intensity-moderado','intensity-intenso');
+			b.classList.add('intensity-'+level);
+			const t=b.querySelector('.intensity-text');
+			if(t) t.textContent=level.toUpperCase();
+			b.setAttribute('aria-label','Intensidade '+level);
+		});
+	}
+	window.applyIntensityBadges=applyIntensityBadges;
+	applyIntensityBadges(document);
 })();
 
 (function(){

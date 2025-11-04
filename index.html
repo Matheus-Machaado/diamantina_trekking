@@ -12,7 +12,7 @@
 <body>
 	<header id="topo" class="flex">
 		<div class="container header-inner">
-			<a href="#topo" class="brand" aria-label="Diamantina Trekking - Início">
+			<a href="#inicio" class="brand" aria-label="Diamantina Trekking - Início">
 				<span class="brand-text">DIAMANTINA/TREKKING</span>
 			</a>
 
@@ -22,17 +22,15 @@
 				aria-label="Abrir menu de navegação"
 				aria-controls="siteMenu"
 				aria-expanded="false">
-				<span class="nav-toggle-bar"></span>
-				<span class="nav-toggle-bar"></span>
-				<span class="nav-toggle-bar"></span>
-				<i class="bx bx-x nav-toggle-x" aria-hidden="true"></i>
+				<i class="bx bx-menu icon-menu" aria-hidden="true"></i>
+				<i class="bx bx-x icon-close" aria-hidden="true"></i>
 			</button>
 
 			<nav class="site-nav" id="siteMenu">
 				<div class="nav-topbar"></div>
 				<ul class="flex">
-					<li><a href="#topo" aria-current="page">Início</a></li>
-					<li><a href="#sobre">Sobre</a></li>
+					<li><a href="#inicio">Início</a></li>
+					<li><a href="#guia">Sobre</a></li>
 					<li><a href="#roteiros">Roteiros</a></li>
 					<li><a href="#depoimentos">Depoimentos</a></li>
 					<li><a href="#perguntas">Perguntas</a></li>
@@ -140,7 +138,7 @@
 			</div>
 
 			<div class="roteiros-grid">
-				<article class="roteiro-card">
+				<article class="roteiro-card" data-intensidade="intenso">
 					<div class="roteiro-card-img">
 						<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
 					</div>
@@ -166,7 +164,7 @@
 					</div>
 				</article>
 
-				<article class="roteiro-card">
+				<article class="roteiro-card" data-intensidade="leve">
 					<div class="roteiro-card-img">
 						<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
 					</div>
@@ -192,7 +190,7 @@
 					</div>
 				</article>
 
-				<article class="roteiro-card">
+				<article class="roteiro-card" data-intensidade="moderado">
 					<div class="roteiro-card-img">
 						<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
 					</div>
@@ -218,7 +216,7 @@
 					</div>
 				</article>
 
-				<article class="roteiro-card">
+				<article class="roteiro-card" data-intensidade="leve">
 					<div class="roteiro-card-img">
 						<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
 					</div>
@@ -244,7 +242,7 @@
 					</div>
 				</article>
 
-				<article class="roteiro-card">
+				<article class="roteiro-card" data-intensidade="moderado">
 					<div class="roteiro-card-img">
 						<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
 					</div>
@@ -270,7 +268,7 @@
 					</div>
 				</article>
 
-				<article class="roteiro-card">
+				<article class="roteiro-card" data-intensidade="intenso">
 					<div class="roteiro-card-img">
 						<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inacio - Por do Sol">
 					</div>
@@ -298,7 +296,7 @@
 			</div>
 
 			<div class="roteiros-cta">
-				<a href="#" class="btn btn-cta">Ver Todos os Roteiros</a>
+				<a href="roteiros.html" class="btn btn-cta">Ver Todos os Roteiros</a>
 			</div>
 		</div>
 	</section>
@@ -358,7 +356,7 @@
 
 			<div class="depo-wrapper" data-reveal="fade-up">
 				<button class="depo-nav left" aria-label="Anterior">
-					<i class="bx bx-chevron-down" aria-hidden="true"></i>
+					<i class="bx bx-chevron-left" aria-hidden="true"></i>
 				</button>
 
 				<div class="depo-viewport">
@@ -427,7 +425,7 @@
 				</div>
 
 				<button class="depo-nav right" aria-label="Próximo">
-					<i class="bx bx-chevron-down" aria-hidden="true"></i>
+					<i class="bx bx-chevron-right" aria-hidden="true"></i>
 				</button>
 			</div>
 

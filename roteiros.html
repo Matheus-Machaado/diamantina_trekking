@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Roteiros - Diamantina Trekking</title>
+	<meta name="description" content="Todos os roteiros da Diamantina Trekking na Chapada Diamantina.">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="roteiros.css">
+	<link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet">
+	<link rel="shortcut icon" href="img/fav_icon.png" type="image/x-icon">
+</head>
+<body>
+	<header id="topo" class="flex">
+		<div class="container header-inner">
+			<a href="index.html#inicio" class="brand" aria-label="Diamantina Trekking - Início">
+				<span class="brand-text">DIAMANTINA/TREKKING</span>
+			</a>
+			<button id="navToggle" class="nav-toggle" type="button" aria-label="Abrir menu de navegação" aria-controls="siteMenu" aria-expanded="false">
+                <i class="bx bx-menu icon-menu" aria-hidden="true"></i>
+                <i class="bx bx-x icon-close" aria-hidden="true"></i>
+            </button>
+			<nav class="site-nav" id="siteMenu">
+				<div class="nav-topbar"></div>
+				<ul class="flex">
+					<li><a href="index.html#inicio">Início</a></li>
+					<li><a href="index.html#guia">Sobre</a></li>
+					<li><a href="index.html#roteiros">Roteiros</a></li>
+					<li><a href="index.html#depoimentos">Depoimentos</a></li>
+					<li><a href="index.html#perguntas">Perguntas</a></li>
+				</ul>
+				<div class="nav-cta-slot"></div>
+			</nav>
+			<div class="contato-lingua flex">
+				<a class="btn-contato btn" data-zap="link">Contato</a>
+				<div class="lang-dropdown">
+					<div id="langTrigger" class="lingua-slect flex" role="button" tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu" title="Selecionar idioma">
+						<img src="img/flag-br.png" alt="Idioma atual: Português (BR)">
+						<i class="bx bx-chevron-down lang-caret" aria-hidden="true"></i>
+					</div>
+					<ul id="langMenu" class="lang-menu" role="menu" aria-label="Selecionar idioma">
+						<li role="none">
+							<a role="menuitem" href="#" data-lang="en">
+								<img src="img/flag-gb.png" alt=""> English (GB)
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="#" data-lang="fr">
+								<img src="img/flag-fr.png" alt=""> Français (FR)
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="#" data-lang="pt" class="active">
+								<img src="img/flag-br.png" alt=""> Português (BR)
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="navBackdrop" class="site-nav-backdrop" hidden></div>
+	</header>
+
+	<main>
+		<section class="roteiros rlist">
+			<div class="container">
+				<div class="section-title-sub">
+					<h2 class="section-title">ROTEIROS</h2>
+					<p class="section-sub">Trilhas, cachoeiras e mirantes: viva a Chapada por inteiro</p>
+				</div>
+
+				<div class="rlist-controls">
+					<label for="rlistFilter">Intensidade</label>
+					<div class="select-wrap">
+						<select id="rlistFilter" aria-label="Filtrar por intensidade">
+							<option value="todos" selected>Todos</option>
+							<option value="leve">Leve</option>
+							<option value="moderado">Moderado</option>
+							<option value="intenso">Intenso</option>
+						</select>
+						<i class="bx bx-chevron-down select-caret" aria-hidden="true"></i>
+					</div>
+				</div>
+
+				<div id="rlistGrid" class="roteiros-grid">
+					<article class="roteiro-card" data-intensidade="leve">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inácio - Pôr do Sol">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Morro do Pai Inácio - Pôr do Sol</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>1 Dia</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+
+					<article class="roteiro-card" data-intensidade="moderado">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Mirantes da Chapada">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Mirantes da Chapada</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Trilha com vistas épicas pelos principais mirantes.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>1 Dia</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 480,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+
+					<article class="roteiro-card" data-intensidade="leve">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Cachoeiras Clássicas">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Cachoeiras Clássicas</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Banhos e quedas d'água icônicas da região.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>1 Dia</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 520,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+
+					<article class="roteiro-card" data-intensidade="intenso">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Travessia Pati Essencial">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Travessia Pati Essencial</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Imersão no Vale do Pati com pernoites em casas nativas.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>3 Dias</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 2.150,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+
+					<article class="roteiro-card" data-intensidade="moderado">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Grutas e Poços">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Grutas e Poços</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Águas azuis em poços e grutas famosas.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>1 Dia</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 650,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+
+					<article class="roteiro-card" data-intensidade="leve">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Roncador + Marimbus">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Roncador + Marimbus</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Canoas pelos Marimbus e banho no Roncador.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>1 Dia</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 750,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+
+					<article class="roteiro-card" data-intensidade="moderado">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Poço do Diabo">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Poço do Diabo</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Dia de banho e rapel opcional.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>1 Dia</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 520,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+
+					<article class="roteiro-card" data-intensidade="leve">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Lençóis Histórico">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Lençóis Histórico</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Centro histórico e cultura garimpeira.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>Meio Dia</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 220,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+
+					<article class="roteiro-card" data-intensidade="moderado">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Ribeirão do Meio">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Ribeirão do Meio</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Escorrega natural e poço para banho.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>Meio Dia</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 180,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+
+					<article class="roteiro-card" data-intensidade="moderado">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Vale do Capão Essencial">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Vale do Capão Essencial</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Trilhas e cachoeiras imperdíveis do Capão.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>1 Dia</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 590,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+
+					<article class="roteiro-card" data-intensidade="moderado">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Caminho das Águas">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Caminho das Águas</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Sequência de poços e corredeiras.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>1 Dia</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 540,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+
+					<article class="roteiro-card" data-intensidade="moderado">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Nascentes e Cânions">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Nascentes e Cânions</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Geologia e águas cristalinas.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>1 Dia</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 560,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+
+					<article class="roteiro-card" data-intensidade="intenso">
+						<div class="roteiro-card-img">
+							<img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Pico do Itobira">
+						</div>
+						<div class="roteiro-card-body">
+							<h3 class="roteiro-card-title">Pico do Itobira</h3>
+							<div class="roteiro-card-line">
+								<span>Sobre o Roteiro</span>
+								<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="Mostrar descrição">
+									<i class="bx bx-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+							<p class="roteiro-desc">Ascensão a um dos picos mais bonitos da região.</p>
+							<div class="roteiro-meta">
+								<span class="roteiro-meta-left"><i class="bx bxs-bolt" aria-hidden="true"></i>1 Dia</span>
+								<span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 690,00</b></span>
+							</div>
+							<a href="#" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+						</div>
+					</article>
+				</div>
+
+				<nav id="rlistPager" class="rt-pager" aria-label="Paginação de roteiros"></nav>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container foot-grid">
+			<div class="foot-brand">
+				<img src="img/logo-footer.png" alt="Diamantina Trekking">
+			</div>
+			<nav class="foot-nav" aria-label="Links do site">
+				<ul>
+					<li><a href="index.html#inicio">Início</a></li>
+					<li><a href="index.html#guia">Sobre</a></li>
+					<li><a href="index.html#roteiros">Roteiros</a></li>
+					<li><a href="index.html#depoimentos">Depoimentos</a></li>
+				</ul>
+			</nav>
+			<div class="foot-contacts">
+				<a class="foot-tel" data-zap="link">+55 75 9844-0434</a>
+				<a class="foot-mail" href="mailto:diamantinatrekking@gmail.com">diamantinatrekking@gmail.com</a>
+				<div class="foot-social">
+					<a class="ft-social-btn" href="#" aria-label="Instagram">
+						<img src="img/icons/instagram-white-icon.png" alt="">
+					</a>
+					<a class="ft-social-btn" href="#" aria-label="Facebook">
+						<img src="img/icons/facebook-white-icon.png" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="container foot-bottom">
+			<hr class="foot-sep">
+			<p class="foot-copy">© Diamantina Trekking 2025 - Todos os direitos reservados.</p>
+			<p class="foot-author">Desenvolvido por Matheus Machado</p>
+		</div>
+	</footer>
+
+	<a href="https://wa.me/557598440434?text=Ol%C3%A1%20Diamantina%20Trekking!%20Quero%20um%20atendimento%20online." class="zap-float" target="_blank" rel="noopener" aria-label="Atendimento Online pelo WhatsApp">
+		<img src="img/icons/whatsapp-white-icon.png" alt="" class="zap-float-icon">
+		<span class="zap-float-label">Atendimento Online</span>
+	</a>
+
+	<script src="main.js"></script>
+	<script src="roteiros.js"></script>
+</body>
+</html>

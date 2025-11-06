@@ -13,6 +13,7 @@
 	--bg-soft:#EFEFEF;
 	--hover-btn:#a7a7a7;
 	--line-light:#dfe7e2;
+	--line-strong: #626262;
 	--cta:#E85C5E;
 	--cal:#F3E7D7;
 	--black-light:#2B2B2B;
@@ -1044,7 +1045,7 @@ section .container{
 	gap:10px;
 	border-top:1px solid var(--line-light);
 	border-bottom:1px solid var(--line-light);
-	padding:10px 0;
+	padding:5px 0;
 }
 
 .rd-sharecopy{font-size:18px;color:#41584c;}

@@ -51,21 +51,27 @@
 	const root = document.getElementById('rpGrid');
 	if(!root) return;
 
-	const DAYS = parseInt(root.dataset.days || '1', 10);
+	const DAYS  = parseInt(root.dataset.days  || '1', 10);
 	const PRICE = parseFloat(root.dataset.price || '0');
 
 	const start = document.getElementById('rpStart');
-	const end = document.getElementById('rpEnd');
+	const end   = document.getElementById('rpEnd');
 
 	const pToggle = document.getElementById('rpPeopleToggle');
-	const pPanel = document.getElementById('rpPeoplePanel');
-	const pLabel = document.getElementById('rpPeopleLabel');
-	const pMinus = document.getElementById('rpMinus');
-	const pPlus = document.getElementById('rpPlus');
-	const pQty = document.getElementById('rpQty');
+	const pPanel  = document.getElementById('rpPeoplePanel');
+	const pLabel  = document.getElementById('rpPeopleLabel');
+	const pMinus  = document.getElementById('rpMinus');
+	const pPlus   = document.getElementById('rpPlus');
+	const pQty    = document.getElementById('rpQty');
+	const pTotal  = document.getElementById('rpPeopleTotal');
 
-	const cta = document.getElementById('rpSubmit');
+	const cta        = document.getElementById('rpSubmit');
 	const subtotalEl = document.getElementById('rpSubtotal');
+
+	const startBtn = document.getElementById('rpStartBtn');
+	const endBtn   = document.getElementById('rpEndBtn');
+	const outStart = document.getElementById('rpStartText');
+	const outEnd   = document.getElementById('rpEndText');
 
 	function dateFromInput(v){
 		if(!v) return null;
@@ -84,24 +90,43 @@
 		dt.setDate(dt.getDate() + n);
 		return dt;
 	}
+	function fmtPretty(d){
+		if(!d) return 'dd/mm/aaaa';
+		let s = d.toLocaleDateString('pt-BR',{ weekday:'short', day:'2-digit', month:'short' });
+		return s.replace(/\./g,'').toLowerCase();
+	}
+	function formatBRL(v){
+		return (v||0).toLocaleString('pt-BR',{ style:'currency', currency:'BRL' });
+	}
 
 	const today = new Date();
 	const todayISO = toInputDate(today);
 	if(start) start.min = todayISO;
-	if(end) end.min = todayISO;
+	if(end)   end.min   = todayISO;
+
+	let syncing = false;
 
 	start?.addEventListener('change', ()=>{
+		if(syncing) return;
 		const s = dateFromInput(start.value);
 		if(!s || !end) return;
 		const e = addDays(s, DAYS);
+		syncing = true;
 		end.value = toInputDate(e);
+		end.min = end.value;
+		syncing = false;
+		updateDatesPretty();
 		updateCTA();
 	});
 	end?.addEventListener('change', ()=>{
+		if(syncing) return;
 		const e = dateFromInput(end.value);
 		if(!e || !start) return;
 		const s = addDays(e, -DAYS);
+		syncing = true;
 		start.value = toInputDate(s);
+		syncing = false;
+		updateDatesPretty();
 		updateCTA();
 	});
 
@@ -123,28 +148,35 @@
 	});
 	pToggle?.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closePeople(); });
 
-	function clampQty(n){ return Math.max(1, Math.min(50, n|0)); }
+	function clampQty(n){ return Math.max(0, Math.min(50, n|0)); }
 	function setQty(n){
 		const q = clampQty(n);
 		pQty.value = String(q);
-		pLabel.textContent = q === 1 ? '1 pessoa' : `${q} pessoas`;
+		if(q === 0) pLabel.textContent = 'Selecione';
+		else pLabel.textContent = q === 1 ? '1 pessoa' : `${q} pessoas`;
+		const total = q * PRICE;
+		if(pTotal) pTotal.textContent = formatBRL(total).replace(/^R\$\s*/,'');
 		updateCTA();
 	}
-	pMinus?.addEventListener('click', ()=> setQty(parseInt(pQty.value||'1',10)-1));
-	pPlus?.addEventListener('click', ()=> setQty(parseInt(pQty.value||'1',10)+1));
-	pQty?.addEventListener('input', ()=> setQty(parseInt(pQty.value||'1',10)));
+	pMinus?.addEventListener('click', ()=> setQty(parseInt(pQty.value||'0',10)-1));
+	pPlus ?.addEventListener('click', ()=> setQty(parseInt(pQty.value||'0',10)+1));
+	pQty  ?.addEventListener('input', ()=> setQty(parseInt(pQty.value||'0',10)));
 
-	function formatBRL(v){ return (v||0).toLocaleString('pt-BR',{ style:'currency', currency:'BRL' }); }
 	function selectedQty(){ return parseInt(pQty?.value||'0',10) || 0; }
 	function calcSubtotal(){ return selectedQty() * PRICE; }
+	function hasDates(){ return !!(start?.value && end?.value); }
 
 	function updateCTA(){
 		subtotalEl.textContent = formatBRL(calcSubtotal());
-		const ready = selectedQty() > 0;
+		const ready = selectedQty() > 0 && hasDates();
 		cta.disabled = !ready;
 		cta.textContent = ready ? 'Reservar agora' : 'Selecione data e quantidade de pessoas';
 	}
-	updateCTA();
+
+	function updateDatesPretty(){
+		outStart.textContent = fmtPretty(dateFromInput(start.value));
+		outEnd.textContent   = fmtPretty(dateFromInput(end.value));
+	}
 
 	cta?.addEventListener('click', ()=>{
 		if(cta.disabled) return;
@@ -162,4 +194,65 @@
 		badge.innerHTML = '<img src="img/icons/intensidade-icon.png" alt=""><span>'+ (level==='intenso'?'INTENSO':(level==='moderado'?'MODERADO':'LEVE')) +'</span>';
 		slot.appendChild(badge);
 	})();
+
+	function openWithOverlay(input, anchor){
+		if(!input) return;
+		try{
+			if(typeof input.showPicker === 'function'){ input.showPicker(); return; }
+		}catch(_){}
+		const r = (anchor || input).getBoundingClientRect();
+		const prev = {
+			position: input.style.position,
+			left: input.style.left,
+			top: input.style.top,
+			width: input.style.width,
+			height: input.style.height,
+			opacity: input.style.opacity,
+			pointerEvents: input.style.pointerEvents,
+			zIndex: input.style.zIndex
+		};
+		input.style.position = 'fixed';
+		input.style.left = r.left + 'px';
+		input.style.top = r.top + 'px';
+		input.style.width = r.width + 'px';
+		input.style.height = r.height + 'px';
+		input.style.opacity = '0.001';
+		input.style.pointerEvents = 'auto';
+		input.style.zIndex = '2147483647';
+		requestAnimationFrame(()=>{
+			input.focus({ preventScroll:true });
+			input.click();
+		});
+		const restore = ()=>{
+			input.style.position = prev.position;
+			input.style.left = prev.left;
+			input.style.top = prev.top;
+			input.style.width = prev.width;
+			input.style.height = prev.height;
+			input.style.opacity = prev.opacity;
+			input.style.pointerEvents = prev.pointerEvents;
+			input.style.zIndex = prev.zIndex;
+		};
+		const cleanup = ()=>{
+			restore();
+			updateDatesPretty();
+			updateCTA();
+			input.removeEventListener('change', cleanup);
+			input.removeEventListener('blur', cleanup);
+		};
+		input.addEventListener('change', cleanup);
+		input.addEventListener('blur', cleanup);
+	}
+
+	startBtn?.addEventListener('click', ()=> openWithOverlay(start, startBtn));
+	endBtn  ?.addEventListener('click', ()=> openWithOverlay(end,   endBtn));
+	startBtn?.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openWithOverlay(start, startBtn); } });
+	endBtn  ?.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openWithOverlay(end,   endBtn); } });
+
+	start?.addEventListener('change', ()=>{ updateDatesPretty(); updateCTA(); });
+	end  ?.addEventListener('change', ()=>{ updateDatesPretty(); updateCTA(); });
+
+	setQty(parseInt(pQty?.value||'0',10)||0);
+	updateDatesPretty();
+	updateCTA();
 })();

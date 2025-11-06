@@ -109,35 +109,39 @@
 									<i class="bx bxs-calendar-alt" aria-hidden="true"></i>
 									<span id="rpStartText">dd/mm/aaaa</span>
 								</button>
-
 								<span class="rp-range-sep" aria-hidden="true"></span>
-
 								<button id="rpEndBtn" type="button" class="rp-range-seg rp-range-end">
 									<span id="rpEndText">dd/mm/aaaa</span>
 								</button>
-
 								<input id="rpStart" class="rp-native-date" type="date" aria-hidden="true">
 								<input id="rpEnd" class="rp-native-date" type="date" aria-hidden="true">
 							</div>
 						</div>
 
 						<div class="rp-field rp-people">
-							<label class="rp-label"><i class="bx bx-user" aria-hidden="true"></i> Quantidade de pessoas</label>
-							<button id="rpPeopleToggle" class="rp-select" type="button" aria-expanded="false" aria-controls="rpPeoplePanel">
-								<span id="rpPeopleLabel">Selecione</span>
-								<i class="bx bx-chevron-down rp-caret" aria-hidden="true"></i>
-							</button>
-							<div id="rpPeoplePanel" class="rp-popover" hidden>
-								<div class="rp-counter">
-									<div class="rp-c-info">
-										<div class="rp-c-title">Pessoa</div>
-										<div class="rp-c-sub">De 05 a 90 anos</div>
+							<div id="rpPeopleBox" class="rp-people-box">
+								<button id="rpPeopleToggle" class="rp-people-headbtn" type="button" aria-expanded="false" aria-controls="rpPeoplePanel">
+									<span class="rp-people-head">
+										<i class="bx bx-user" aria-hidden="true"></i>
+										<span class="rp-people-title">QUANTIDADE DE PESSOAS</span>
+									</span>
+									<i class="bx bx-chevron-down rp-caret" aria-hidden="true"></i>
+									<span class="rp-people-sub" id="rpPeopleLabel">Selecione</span>
+								</button>
+
+								<div id="rpPeoplePanel" class="rp-people-content" hidden>
+									<div class="rp-people-row">
+										<div class="rp-c-info">
+											<div class="rp-c-title">Pessoa</div>
+											<div class="rp-c-sub">De 05 a 90 anos</div>
+										</div>
+										<div class="rp-stepper">
+											<button id="rpMinus" class="rp-step" type="button" aria-label="Diminuir">-</button>
+											<input id="rpQty" class="rp-qty" type="text" inputmode="numeric" value="0" aria-label="Quantidade" />
+											<button id="rpPlus" class="rp-step" type="button" aria-label="Aumentar">+</button>
+										</div>
 									</div>
-									<div class="rp-stepper">
-										<button id="rpMinus" class="rp-step" type="button" aria-label="Diminuir">–</button>
-										<input id="rpQty" class="rp-qty" type="text" inputmode="numeric" value="1" aria-label="Quantidade" />
-										<button id="rpPlus" class="rp-step" type="button" aria-label="Aumentar">+</button>
-									</div>
+									<div class="rp-people-price">R$ <b id="rpPeoplePrice">0,00</b></div>
 								</div>
 							</div>
 						</div>

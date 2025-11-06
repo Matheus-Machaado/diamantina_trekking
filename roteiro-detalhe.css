@@ -1,5 +1,3 @@
-/* Reaproveita tokens do styles.css; adiciona só o necessário para esta página */
-
 .rp{
 	background:#fff;
 	color:var(--text-green);
@@ -8,7 +6,6 @@
 }
 .rp .container{ gap:22px; }
 
-/* Grid principal */
 .rp-grid{
 	display:grid;
 	grid-template-columns:1.1fr .9fr;
@@ -19,10 +16,9 @@
 	.rp-grid{ grid-template-columns:1fr; gap:22px; }
 }
 
-/* Título/lead/meta */
 .rp-title{
 	font-family:"Handpack", Arial, sans-serif;
-	font-size:32px;
+	font-size:28px;
 	letter-spacing:.4px;
 	margin:0 0 6px;
 }
@@ -41,70 +37,169 @@
 	border-top:2px solid var(--line-light);
 	border-bottom:2px solid var(--line-light);
 	margin-bottom:12px;
+	font-size:25px;
 }
-.rp-meta small{ color:#6a7a73; font-size:12px; }
-.rp-days i{ font-size:18px; margin-right:6px; }
+.rp-meta small{ color:#6a7a73; font-size:15px; }
+.rp-days{ font-size:20px; }
+.rp-days i{ margin-right:6px; }
 
-/* Galeria */
-.rp-gallery{ display:flex; flex-direction:column; gap:10px; }
-.rp-viewport{
+.gal{
+	display:flex;
+	flex-direction:column;
+	gap:12px;
+}
+.gal-viewport{
 	position:relative;
 	border-radius:12px;
 	overflow:hidden;
 	background:#000;
-	aspect-ratio: 16/9;
 }
-.rp-track{ display:flex; height:100%; transition:transform 440ms cubic-bezier(.2,.7,.2,1); }
-.rp-slide{ flex:0 0 100%; height:100%; }
-.rp-slide img{ width:100%; height:100%; object-fit:cover; display:block; }
-
-.rp-nav{
-	position:absolute; top:50%; transform:translateY(-50%);
-	width:44px; height:44px; border:0; border-radius:8px;
-	display:inline-flex; align-items:center; justify-content:center;
-	background:rgba(0,0,0,.45); color:#fff; cursor:pointer;
+.gal-track{
+	display:flex;
+	transition:transform 380ms cubic-bezier(.2,.7,.2,1);
+	will-change:transform;
 }
-.rp-prev{ left:8px; } .rp-next{ right:8px; }
-.rp-nav i{ font-size:34px; line-height:1; }
-
-.rp-thumbs{
+.gal-slide{ flex:0 0 100%; }
+.gal-slide img{
+	width:100%;
+	height:clamp(240px,46vw,420px);
+	object-fit:cover;
+	display:block;
+}
+.gal-thumbs-row{
 	display:grid;
-	grid-template-columns:repeat(4,1fr);
-	gap:10px;
+	grid-template-columns:auto 1fr auto;
+	align-items:center;
+	gap:12px;
 }
-.rp-thumb{
-	border:0;
-	padding:0;
-	background:#fff;
-	border-radius:8px;
+.gal-thumbs-viewport{ overflow:hidden; }
+.gal-thumbs{
+	display:flex;
+	gap:12px;
+	will-change:transform;
+}
+.gal-thumb{
+	width:140px;
+	height:74px;
+	border-radius:10px;
 	overflow:hidden;
-	box-shadow:0 2px 8px rgba(0,0,0,.08);
+	background:#fff;
+	border:2px solid transparent;
+	box-shadow:0 4px 12px rgba(0,0,0,.08);
+	cursor:pointer;
+	padding:0;
+}
+.gal-thumb img{
+	width:100%;
+	height:100%;
+	object-fit:cover;
+	display:block;
+}
+.gal-thumb.is-active{ border-color:var(--brand); }
+.gal-arrow{
+	border: none;
+	background-color: transparent;
 	cursor:pointer;
 }
-.rp-thumb.is-active{ outline:3px solid var(--brand); }
-.rp-thumb img{ width:100%; height:64px; object-fit:cover; display:block; }
+.gal-arrow i{
+	color:var(--text-green);
+	font-size:45px;
+	line-height:1;
+	display:block;
+}
+.gal-arrow:disabled{
+	opacity:.45;
+	cursor:not-allowed;
+}
+@media (max-width:560px){
+	.gal-thumb{ width:96px; height:56px; }
+}
 
+.intensity-badge{
+	position:absolute;
+	top:8px;
+	right:8px;
+	display:inline-flex;
+	align-items:center;
+	gap:8px;
+	height:28px;
+	padding:0 10px;
+	border-radius:6px;
+	color:#fff;
+	font-family:"Handpack",Arial,sans-serif!important;
+	font-weight:800;
+	letter-spacing:.5px;
+	font-size:14px;
+	background:var(--brand);
+	box-shadow:0 4px 12px rgba(0,0,0,.18);
+}
+.intensity-badge img{ width:18px; height:18px; display:block; }
+.intensity-leve{ background:var(--brand); }
+.intensity-moderado{ background:var(--text-green); }
+.intensity-intenso{ background:var(--cta); }
+
+.rp-gallery{ display:flex; flex-direction:column; gap:10px; }
 .rp-sharebar{ margin-top:6px; }
 .rp-desc-btn{ align-self:flex-start; margin-top:4px; }
 
-/* Campos / formulários */
 .rp-field{ display:flex; flex-direction:column; gap:8px; margin:12px 0; }
-.rp-label{ font-weight:700; display:inline-flex; align-items:center; gap:8px; }
-.rp-dates{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-.rp-date{
-	width:100%;
-	background:#fff;
-	border:1px solid var(--line-light);
-	border-radius:12px;
-	padding:12px 12px;
-	font-size:16px;
-	box-shadow:0 6px 18px rgba(0,0,0,.06);
-}
-@media (max-width:560px){
-	.rp-dates{ grid-template-columns:1fr; }
+.rp-label{ 
+	font-weight:700; 
+	display:inline-flex; 
+	align-items:center; 
+	gap:8px; 
+	font-size: 18px;
 }
 
-/* Seletor de pessoas (inspirado no select estilizado da listagem) */
+.rp-range{
+	display:grid;
+	grid-template-columns:1fr 1px 1fr;
+	align-items:center;
+	background:#fff;
+	border:1px solid var(--line-light);
+	border-radius: 5px;
+	box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+.rp-range-seg{
+	display:flex;
+	align-items:center;
+	gap:10px;
+	width:100%;
+	padding:12px 14px;
+	background:transparent;
+	border:0;
+	text-align:left;
+	color:var(--text-green);
+	font-weight:600;
+	cursor:pointer;
+}
+.rp-range-seg:focus-visible{
+	outline:2px solid rgba(47,125,76,.25);
+	border-radius:10px;
+}
+.rp-range span{
+	font-size: 20px;
+}
+.rp-range i{ 
+	font-size:30px;
+	color:var(--text-green); 
+}
+.rp-range-sep{
+	width:1px;
+	height:28px;
+	background:var(--line-light);
+	justify-self:center;
+}
+.rp-native-date{
+	position:fixed;
+	left:-9999px;
+	top:auto;
+	width:1px;
+	height:1px;
+	opacity:0;
+	pointer-events:none;
+}
+
 .rp-people{ position:relative; }
 .rp-select{
 	display:flex; align-items:center; justify-content:space-between; gap:10px;
@@ -146,12 +241,10 @@
 	padding:6px 8px; font-weight:700; color:var(--text-green);
 }
 
-/* CTA + subtotal */
 .rp-cta{ width:100%; margin-top:6px; }
 .rp-cta[disabled]{ opacity:.7; cursor:not-allowed; }
 .rp-subtotal{ font-size:16px; margin-top:8px; }
 
-/* Inclusões */
 .rp-incluso{
 	border:1px solid var(--line-light);
 	border-radius:12px;
@@ -174,7 +267,6 @@
 .rp-inc-list b{ display:block; }
 .rp-inc-list span{ display:block; color:#41584c; }
 
-/* Descrição completa */
 .rp-about{ background:#fff; }
 .rp-preview{ font-size:18px; line-height:26px; color:#2f463b; text-align:justify; }
 .rp-see-more{
@@ -183,13 +275,10 @@
 }
 .rp-see-more.up{ margin-top:8px; }
 
-.rp-desc{
-	height:0; overflow:hidden; transition:height .34s cubic-bezier(.2,.7,.2,1);
-}
+.rp-desc{ height:0; overflow:hidden; transition:height .34s cubic-bezier(.2,.7,.2,1); }
 .rp-desc h3{ font-size:20px; margin:14px 0 6px; }
 .rp-desc ul{ padding-left:18px; }
 .rp-desc li{ list-style:disc; margin:6px 0; }
 
-/* Recomendações (reusa grade existente) */
 .rp-more{ }
 .rp-more .roteiros-grid{ margin-top:10px; }

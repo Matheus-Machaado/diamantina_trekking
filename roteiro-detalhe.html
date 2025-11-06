@@ -11,18 +11,15 @@
 	<link rel="shortcut icon" href="img/fav_icon.png" type="image/x-icon">
 </head>
 <body>
-	<!-- Cabeçalho padrão -->
 	<header id="topo" class="flex">
 		<div class="container header-inner">
 			<a href="index.html#inicio" class="brand" aria-label="Diamantina Trekking - Início">
 				<span class="brand-text">DIAMANTINA/TREKKING</span>
 			</a>
-
 			<button id="navToggle" class="nav-toggle" type="button" aria-label="Abrir menu de navegação" aria-controls="siteMenu" aria-expanded="false">
 				<i class="bx bx-menu icon-menu" aria-hidden="true"></i>
 				<i class="bx bx-x icon-close" aria-hidden="true"></i>
 			</button>
-
 			<nav class="site-nav" id="siteMenu">
 				<div class="nav-topbar"></div>
 				<ul class="flex">
@@ -34,7 +31,6 @@
 				</ul>
 				<div class="nav-cta-slot"></div>
 			</nav>
-
 			<div class="contato-lingua flex">
 				<a class="btn-contato btn" data-zap="link">Contato</a>
 				<div class="lang-dropdown">
@@ -54,34 +50,35 @@
 	</header>
 
 	<main>
-		<!-- Roteiro: layout esquerda (galeria) + direita (infos) -->
 		<section class="rp">
 			<div class="container rp-container" data-reveal="fade-up">
-
 				<div id="rpGrid" class="rp-grid" data-days="1" data-price="405" data-intensidade="leve">
-					<!-- GALERIA -->
 					<div class="rp-gallery">
-						<div class="rp-viewport">
-							<ul class="rp-track">
-								<li class="rp-slide"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Vista do Morro do Pai Inácio 1"></li>
-								<li class="rp-slide"><img src="img/roteiros/pai-inacio/imagem-2.png" alt="Vista do Morro do Pai Inácio 2"></li>
-								<li class="rp-slide"><img src="img/roteiros/pai-inacio/imagem-3.png" alt="Vista do Morro do Pai Inácio 3"></li>
-								<li class="rp-slide"><img src="img/roteiros/pai-inacio/imagem-4.png" alt="Vista do Morro do Pai Inácio 4"></li>
-							</ul>
-
-							<button class="rp-nav rp-prev" type="button" aria-label="Anterior">
-								<i class="bx bx-chevron-left" aria-hidden="true"></i>
-							</button>
-							<button class="rp-nav rp-next" type="button" aria-label="Próxima">
-								<i class="bx bx-chevron-right" aria-hidden="true"></i>
-							</button>
-						</div>
-
-						<div class="rp-thumbs">
-							<button class="rp-thumb is-active" data-index="0"><img src="img/roteiros/pai-inacio/imagem-1.png" alt=""></button>
-							<button class="rp-thumb" data-index="1"><img src="img/roteiros/pai-inacio/imagem-2.png" alt=""></button>
-							<button class="rp-thumb" data-index="2"><img src="img/roteiros/pai-inacio/imagem-3.png" alt=""></button>
-							<button class="rp-thumb" data-index="3"><img src="img/roteiros/pai-inacio/imagem-4.png" alt=""></button>
+						<div id="galeriaRoteiro" class="gal">
+							<div class="gal-viewport">
+								<div class="gal-track">
+									<div class="gal-slide"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Vista 1 do Morro do Pai Inácio"></div>
+									<div class="gal-slide"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Vista 2 do Morro do Pai Inácio"></div>
+									<div class="gal-slide"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Vista 3 do Morro do Pai Inácio"></div>
+									<div class="gal-slide"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Vista 4 do Morro do Pai Inácio"></div>
+								</div>
+							</div>
+							<div class="gal-thumbs-row">
+								<button class="gal-arrow gal-prev" type="button" aria-label="Anterior">
+									<i class="bx bx-chevron-left" aria-hidden="true"></i>
+								</button>
+								<div class="gal-thumbs-viewport">
+									<div class="gal-thumbs">
+										<button class="gal-thumb is-active" type="button"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Miniatura 1"></button>
+										<button class="gal-thumb" type="button"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Miniatura 2"></button>
+										<button class="gal-thumb" type="button"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Miniatura 3"></button>
+										<button class="gal-thumb" type="button"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Miniatura 4"></button>
+									</div>
+								</div>
+								<button class="gal-arrow gal-next" type="button" aria-label="Próxima">
+									<i class="bx bx-chevron-right" aria-hidden="true"></i>
+								</button>
+							</div>
 						</div>
 
 						<div class="rp-sharebar rd-sharebar">
@@ -97,34 +94,39 @@
 						</button>
 					</div>
 
-					<!-- INFOS / RESERVA -->
 					<aside class="rp-side">
 						<h1 class="rp-title">Morro do Pai Inácio - Pôr do Sol</h1>
 						<p class="rp-lead">Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio. Uma subida curta e panorâmica revela chapadões a perder de vista e um mar de vales dourados pela luz da tarde. Uma experiência inesquecível e acessível, ideal para todas as idades.</p>
-
 						<div class="rp-meta">
 							<span class="rp-days"><i class="bx bxs-bolt" aria-hidden="true"></i> <b>1 Dia</b></span>
 							<span class="rp-price"><small>A partir de</small> <b>R$ 405,00</b></span>
 						</div>
 
-						<!-- Datas -->
 						<div class="rp-field">
-							<label class="rp-label"><i class="bx bx-calendar" aria-hidden="true"></i> Início e término</label>
-							<div class="rp-dates">
-								<input id="rpStart" class="rp-date" type="date" aria-label="Data de início">
-								<input id="rpEnd" class="rp-date" type="date" aria-label="Data de término">
+							<label class="rp-label">Início e término</label>
+							<div class="rp-range" role="group" aria-label="Início e término">
+								<button id="rpStartBtn" type="button" class="rp-range-seg rp-range-start">
+									<i class="bx bxs-calendar-alt" aria-hidden="true"></i>
+									<span id="rpStartText">dd/mm/aaaa</span>
+								</button>
+
+								<span class="rp-range-sep" aria-hidden="true"></span>
+
+								<button id="rpEndBtn" type="button" class="rp-range-seg rp-range-end">
+									<span id="rpEndText">dd/mm/aaaa</span>
+								</button>
+
+								<input id="rpStart" class="rp-native-date" type="date" aria-hidden="true">
+								<input id="rpEnd" class="rp-native-date" type="date" aria-hidden="true">
 							</div>
 						</div>
 
-						<!-- Pessoas -->
 						<div class="rp-field rp-people">
 							<label class="rp-label"><i class="bx bx-user" aria-hidden="true"></i> Quantidade de pessoas</label>
-
 							<button id="rpPeopleToggle" class="rp-select" type="button" aria-expanded="false" aria-controls="rpPeoplePanel">
 								<span id="rpPeopleLabel">Selecione</span>
 								<i class="bx bx-chevron-down rp-caret" aria-hidden="true"></i>
 							</button>
-
 							<div id="rpPeoplePanel" class="rp-popover" hidden>
 								<div class="rp-counter">
 									<div class="rp-c-info">
@@ -140,13 +142,11 @@
 							</div>
 						</div>
 
-						<!-- CTA + Subtotal -->
 						<button id="rpSubmit" class="btn btn-cta rp-cta" type="button" disabled>Selecione data e quantidade de pessoas</button>
 						<div class="rp-subtotal">Subtotal: <b id="rpSubtotal">R$ 0,00</b></div>
 					</aside>
 				</div>
 
-				<!-- O que está incluso -->
 				<div class="rp-incluso">
 					<h2 class="rp-subtitle">O que está incluso</h2>
 					<ul class="rp-inc-list">
@@ -169,15 +169,12 @@
 					</ul>
 				</div>
 
-				<!-- Descrição completa (abre por botão ou "Ver mais") -->
 				<article class="rp-about">
 					<h2 class="rp-subtitle">Sobre a atividade</h2>
-
 					<p class="rp-preview">
 						Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio. Uma subida curta e panorâmica a revela chapadões e vales dourados pela luz da tarde — ideal para amantes da natureza de todas as idades.
 						<button id="rpSeeMore" class="rp-see-more" type="button" aria-expanded="false">Ver mais <i class="bx bx-chevron-down"></i></button>
 					</p>
-
 					<div id="rpDesc" class="rp-desc">
 						<section>
 							<h3>Visão Geral</h3>
@@ -187,7 +184,6 @@
 								<li>Retorno: logo após o pôr do sol, conforme horário do crepúsculo.</li>
 							</ul>
 						</section>
-
 						<section>
 							<h3>Trilha e Esforço Físico</h3>
 							<ul>
@@ -196,7 +192,6 @@
 								<li>Recomendado para famílias e iniciantes ativos.</li>
 							</ul>
 						</section>
-
 						<section>
 							<h3>O que esperar visualmente</h3>
 							<ul>
@@ -204,7 +199,6 @@
 								<li>Céu dramático ao pôr do sol e fotos imperdíveis.</li>
 							</ul>
 						</section>
-
 						<section>
 							<h3>Regras e dicas úteis</h3>
 							<ul>
@@ -213,12 +207,10 @@
 								<li>Chegar com antecedência para evitar filas na entrada.</li>
 							</ul>
 						</section>
-
 						<button id="rpSeeLess" class="rp-see-more up" type="button">Ver menos <i class="bx bx-chevron-up"></i></button>
 					</div>
 				</article>
 
-				<!-- Recomendações -->
 				<div class="rp-more">
 					<h2 class="rp-subtitle">Mais aventuras para explorar</h2>
 					<div class="roteiros-grid">
@@ -232,7 +224,6 @@
 								<a href="roteiro-detalhe.html" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
 							</div>
 						</article>
-
 						<article class="roteiro-card" data-intensidade="moderado">
 							<div class="roteiro-card-img"><img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Mirantes da Chapada"></div>
 							<div class="roteiro-card-body">
@@ -243,7 +234,6 @@
 								<a href="roteiro-detalhe.html" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
 							</div>
 						</article>
-
 						<article class="roteiro-card" data-intensidade="intenso">
 							<div class="roteiro-card-img"><img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Pico do Itobira"></div>
 							<div class="roteiro-card-body">
@@ -261,7 +251,6 @@
 		</section>
 	</main>
 
-	<!-- Rodapé padrão -->
 	<footer class="site-footer">
 		<div class="container foot-grid">
 			<div class="foot-brand"><img src="img/logo-footer.png" alt="Diamantina Trekking"></div>

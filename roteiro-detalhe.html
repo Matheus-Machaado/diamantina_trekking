@@ -90,7 +90,7 @@
 						</div>
 
 						<button id="rpDescBtn" class="btn btn-ghost rp-desc-btn" type="button">
-							<i class="bx bx-book-open" aria-hidden="true"></i> Ler Descrição
+							<i class="bx bxs-book" aria-hidden="true"></i> Ler Descrição
 						</button>
 					</div>
 
@@ -122,32 +122,40 @@
 							<div id="rpPeopleBox" class="rp-people-box">
 								<button id="rpPeopleToggle" class="rp-people-headbtn" type="button" aria-expanded="false" aria-controls="rpPeoplePanel">
 									<span class="rp-people-head">
-										<i class="bx bx-user" aria-hidden="true"></i>
-										<span class="rp-people-title">QUANTIDADE DE PESSOAS</span>
+										<span class="rp-people-text">
+											<i class="bx bxs-user" aria-hidden="true"></i>
+											<span class="rp-people-title">QUANTIDADE DE PESSOAS</span>
+										</span>
+										<span class="rp-people-sub" id="rpPeopleLabel">Selecione</span>
 									</span>
 									<i class="bx bx-chevron-down rp-caret" aria-hidden="true"></i>
-									<span class="rp-people-sub" id="rpPeopleLabel">Selecione</span>
 								</button>
 
 								<div id="rpPeoplePanel" class="rp-people-content" hidden>
-									<div class="rp-people-row">
-										<div class="rp-c-info">
-											<div class="rp-c-title">Pessoa</div>
-											<div class="rp-c-sub">De 05 a 90 anos</div>
+									<div class="rp-people-inner">
+										<div class="rp-people-row">
+											<div class="rp-c-info">
+												<div class="rp-c-title">Pessoa</div>
+												<div class="rp-c-sub">(De 05 a 90 anos)</div>
+											</div>
+											<div class="rp-people-price"><b id="rpPeoplePrice">R$ 405,00</b></div>
 										</div>
-										<div class="rp-stepper">
-											<button id="rpMinus" class="rp-step" type="button" aria-label="Diminuir">-</button>
+										<div class="rp-stepper" role="group" aria-label="Quantidade">
+											<button id="rpMinus" class="rp-step" type="button" aria-label="Diminuir">
+												<i class="bx bx-minus" aria-hidden="true"></i>
+											</button>
 											<input id="rpQty" class="rp-qty" type="text" inputmode="numeric" value="0" aria-label="Quantidade" />
-											<button id="rpPlus" class="rp-step" type="button" aria-label="Aumentar">+</button>
+											<button id="rpPlus" class="rp-step" type="button" aria-label="Aumentar">
+												<i class="bx bx-plus" aria-hidden="true"></i>
+											</button>
 										</div>
 									</div>
-									<div class="rp-people-price">R$ <b id="rpPeoplePrice">0,00</b></div>
 								</div>
 							</div>
 						</div>
 
 						<button id="rpSubmit" class="btn btn-cta rp-cta" type="button" disabled>Selecione data e quantidade de pessoas</button>
-						<div class="rp-subtotal">Subtotal: <b id="rpSubtotal">R$ 0,00</b></div>
+						<div class="rp-subtotal btn">Subtotal: <b id="rpSubtotal">R$ 0,00</b></div>
 					</aside>
 				</div>
 
@@ -176,60 +184,69 @@
 				<article class="rp-about">
 					<h2 class="rp-subtitle">Sobre a atividade</h2>
 					<p class="rp-preview">
-						Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio. Uma subida curta e panorâmica a revela chapadões e vales dourados pela luz da tarde — ideal para amantes da natureza de todas as idades.
-						<button id="rpSeeMore" class="rp-see-more" type="button" aria-expanded="false">Ver mais <i class="bx bx-chevron-down"></i></button>
+						Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio. Uma subida curta e panorâmica revela chapadões a perder de vista e um mar de vales dourados pela luz da tarde. Uma experiência inesquecível e acessível, ideal para todas as idades.
 					</p>
-					<div id="rpDesc" class="rp-desc">
-						<section>
-							<h3>Visão Geral</h3>
-							<ul>
-								<li>Local: Morro do Pai Inácio, município de Palmeiras, Bahia.</li>
-								<li>Tempo total do passeio: 1 dia (parte da tarde ao pôr do sol).</li>
-								<li>Retorno: logo após o pôr do sol, conforme horário do crepúsculo.</li>
-							</ul>
-						</section>
-						<section>
-							<h3>Trilha e Esforço Físico</h3>
-							<ul>
-								<li>Distância: ~1 km de caminhada (trechos inclinados).</li>
-								<li>Nível de dificuldade: <b>leve a moderado</b>. Não exige técnica de trekking.</li>
-								<li>Recomendado para famílias e iniciantes ativos.</li>
-							</ul>
-						</section>
-						<section>
-							<h3>O que esperar visualmente</h3>
-							<ul>
-								<li>Mirante com vista 360° para vales, chapadões e serras.</li>
-								<li>Céu dramático ao pôr do sol e fotos imperdíveis.</li>
-							</ul>
-						</section>
-						<section>
-							<h3>Regras e dicas úteis</h3>
-							<ul>
-								<li>Levar água, protetor solar, boné/chapéu e corta-vento leve.</li>
-								<li>Tênis aderente ou bota de trilha recomendado.</li>
-								<li>Chegar com antecedência para evitar filas na entrada.</li>
-							</ul>
-						</section>
+					<button id="rpSeeMore" class="rp-see-more" type="button" aria-expanded="false">Ver mais <i class="bx bx-chevron-down"></i></button>
+					<div id="rpDesc" class="rp-desc" hidden>
+						<div class="rp-desc-inner">
+							<div>
+								<h3>Visão Geral</h3>
+								<ul>
+									<li>Local: Morro do Pai Inácio, município de Palmeiras, Bahia.</li>
+									<li>Tempo total do passeio: 1 dia (parte da tarde ao pôr do sol).</li>
+									<li>Retorno: logo após o pôr do sol, conforme horário do crepúsculo.</li>
+								</ul>
+							</div>
+							<div>
+								<h3>Trilha e Esforço Físico</h3>
+								<ul>
+									<li>Distância: ~1 km de caminhada (trechos inclinados).</li>
+									<li>Nível de dificuldade: <b>leve a moderado</b>. Não exige técnica de trekking.</li>
+									<li>Recomendado para famílias e iniciantes ativos.</li>
+								</ul>
+							</div>
+							<div>
+								<h3>O que esperar visualmente</h3>
+								<ul>
+									<li>Mirante com vista 360° para vales, chapadões e serras.</li>
+									<li>Céu dramático ao pôr do sol e fotos imperdíveis.</li>
+								</ul>
+							</div>
+							<div>
+								<h3>Regras e dicas úteis</h3>
+								<ul>
+									<li>Levar água, protetor solar, boné/chapéu e corta-vento leve.</li>
+									<li>Tênis aderente ou bota de trilha recomendado.</li>
+									<li>Chegar com antecedência para evitar filas na entrada.</li>
+								</ul>
+							</div>
+						</div>
 						<button id="rpSeeLess" class="rp-see-more up" type="button">Ver menos <i class="bx bx-chevron-up"></i></button>
 					</div>
 				</article>
 
 				<div class="rp-more">
-					<h2 class="rp-subtitle">Mais aventuras para explorar</h2>
-					<div class="roteiros-grid">
-						<article class="roteiro-card" data-intensidade="leve">
-							<div class="roteiro-card-img"><img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Morro do Pai Inácio - Pôr do Sol"></div>
+					<div class="rp-more-head">
+						<h2 class="rp-subtitle">Mais aventuras para explorar</h2>
+						<div class="rp-more-arrows">
+							<button type="button" class="rm-arrow" id="rmPrev" aria-label="Anterior"><i class="bx bx-chevron-left"></i></button>
+							<button type="button" class="rm-arrow" id="rmNext" aria-label="Próximo"><i class="bx bx-chevron-right"></i></button>
+						</div>
+					</div>
+
+					<div class="roteiros-grid" id="carrosselRoteiros">
+						<article class="roteiro-card" data-intensidade="intenso">
+							<div class="roteiro-card-img"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Pico do Itobira"></div>
 							<div class="roteiro-card-body">
-								<h3 class="roteiro-card-title">Morro do Pai Inácio - Pôr do Sol</h3>
+								<h3 class="roteiro-card-title">Pico do Itobira</h3>
 								<div class="roteiro-card-line"><span>Sobre o Roteiro</span><button class="roteiro-toggle" type="button" aria-expanded="false"><i class="bx bx-plus" aria-hidden="true"></i></button></div>
-								<p class="roteiro-desc">Trilha curta e segura com visual 360° no cume.</p>
-								<div class="roteiro-meta"><span class="roteiro-meta-left"><i class="bx bxs-bolt"></i>1 Dia</span><span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 405,00</b></span></div>
+								<p class="roteiro-desc">Subida intensa com recompensa visual impressionante.</p>
+								<div class="roteiro-meta"><span class="roteiro-meta-left"><i class="bx bxs-bolt"></i>1 Dia</span><span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 690,00</b></span></div>
 								<a href="roteiro-detalhe.html" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
 							</div>
 						</article>
 						<article class="roteiro-card" data-intensidade="moderado">
-							<div class="roteiro-card-img"><img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Mirantes da Chapada"></div>
+							<div class="roteiro-card-img"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Mirantes da Chapada"></div>
 							<div class="roteiro-card-body">
 								<h3 class="roteiro-card-title">Mirantes da Chapada</h3>
 								<div class="roteiro-card-line"><span>Sobre o Roteiro</span><button class="roteiro-toggle" type="button" aria-expanded="false"><i class="bx bx-plus" aria-hidden="true"></i></button></div>
@@ -239,12 +256,22 @@
 							</div>
 						</article>
 						<article class="roteiro-card" data-intensidade="intenso">
-							<div class="roteiro-card-img"><img src="img/roteiros/pai-inacio/miniatura-morro.png" alt="Pico do Itobira"></div>
+							<div class="roteiro-card-img"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Pico do Itobira"></div>
 							<div class="roteiro-card-body">
 								<h3 class="roteiro-card-title">Pico do Itobira</h3>
 								<div class="roteiro-card-line"><span>Sobre o Roteiro</span><button class="roteiro-toggle" type="button" aria-expanded="false"><i class="bx bx-plus" aria-hidden="true"></i></button></div>
 								<p class="roteiro-desc">Subida intensa com recompensa visual impressionante.</p>
 								<div class="roteiro-meta"><span class="roteiro-meta-left"><i class="bx bxs-bolt"></i>1 Dia</span><span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 690,00</b></span></div>
+								<a href="roteiro-detalhe.html" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
+							</div>
+						</article>
+						<article class="roteiro-card" data-intensidade="moderado">
+							<div class="roteiro-card-img"><img src="img/roteiros/pai-inacio/imagem-1.png" alt="Cachoeira do Sossego"></div>
+							<div class="roteiro-card-body">
+								<h3 class="roteiro-card-title">Cachoeira do Sossego</h3>
+								<div class="roteiro-card-line"><span>Sobre o Roteiro</span><button class="roteiro-toggle" type="button" aria-expanded="false"><i class="bx bx-plus" aria-hidden="true"></i></button></div>
+								<p class="roteiro-desc">Trilha com belas quedas d’água e poços para banho.</p>
+								<div class="roteiro-meta"><span class="roteiro-meta-left"><i class="bx bxs-bolt"></i>1 Dia</span><span class="roteiro-meta-right"><small>A partir de</small> <b>R$ 520,00</b></span></div>
 								<a href="roteiro-detalhe.html" class="btn btn-primary roteiro-btn">Ver Detalhes</a>
 							</div>
 						</article>

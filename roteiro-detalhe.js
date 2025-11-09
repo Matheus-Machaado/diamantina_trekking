@@ -131,12 +131,23 @@
 	});
 
 	function openPeople(){
+		if(!pPanel) return;
 		pPanel.hidden = false;
 		pToggle.setAttribute('aria-expanded','true');
+		requestAnimationFrame(function(){
+			pPanel.classList.add('is-open');
+		});
 	}
 	function closePeople(){
-		pPanel.hidden = true;
-		pToggle.setAttribute('aria-expanded','false');
+		if(!pPanel) return;
+		pPanel.classList.remove('is-open');
+		const onEnd = function(e){
+			if(e.target !== pPanel) return;
+			pPanel.hidden = true;
+			pToggle.setAttribute('aria-expanded','false');
+			pPanel.removeEventListener('transitionend', onEnd);
+		};
+		pPanel.addEventListener('transitionend', onEnd);
 	}
 	pToggle?.addEventListener('click', (e)=>{
 		e.stopPropagation();
@@ -152,8 +163,7 @@
 	function setQty(n){
 		const q = clampQty(n);
 		pQty.value = String(q);
-		if(q === 0) pLabel.textContent = 'Selecione';
-		else pLabel.textContent = q === 1 ? '1 pessoa' : `${q} pessoas`;
+		pLabel.textContent = q === 0 ? 'Selecione' : (q === 1 ? '1 pessoa' : `${q} pessoas`);
 		const total = q * PRICE;
 		if(pTotal) pTotal.textContent = formatBRL(total).replace(/^R\$\s*/,'');
 		updateCTA();
@@ -255,4 +265,131 @@
 	setQty(parseInt(pQty?.value||'0',10)||0);
 	updateDatesPretty();
 	updateCTA();
+
+	/* === Sobre a atividade (expand/collapse) === */
+	const aboutEl     = document.querySelector('.rp-about');
+	const descEl      = document.getElementById('rpDesc');
+	const seeMoreBtn  = document.getElementById('rpSeeMore');
+	const seeLessBtn  = document.getElementById('rpSeeLess');
+	const openDescBtn = document.getElementById('rpDescBtn');
+
+	function expandAbout(opts){
+		if(!descEl) return;
+		descEl.hidden = false;
+		aboutEl?.classList.add('is-open');
+		seeMoreBtn?.setAttribute('aria-expanded','true');
+		openDescBtn?.setAttribute('aria-expanded','true');
+		seeMoreBtn?.setAttribute('aria-controls','rpDesc');
+		openDescBtn?.setAttribute('aria-controls','rpDesc');
+		if(seeMoreBtn) seeMoreBtn.hidden = true;
+		requestAnimationFrame(()=> descEl.classList.add('is-open'));
+		if(opts && opts.scroll){
+			(aboutEl || descEl).scrollIntoView({ behavior:'smooth', block:'start' });
+		}
+	}
+
+	function collapseAbout(){
+		if(!descEl) return;
+		aboutEl?.classList.remove('is-open');
+		descEl.classList.remove('is-open');
+		const onEnd = e=>{
+			if(e.target !== descEl) return;
+			descEl.hidden = true;
+			if(seeMoreBtn) seeMoreBtn.hidden = false;
+			seeMoreBtn?.setAttribute('aria-expanded','false');
+			openDescBtn?.setAttribute('aria-expanded','false');
+			descEl.removeEventListener('transitionend', onEnd);
+		};
+		descEl.addEventListener('transitionend', onEnd);
+	}
+
+	seeMoreBtn?.addEventListener('click', ()=>{
+		if(descEl?.classList.contains('is-open')) collapseAbout();
+		else expandAbout();
+	});
+	seeLessBtn?.addEventListener('click', ()=> collapseAbout());
+	openDescBtn?.addEventListener('click', ()=> expandAbout({ scroll:true }));
+})();
+
+(function(){
+	const grid = document.querySelector('#carrosselRoteiros');
+	if(!grid) return;
+
+	const prev = document.getElementById('rmPrev');
+	const next = document.getElementById('rmNext');
+
+	let isDown = false;
+	let startX = 0;
+	let startScroll = 0;
+	let moved = false;
+
+	const xFrom = e => (e.touches ? e.touches[0].clientX : e.clientX || 0);
+
+	function step(){
+		const item = grid.querySelector('.roteiro-card');
+		if(!item) return grid.clientWidth;
+		const rect = item.getBoundingClientRect();
+		const gap = parseFloat(getComputedStyle(grid).gap) || 0;
+		return rect.width + gap;
+	}
+
+	function scrollToDir(dir){
+		grid.scrollBy({ left: dir * step(), behavior:'smooth' });
+	}
+
+	function updateArrows(){
+		if(!prev || !next) return;
+		const max = grid.scrollWidth - grid.clientWidth - 1;
+		prev.disabled = grid.scrollLeft <= 0;
+		next.disabled = grid.scrollLeft >= max;
+	}
+
+	function down(e){
+		isDown = true;
+		moved = false;
+		startX = xFrom(e);
+		startScroll = grid.scrollLeft;
+		grid.classList.add('is-dragging');
+		grid.setPointerCapture?.(e.pointerId || 0);
+	}
+
+	function move(e){
+		if(!isDown) return;
+		const dx = xFrom(e) - startX;
+		if(Math.abs(dx) > 3) moved = true;
+		grid.scrollLeft = startScroll - dx;
+	}
+
+	function up(){
+		if(!isDown) return;
+		isDown = false;
+		grid.classList.remove('is-dragging');
+	}
+
+	prev?.addEventListener('click', ()=> scrollToDir(-1));
+	next?.addEventListener('click', ()=> scrollToDir(1));
+
+	grid.addEventListener('scroll', updateArrows, { passive:true });
+	window.addEventListener('resize', updateArrows);
+
+	grid.addEventListener('pointerdown', down, { passive:true });
+	grid.addEventListener('pointermove', move, { passive:false });
+	grid.addEventListener('pointerup', up);
+	grid.addEventListener('pointerleave', up);
+	grid.addEventListener('pointercancel', up);
+
+	grid.addEventListener('touchstart', down, { passive:true });
+	grid.addEventListener('touchmove', move, { passive:false });
+	grid.addEventListener('touchend', up);
+	grid.addEventListener('touchcancel', up);
+
+	grid.addEventListener('click', function(e){
+		if(moved){
+			e.preventDefault();
+			e.stopPropagation();
+		}
+		moved = false;
+	}, true);
+
+	updateArrows();
 })();

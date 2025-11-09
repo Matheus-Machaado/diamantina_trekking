@@ -328,6 +328,7 @@ header.is-hidden{
 	font-weight:700;
 	font-size: clamp(16px, 1.8vw, 20px);
 	padding:8px 10px;
+	text-align: center;
 }
 
 .btn:hover, .zap-float:hover{background-color:var(--hover-btn);}
@@ -813,7 +814,9 @@ section .container{
 	transition:.2s ease-in-out;
 }
 
-.guia-social-btn:hover, .rd-share-btn:hover, .ft-social-btn:hover{transform:translateY(-2px);}
+.guia-social-btn:hover, .rd-share-btn:hover, .ft-social-btn:hover{
+	transform:translateY(-2px);
+}
 
 .guia-media{
 	display:flex;
@@ -901,7 +904,9 @@ section .container{
 	color:#fff;
 }
 
-.depo-nav:hover{background-color:var(--hover-btn);}
+.depo-nav:hover{
+	background-color:var(--hover-btn);
+}
 
 .depo-nav i{
 	font-size:45px;

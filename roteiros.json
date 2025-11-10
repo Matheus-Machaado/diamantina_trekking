@@ -1,0 +1,83 @@
+{
+	"roteiros": [
+		{
+			"id": 1,
+			"titulo": "Morro do Pai Inácio - Pôr do Sol",
+			"nivel": "leve",
+			"valor_por_pessoa": 405.00,
+			"duracao": "1 Dia",
+			"dias": 1,
+			"preview": "Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio.",
+			"descricao": "Subida curta e panorâmica com vista 360°. Recomendado para todas as idades. Leve água, protetor solar e calçado fechado.",
+			"imagens": [
+				"img/roteiros/pai-inacio/imagem-1.png",
+				"img/roteiros/pai-inacio/imagem-1.png",
+				"img/roteiros/pai-inacio/imagem-1.png",
+				"img/roteiros/pai-inacio/imagem-1.png"
+			],
+			"pagina-principal": true,
+			"destaque": true,
+			"descricao-destaque": "Um fim de tarde dourado no topo do Pai Inácio, com visuais de tirar o fôlego."
+		},
+		{
+			"id": 2,
+			"titulo": "Roncador + Marimbus",
+			"nivel": "leve",
+			"valor_por_pessoa": 750.00,
+			"duracao": "1 Dia",
+			"dias": 1,
+			"preview": "Canoas pelos Marimbus e banho nos lajedos rosados do Roncador.",
+			"descricao": "Passeio completo saindo de Lençóis, com almoço caseiro e retorno ao fim do dia.",
+			"imagens": [
+				"img/roteiros/marimbus/marimbus-imagem1.png",
+				"img/roteiros/marimbus/marimbus-imagem1.png"
+			],
+			"pagina-principal": true
+		},
+		{
+			"id": 3,
+			"titulo": "Travessia Pati Essencial",
+			"nivel": "intenso",
+			"valor_por_pessoa": 2150.00,
+			"duracao": "3 Dias",
+			"dias": 3,
+			"preview": "Imersão no Vale do Pati com pernoites em casas nativas.",
+			"descricao": "Travessia clássica com mirantes, cânions e cultura local. Exige bom preparo.",
+			"imagens": [
+				"img/roteiros/pati/pati-1.png",
+				"img/roteiros/pati/pati-2.png"
+			],
+			"pagina-principal": true
+		},
+        {
+			"id": 4,
+			"titulo": "Travessia Pati Essencial",
+			"nivel": "intenso",
+			"valor_por_pessoa": 2150.00,
+			"duracao": "3 Dias",
+			"dias": 3,
+			"preview": "Imersão no Vale do Pati com pernoites em casas nativas.",
+			"descricao": "Travessia clássica com mirantes, cânions e cultura local. Exige bom preparo.",
+			"imagens": [
+				"img/roteiros/pati/pati-1.png",
+				"img/roteiros/pati/pati-2.png"
+			],
+			"pagina-principal": true
+		},
+        {
+			"id": 5,
+			"titulo": "Travessia Pati Essencial",
+			"nivel": "intenso",
+			"valor_por_pessoa": 2150.00,
+			"duracao": "3 Dias",
+			"dias": 3,
+			"preview": "Imersão no Vale do Pati com pernoites em casas nativas.",
+			"descricao": "Travessia clássica com mirantes, cânions e cultura local. Exige bom preparo.",
+			"imagens": [
+				"img/roteiros/pati/pati-1.png",
+				"img/roteiros/pati/pati-2.png"
+			],
+			"pagina-principal": true
+		}
+	]
+}

@@ -17,11 +17,10 @@
 		index = ((i % slides.length) + slides.length) % slides.length;
 		const x = viewport.clientWidth * index;
 		track.style.transform = `translateX(${-x}px)`;
-		thumbs.forEach((t,ti)=> t.classList.toggle('is-active', ti===index));
+		thumbs.forEach((t,ti)=>t.classList.toggle('is-active', ti===index));
 		ensureThumbVisible(index);
 		updateArrows();
 	}
-
 	function ensureThumbVisible(i){
 		const btn = thumbs[i];
 		if(!btn || !tView) return;
@@ -32,17 +31,16 @@
 		if(left < minV) tView.scrollLeft = left - 8;
 		else if(right > maxV) tView.scrollLeft = right - tView.clientWidth + 8;
 	}
-
 	function updateArrows(){
 		const single = slides.length <= 1;
 		if(prevBtn) prevBtn.disabled = single;
 		if(nextBtn) nextBtn.disabled = single;
 	}
 
-	thumbs.forEach((btn,i)=> btn.addEventListener('click', ()=> show(i)));
-	if(prevBtn) prevBtn.addEventListener('click', ()=> show(index - 1));
-	if(nextBtn) nextBtn.addEventListener('click', ()=> show(index + 1));
-	window.addEventListener('resize', ()=> show(index));
+	thumbs.forEach((btn,i)=>btn.addEventListener('click', ()=>show(i)));
+	if(prevBtn) prevBtn.addEventListener('click', ()=>show(index - 1));
+	if(nextBtn) nextBtn.addEventListener('click', ()=>show(index + 1));
+	window.addEventListener('resize', ()=>show(index));
 
 	show(0);
 })();
@@ -51,27 +49,27 @@
 	const root = document.getElementById('rpGrid');
 	if(!root) return;
 
-	const DAYS  = parseInt(root.dataset.days  || '1', 10);
+	const DAYS = parseInt(root.dataset.days || '1', 10);
 	const PRICE = parseFloat(root.dataset.price || '0');
 
 	const start = document.getElementById('rpStart');
-	const end   = document.getElementById('rpEnd');
+	const end = document.getElementById('rpEnd');
 
 	const pToggle = document.getElementById('rpPeopleToggle');
-	const pPanel  = document.getElementById('rpPeoplePanel');
-	const pLabel  = document.getElementById('rpPeopleLabel');
-	const pMinus  = document.getElementById('rpMinus');
-	const pPlus   = document.getElementById('rpPlus');
-	const pQty    = document.getElementById('rpQty');
-	const pTotal  = document.getElementById('rpPeopleTotal');
+	const pPanel = document.getElementById('rpPeoplePanel');
+	const pLabel = document.getElementById('rpPeopleLabel');
+	const pMinus = document.getElementById('rpMinus');
+	const pPlus = document.getElementById('rpPlus');
+	const pQty = document.getElementById('rpQty');
+	const pTotal = document.getElementById('rpPeopleTotal');
 
-	const cta        = document.getElementById('rpSubmit');
+	const cta = document.getElementById('rpSubmit');
 	const subtotalEl = document.getElementById('rpSubtotal');
 
 	const startBtn = document.getElementById('rpStartBtn');
-	const endBtn   = document.getElementById('rpEndBtn');
+	const endBtn = document.getElementById('rpEndBtn');
 	const outStart = document.getElementById('rpStartText');
-	const outEnd   = document.getElementById('rpEndText');
+	const outEnd = document.getElementById('rpEndText');
 
 	function dateFromInput(v){
 		if(!v) return null;
@@ -92,17 +90,17 @@
 	}
 	function fmtPretty(d){
 		if(!d) return 'dd/mm/aaaa';
-		let s = d.toLocaleDateString('pt-BR',{ weekday:'short', day:'2-digit', month:'short' });
+		let s = d.toLocaleDateString('pt-BR', { weekday:'short', day:'2-digit', month:'short' });
 		return s.replace(/\./g,'').toLowerCase();
 	}
 	function formatBRL(v){
-		return (v||0).toLocaleString('pt-BR',{ style:'currency', currency:'BRL' });
+		return (v||0).toLocaleString('pt-BR', { style:'currency', currency:'BRL' });
 	}
 
 	const today = new Date();
 	const todayISO = toInputDate(today);
 	if(start) start.min = todayISO;
-	if(end)   end.min   = todayISO;
+	if(end) end.min = todayISO;
 
 	let syncing = false;
 
@@ -118,6 +116,7 @@
 		updateDatesPretty();
 		updateCTA();
 	});
+
 	end?.addEventListener('change', ()=>{
 		if(syncing) return;
 		const e = dateFromInput(end.value);
@@ -134,7 +133,7 @@
 		if(!pPanel) return;
 		pPanel.hidden = false;
 		pToggle.setAttribute('aria-expanded','true');
-		requestAnimationFrame(function(){
+		requestAnimationFrame(()=>{
 			pPanel.classList.add('is-open');
 		});
 	}
@@ -149,17 +148,22 @@
 		};
 		pPanel.addEventListener('transitionend', onEnd);
 	}
+
 	pToggle?.addEventListener('click', (e)=>{
 		e.stopPropagation();
-		(pPanel.hidden ? openPeople() : closePeople());
+		pPanel.hidden ? openPeople() : closePeople();
 	});
 	document.addEventListener('click', (e)=>{
 		if(!pPanel || pPanel.hidden) return;
 		if(!pPanel.contains(e.target) && !pToggle.contains(e.target)) closePeople();
 	});
-	pToggle?.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closePeople(); });
+	pToggle?.addEventListener('keydown', (e)=>{
+		if(e.key==='Escape') closePeople();
+	});
 
-	function clampQty(n){ return Math.max(0, Math.min(50, n|0)); }
+	function clampQty(n){
+		return Math.max(0, Math.min(50, n|0));
+	}
 	function setQty(n){
 		const q = clampQty(n);
 		pQty.value = String(q);
@@ -168,13 +172,25 @@
 		if(pTotal) pTotal.textContent = formatBRL(total).replace(/^R\$\s*/,'');
 		updateCTA();
 	}
-	pMinus?.addEventListener('click', ()=> setQty(parseInt(pQty.value||'0',10)-1));
-	pPlus ?.addEventListener('click', ()=> setQty(parseInt(pQty.value||'0',10)+1));
-	pQty  ?.addEventListener('input', ()=> setQty(parseInt(pQty.value||'0',10)));
+	pMinus?.addEventListener('click', ()=>{
+		setQty(parseInt(pQty.value||'0',10) - 1);
+	});
+	pPlus?.addEventListener('click', ()=>{
+		setQty(parseInt(pQty.value||'0',10) + 1);
+	});
+	pQty?.addEventListener('input', ()=>{
+		setQty(parseInt(pQty.value||'0',10));
+	});
 
-	function selectedQty(){ return parseInt(pQty?.value||'0',10) || 0; }
-	function calcSubtotal(){ return selectedQty() * PRICE; }
-	function hasDates(){ return !!(start?.value && end?.value); }
+	function selectedQty(){
+		return parseInt(pQty?.value||'0',10) || 0;
+	}
+	function calcSubtotal(){
+		return selectedQty() * PRICE;
+	}
+	function hasDates(){
+		return !!(start?.value && end?.value);
+	}
 
 	function updateCTA(){
 		subtotalEl.textContent = formatBRL(calcSubtotal());
@@ -182,10 +198,9 @@
 		cta.disabled = !ready;
 		cta.textContent = ready ? 'Reservar agora' : 'Selecione data e quantidade de pessoas';
 	}
-
 	function updateDatesPretty(){
 		outStart.textContent = fmtPretty(dateFromInput(start.value));
-		outEnd.textContent   = fmtPretty(dateFromInput(end.value));
+		outEnd.textContent = fmtPretty(dateFromInput(end.value));
 	}
 
 	cta?.addEventListener('click', ()=>{
@@ -208,19 +223,13 @@
 	function openWithOverlay(input, anchor){
 		if(!input) return;
 		try{
-			if(typeof input.showPicker === 'function'){ input.showPicker(); return; }
+			if(typeof input.showPicker === 'function'){
+				input.showPicker();
+				return;
+			}
 		}catch(_){}
 		const r = (anchor || input).getBoundingClientRect();
-		const prev = {
-			position: input.style.position,
-			left: input.style.left,
-			top: input.style.top,
-			width: input.style.width,
-			height: input.style.height,
-			opacity: input.style.opacity,
-			pointerEvents: input.style.pointerEvents,
-			zIndex: input.style.zIndex
-		};
+		const prev = { position: input.style.position, left: input.style.left, top: input.style.top, width: input.style.width, height: input.style.height, opacity: input.style.opacity, pointerEvents: input.style.pointerEvents, zIndex: input.style.zIndex };
 		input.style.position = 'fixed';
 		input.style.left = r.left + 'px';
 		input.style.top = r.top + 'px';
@@ -254,23 +263,42 @@
 		input.addEventListener('blur', cleanup);
 	}
 
-	startBtn?.addEventListener('click', ()=> openWithOverlay(start, startBtn));
-	endBtn  ?.addEventListener('click', ()=> openWithOverlay(end,   endBtn));
-	startBtn?.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openWithOverlay(start, startBtn); } });
-	endBtn  ?.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openWithOverlay(end,   endBtn); } });
+	startBtn?.addEventListener('click', ()=>{
+		openWithOverlay(start, startBtn);
+	});
+	endBtn?.addEventListener('click', ()=>{
+		openWithOverlay(end, endBtn);
+	});
+	startBtn?.addEventListener('keydown', (e)=>{
+		if(e.key==='Enter' || e.key===' '){
+			e.preventDefault();
+			openWithOverlay(start, startBtn);
+		}
+	});
+	endBtn?.addEventListener('keydown', (e)=>{
+		if(e.key==='Enter' || e.key===' '){
+			e.preventDefault();
+			openWithOverlay(end, endBtn);
+		}
+	});
 
-	start?.addEventListener('change', ()=>{ updateDatesPretty(); updateCTA(); });
-	end  ?.addEventListener('change', ()=>{ updateDatesPretty(); updateCTA(); });
+	start?.addEventListener('change', ()=>{
+		updateDatesPretty();
+		updateCTA();
+	});
+	end?.addEventListener('change', ()=>{
+		updateDatesPretty();
+		updateCTA();
+	});
 
-	setQty(parseInt(pQty?.value||'0',10)||0);
+	setQty(parseInt(pQty?.value||'0',10) || 0);
 	updateDatesPretty();
 	updateCTA();
 
-	/* === Sobre a atividade (expand/collapse) === */
-	const aboutEl     = document.querySelector('.rp-about');
-	const descEl      = document.getElementById('rpDesc');
-	const seeMoreBtn  = document.getElementById('rpSeeMore');
-	const seeLessBtn  = document.getElementById('rpSeeLess');
+	const aboutEl = document.querySelector('.rp-about');
+	const descEl = document.getElementById('rpDesc');
+	const seeMoreBtn = document.getElementById('rpSeeMore');
+	const seeLessBtn = document.getElementById('rpSeeLess');
 	const openDescBtn = document.getElementById('rpDescBtn');
 
 	function expandAbout(opts){
@@ -282,12 +310,13 @@
 		seeMoreBtn?.setAttribute('aria-controls','rpDesc');
 		openDescBtn?.setAttribute('aria-controls','rpDesc');
 		if(seeMoreBtn) seeMoreBtn.hidden = true;
-		requestAnimationFrame(()=> descEl.classList.add('is-open'));
+		requestAnimationFrame(()=>{
+			descEl.classList.add('is-open');
+		});
 		if(opts && opts.scroll){
 			(aboutEl || descEl).scrollIntoView({ behavior:'smooth', block:'start' });
 		}
 	}
-
 	function collapseAbout(){
 		if(!descEl) return;
 		aboutEl?.classList.remove('is-open');
@@ -307,8 +336,12 @@
 		if(descEl?.classList.contains('is-open')) collapseAbout();
 		else expandAbout();
 	});
-	seeLessBtn?.addEventListener('click', ()=> collapseAbout());
-	openDescBtn?.addEventListener('click', ()=> expandAbout({ scroll:true }));
+	seeLessBtn?.addEventListener('click', ()=>{
+		collapseAbout();
+	});
+	openDescBtn?.addEventListener('click', ()=>{
+		expandAbout({ scroll:true });
+	});
 })();
 
 (function(){
@@ -317,79 +350,72 @@
 
 	const prev = document.getElementById('rmPrev');
 	const next = document.getElementById('rmNext');
+	const arrows = document.querySelector('.rp-more-arrows');
 
-	let isDown = false;
-	let startX = 0;
-	let startScroll = 0;
-	let moved = false;
+	function fitCols(){
+		const item = grid.querySelector('.roteiro-card');
+		if(!item) return 0;
+		const gap = parseFloat(getComputedStyle(grid).gap) || 0;
+		const w = item.getBoundingClientRect().width;
+		const avail = grid.clientWidth;
+		return Math.max(1, Math.floor((avail + gap) / (w + gap)));
+	}
 
-	const xFrom = e => (e.touches ? e.touches[0].clientX : e.clientX || 0);
+	function shouldShow(){
+		const total = grid.querySelectorAll('.roteiro-card').length;
+		if(total <= 1) return false;
+		const cols = fitCols();
+		const overflow = (grid.scrollWidth - grid.clientWidth) > 1;
+		return total > cols || overflow;
+	}
+
+	function applyVisibility(){
+		const show = shouldShow();
+		if(arrows){
+			arrows.hidden = !show;
+			arrows.style.display = show ? '' : 'none';
+		}
+		if(!prev || !next) return;
+		if(!show){
+			prev.disabled = true;
+			next.disabled = true;
+			return;
+		}
+		const max = grid.scrollWidth - grid.clientWidth - 1;
+		prev.disabled = grid.scrollLeft <= 0;
+		next.disabled = grid.scrollLeft >= max;
+	}
 
 	function step(){
 		const item = grid.querySelector('.roteiro-card');
 		if(!item) return grid.clientWidth;
-		const rect = item.getBoundingClientRect();
 		const gap = parseFloat(getComputedStyle(grid).gap) || 0;
-		return rect.width + gap;
+		return item.getBoundingClientRect().width + gap;
 	}
 
 	function scrollToDir(dir){
 		grid.scrollBy({ left: dir * step(), behavior:'smooth' });
 	}
 
-	function updateArrows(){
-		if(!prev || !next) return;
-		const max = grid.scrollWidth - grid.clientWidth - 1;
-		prev.disabled = grid.scrollLeft <= 0;
-		next.disabled = grid.scrollLeft >= max;
+	prev?.addEventListener('click', ()=>scrollToDir(-1));
+	next?.addEventListener('click', ()=>scrollToDir(1));
+
+	grid.addEventListener('scroll', applyVisibility, { passive:true });
+	window.addEventListener('resize', applyVisibility);
+
+	const mo = new MutationObserver(applyVisibility);
+	mo.observe(grid, { childList:true });
+
+	const imgs = grid.querySelectorAll('img');
+	let pending = imgs.length;
+	if(pending){
+		imgs.forEach(img=>{
+			if(img.complete){ if(--pending===0) applyVisibility(); }
+			else img.addEventListener('load', ()=>{ if(--pending===0) applyVisibility(); });
+		});
 	}
 
-	function down(e){
-		isDown = true;
-		moved = false;
-		startX = xFrom(e);
-		startScroll = grid.scrollLeft;
-		grid.classList.add('is-dragging');
-		grid.setPointerCapture?.(e.pointerId || 0);
-	}
-
-	function move(e){
-		if(!isDown) return;
-		const dx = xFrom(e) - startX;
-		if(Math.abs(dx) > 3) moved = true;
-		grid.scrollLeft = startScroll - dx;
-	}
-
-	function up(){
-		if(!isDown) return;
-		isDown = false;
-		grid.classList.remove('is-dragging');
-	}
-
-	prev?.addEventListener('click', ()=> scrollToDir(-1));
-	next?.addEventListener('click', ()=> scrollToDir(1));
-
-	grid.addEventListener('scroll', updateArrows, { passive:true });
-	window.addEventListener('resize', updateArrows);
-
-	grid.addEventListener('pointerdown', down, { passive:true });
-	grid.addEventListener('pointermove', move, { passive:false });
-	grid.addEventListener('pointerup', up);
-	grid.addEventListener('pointerleave', up);
-	grid.addEventListener('pointercancel', up);
-
-	grid.addEventListener('touchstart', down, { passive:true });
-	grid.addEventListener('touchmove', move, { passive:false });
-	grid.addEventListener('touchend', up);
-	grid.addEventListener('touchcancel', up);
-
-	grid.addEventListener('click', function(e){
-		if(moved){
-			e.preventDefault();
-			e.stopPropagation();
-		}
-		moved = false;
-	}, true);
-
-	updateArrows();
+	setTimeout(applyVisibility, 0);
+	setTimeout(applyVisibility, 200);
+	setTimeout(applyVisibility, 800);
 })();

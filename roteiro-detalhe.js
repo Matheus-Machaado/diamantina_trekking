@@ -66,8 +66,6 @@
 	const cta = document.getElementById('rpSubmit');
 	const subtotalEl = document.getElementById('rpSubtotal');
 
-	const startBtn = document.getElementById('rpStartBtn');
-	const endBtn = document.getElementById('rpEndBtn');
 	const outStart = document.getElementById('rpStartText');
 	const outEnd = document.getElementById('rpEndText');
 
@@ -102,40 +100,68 @@
 	if(start) start.min = todayISO;
 	if(end) end.min = todayISO;
 
+	function ensureEndAfterStart(){
+		const s = dateFromInput(start.value);
+		const e = dateFromInput(end.value);
+		if(!s) return;
+		if(!e || e < s){
+			end.value = toInputDate(addDays(s, DAYS));
+		}
+		end.min = start.value || todayISO;
+	}
+
+	function updateDatesPretty(){
+		outStart.textContent = fmtPretty(dateFromInput(start.value));
+		outEnd.textContent = fmtPretty(dateFromInput(end.value));
+	}
+
+	function selectedQty(){
+		return parseInt(pQty?.value||'0',10) || 0;
+	}
+	function calcSubtotal(){
+		return selectedQty() * PRICE;
+	}
+	function hasDates(){
+		const s = dateFromInput(start.value);
+		const e = dateFromInput(end.value);
+		return !!(s && e && e >= s);
+	}
+	function updateCTA(){
+		if(subtotalEl) subtotalEl.textContent = formatBRL(calcSubtotal());
+		const ready = selectedQty() > 0 && hasDates();
+		cta.disabled = !ready;
+		cta.textContent = ready ? 'Reservar agora' : 'Selecione data e quantidade de pessoas';
+	}
+
 	let syncing = false;
 
 	start?.addEventListener('change', ()=>{
 		if(syncing) return;
-		const s = dateFromInput(start.value);
-		if(!s || !end) return;
-		const e = addDays(s, DAYS);
 		syncing = true;
-		end.value = toInputDate(e);
-		end.min = end.value;
-		syncing = false;
+		ensureEndAfterStart();
 		updateDatesPretty();
 		updateCTA();
+		syncing = false;
 	});
 
 	end?.addEventListener('change', ()=>{
 		if(syncing) return;
+		const s = dateFromInput(start.value);
 		const e = dateFromInput(end.value);
-		if(!e || !start) return;
-		const s = addDays(e, -DAYS);
 		syncing = true;
-		start.value = toInputDate(s);
-		syncing = false;
+		if(s && e && e < s){
+			start.value = toInputDate(e);
+		}
 		updateDatesPretty();
 		updateCTA();
+		syncing = false;
 	});
 
 	function openPeople(){
 		if(!pPanel) return;
 		pPanel.hidden = false;
 		pToggle.setAttribute('aria-expanded','true');
-		requestAnimationFrame(()=>{
-			pPanel.classList.add('is-open');
-		});
+		requestAnimationFrame(()=>{ pPanel.classList.add('is-open'); });
 	}
 	function closePeople(){
 		if(!pPanel) return;
@@ -169,131 +195,12 @@
 		pQty.value = String(q);
 		pLabel.textContent = q === 0 ? 'Selecione' : (q === 1 ? '1 pessoa' : `${q} pessoas`);
 		const total = q * PRICE;
-		if(pTotal) pTotal.textContent = formatBRL(total).replace(/^R\$\s*/,'');
+		if(pTotal) pTotal.textContent = formatBRL(total).replace(/^R\$\s*/, '');
 		updateCTA();
 	}
-	pMinus?.addEventListener('click', ()=>{
-		setQty(parseInt(pQty.value||'0',10) - 1);
-	});
-	pPlus?.addEventListener('click', ()=>{
-		setQty(parseInt(pQty.value||'0',10) + 1);
-	});
-	pQty?.addEventListener('input', ()=>{
-		setQty(parseInt(pQty.value||'0',10));
-	});
-
-	function selectedQty(){
-		return parseInt(pQty?.value||'0',10) || 0;
-	}
-	function calcSubtotal(){
-		return selectedQty() * PRICE;
-	}
-	function hasDates(){
-		return !!(start?.value && end?.value);
-	}
-
-	function updateCTA(){
-		subtotalEl.textContent = formatBRL(calcSubtotal());
-		const ready = selectedQty() > 0 && hasDates();
-		cta.disabled = !ready;
-		cta.textContent = ready ? 'Reservar agora' : 'Selecione data e quantidade de pessoas';
-	}
-	function updateDatesPretty(){
-		outStart.textContent = fmtPretty(dateFromInput(start.value));
-		outEnd.textContent = fmtPretty(dateFromInput(end.value));
-	}
-
-	cta?.addEventListener('click', ()=>{
-		if(cta.disabled) return;
-		const inc = document.querySelector('.rp-incluso');
-		if(inc) inc.scrollIntoView({ behavior:'smooth', block:'start' });
-	});
-
-	(function ensureIntensityBadge(){
-		const level = (root.dataset.intensidade || '').toLowerCase();
-		if(!level) return;
-		const slot = document.querySelector('.gal-viewport');
-		if(!slot || slot.querySelector('.intensity-badge')) return;
-		const badge = document.createElement('span');
-		badge.className = 'intensity-badge intensity-' + level;
-		badge.innerHTML = '<img src="img/icons/intensidade-icon.png" alt=""><span>'+ (level==='intenso'?'INTENSO':(level==='moderado'?'MODERADO':'LEVE')) +'</span>';
-		slot.appendChild(badge);
-	})();
-
-	function openWithOverlay(input, anchor){
-		if(!input) return;
-		try{
-			if(typeof input.showPicker === 'function'){
-				input.showPicker();
-				return;
-			}
-		}catch(_){}
-		const r = (anchor || input).getBoundingClientRect();
-		const prev = { position: input.style.position, left: input.style.left, top: input.style.top, width: input.style.width, height: input.style.height, opacity: input.style.opacity, pointerEvents: input.style.pointerEvents, zIndex: input.style.zIndex };
-		input.style.position = 'fixed';
-		input.style.left = r.left + 'px';
-		input.style.top = r.top + 'px';
-		input.style.width = r.width + 'px';
-		input.style.height = r.height + 'px';
-		input.style.opacity = '0.001';
-		input.style.pointerEvents = 'auto';
-		input.style.zIndex = '2147483647';
-		requestAnimationFrame(()=>{
-			input.focus({ preventScroll:true });
-			input.click();
-		});
-		const restore = ()=>{
-			input.style.position = prev.position;
-			input.style.left = prev.left;
-			input.style.top = prev.top;
-			input.style.width = prev.width;
-			input.style.height = prev.height;
-			input.style.opacity = prev.opacity;
-			input.style.pointerEvents = prev.pointerEvents;
-			input.style.zIndex = prev.zIndex;
-		};
-		const cleanup = ()=>{
-			restore();
-			updateDatesPretty();
-			updateCTA();
-			input.removeEventListener('change', cleanup);
-			input.removeEventListener('blur', cleanup);
-		};
-		input.addEventListener('change', cleanup);
-		input.addEventListener('blur', cleanup);
-	}
-
-	startBtn?.addEventListener('click', ()=>{
-		openWithOverlay(start, startBtn);
-	});
-	endBtn?.addEventListener('click', ()=>{
-		openWithOverlay(end, endBtn);
-	});
-	startBtn?.addEventListener('keydown', (e)=>{
-		if(e.key==='Enter' || e.key===' '){
-			e.preventDefault();
-			openWithOverlay(start, startBtn);
-		}
-	});
-	endBtn?.addEventListener('keydown', (e)=>{
-		if(e.key==='Enter' || e.key===' '){
-			e.preventDefault();
-			openWithOverlay(end, endBtn);
-		}
-	});
-
-	start?.addEventListener('change', ()=>{
-		updateDatesPretty();
-		updateCTA();
-	});
-	end?.addEventListener('change', ()=>{
-		updateDatesPretty();
-		updateCTA();
-	});
-
-	setQty(parseInt(pQty?.value||'0',10) || 0);
-	updateDatesPretty();
-	updateCTA();
+	pMinus?.addEventListener('click', ()=>{ setQty(parseInt(pQty.value||'0',10) - 1); });
+	pPlus?.addEventListener('click', ()=>{ setQty(parseInt(pQty.value||'0',10) + 1); });
+	pQty?.addEventListener('input', ()=>{ setQty(parseInt(pQty.value||'0',10)); });
 
 	const aboutEl = document.querySelector('.rp-about');
 	const descEl = document.getElementById('rpDesc');
@@ -310,9 +217,7 @@
 		seeMoreBtn?.setAttribute('aria-controls','rpDesc');
 		openDescBtn?.setAttribute('aria-controls','rpDesc');
 		if(seeMoreBtn) seeMoreBtn.hidden = true;
-		requestAnimationFrame(()=>{
-			descEl.classList.add('is-open');
-		});
+		requestAnimationFrame(()=>{ descEl.classList.add('is-open'); });
 		if(opts && opts.scroll){
 			(aboutEl || descEl).scrollIntoView({ behavior:'smooth', block:'start' });
 		}
@@ -332,16 +237,19 @@
 		descEl.addEventListener('transitionend', onEnd);
 	}
 
-	seeMoreBtn?.addEventListener('click', ()=>{
-		if(descEl?.classList.contains('is-open')) collapseAbout();
-		else expandAbout();
+	cta?.addEventListener('click', ()=>{
+		if(cta.disabled) return;
+		const inc = document.querySelector('.rp-incluso');
+		if(inc) inc.scrollIntoView({ behavior:'smooth', block:'start' });
 	});
-	seeLessBtn?.addEventListener('click', ()=>{
-		collapseAbout();
-	});
-	openDescBtn?.addEventListener('click', ()=>{
-		expandAbout({ scroll:true });
-	});
+	seeMoreBtn?.addEventListener('click', ()=>{ descEl?.classList.contains('is-open') ? collapseAbout() : expandAbout(); });
+	seeLessBtn?.addEventListener('click', ()=>{ collapseAbout(); });
+	openDescBtn?.addEventListener('click', ()=>{ expandAbout({ scroll:true }); });
+
+	setQty(parseInt(pQty?.value||'0',10) || 0);
+	updateDatesPretty();
+	updateCTA();
+	ensureEndAfterStart();
 })();
 
 (function(){

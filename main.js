@@ -424,6 +424,7 @@ const langMenu = (() => {
 	const viewport = section.querySelector('.depo-viewport');
 	const track = section.querySelector('.depo-track');
 	const cards = Array.from(track.children);
+	if (!cards.length) return;
 	const prevBtn = section.querySelector('.depo-nav.left');
 	const nextBtn = section.querySelector('.depo-nav.right');
 	const dotsBox = section.querySelector('.depo-dots');
@@ -491,6 +492,7 @@ const langMenu = (() => {
 	const viewport = section.querySelector('.rd-viewport');
 	const track = section.querySelector('.rd-track');
 	const slides = Array.from(track.children);
+	if (!slides.length) return;
 	const dotsBox = section.querySelector('.rd-dots');
 	const sharebar = section.querySelector('.rd-sharebar');
 	const mqlStack = window.matchMedia('(max-width: 980px)');

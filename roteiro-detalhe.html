@@ -95,16 +95,16 @@
 						<div class="rp-field">
 							<label class="rp-label">Início e término</label>
 							<div class="rp-range" role="group" aria-label="Início e término">
-								<button id="rpStartBtn" type="button" class="rp-range-seg rp-range-start">
+								<label class="rp-range-seg rp-range-start">
 									<i class="bx bxs-calendar-alt" aria-hidden="true"></i>
 									<span id="rpStartText">dd/mm/aaaa</span>
-								</button>
+									<input id="rpStart" class="rp-date" type="date" aria-label="Data de início">
+								</label>
 								<span class="rp-range-sep" aria-hidden="true"></span>
-								<button id="rpEndBtn" type="button" class="rp-range-seg rp-range-end">
+								<label class="rp-range-seg rp-range-end">
 									<span id="rpEndText">dd/mm/aaaa</span>
-								</button>
-								<input id="rpStart" class="rp-native-date" type="date" aria-hidden="true">
-								<input id="rpEnd" class="rp-native-date" type="date" aria-hidden="true">
+									<input id="rpEnd" class="rp-date" type="date" aria-label="Data de término">
+								</label>
 							</div>
 						</div>
 
@@ -233,7 +233,7 @@
 	</a>
 
 	<script type="module">
-		import {hydrateDetail} from './data.js';
+		import {hydrateDetail} from './data.js'; 
 		await hydrateDetail();
 		await import('./main.js');
 		await import('./roteiro-detalhe.js');

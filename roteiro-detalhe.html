@@ -95,16 +95,16 @@
 						<div class="rp-field">
 							<label class="rp-label">Início e término</label>
 							<div class="rp-range" role="group" aria-label="Início e término">
-								<label class="rp-range-seg rp-range-start">
+								<button id="rpStartBtn" class="rp-range-seg rp-range-start" type="button">
 									<i class="bx bxs-calendar-alt" aria-hidden="true"></i>
 									<span id="rpStartText">dd/mm/aaaa</span>
-									<input id="rpStart" class="rp-date" type="date" aria-label="Data de início">
-								</label>
+								</button>
 								<span class="rp-range-sep" aria-hidden="true"></span>
-								<label class="rp-range-seg rp-range-end">
+								<button id="rpEndBtn" class="rp-range-seg rp-range-end" type="button">
 									<span id="rpEndText">dd/mm/aaaa</span>
-									<input id="rpEnd" class="rp-date" type="date" aria-label="Data de término">
-								</label>
+								</button>
+								<input id="rpStart" type="hidden" aria-hidden="true">
+								<input id="rpEnd" type="hidden" aria-hidden="true">
 							</div>
 						</div>
 
@@ -231,6 +231,36 @@
 		<img src="img/icons/whatsapp-white-icon.png" alt="" class="zap-float-icon">
 		<span class="zap-float-label">Atendimento Online</span>
 	</a>
+	
+	<div id="drpBackdrop" class="drp-backdrop" hidden></div>
+	<div id="drpModal" class="drp-modal" hidden role="dialog" aria-modal="true" aria-labelledby="drpTitle">
+		<div class="drp-head">
+			<h3 id="drpTitle" class="drp-title">Início e término</h3>
+			<div class="drp-tabs" role="group" aria-label="Entrada de datas">
+				<label class="drp-tab" id="drpTabStart">
+					<span class="drp-tab-label">Início</span>
+					<input id="drpInputStart" class="drp-input" type="text" inputmode="numeric" placeholder="dd/mm/aaaa" aria-label="Data de início">
+				</label>
+				<label class="drp-tab" id="drpTabEnd">
+					<span class="drp-tab-label">Término</span>
+					<input id="drpInputEnd" class="drp-input" type="text" inputmode="numeric" placeholder="dd/mm/aaaa" aria-label="Data de término">
+				</label>
+			</div>
+		</div>
+
+		<hr class="drp-sep">
+
+		<div class="drp-calwrap">
+			<button class="drp-nav drp-prev" type="button" aria-label="Mês anterior"><i class="bx bx-chevron-left"></i></button>
+			<div class="drp-months" id="drpMonths"></div>
+			<button class="drp-nav drp-next" type="button" aria-label="Próximo mês"><i class="bx bx-chevron-right"></i></button>
+		</div>
+
+		<div class="drp-actions">
+			<button class="drp-clear" type="button" id="drpClear">Limpar</button>
+			<button class="drp-apply" type="button" id="drpApply" disabled>Concluído</button>
+		</div>
+	</div>
 
 	<script type="module">
 		import {hydrateDetail} from './data.js'; 

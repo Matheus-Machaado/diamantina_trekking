@@ -763,6 +763,17 @@
 	transform: translate(-50%,-50%) scale(1);
 }
 
+#drpBackdrop[hidden],
+#drpModal[hidden]{
+  	display: none !important;
+}
+.drp-modal:not(.is-visible){
+  	pointer-events: none;
+}
+.drp-backdrop:not(.is-visible){
+  	pointer-events: none;
+}
+
 .drp-title{
 	margin: 0;
 	color: var(--text-green);

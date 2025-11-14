@@ -777,7 +777,7 @@
 .drp-title{
 	margin: 0;
 	color: var(--text-green);
-	font-size: 18px;
+	font-size: 20px;
 }
 
 .drp-head{
@@ -822,6 +822,7 @@
 .drp-tab-label{
 	font-weight: 700;
 	color: var(--text-green);
+	font-size: 17px;
 }
 
 .drp-input{
@@ -832,7 +833,8 @@
 	font-weight: 700;
 	color: var(--text-green);
 	text-align: right;
-	min-width: 120px;
+	max-width: 160px;
+	font-size: 17px;
 }
 
 .drp-input::placeholder{
@@ -854,7 +856,7 @@
 .drp-months{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 22px;
+	gap: 30px;
 	align-items: start;
 }
 
@@ -880,21 +882,25 @@
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 38px;
-	height: 38px;
-	border: 1px solid var(--line-strong);
-	border-radius: 50%;
-	background: #fff;
+	font-size: 40px;
+	border: none;
+	border-radius: 5px;
+	background: var(--cta);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--text-green);
+	color: white;
 	box-shadow: 0 6px 18px rgba(0,0,0,.10);
 	z-index: 5;
+	cursor: pointer;
+	transition: .2s ease-in-out;
+}
+.drp-nav:hover {
+	background-color: var(--hover-btn);
 }
 
-.drp-prev{ left: -22px; }
-.drp-next{ right: -22px; }
+.drp-prev{ left: -35px; }
+.drp-next{ right: -35px; }
 
 .drp-nav.is-hidden{
   	display: none;
@@ -911,12 +917,12 @@
 	color: var(--text-green);
 	text-transform: lowercase;
 	text-align: center;
+	font-size: 18px;
 }
 
 .drp-grid{
 	display: grid;
 	grid-template-columns: repeat(7,1fr);
-	gap: 6px;
 }
 
 .drp-cell{
@@ -981,26 +987,27 @@
 	border-top: 1px solid var(--line-light);
 }
 
+.drp-actions .btn {
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 18px;
+}
+
 .drp-clear{
 	border: 1px solid var(--line-light);
 	background: #fff;
 	color: var(--text-green);
-	border-radius: 8px;
-	padding: 10px 12px;
-	font-weight: 700;
-	cursor: pointer;
 }
 
 .drp-apply{
 	border: 0;
 	background: var(--brand);
 	color: #fff;
-	border-radius: 8px;
-	padding: 10px 14px;
-	font-weight: 800;
-	cursor: pointer;
 }
-.drp-apply:disabled{ opacity: .6; cursor: not-allowed; }
+.drp-apply:disabled{ 
+	opacity: .6; 
+	cursor: not-allowed; 
+}
 
 #drpBackdrop[hidden], #drpModal[hidden]{ display: none !important; }
 .drp-modal{ pointer-events: none; }

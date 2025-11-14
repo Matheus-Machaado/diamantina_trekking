@@ -52,7 +52,7 @@
 	if(!root) return;
 
 	const DAYS = parseInt(root.dataset.days || '1', 10);
-	const OFFSET = Math.max(0, DAYS - 1);
+	const OFFSET = Math.max(1, DAYS);
 
 	const startBtn = document.getElementById('rpStartBtn');
 	const endBtn = document.getElementById('rpEndBtn');
@@ -72,14 +72,10 @@
 	const btnApply = $('#drpApply');
 	const btnClear = $('#drpClear');
 
-	backdrop.hidden = true;
-	modal.hidden = true;
-	backdrop.classList.remove('is-visible');
-	modal.classList.remove('is-visible');
-
-	const today = new Date();
-	today.setHours(0,0,0,0);
-	const MIN_VIEW = new Date(today.getFullYear(), today.getMonth(), 1);
+	const DAY = 86400000;
+	const today = new Date(); today.setHours(0,0,0,0);
+	const todayTime = today.getTime();
+	const earliest = new Date(today.getFullYear(), today.getMonth(), 1);
 
 	function clearTime(d){ d.setHours(0,0,0,0); }
 	function toISO(d){ return !d ? '' : `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
@@ -99,19 +95,15 @@
 		clearTime(d);
 		return isNaN(+d) ? null : d;
 	}
-	function addDays(d,n){
-		const x = new Date(d.getFullYear(), d.getMonth(), d.getDate()+n);
-		clearTime(x);
-		return x;
-	}
+	function addDays(d,n){ const x = new Date(d.getFullYear(), d.getMonth(), d.getDate()+n); clearTime(x); return x; }
 	function clampMin(d){ return d && d < today ? new Date(today) : d; }
-	function commitRange(s,e){
+	function commitHidden(s,e){
 		isoStart.value = s ? toISO(s) : '';
 		isoEnd.value = e ? toISO(e) : '';
 		document.dispatchEvent(new CustomEvent('rp:dates-commit'));
 	}
 
-	let viewBase = new Date(MIN_VIEW);
+	let viewBase = new Date(today.getFullYear(), today.getMonth(), 1);
 	let focus = 'start';
 	let startSel = null;
 	let endSel = null;
@@ -134,8 +126,9 @@
 		btnApply.disabled = !(startSel && endSel && endSel >= startSel);
 	}
 	function monthTitle(y,m){ return new Date(y, m, 1).toLocaleDateString('pt-BR', { month:'long' }).toLowerCase(); }
-	function NewDate(y,m,d){ const dt = new Date(y,m,d); clearTime(dt); return dt; }
+	function NewDate(y,m,d){ const dt = new Date(y, m, d); clearTime(dt); return dt; }
 	const WD = ['D','S','T','Q','Q','S','S'];
+
 	function buildMonth(y,m){
 		const first = NewDate(y, m, 1);
 		const last = NewDate(y, m+1, 0);
@@ -150,14 +143,13 @@
 		for(let d=1; d<=total; d++){
 			const dt = NewDate(y, m, d);
 			const t = dt.getTime();
-			const disPast = t < today.getTime();
-			const disEndFocus = focus === 'end' && (t <= today.getTime() || addDays(dt, -OFFSET) < today);
-			const disabled = disPast || disEndFocus;
 			const isStart = startSel && t === startSel.getTime();
-			const isEnd = endSel && t === endSel.getTime();
+		            const isEnd = endSel && t === endSel.getTime();
 			const inRange = startSel && endSel && t > startSel.getTime() && t < endSel.getTime();
-			const atStart = startSel && t === startSel.getTime() && endSel && endSel > startSel;
-			const atEnd = endSel && t === endSel.getTime() && startSel && endSel > startSel;
+			const atStart = isStart && endSel && endSel > startSel;
+			const atEnd = isEnd && startSel && endSel > startSel;
+			const disBase = (t < todayTime) || (focus === 'end' && t < (todayTime + OFFSET*DAY));
+			const disabled = disBase && !(isStart || isEnd);
 			const cls = [
 				'drp-cell',
 				disabled ? 'disabled' : '',
@@ -172,13 +164,17 @@
 		html += '</div></div>';
 		return html;
 	}
+
 	function updateNav(){
-		const allowPrev = viewBase.getTime() > MIN_VIEW.getTime();
+		const candidate = new Date(viewBase.getFullYear(), viewBase.getMonth() - 2, 1);
+		const allowPrev = candidate.getTime() >= earliest.getTime();
 		btnPrev.hidden = !allowPrev;
-		btnPrev.style.display = allowPrev ? '' : 'none';
-		btnPrev.setAttribute('aria-hidden', (!allowPrev).toString());
+		btnPrev.style.display = allowPrev ? 'inline-flex' : 'none';
+		btnPrev.disabled = !allowPrev;
 		btnPrev.tabIndex = allowPrev ? 0 : -1;
+		btnPrev.setAttribute('aria-hidden', allowPrev ? 'false' : 'true');
 	}
+
 	function render(){
 		const y = viewBase.getFullYear();
 		const m = viewBase.getMonth();
@@ -186,8 +182,7 @@
 		monthsEl.querySelectorAll('.drp-cell:not(.disabled) .drp-day').forEach((el)=>{
 			el.addEventListener('click', ()=>{
 				const t = parseInt(el.parentElement.getAttribute('data-time'), 10);
-				const d = new Date(t);
-				clearTime(d);
+				const d = new Date(t); clearTime(d);
 				if(focus === 'start'){
 					startSel = clampMin(d);
 					endSel = addDays(startSel, OFFSET);
@@ -201,6 +196,7 @@
 		});
 		updateNav();
 	}
+
 	function openWithState(active){
 		startSel = clampMin(fromISO(isoStart.value)) || null;
 		endSel = clampMin(fromISO(isoEnd.value)) || null;
@@ -208,11 +204,10 @@
 			if(startSel) endSel = addDays(startSel, OFFSET);
 			else if(endSel) startSel = addDays(endSel, -OFFSET);
 		}else{
-			if(endSel && endSel <= today) endSel = addDays(today, 1);
 			if(endSel) startSel = addDays(endSel, -OFFSET);
 			else if(startSel) endSel = addDays(startSel, OFFSET);
 		}
-		viewBase = startSel || endSel || new Date(MIN_VIEW);
+		viewBase = startSel || endSel || new Date(today.getFullYear(), today.getMonth(), 1);
 		clearTime(viewBase);
 		viewBase.setDate(1);
 		backdrop.hidden = false;
@@ -226,6 +221,7 @@
 		render();
 		setFocus(active === 'end' ? 'end' : 'start');
 	}
+
 	function closeModal(){
 		backdrop.classList.remove('is-visible');
 		modal.classList.remove('is-visible');
@@ -235,8 +231,9 @@
 			document.body.classList.remove('drp-open');
 		}, 200);
 	}
+
 	function commit(){
-		commitRange(startSel, endSel);
+		commitHidden(startSel, endSel);
 		closeModal();
 	}
 
@@ -258,7 +255,7 @@
 		inpE.value = mask(inpE.value);
 		const d = parseBR(inpE.value);
 		if(d){
-			if(d <= today) return;
+			if(d.getTime() < (todayTime + OFFSET*DAY)) return;
 			endSel = clampMin(d);
 			startSel = addDays(endSel, -OFFSET);
 			setInputs();
@@ -267,9 +264,9 @@
 	});
 
 	btnPrev.addEventListener('click', ()=>{
-		const cand = new Date(viewBase.getFullYear(), viewBase.getMonth() - 2, 1);
-		if(cand < MIN_VIEW) return;
-		viewBase = cand;
+		const candidate = new Date(viewBase.getFullYear(), viewBase.getMonth() - 2, 1);
+		if(candidate.getTime() < earliest.getTime()) return;
+		viewBase = candidate;
 		render();
 	});
 
@@ -288,22 +285,10 @@
 	});
 
 	backdrop.addEventListener('click', (e)=>{ if(e.target === backdrop) closeModal(); });
+	function onEsc(ev){ if(ev.key==='Escape'){ closeModal(); document.removeEventListener('keydown', onEsc); } }
 
-	function onEsc(ev){
-		if(ev.key==='Escape'){
-			closeModal();
-			document.removeEventListener('keydown', onEsc);
-		}
-	}
-
-	startBtn?.addEventListener('click', ()=>{
-		document.addEventListener('keydown', onEsc);
-		openWithState('start');
-	});
-	endBtn?.addEventListener('click', ()=>{
-		document.addEventListener('keydown', onEsc);
-		openWithState('end');
-	});
+	startBtn?.addEventListener('click', ()=>{ document.addEventListener('keydown', onEsc); openWithState('start'); });
+	endBtn?.addEventListener('click', ()=>{ document.addEventListener('keydown', onEsc); openWithState('end'); });
 })();
 
 (function(){

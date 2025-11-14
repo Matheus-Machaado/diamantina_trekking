@@ -331,7 +331,10 @@ header.is-hidden{
 	text-align: center;
 }
 
-.btn:hover, .zap-float:hover{background-color:var(--hover-btn);}
+.btn:hover, .zap-float:hover{
+	background-color:var(--hover-btn);
+	color: white;
+}
 
 .btn-contato{
 	background-color:var(--brand);

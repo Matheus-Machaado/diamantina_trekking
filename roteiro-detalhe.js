@@ -51,170 +51,259 @@
 	const root = document.getElementById('rpGrid');
 	if(!root) return;
 
-	const PRICE = parseFloat(root.dataset.price || '0');
+	const DAYS = parseInt(root.dataset.days || '1', 10);
+	const OFFSET = Math.max(0, DAYS - 1);
 
-	const pToggle = document.getElementById('rpPeopleToggle');
-	const pPanel  = document.getElementById('rpPeoplePanel');
-	const pLabel  = document.getElementById('rpPeopleLabel');
-	const pMinus  = document.getElementById('rpMinus');
-	const pPlus   = document.getElementById('rpPlus');
-	const pQty    = document.getElementById('rpQty');
-	const pTotal  = document.getElementById('rpPeopleTotal');
+	const startBtn = document.getElementById('rpStartBtn');
+	const endBtn = document.getElementById('rpEndBtn');
+	const isoStart = document.getElementById('rpStart');
+	const isoEnd = document.getElementById('rpEnd');
 
-	const cta        = document.getElementById('rpSubmit');
-	const subtotalEl = document.getElementById('rpSubtotal');
+	const $ = (s)=>document.querySelector(s);
+	const backdrop = $('#drpBackdrop');
+	const modal = $('#drpModal');
+	const monthsEl = $('#drpMonths');
+	const tabS = $('#drpTabStart');
+	const tabE = $('#drpTabEnd');
+	const inpS = $('#drpInputStart');
+	const inpE = $('#drpInputEnd');
+	const btnPrev = $('.drp-prev');
+	const btnNext = $('.drp-next');
+	const btnApply = $('#drpApply');
+	const btnClear = $('#drpClear');
 
-	const isoStart = document.getElementById('rpStart');     
-	const isoEnd   = document.getElementById('rpEnd');       
-	const outStart = document.getElementById('rpStartText');
-	const outEnd   = document.getElementById('rpEndText');
+	backdrop.hidden = true;
+	modal.hidden = true;
+	backdrop.classList.remove('is-visible');
+	modal.classList.remove('is-visible');
 
-	function parseISO(s){
+	const today = new Date();
+	today.setHours(0,0,0,0);
+	const MIN_VIEW = new Date(today.getFullYear(), today.getMonth(), 1);
+
+	function clearTime(d){ d.setHours(0,0,0,0); }
+	function toISO(d){ return !d ? '' : `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
+	function fromISO(s){
 		if(!s) return null;
 		const [y,m,d] = s.split('-').map(n=>parseInt(n,10));
 		if(!y||!m||!d) return null;
 		const dt = new Date(y, m-1, d);
-		dt.setHours(0,0,0,0);
+		clearTime(dt);
 		return isNaN(+dt) ? null : dt;
 	}
-
-	function fmtBR(d){
-		if(!d) return 'dd/mm/aaaa';
-		const dd = String(d.getDate()).padStart(2,'0');
-		const mm = String(d.getMonth()+1).padStart(2,'0');
-		const yy = d.getFullYear();
-		return `${dd}/${mm}/${yy}`;
+	function br(d){ return !d ? 'dd/mm/aaaa' : `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`; }
+	function parseBR(v){
+		const m = v.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+		if(!m) return null;
+		const d = new Date(parseInt(m[3],10), parseInt(m[2],10)-1, parseInt(m[1],10));
+		clearTime(d);
+		return isNaN(+d) ? null : d;
+	}
+	function addDays(d,n){
+		const x = new Date(d.getFullYear(), d.getMonth(), d.getDate()+n);
+		clearTime(x);
+		return x;
+	}
+	function clampMin(d){ return d && d < today ? new Date(today) : d; }
+	function commitRange(s,e){
+		isoStart.value = s ? toISO(s) : '';
+		isoEnd.value = e ? toISO(e) : '';
+		document.dispatchEvent(new CustomEvent('rp:dates-commit'));
 	}
 
-	function selectedQty(){
-		return parseInt(pQty?.value||'0',10) || 0;
+	let viewBase = new Date(MIN_VIEW);
+	let focus = 'start';
+	let startSel = null;
+	let endSel = null;
+
+	function setFocus(f){
+		focus = f;
+		tabS.classList.toggle('is-active', f === 'start');
+		tabE.classList.toggle('is-active', f === 'end');
+		(f === 'start' ? inpS : inpE).focus();
+	}
+	function mask(v){
+		let x = v.replace(/\D/g,'').slice(0,8);
+		if(x.length >= 5) return x.slice(0,2)+'/'+x.slice(2,4)+'/'+x.slice(4);
+		if(x.length >= 3) return x.slice(0,2)+'/'+x.slice(2);
+		return x;
+	}
+	function setInputs(){
+		inpS.value = startSel ? br(startSel) : '';
+		inpE.value = endSel ? br(endSel) : '';
+		btnApply.disabled = !(startSel && endSel && endSel >= startSel);
+	}
+	function monthTitle(y,m){ return new Date(y, m, 1).toLocaleDateString('pt-BR', { month:'long' }).toLowerCase(); }
+	function NewDate(y,m,d){ const dt = new Date(y,m,d); clearTime(dt); return dt; }
+	const WD = ['D','S','T','Q','Q','S','S'];
+	function buildMonth(y,m){
+		const first = NewDate(y, m, 1);
+		const last = NewDate(y, m+1, 0);
+		const lead = first.getDay();
+		const total = last.getDate();
+		let html = '';
+		html += '<div class="drp-month">';
+		html += `<div class="drp-month-title">${monthTitle(y,m)}</div>`;
+		html += `<div class="drp-week">${WD.map(w=>`<span>${w}</span>`).join('')}</div>`;
+		html += '<div class="drp-grid">';
+		for(let i=0;i<lead;i++) html += '<div class="drp-cell other"><div class="drp-day"></div></div>';
+		for(let d=1; d<=total; d++){
+			const dt = NewDate(y, m, d);
+			const t = dt.getTime();
+			const disPast = t < today.getTime();
+			const disEndFocus = focus === 'end' && (t <= today.getTime() || addDays(dt, -OFFSET) < today);
+			const disabled = disPast || disEndFocus;
+			const isStart = startSel && t === startSel.getTime();
+			const isEnd = endSel && t === endSel.getTime();
+			const inRange = startSel && endSel && t > startSel.getTime() && t < endSel.getTime();
+			const atStart = startSel && t === startSel.getTime() && endSel && endSel > startSel;
+			const atEnd = endSel && t === endSel.getTime() && startSel && endSel > startSel;
+			const cls = [
+				'drp-cell',
+				disabled ? 'disabled' : '',
+				inRange ? 'in-range' : '',
+				isStart ? 'is-start' : '',
+				isEnd ? 'is-end' : '',
+				atStart ? 'range-start' : '',
+				atEnd ? 'range-end' : ''
+			].filter(Boolean).join(' ');
+			html += `<div class="${cls}" data-time="${t}"><div class="drp-day">${d}</div></div>`;
+		}
+		html += '</div></div>';
+		return html;
+	}
+	function updateNav(){
+		const allowPrev = viewBase.getTime() > MIN_VIEW.getTime();
+		btnPrev.hidden = !allowPrev;
+		btnPrev.style.display = allowPrev ? '' : 'none';
+		btnPrev.setAttribute('aria-hidden', (!allowPrev).toString());
+		btnPrev.tabIndex = allowPrev ? 0 : -1;
+	}
+	function render(){
+		const y = viewBase.getFullYear();
+		const m = viewBase.getMonth();
+		monthsEl.innerHTML = buildMonth(y,m) + buildMonth(y,m+1);
+		monthsEl.querySelectorAll('.drp-cell:not(.disabled) .drp-day').forEach((el)=>{
+			el.addEventListener('click', ()=>{
+				const t = parseInt(el.parentElement.getAttribute('data-time'), 10);
+				const d = new Date(t);
+				clearTime(d);
+				if(focus === 'start'){
+					startSel = clampMin(d);
+					endSel = addDays(startSel, OFFSET);
+				}else{
+					endSel = clampMin(d);
+					startSel = addDays(endSel, -OFFSET);
+				}
+				setInputs();
+				render();
+			});
+		});
+		updateNav();
+	}
+	function openWithState(active){
+		startSel = clampMin(fromISO(isoStart.value)) || null;
+		endSel = clampMin(fromISO(isoEnd.value)) || null;
+		if(active === 'start'){
+			if(startSel) endSel = addDays(startSel, OFFSET);
+			else if(endSel) startSel = addDays(endSel, -OFFSET);
+		}else{
+			if(endSel && endSel <= today) endSel = addDays(today, 1);
+			if(endSel) startSel = addDays(endSel, -OFFSET);
+			else if(startSel) endSel = addDays(startSel, OFFSET);
+		}
+		viewBase = startSel || endSel || new Date(MIN_VIEW);
+		clearTime(viewBase);
+		viewBase.setDate(1);
+		backdrop.hidden = false;
+		modal.hidden = false;
+		requestAnimationFrame(()=>{
+			document.body.classList.add('drp-open');
+			backdrop.classList.add('is-visible');
+			modal.classList.add('is-visible');
+		});
+		setInputs();
+		render();
+		setFocus(active === 'end' ? 'end' : 'start');
+	}
+	function closeModal(){
+		backdrop.classList.remove('is-visible');
+		modal.classList.remove('is-visible');
+		setTimeout(()=>{
+			backdrop.hidden = true;
+			modal.hidden = true;
+			document.body.classList.remove('drp-open');
+		}, 200);
+	}
+	function commit(){
+		commitRange(startSel, endSel);
+		closeModal();
 	}
 
-	function hasDates(){
-		const s = parseISO(isoStart.value);
-		const e = parseISO(isoEnd.value);
-		return !!(s && e && e >= s);
-	}
+	tabS.addEventListener('click', ()=> setFocus('start'));
+	tabE.addEventListener('click', ()=> setFocus('end'));
 
-	function formatBRL(v){
-		return (v||0).toLocaleString('pt-BR', { style:'currency', currency:'BRL' });
-	}
-
-	function updateDateLabels(){
-		outStart.textContent = fmtBR(parseISO(isoStart.value));
-		outEnd.textContent   = fmtBR(parseISO(isoEnd.value));
-	}
-
-	function updateCTA(){
-		if(subtotalEl) subtotalEl.textContent = formatBRL(selectedQty() * PRICE);
-		const ready = selectedQty() > 0 && hasDates();
-		cta.disabled = !ready;
-		cta.textContent = ready ? 'Reservar agora' : 'Selecione data e quantidade de pessoas';
-	}
-
-	function openPeople(){
-		if(!pPanel) return;
-		pPanel.hidden = false;
-		pToggle.setAttribute('aria-expanded','true');
-		requestAnimationFrame(()=>{ pPanel.classList.add('is-open'); });
-	}
-
-	function closePeople(){
-		if(!pPanel) return;
-		pPanel.classList.remove('is-open');
-		const onEnd = (e)=>{
-			if(e.target !== pPanel) return;
-			pPanel.hidden = true;
-			pToggle.setAttribute('aria-expanded','false');
-			pPanel.removeEventListener('transitionend', onEnd);
-		};
-		pPanel.addEventListener('transitionend', onEnd);
-	}
-
-	pToggle?.addEventListener('click', (e)=>{
-		e.stopPropagation();
-		pPanel.hidden ? openPeople() : closePeople();
+	inpS.addEventListener('input', ()=>{
+		inpS.value = mask(inpS.value);
+		const d = parseBR(inpS.value);
+		if(d){
+			startSel = clampMin(d);
+			endSel = addDays(startSel, OFFSET);
+			setInputs();
+			render();
+		}
 	});
 
-	document.addEventListener('click', (e)=>{
-		if(!pPanel || pPanel.hidden) return;
-		if(!pPanel.contains(e.target) && !pToggle.contains(e.target)) closePeople();
+	inpE.addEventListener('input', ()=>{
+		inpE.value = mask(inpE.value);
+		const d = parseBR(inpE.value);
+		if(d){
+			if(d <= today) return;
+			endSel = clampMin(d);
+			startSel = addDays(endSel, -OFFSET);
+			setInputs();
+			render();
+		}
 	});
 
-	pToggle?.addEventListener('keydown', (e)=>{
-		if(e.key==='Escape') closePeople();
+	btnPrev.addEventListener('click', ()=>{
+		const cand = new Date(viewBase.getFullYear(), viewBase.getMonth() - 2, 1);
+		if(cand < MIN_VIEW) return;
+		viewBase = cand;
+		render();
 	});
 
-	function clampQty(n){
-		return Math.max(0, Math.min(50, n|0));
-	}
+	btnNext.addEventListener('click', ()=>{
+		viewBase = new Date(viewBase.getFullYear(), viewBase.getMonth() + 2, 1);
+		render();
+	});
 
-	function setQty(n){
-		const q = clampQty(n);
-		pQty.value = String(q);
-		pLabel.textContent = q === 0 ? 'Selecione' : (q === 1 ? '1 pessoa' : `${q} pessoas`);
-		if(pTotal) pTotal.textContent = formatBRL(q * PRICE).replace(/^R\$\s*/, '');
-		updateCTA();
-	}
+	btnApply.addEventListener('click', commit);
 
-	pMinus?.addEventListener('click', ()=>{ setQty(parseInt(pQty.value||'0',10) - 1); });
-	pPlus ?.addEventListener('click', ()=>{ setQty(parseInt(pQty.value||'0',10) + 1); });
-	pQty  ?.addEventListener('input', ()=>{ setQty(parseInt(pQty.value||'0',10)); });
+	btnClear.addEventListener('click', ()=>{
+		startSel = null;
+		endSel = null;
+		setInputs();
+		render();
+	});
 
-	const aboutEl   = document.querySelector('.rp-about');
-	const descEl    = document.getElementById('rpDesc');
-	const seeMore   = document.getElementById('rpSeeMore');
-	const seeLess   = document.getElementById('rpSeeLess');
-	const openDesc  = document.getElementById('rpDescBtn');
+	backdrop.addEventListener('click', (e)=>{ if(e.target === backdrop) closeModal(); });
 
-	function expandAbout(opts){
-		if(!descEl) return;
-		descEl.hidden = false;
-		aboutEl?.classList.add('is-open');
-		seeMore?.setAttribute('aria-expanded','true');
-		openDesc?.setAttribute('aria-expanded','true');
-		seeMore?.setAttribute('aria-controls','rpDesc');
-		openDesc?.setAttribute('aria-controls','rpDesc');
-		if(seeMore) seeMore.hidden = true;
-		requestAnimationFrame(()=>{ descEl.classList.add('is-open'); });
-		if(opts && opts.scroll){
-			(aboutEl || descEl).scrollIntoView({ behavior:'smooth', block:'start' });
+	function onEsc(ev){
+		if(ev.key==='Escape'){
+			closeModal();
+			document.removeEventListener('keydown', onEsc);
 		}
 	}
 
-	function collapseAbout(){
-		if(!descEl) return;
-		aboutEl?.classList.remove('is-open');
-		descEl.classList.remove('is-open');
-		const onEnd = (e)=>{
-			if(e.target !== descEl) return;
-			descEl.hidden = true;
-			if(seeMore) seeMore.hidden = false;
-			seeMore?.setAttribute('aria-expanded','false');
-			openDesc?.setAttribute('aria-expanded','false');
-			descEl.removeEventListener('transitionend', onEnd);
-		};
-		descEl.addEventListener('transitionend', onEnd);
-	}
-
-	document.getElementById('rpSubmit')?.addEventListener('click', ()=>{
-		if(cta.disabled) return;
-		const inc = document.querySelector('.rp-incluso');
-		if(inc) inc.scrollIntoView({ behavior:'smooth', block:'start' });
+	startBtn?.addEventListener('click', ()=>{
+		document.addEventListener('keydown', onEsc);
+		openWithState('start');
 	});
-
-	seeMore ?.addEventListener('click', ()=>{ descEl?.classList.contains('is-open') ? collapseAbout() : expandAbout(); });
-	seeLess ?.addEventListener('click', ()=>{ collapseAbout(); });
-	openDesc?.addEventListener('click',  ()=>{ expandAbout({ scroll:true }); });
-
-	document.addEventListener('rp:dates-commit', ()=>{
-		updateDateLabels();
-		updateCTA();
+	endBtn?.addEventListener('click', ()=>{
+		document.addEventListener('keydown', onEsc);
+		openWithState('end');
 	});
-
-	setQty(parseInt(pQty?.value||'0',10) || 0);
-	updateDateLabels();
-	updateCTA();
 })();
 
 (function(){
@@ -291,338 +380,4 @@
 	setTimeout(applyVisibility, 0);
 	setTimeout(applyVisibility, 200);
 	setTimeout(applyVisibility, 800);
-})();
-
-(function(){
-	const root = document.getElementById('rpGrid');
-	if(!root) return;
-
-	const DAYS = parseInt(root.dataset.days || '1', 10);
-
-	const startBtn = document.getElementById('rpStartBtn');
-	const endBtn   = document.getElementById('rpEndBtn');
-	const rangeBox = document.querySelector('.rp-range');
-
-	const isoStart = document.getElementById('rpStart');  
-	const isoEnd   = document.getElementById('rpEnd');   
-
-	const $        = (s)=>document.querySelector(s);
-	const backdrop = $('#drpBackdrop');
-	const modal    = $('#drpModal');
-	const monthsEl = $('#drpMonths');
-	const tabS     = $('#drpTabStart');
-	const tabE     = $('#drpTabEnd');
-	const inpS     = $('#drpInputStart');
-	const inpE     = $('#drpInputEnd');
-	const btnPrev  = $('.drp-prev');
-	const btnNext  = $('.drp-next');
-	const btnApply = $('#drpApply');
-	const btnClear = $('#drpClear');
-
-	backdrop.hidden = true;
-	modal.hidden = true;
-	backdrop.classList.remove('is-visible');
-	modal.classList.remove('is-visible');
-
-	const today = new Date();
-	clearTime(today);
-
-	function clearTime(d){
-		d.setHours(0,0,0,0);
-	}
-
-	function toISO(d){
-		if(!d) return '';
-		const y = d.getFullYear();
-		const m = String(d.getMonth()+1).padStart(2,'0');
-		const da = String(d.getDate()).padStart(2,'0');
-		return `${y}-${m}-${da}`;
-	}
-
-	function fromISO(s){
-		if(!s) return null;
-		const [y,m,d] = s.split('-').map(n=>parseInt(n,10));
-		if(!y||!m||!d) return null;
-		const dt = new Date(y, m-1, d);
-		clearTime(dt);
-		return isNaN(+dt) ? null : dt;
-	}
-
-	function br(d){
-		if(!d) return 'dd/mm/aaaa';
-		const dd = String(d.getDate()).padStart(2,'0');
-		const mm = String(d.getMonth()+1).padStart(2,'0');
-		const yy = d.getFullYear();
-		return `${dd}/${mm}/${yy}`;
-	}
-
-	function parseBR(v){
-		const m = v.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
-		if(!m) return null;
-		const d = new Date(parseInt(m[3],10), parseInt(m[2],10)-1, parseInt(m[1],10));
-		if(isNaN(+d)) return null;
-		clearTime(d);
-		return d;
-	}
-
-	function addDays(d,n){
-		const x = new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
-		clearTime(x);
-		return x;
-	}
-
-	function clampMin(d){
-		if(!d) return d;
-		return d < today ? new Date(today) : d;
-	}
-
-	function fireCommit(s,e){
-		isoStart.value = s ? toISO(s) : '';
-		isoEnd.value   = e ? toISO(e)   : '';
-		document.dispatchEvent(new CustomEvent('rp:dates-commit'));
-	}
-
-	let viewBase = new Date();
-	clearTime(viewBase);
-	viewBase.setDate(1);
-
-	let focus = 'start';
-	let startSel = null;
-	let endSel = null;
-
-	function setFocus(f){
-		focus = f;
-		tabS.classList.toggle('is-active', f === 'start');
-		tabE.classList.toggle('is-active', f === 'end');
-		if(f === 'start'){ inpS.focus(); }
-		else             { inpE.focus(); }
-	}
-
-	function mask(v){
-		let x = v.replace(/\D/g,'').slice(0,8);
-		if(x.length >= 5) return x.slice(0,2)+'/'+x.slice(2,4)+'/'+x.slice(4);
-		if(x.length >= 3) return x.slice(0,2)+'/'+x.slice(2);
-		return x;
-	}
-
-	function setInputs(){
-		inpS.value = startSel ? br(startSel) : '';
-		inpE.value = endSel ? br(endSel) : '';
-		btnApply.disabled = !(startSel && endSel && endSel >= startSel);
-	}
-
-	function monthTitle(y,m){
-		return new Date(y, m, 1).toLocaleDateString('pt-BR', { month:'long' }).toLowerCase();
-	}
-
-	function NewDate(y,m,d){
-		const dt = new Date(y, m, d);
-		clearTime(dt);
-		return dt;
-	}
-
-	function buildMonth(y,m){
-		const first = NewDate(y, m, 1);
-		const last  = NewDate(y, m+1, 0);
-		const lead  = first.getDay();
-		const total = last.getDate();
-
-		let html = '';
-		html += '<div class="drp-month">';
-		html += '<div class="drp-month-title">'+monthTitle(y,m)+'</div>';
-		html += '<div class="drp-week">D S T Q Q S S</div>';
-		html += '<div class="drp-grid">';
-
-		for(let i=0;i<lead;i++){
-			html += '<div class="drp-cell other"><div class="drp-day"></div></div>';
-		}
-
-		for(let d=1; d<=total; d++){
-			const dt = NewDate(y, m, d);
-			const t  = dt.getTime();
-
-			const dis     = t < today.getTime();
-			const isStart = startSel && t === startSel.getTime();
-			const isEnd   = endSel   && t === endSel.getTime();
-			const inRange = startSel && endSel && t > startSel.getTime() && t < endSel.getTime();
-			const atStart = startSel && t === startSel.getTime() && endSel && endSel > startSel;
-			const atEnd   = endSel   && t === endSel.getTime()   && startSel && endSel > startSel;
-
-			const cls = [
-				'drp-cell',
-				dis ? 'disabled' : '',
-				inRange ? 'in-range' : '',
-				isStart ? 'is-start' : '',
-				isEnd ? 'is-end' : '',
-				atStart ? 'range-start' : '',
-				atEnd ? 'range-end' : ''
-			].filter(Boolean).join(' ');
-
-			html += '<div class="'+cls+'" data-time="'+t+'"><div class="drp-day">'+d+'</div></div>';
-		}
-
-		html += '</div>';
-		html += '</div>';
-
-		return html;
-	}
-
-	function render(){
-		const y = viewBase.getFullYear();
-		const m = viewBase.getMonth();
-		monthsEl.innerHTML = buildMonth(y, m) + buildMonth(y, m+1);
-
-		monthsEl.querySelectorAll('.drp-cell:not(.disabled) .drp-day').forEach((el)=>{
-			el.addEventListener('click', ()=>{
-				const t = parseInt(el.parentElement.getAttribute('data-time'), 10);
-				const d = new Date(t);
-				clearTime(d);
-
-				if(focus === 'start'){
-					startSel = clampMin(d);
-					if(!endSel || endSel < startSel){
-						endSel = addDays(startSel, DAYS);
-					}
-				}else{
-					endSel = clampMin(d);
-					if(!startSel || startSel > endSel){
-						startSel = addDays(endSel, -DAYS);
-					}
-				}
-
-				setInputs();
-				render();
-			});
-		});
-	}
-
-	function openWithState(active){
-		startSel = clampMin(fromISO(isoStart.value)) || null;
-		endSel   = clampMin(fromISO(isoEnd.value))   || null;
-
-		if(startSel && (!endSel || endSel < startSel)){
-			endSel = addDays(startSel, DAYS);
-		}
-		if(endSel && (!startSel || startSel > endSel)){
-			startSel = addDays(endSel, -DAYS);
-		}
-
-		viewBase = startSel || endSel || new Date();
-		clearTime(viewBase);
-		viewBase.setDate(1);
-
-		backdrop.hidden = false;
-		modal.hidden = false;
-
-		requestAnimationFrame(()=>{
-			document.body.classList.add('drp-open');
-			backdrop.classList.add('is-visible');
-			modal.classList.add('is-visible');
-		});
-
-		setInputs();
-		render();
-		setFocus(active === 'end' ? 'end' : 'start');
-	}
-
-	function closeModal(){
-		backdrop.classList.remove('is-visible');
-		modal.classList.remove('is-visible');
-		setTimeout(()=>{
-			backdrop.hidden = true;
-			modal.hidden = true;
-			document.body.classList.remove('drp-open');
-		}, 200);
-	}
-
-	function commit(){
-		fireCommit(startSel, endSel);
-		closeModal();
-	}
-
-	tabS.addEventListener('click', ()=>{ setFocus('start'); });
-	tabE.addEventListener('click', ()=>{ setFocus('end');   });
-
-	inpS.addEventListener('input', ()=>{
-		const v = mask(inpS.value);
-		inpS.value = v;
-		const d = parseBR(v);
-		if(d){
-			startSel = clampMin(d);
-			if(!endSel || endSel < startSel){
-				endSel = addDays(startSel, DAYS);
-			}
-			setInputs();
-			render();
-		}
-	});
-
-	inpE.addEventListener('input', ()=>{
-		const v = mask(inpE.value);
-		inpE.value = v;
-		const d = parseBR(v);
-		if(d){
-			endSel = clampMin(d);
-			if(!startSel || startSel > endSel){
-				startSel = addDays(endSel, -DAYS);
-			}
-			setInputs();
-			render();
-		}
-	});
-
-	btnPrev.addEventListener('click', ()=>{
-		viewBase.setMonth(viewBase.getMonth() - 1);
-		render();
-	});
-
-	btnNext.addEventListener('click', ()=>{
-		viewBase.setMonth(viewBase.getMonth() + 1);
-		render();
-	});
-
-	btnApply.addEventListener('click', ()=>{
-		commit();
-	});
-
-	btnClear.addEventListener('click', ()=>{
-		startSel = null;
-		endSel = null;
-		setInputs();
-		render();
-	});
-
-	backdrop.addEventListener('click', (e)=>{
-		if(e.target === backdrop) closeModal();
-	});
-
-	function onEsc(ev){
-		if(ev.key === 'Escape'){
-			closeModal();
-			document.removeEventListener('keydown', onEsc);
-		}
-	}
-
-	startBtn?.addEventListener('click', ()=>{
-		document.addEventListener('keydown', onEsc);
-		openWithState('start');
-	});
-
-	endBtn?.addEventListener('click', ()=>{
-		document.addEventListener('keydown', onEsc);
-		openWithState('end');
-	});
-
-	rangeBox?.addEventListener('click', (ev)=>{
-		const inStart = ev.target.closest('#rpStartBtn');
-		const inEnd   = ev.target.closest('#rpEndBtn');
-		if(inStart || inEnd){
-			return;
-		}
-		const rect = rangeBox.getBoundingClientRect();
-		const x = ev.clientX - rect.left;
-		const half = rect.width / 2;
-		document.addEventListener('keydown', onEsc);
-		openWithState(x <= half ? 'start' : 'end');
-	});
 })();

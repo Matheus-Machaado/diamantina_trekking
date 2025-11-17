@@ -1,5 +1,7 @@
 import * as i18n from './js/i18n.js'
 
+const DATA_URL = (typeof window !== 'undefined' && window.__DATA_URL__) || './data.json'
+
 function money(v){
 	return (v||0).toLocaleString(i18n.locale(), { style:'currency', currency:'BRL' })
 }
@@ -9,10 +11,12 @@ function plural(n, one, other){
 }
 
 function dataURL(){
+	if (typeof window !== 'undefined' && window.__DATA_URL__) return window.__DATA_URL__
 	return `./i18n/${i18n.getLang()}/data.json`
 }
 
 let __DATA_ALL__ = null
+let __DATA_LANG__ = null
 
 function normalizeRoteiro(r){
 	const nivel = String(r.nivel||'').toLowerCase()
@@ -231,8 +235,20 @@ function bindRoteiroToggles(scope){
 	})
 }
 
+export function invalidateDataCache(){
+	__DATA_ALL__ = null
+	__DATA_LANG__ = null
+}
+
 async function loadData(){
-	if(__DATA_ALL__) return __DATA_ALL__
+	const currentLang =
+		(typeof i18n?.getLang === 'function' && i18n.getLang()) ||
+		(document.documentElement.lang || 'pt')
+
+	if(__DATA_ALL__ && __DATA_LANG__ === currentLang){
+		return __DATA_ALL__
+	}
+
 	try{
 		const res = await fetch(dataURL(), { cache:'no-store' })
 		if(!res.ok) throw new Error()
@@ -245,9 +261,10 @@ async function loadData(){
 			perguntas: flist.map(normalizePergunta),
 			memorias: mlist.map(normalizeMemoria)
 		}
+		__DATA_LANG__ = currentLang
 		return __DATA_ALL__
 	}catch(_){
-		if(i18n.getLang()!=='pt'){
+		if(currentLang!=='pt'){
 			try{
 				const res = await fetch('./i18n/pt/data.json', { cache:'no-store' })
 				if(res.ok){
@@ -260,11 +277,13 @@ async function loadData(){
 						perguntas: flist.map(normalizePergunta),
 						memorias: mlist.map(normalizeMemoria)
 					}
+					__DATA_LANG__ = 'pt'
 					return __DATA_ALL__
 				}
 			}catch(__){}
 		}
 		__DATA_ALL__ = { roteiros:[], perguntas:[], memorias:[] }
+		__DATA_LANG__ = currentLang
 		return __DATA_ALL__
 	}
 }

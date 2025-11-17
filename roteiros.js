@@ -1,18 +1,51 @@
 (function(){
 	if('scrollRestoration' in history) history.scrollRestoration = 'manual';
 	window.scrollTo(0,0);
-	window.addEventListener('load', ()=>{
-		window.scrollTo(0,0);
-	});
-	window.addEventListener('pageshow', (e)=>{
-		if(e.persisted) window.scrollTo(0,0);
-	});
+	window.addEventListener('load', ()=>{ window.scrollTo(0,0); });
+	window.addEventListener('pageshow', (e)=>{ if(e.persisted) window.scrollTo(0,0); });
 
 	const grid = document.getElementById('rlistGrid');
 	const pager = document.getElementById('rlistPager');
 	const filter = document.getElementById('rlistFilter');
 	const selectWrap = document.querySelector('.select-wrap');
 	if(!grid || !pager) return;
+
+	const t = (k,p)=> (window.i18n && typeof i18n.t==='function') ? i18n.t(k,p) : null;
+	const tt = (k,fallback)=>{ const r = t(k); return (r && r!==k) ? r : (fallback ?? ''); };
+
+	function levelLabel(code){
+		const c = (code||'').toLowerCase();
+		return tt('levels.'+c, c==='leve'?'Leve':c==='moderado'?'Moderado':c==='intenso'?'Intenso':'');
+	}
+
+	function applyStaticText(){
+		const titleEl = document.querySelector('.section-title');
+		if(titleEl) titleEl.textContent = tt('tours.title', titleEl.textContent || 'ROTEIROS');
+
+		const subEl = document.querySelector('.section-sub');
+		if(subEl) subEl.textContent = tt('tours.subtitle', subEl.textContent || 'Trilhas, cachoeiras e mirantes: viva a Chapada por inteiro');
+
+		const lbl = document.querySelector('label[for="rlistFilter"]');
+		const lblTxt = tt('tours.filter.intensity', lbl?.textContent || 'Intensidade');
+		if(lbl) lbl.textContent = lblTxt;
+		if(filter){
+			filter.setAttribute('aria-label', lblTxt);
+			[...filter.options].forEach(opt=>{
+				const v = (opt.value||'').toLowerCase();
+				if(v==='todos') opt.textContent = tt('tours.filter.all', 'Todos');
+				if(v==='leve' || v==='moderado' || v==='intenso'){
+					opt.textContent = levelLabel(v);
+				}
+			});
+		}
+
+		document.querySelectorAll('.intensity-badge').forEach(b=>{
+			const card = b.closest('.roteiro-card');
+			const level = (card?.dataset.intensidade||'leve').toLowerCase();
+			const span = b.querySelector('span');
+			if(span) span.textContent = levelLabel(level).toUpperCase();
+		});
+	}
 
 	let cardsAll = [...grid.querySelectorAll('.roteiro-card')];
 	let ORDER = { leve:0, moderado:1, intenso:2 };
@@ -34,7 +67,7 @@
 			const level = (card.dataset.intensidade||'').toLowerCase();
 			const slot = card.querySelector('.roteiro-card-img');
 			if(!slot || slot.querySelector('.intensity-badge')) return;
-			const text = level==='intenso' ? 'INTENSO' : level==='moderado' ? 'MODERADO' : 'LEVE';
+			const text = levelLabel(level).toUpperCase();
 			const badge = document.createElement('span');
 			badge.className = 'intensity-badge intensity-'+(level||'leve');
 			badge.innerHTML = '<img src="img/icons/intensidade-icon.png" alt=""><span>'+text+'</span>';
@@ -56,15 +89,9 @@
 	let active = cardsAll;
 	let page = 1;
 
-	function totalPages(){
-		return Math.max(1, Math.ceil(active.length / PER_PAGE));
-	}
-	function clamp(n, min, max){
-		return Math.min(max, Math.max(min, n));
-	}
-	function scrollTopSmooth(){
-		requestAnimationFrame(()=>requestAnimationFrame(()=>window.scrollTo({ top:0, behavior:'smooth' })));
-	}
+	function totalPages(){ return Math.max(1, Math.ceil(active.length / PER_PAGE)); }
+	function clamp(n, min, max){ return Math.min(max, Math.max(min, n)); }
+	function scrollTopSmooth(){ requestAnimationFrame(()=>requestAnimationFrame(()=>window.scrollTo({ top:0, behavior:'smooth' }))); }
 
 	function showPage(p){
 		page = clamp(p, 1, totalPages());
@@ -97,7 +124,8 @@
 		const b = document.createElement('button');
 		b.className = 'rt-btn ' + (dir<0 ? 'rt-prev' : 'rt-next');
 		b.type = 'button';
-		b.setAttribute('aria-label', dir<0 ? 'Anterior' : 'Próxima');
+		const lab = dir<0 ? tt('pager.prev', 'Anterior') : tt('pager.next', 'Próxima');
+		b.setAttribute('aria-label', lab);
 		b.innerHTML = '<i class="bx bx-chevron-'+(dir<0?'left':'right')+'" aria-hidden="true"></i>';
 		b.disabled = !!disabled;
 		b.addEventListener('click', ()=>showPage(page + dir));
@@ -152,10 +180,13 @@
 	}
 
 	function init(){
+		applyStaticText();
+
 		const url = new URL(location.href);
 		const ord = (url.searchParams.get('o')||'').toLowerCase();
 		applyOrdering(ord==='intenso' ? 'intenso' : '');
 		ensureBadges();
+
 		const i = (url.searchParams.get('i')||'todos').toLowerCase();
 		const p = parseInt(url.searchParams.get('p')||'1', 10);
 		if(filter) filter.value = (i==='leve'||i==='moderado'||i==='intenso') ? i : 'todos';
@@ -164,38 +195,19 @@
 	}
 
 	if(filter && selectWrap){
-		function openSel(){
-			selectWrap.classList.add('is-open');
-		}
-		function closeSel(){
-			selectWrap.classList.remove('is-open');
-			filter.blur();
-		}
-		filter.addEventListener('click', ()=>{
-			if(selectWrap.classList.contains('is-open')) closeSel();
-			else openSel();
-		});
-		filter.addEventListener('change', ()=>{
-			setFilter(filter.value);
-			closeSel();
-		});
-		document.addEventListener('click', (e)=>{
-			if(!selectWrap.contains(e.target)) closeSel();
-		});
-		filter.addEventListener('keydown', (e)=>{
-			if(e.key==='Escape') closeSel();
-		});
+		function openSel(){ selectWrap.classList.add('is-open'); }
+		function closeSel(){ selectWrap.classList.remove('is-open'); filter.blur(); }
+		filter.addEventListener('click', ()=>{ selectWrap.classList.contains('is-open') ? closeSel() : openSel(); });
+		filter.addEventListener('change', ()=>{ setFilter(filter.value); closeSel(); });
+		document.addEventListener('click', (e)=>{ if(!selectWrap.contains(e.target)) closeSel(); });
+		filter.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeSel(); });
 	}else if(filter){
-		filter.addEventListener('change', ()=>{
-			setFilter(filter.value);
-		});
+		filter.addEventListener('change', ()=>{ setFilter(filter.value); });
 	}
 
-	window.addEventListener('keydown', (e)=>{
-		if(e.key==='ArrowLeft') showPage(page - 1);
-		if(e.key==='ArrowRight') showPage(page + 1);
-	});
+	window.addEventListener('keydown', (e)=>{ if(e.key==='ArrowLeft') showPage(page - 1); if(e.key==='ArrowRight') showPage(page + 1); });
 
 	init();
-	window.rlistShowPage = showPage;
+
+	document.addEventListener('i18n:change', applyStaticText);
 })();

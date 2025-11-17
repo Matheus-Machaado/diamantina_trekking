@@ -83,6 +83,25 @@
 		"cta": "I want this adventure",
 		"teaserTail": "What are you waiting for to jump in?"
 	},
+	"included": {
+		"title": "What’s included",
+		"pickup": {
+			"title": "Pick‑up at Your Accommodation",
+			"text": "We pick you up wherever you’re staying in Lençóis."
+		},
+		"meal": {
+			"title": "Meal on the Tour",
+			"text": "Includes lunch or snack, according to the itinerary."
+		},
+		"tickets": {
+			"title": "Entrance Fees Included",
+			"text": "Tickets and permits when applicable."
+		},
+		"guide": {
+			"title": "Experienced Local Guide",
+			"text": "Licensed guide, safety and environmental interpretation."
+		}
+	},
 	"ppc": {
 		"title": "Payment<br>and cancellation policies:",
 		"items": {
@@ -118,7 +137,13 @@
 		"seeLess": "See less",
 		"people": {
 			"title": "NUMBER OF PEOPLE",
-			"select": "Select"
+			"select": "Select",
+			"personOne": "person",
+			"personOther": "people",
+			"ageRange": "(Ages 5–90)",
+			"ariaQty": "Quantity",
+			"inc": "Increase",
+			"dec": "Decrease"
 		},
 		"cta": {
 			"disabled": "Select dates and number of people",
@@ -139,6 +164,8 @@
 	},
 	"drp": {
 		"title": "Start and end",
+		"tabStart": "Start",
+		"tabEnd": "End",
 		"clear": "Clear",
 		"apply": "Done",
 		"prev": "Previous month",

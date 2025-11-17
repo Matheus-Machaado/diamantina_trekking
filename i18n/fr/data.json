@@ -2,14 +2,14 @@
 	"roteiros": [
 		{
 			"id": 1,
-			"titulo": "Cascade du Mosquito & Piscine du Diable",
+			"titulo": "Cascade Mosquito & « Piscine du Diable »",
 			"nivel": "moderado",
 			"valor_por_pessoa": 10,
 			"duracao": 1,
-			"preview": "De l’impact d’une chute de 50 m à l’énergie de la Piscine du Diable : une journée avec baignades, sentiers courts et déjeuner maison à la Fazenda Mosquito.",
+			"preview": "De l’impact d’une chute de 50 m à l’énergie de la Piscine du Diable : journée avec baignades, courts sentiers et déjeuner maison à la Fazenda Mosquito.",
 			"descricao": [
 				"Départ à 8h30 vers la Fazenda Mosquito.",
-				"Visite de la cascade par le haut et par le bas.",
+				"Vue de la cascade d’en haut et d’en bas.",
 				"Déjeuner maison à la ferme.",
 				"Baignade à la Piscine du Diable et retour à Lençóis."
 			],
@@ -23,12 +23,12 @@
 		},
 		{
 			"id": 2,
-			"titulo": "Grottes Azul, Pratinha et Lapa Doce + Morro do Pai Inácio",
+			"titulo": "Grotte Bleue, Pratinha et Lapa Doce + Morro do Pai Inácio",
 			"nivel": "leve",
 			"valor_por_pessoa": 0,
 			"duracao": 24,
-			"preview": "Paysages souterrains, eaux cristallines et coucher de soleil inoubliable au belvédère emblématique de la Chapada.",
-			"descricao": "Départ à 8h30 pour la grotte de Lapa Doce et sa traversée entre salles et concrétions. Déjeuner local. Puis Pratinha et la Grotte Azul pour contempler et, en option, faire de la flottaison, tyrolienne, canoë et autres activités. En fin d’après‑midi, montée au Morro do Pai Inácio pour admirer le coucher du soleil entre plateaux et vallées. Retour à Lençóis en soirée.",
+			"preview": "Paysages souterrains, eaux cristallines et coucher de soleil inoubliable sur le belvédère emblématique de la Chapada.",
+			"descricao": "Départ à 8h30 pour la grotte de Lapa Doce et sa traversée entre salles et spéléothèmes. Déjeuner local. Puis Pratinha et la Grotte Bleue pour contempler et, en option, faire de la flottaison, tyrolienne, canoë et autres activités. En fin de journée, montée au Morro do Pai Inácio pour le coucher du soleil entre plateaux et vallées. Retour à Lençóis en soirée.",
 			"imagens": [
 				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-1.png",
 				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-2.png",
@@ -39,12 +39,12 @@
 		},
 		{
 			"id": 3,
-			"titulo": "Belvédère de la Fumaça & Riachinho",
+			"titulo": "Belvédère de Fumaça & Riachinho",
 			"nivel": "moderado",
 			"valor_por_pessoa": 0,
 			"duracao": 48,
-			"preview": "La 2ᵉ plus haute chute du Brésil vue d’en haut, puis une baignade revigorante aux piscines de Riachinho.",
-			"descricao": "Départ à 8h pour la vallée du Capão. Montée initiale de 1,8 km jusqu’aux Gerais da Fumaça puis marche plane jusqu’au bord du canyon : le vent pulvérise la chute en brume. Pause‑casse‑croûte avec vue et retour par le même sentier. Fin de journée à la cascade de Riachinho avant de rentrer à Lençóis.",
+			"preview": "La 2ᵉ plus haute chute du Brésil vue d’en haut et, ensuite, un bain revigorant dans les piscines de Riachinho.",
+			"descricao": "Départ à 8h pour la vallée du Capão. Montée initiale de 1,8 km jusqu’aux plateaux de Fumaça, puis marche plane jusqu’au bord du canyon où l’eau se pulvérise au vent. En‑cas avec vue et retour par le même sentier. Fin de journée à la cascade de Riachinho avant de rentrer à Lençóis.",
 			"imagens": [
 				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
 				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
@@ -60,7 +60,7 @@
 			"valor_por_pessoa": 0,
 			"duracao": 8,
 			"preview": "Sentiers historiques à deux pas du centre de Lençóis et toboggan naturel à Ribeirão do Meio.",
-			"descricao": "Le matin, balade dans le parc de Muritiba : vasques du Serrano, salles de sables colorés, arrêts à Cachoeirinha et Primavera, et belvédère sur Lençóis. Après le déjeuner, marche jusqu’à Ribeirão do Meio, une dalle lisse se terminant par une piscine naturelle — le toboggan préféré des locaux.",
+			"descricao": "Le matin, balade dans le parc de Muritiba : vasques de Serrano, sables colorés, arrêts à Cachoeirinha et Primavera et belvédère sur Lençóis. Après le déjeuner, marche jusqu’à Ribeirão do Meio, grande dalle lisse aboutissant à une délicieuse piscine naturelle : l’endroit parfait pour glisser comme les locaux.",
 			"imagens": [
 				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
 				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-2.png",
@@ -71,12 +71,12 @@
 		},
 		{
 			"id": 5,
-			"titulo": "Poço Encantado & Poço Azul",
+			"titulo": "Lac Enchanté & Lac Bleu",
 			"nivel": "leve",
 			"valor_por_pessoa": 0,
 			"duracao": 10,
-			"preview": "Du faisceau lumineux hypnotique de l’Encantado à la flottaison dans les eaux cristallines du Azul — une journée pour tomber amoureux du monde souterrain de la Chapada.",
-			"descricao": "Départ à 8h30 pour contempler le Poço Encantado, lac turquoise illuminé par les rayons du soleil traversant la grotte. Ensuite, Poço Azul pour flotter dans une eau transparente et observer les tonalités qui changent avec le soleil. Déjeuner régional et retour à Lençóis.",
+			"preview": "Du faisceau lumineux hypnotique de l’Enchanté à la flottaison dans les eaux cristallines du Bleu — on tombe amoureux de la Chapada souterraine.",
+			"descricao": "Départ à 8h30 pour contempler le Lac Enchanté, d’un bleu turquoise éclairé par les rayons du soleil pénétrant la grotte. Ensuite, visite du Lac Bleu où l’on peut flotter dans des eaux transparentes et observer les teintes changer avec le soleil. Déjeuner régional et retour à Lençóis.",
 			"imagens": [
 				"img/roteiros/poco-encantado-poco-azul/imagem-1.png",
 				"img/roteiros/poco-encantado-poco-azul/imagem-2.png",
@@ -87,12 +87,12 @@
 		},
 		{
 			"id": 6,
-			"titulo": "Marimbus & Cascades du Roncador",
+			"titulo": "Marimbus & Chutes de Roncador",
 			"nivel": "leve",
 			"valor_por_pessoa": 0,
 			"duracao": 12,
-			"preview": "Canoës dans le « mini Pantanal » de la Chapada, déjeuner dans une ferme historique et baignades aux cascades du Roncador.",
-			"descricao": "Départ à 8h30 pour Remanso. Canoës guidées par des habitants d’une communauté quilombola pour traverser les Marimbus pendant env. 2 h, entre végétation inondée et vie riveraine. Déjeuner à la Fazenda Santo Antônio, manoir du XIXᵉ siècle. Courte marche jusqu’aux cascades du Roncador pour des piscines naturelles. Fin par un agréable sentier de 4 km jusqu’au point de rendez‑vous et retour à Lençóis.",
+			"preview": "Canoës dans le « pantanal » de la Chapada, déjeuner dans une ferme historique et baignades aux chutes de Roncador.",
+			"descricao": "Départ à 8h30 vers Remanso. Canoës manœuvrées par des habitants de la communauté quilombola pour traverser les Marimbus pendant env. 2 h, au milieu de la végétation inondée et de la vie riveraine. Déjeuner à la Fazenda Santo Antônio, manoir du XIXᵉ siècle. Courte marche jusqu’aux chutes de Roncador pour des piscines naturelles. Retour par un agréable sentier de 4 km jusqu’au véhicule et à Lençóis.",
 			"imagens": [
 				"img/roteiros/marimbus-roncador/imagem-1.png",
 				"img/roteiros/marimbus-roncador/imagem-2.png",
@@ -100,7 +100,8 @@
 				"img/roteiros/marimbus-roncador/imagem-4.png"
 			],
 			"destaque": true,
-			"descricao-destaque": "Une journée entière d’aventure dans la Chapada ! Départ de Lençóis à 8h30 vers Remanso, puis navigation en canoë sur les Marimbus, le « mini Pantanal » de la Chapada, entouré de nature et de zones humides. À la Fazenda Santo Antônio, maison du XIXᵉ siècle, déjeuner maison, puis cascades du Roncador, avec piscines naturelles et dalles rosées. On termine par 4 km de sentier forestier jusqu’au retour."
+			"descricao-destaque": "Journée entière d’aventure dans la Chapada ! Départ de Lençóis à 8h30 vers Remanso, puis traversée en canoë des Marimbus — le « mini Pantanal de la Chapada » — entourés d’une nature vivante et de paysages inondés. À la Fazenda Santo Antônio, manoir du XIXᵉ siècle, déjeuner maison avant de rejoindre les chutes de Roncador pour des piscines naturelles et des dalles rosées. Fin par un sentier de 4 km en forêt jusqu’au retour.",
+			"pagina-principal": true
 		},
 		{
 			"id": 7,
@@ -108,8 +109,8 @@
 			"nivel": "intenso",
 			"valor_por_pessoa": 0,
 			"duracao": 15,
-			"preview": "Un sentier exigeant vers l’une des plus belles cascades de Lençóis, puis la récompense du toboggan naturel au retour.",
-			"descricao": "Départ à pied de Lençóis à 8h30 le long du Ribeirão. Alternance de tronçons ombragés, montées irrégulières et progression sur le lit de la rivière en sautant de pierre en pierre jusqu’à la cascade du Sossego. Après la vue et la baignade, retour avec arrêt à Ribeirão do Meio pour une glissade bien méritée avant la ville.",
+			"preview": "Sentier exigeant vers l’une des plus belles cascades de Lençóis et, au retour, la récompense du toboggan naturel.",
+			"descricao": "Départ à pied de Lençóis à 8h30 en suivant le Ribeirão. Alternance de tronçons plats ombragés, montées sur terrain irrégulier et progression sur le lit de la rivière jusqu’à la cascade du Sossego. Après la vue et le bain, retour avec arrêt à Ribeirão do Meio pour une baignade méritée avant de rentrer en ville.",
 			"imagens": [
 				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-1.png",
 				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-2.png",
@@ -119,12 +120,12 @@
 		},
 		{
 			"id": 8,
-			"titulo": "Serra das Paridas & Cascade du Mosquito",
+			"titulo": "Serra das Paridas & Cascade Mosquito",
 			"nivel": "leve",
 			"valor_por_pessoa": 0,
 			"duracao": 18,
-			"preview": "Art rupestre millénaire à ciel ouvert et baignade à la cascade qui porte le nom des « diamants mosquito ».",
-			"descricao": "Départ à 8h30 vers le Complexe archéologique Serra das Paridas pour un circuit contemplatif parmi des panneaux d’art rupestre de 8–10 000 ans. Puis route vers la Fazenda Mosquito et marche de 20 min pour voir la cascade par le haut et par le bas. Déjeuner typique à la ferme et retour à Lençóis en fin d’après‑midi.",
+			"preview": "Art rupestre millénaire à ciel ouvert et bain dans la cascade qui porte le nom des « diamants moustiques ».",
+			"descricao": "Départ à 8h30 pour le Complexe Archéologique Serra das Paridas, circuit contemplatif parmi des panneaux d’art rupestre âgés de 8–10 000 ans. Puis route jusqu’à la Fazenda Mosquito et marche d’env. 20 min pour voir la cascade d’en haut et d’en bas. Déjeuner typique à la ferme et retour à Lençóis en fin d’après‑midi.",
 			"imagens": [
 				"img/roteiros/serra-das-paridas-mosquito/imagem-1.png",
 				"img/roteiros/serra-das-paridas-mosquito/imagem-2.png",
@@ -138,8 +139,8 @@
 			"nivel": "moderado",
 			"valor_por_pessoa": 0,
 			"duracao": 6,
-			"preview": "À travers les plaines des Gerais jusqu’à une piscine naturelle au pied du Morrão — grands paysages et rivière toute la journée.",
-			"descricao": "Départ à 8h, 30 km jusqu’au départ du sentier et 4–5 h de marche totale dans le Parc national. Nous traversons les campos avec vue constante sur le Morrão et atteignons Águas Claras, piscine naturelle formée par la rivière Mucugezinho. Temps libre pour se baigner, pique‑niquer et contempler avant le retour.",
+			"preview": "Marche à travers les hautes‑terres jusqu’à une piscine naturelle au pied du Morrão — grands paysages et bains de rivière toute la journée.",
+			"descricao": "Départ à 8h, 30 km jusqu’au départ du sentier et 4–5 h de marche au total dans le parc national. Traversée des campos gerais avec vue constante sur le Morrão jusqu’à Águas Claras, piscine naturelle formée par la rivière Mucugezinho. Temps libre pour se baigner, collation et contemplation avant le retour.",
 			"imagens": [
 				"img/roteiros/aguas-claras/imagem-1.png",
 				"img/roteiros/aguas-claras/imagem-2.png",
@@ -153,8 +154,8 @@
 			"nivel": "leve",
 			"valor_por_pessoa": 0,
 			"duracao": 4,
-			"preview": "L’aventure classique d’Ibicoara : canyon étroit, nage obligatoire avec gilet et chute de 90 m au bout.",
-			"descricao": "Départ à 6h vers Ibicoara, trajet plus long. Environ 3 km jusqu’aux belvédères puis accès par l’intérieur du canyon — généralement à la nage avec gilets obligatoires (fournis) ou en marchant le long de la paroi avec appuis. Décor cinématographique et baignade inoubliable avant le retour à Lençóis.",
+			"preview": "L’aventure classique d’Ibicoara : canyon étroit, nage obligatoire avec gilet et chute de 90 m au bout.",
+			"descricao": "Départ à 6h en direction d’Ibicoara par une route plus longue. Environ 3 km de marche jusqu’aux belvédères puis accès à l’intérieur du canyon — généralement à la nage avec gilets fournis ou en longeant la paroi avec appui. Décor cinématographique et bain inoubliable avant le retour à Lençóis.",
 			"imagens": [
 				"img/roteiros/cachoeira-do-buracao/imagem-1.png",
 				"img/roteiros/cachoeira-do-buracao/imagem-2.png",
@@ -167,64 +168,64 @@
 		{
 			"nome": "Matheus Machado",
 			"data": "2025-09-20",
-			"mensagem": "Waouh, c’était incroyable ! La Chapada Diamantina a dépassé toutes mes attentes. Service impeccable — j’ai déjà recommandé à plusieurs amis et j’ai hâte de revenir !"
+			"mensagem": "Incroyable ! La Chapada Diamantina a dépassé toutes mes attentes. Service parfait, j’ai déjà recommandé à des amis et j’ai hâte de revenir !"
 		},
 		{
 			"nome": "Larissa Nogueira",
 			"data": "2025-08-12",
-			"mensagem": "Guides excellents, sentiers sûrs et paysages uniques. Une expérience complète du début à la fin !"
+			"mensagem": "Guides excellents, sentiers sûrs et paysages uniques. Expérience complète du début à la fin !"
 		},
 		{
 			"nome": "Felipe Souza",
 			"data": "2025-07-03",
-			"mensagem": "Organisation irréprochable. Le coucher de soleil au Pai Inácio, inoubliable !"
+			"mensagem": "Organisation irréprochable. Le coucher de soleil au Pai Inácio est inoubliable !"
 		},
 		{
 			"nome": "Ana Paula",
 			"data": "2025-06-18",
-			"mensagem": "Circuit privatif sur mesure — nous avons tout profité à notre rythme. Je recommande vivement !"
+			"mensagem": "Parcours privatif sur mesure, on a pu profiter à notre rythme. Je recommande vivement !"
 		},
 		{
 			"nome": "João Victor",
 			"data": "2025-05-10",
-			"mensagem": "Équipe très attentionnée et préparée. Je planifie déjà la prochaine traversée !"
+			"mensagem": "Équipe très attentive et bien préparée. On planifie déjà la prochaine traversée !"
 		},
 		{
 			"nome": "Bruna Ferreira",
 			"data": "2025-04-22",
-			"mensagem": "Expérience authentique, pleine d’histoire et de nature. Chaque minute en vaut la peine."
+			"mensagem": "Expérience authentique, pleine d’histoire et de nature. Ça vaut chaque minute."
 		},
 		{
 			"nome": "Roberto",
 			"data": "2025-04-22",
-			"mensagem": "Expérience authentique, pleine d’histoire et de nature. Chaque minute en vaut la peine."
+			"mensagem": "Expérience authentique, pleine d’histoire et de nature. Ça vaut chaque minute."
 		}
 	],
 	"perguntas": [
 		{
 			"id": 1,
-			"pergunta": "Faut‑il être très entraîné ? Qui peut participer ?",
-			"resposta": "Pas besoin d’être athlète. Il suffit d’être actif, de pratiquer une activité régulièrement et d’aimer la nature et la marche. Certains jours, on peut marcher jusqu’à 18 km, toujours à votre rythme et avec l’accompagnement du guide."
+			"pergunta": "Faut‑il être très en forme pour ce circuit ? Qui peut participer ?",
+			"resposta": "Pas besoin d’être un athlète. Nous demandons seulement d’être actif, de pratiquer une activité régulièrement et d’aimer la nature et la marche. Certains jours nous pouvons faire jusqu’à 18 km, toujours à votre rythme avec l’accompagnement du guide."
 		},
 		{
 			"id": 2,
-			"pergunta": "Que comprend le prix du circuit ?",
-			"resposta": "Guides agréés, transport pendant le circuit, droits d’entrée, équipements de sécurité si nécessaire et assurance aventure. Repas selon chaque itinéraire."
+			"pergunta": "Qu’est‑ce qui est inclus dans le prix du circuit ?",
+			"resposta": "Guides agréés, transport pendant le circuit, frais d’entrée, équipements de sécurité si nécessaire et assurance aventure. Restauration selon chaque itinéraire."
 		},
 		{
 			"id": 3,
-			"pergunta": "Puis‑je faire le circuit en format privatif ?",
-			"resposta": "Oui. Nous proposons des expériences privées avec horaires flexibles et ajustements de rythme. Dites‑nous et nous le construirons sur mesure."
+			"pergunta": "Puis‑je réserver un circuit privatif ?",
+			"resposta": "Oui. Nous proposons des expériences privées avec horaires flexibles et ajustement du rythme. Dites‑le nous et nous adaptons tout sur mesure."
 		},
 		{
 			"id": 4,
-			"pergunta": "Comment fonctionnent l’annulation et le remboursement ?",
-			"resposta": "En cas d’annulation, l’acompte de 30 % n’est pas remboursable. Le reste suit notre politique communiquée lors de la réservation."
+			"pergunta": "Comment fonctionnent les annulations et remboursements ?",
+			"resposta": "En cas d’annulation, l’acompte de 30 % n’est pas remboursable. Le reste suit notre politique communiquée lors de la réservation."
 		},
 		{
 			"id": 5,
-			"pergunta": "Quels sont les objets essentiels à emporter ?",
-			"resposta": "Chaussures adaptées, gourde, crème solaire, chapeau/casquette et coupe‑vent léger. La liste complète est envoyée après la réservation."
+			"pergunta": "Quels sont les indispensables à emporter ?",
+			"resposta": "Chaussures de randonnée, gourde, crème solaire, chapeau/casquette et coupe‑vent léger. La liste complète est envoyée après la réservation."
 		}
 	]
 }

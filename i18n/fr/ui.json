@@ -83,6 +83,25 @@
 		"cta": "Je veux cette aventure",
 		"teaserTail": "Qu’attendez‑vous pour vous lancer ?"
 	},
+	"included": {
+		"title": "Ce qui est inclus",
+		"pickup": {
+			"title": "Prise en charge à votre hébergement",
+			"text": "Nous venons vous chercher où que vous séjourniez à Lençóis."
+		},
+		"meal": {
+			"title": "Repas pendant le circuit",
+			"text": "Déjeuner ou encas selon le programme."
+		},
+		"tickets": {
+			"title": "Frais d’entrée inclus",
+			"text": "Billets et autorisations lorsque nécessaire."
+		},
+		"guide": {
+			"title": "Guide local expérimenté",
+			"text": "Accompagnateur agréé, sécurité et interprétation environnementale."
+		}
+	},
 	"ppc": {
 		"title": "Politiques de paiement<br>et d’annulation :",
 		"items": {
@@ -118,10 +137,16 @@
 		"seeLess": "Voir moins",
 		"people": {
 			"title": "NOMBRE DE PERSONNES",
-			"select": "Sélectionner"
+			"select": "Sélectionner",
+			"personOne": "personne",
+			"personOther": "personnes",
+			"ageRange": "(De 5 à 90 ans)",
+			"ariaQty": "Quantité",
+			"inc": "Augmenter",
+			"dec": "Diminuer"
 		},
 		"cta": {
-			"disabled": "Choisissez les dates et le nombre de personnes",
+			"disabled": "Sélectionnez les dates et le nombre de personnes",
 			"ready": "Réserver"
 		},
 		"subtotalLabel": "Sous‑total :",
@@ -139,6 +164,8 @@
 	},
 	"drp": {
 		"title": "Début et fin",
+		"tabStart": "Début",
+		"tabEnd": "Fin",
 		"clear": "Effacer",
 		"apply": "Terminé",
 		"prev": "Mois précédent",

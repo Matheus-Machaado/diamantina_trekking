@@ -6,11 +6,11 @@
 			"nivel": "moderado",
 			"valor_por_pessoa": 10,
 			"duracao": 1,
-			"preview": "From the impact of a 50‑m drop to the energy of Devil’s Pool: a day with waterfall swims, short trails and a home‑style lunch at Fazenda Mosquito.",
+			"preview": "From the impact of a 50 m fall to the energy of Devil’s Pool: a day of waterfall swims, short trails and a home‑style lunch at Fazenda Mosquito.",
 			"descricao": [
-				"Departure at 8:30 towards Fazenda Mosquito.",
+				"Departure at 8:30 to Fazenda Mosquito.",
 				"Visit the waterfall from the top and the base.",
-				"Home‑style lunch at the farm.",
+				"Homemade lunch at the farm.",
 				"Swim at Devil’s Pool and return to Lençóis."
 			],
 			"imagens": [
@@ -23,12 +23,12 @@
 		},
 		{
 			"id": 2,
-			"titulo": "Blue Cave, Pratinha & Lapa Doce + Pai Inácio Hill",
+			"titulo": "Blue Cave, Pratinha and Lapa Doce + Pai Inácio Hill",
 			"nivel": "leve",
 			"valor_por_pessoa": 0,
 			"duracao": 24,
-			"preview": "Underground scenery, crystal‑clear waters and an unforgettable sunset at Chapada’s postcard viewpoint.",
-			"descricao": "Departure at 8:30 to Lapa Doce Cave for a traverse through halls and speleothems. Local lunch. Continue to Pratinha and Blue Cave to contemplate and, optionally, float, zipline, canoe and more. Late afternoon, hike up Pai Inácio Hill for sunset over mesas and valleys — a Chapada Diamantina classic. Return to Lençóis in the evening.",
+			"preview": "Subterranean scenery, crystal‑clear waters and an unforgettable sunset at Chapada’s postcard viewpoint.",
+			"descricao": "Departure at 8:30 to Lapa Doce Cave for a traverse through chambers and speleothems. Local lunch. We continue to Pratinha and the Blue Cave to contemplate and optionally do floating, zipline, canoe and other activities. Late afternoon, we climb Pai Inácio Hill for sunset among plateaus and valleys. Return to Lençóis by the end of the day.",
 			"imagens": [
 				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-1.png",
 				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-2.png",
@@ -43,8 +43,8 @@
 			"nivel": "moderado",
 			"valor_por_pessoa": 0,
 			"duracao": 48,
-			"preview": "Brazil’s 2nd‑highest drop seen from above, followed by a refreshing dip in Riachinho’s pools.",
-			"descricao": "Departure at 8:00 to Vale do Capão. Initial 1.8 km ascent to the Gerais da Fumaça and a flat walk to the canyon’s edge where the fall atomizes in the wind like mist. Snack with views and return by the same trail. End the day relaxing at Riachinho Waterfall before heading back to Lençóis.",
+			"preview": "Brazil’s 2nd tallest waterfall seen from above and, afterwards, a refreshing bath in Riachinho’s pools.",
+			"descricao": "Departure at 8:00 to Vale do Capão. Initial ascent of 1.8 km to Fumaça’s highlands, then a flat walk to the canyon edge where the water atomizes in the wind. Snack with a view and return on the same trail. We end the day relaxing at Riachinho Waterfall before heading back to Lençóis.",
 			"imagens": [
 				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
 				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
@@ -59,8 +59,8 @@
 			"nivel": "moderado",
 			"valor_por_pessoa": 0,
 			"duracao": 8,
-			"preview": "Historic trails steps from Lençóis’ centre and the fun natural slide at Ribeirão do Meio.",
-			"descricao": "Morning walk in Muritiba Park: Serrano pools, coloured sand halls, stops at Cachoeirinha and Primavera waterfalls, and a lookout over Lençóis. After lunch, we head on foot to Ribeirão do Meio, a smooth rock slab that ends in a delicious natural pool — the locals’ classic slide.",
+			"preview": "Historical trails steps away from downtown Lençóis and the fun natural slide at Ribeirão do Meio.",
+			"descricao": "In the morning, we walk through Muritiba Park: Serrano pools, colored‑sand formations, stops at Cachoeirinha and Primavera, and a viewpoint over Lençóis. After lunch, we head on foot to Ribeirão do Meio, a smooth rock slab ending in a delicious natural pool—perfect to laugh and slide as locals do.",
 			"imagens": [
 				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
 				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-2.png",
@@ -75,8 +75,8 @@
 			"nivel": "leve",
 			"valor_por_pessoa": 0,
 			"duracao": 10,
-			"preview": "From the hypnotic light beam at Enchanted to floating in the crystal waters of Blue — a day to fall for Chapada’s underground.",
-			"descricao": "Departure at 8:30 to contemplate the Enchanted Pool, a turquoise lake lit by sun rays crossing the cave and creating a unique light show. Then visit the Blue Pool for a floating session in transparent water, watching tones shift with the sun. Regional lunch and return to Lençóis.",
+			"preview": "From the hypnotic light beam of the Enchanted to floating in the crystal‑clear Blue—fall in love with Chapada’s underground.",
+			"descricao": "Departure at 8:30 to admire the Enchanted Pool, a turquoise lake lit by sunbeams that cross the cave. Then we visit Blue Pool, where you can float in transparent waters and watch tones shift with sunlight. Regional lunch and return to Lençóis.",
 			"imagens": [
 				"img/roteiros/poco-encantado-poco-azul/imagem-1.png",
 				"img/roteiros/poco-encantado-poco-azul/imagem-2.png",
@@ -91,8 +91,8 @@
 			"nivel": "leve",
 			"valor_por_pessoa": 0,
 			"duracao": 12,
-			"preview": "Canoes through Chapada’s ‘mini Pantanal’, lunch at a historic farm and swims at Roncador’s cascades.",
-			"descricao": "Departure at 8:30 to Remanso. We board canoes paddled by residents of the quilombola community and cross the Marimbus for about 2 h, enjoying flooded vegetation and riverside life. Lunch at Fazenda Santo Antônio, a 19th‑century manor. Short walk to Roncador waterfalls for natural pools. Finish with a pleasant 4‑km forest trail to the pick‑up point and return to Lençóis.",
+			"preview": "Canoes through Chapada’s “pantanal”, lunch in a historic farm and swims at Roncador’s cascades.",
+			"descricao": "Departure at 8:30 to Remanso. We board canoes rowed by members of the local quilombola community and cross the Marimbus for about 2 hours, enjoying flooded vegetation and riverside life. Lunch at Fazenda Santo Antônio, a 19th‑century manor. Short walk to Roncador waterfalls to swim in natural pools. We finish with a pleasant 4 km trail to the car meeting point and return to Lençóis.",
 			"imagens": [
 				"img/roteiros/marimbus-roncador/imagem-1.png",
 				"img/roteiros/marimbus-roncador/imagem-2.png",
@@ -100,7 +100,8 @@
 				"img/roteiros/marimbus-roncador/imagem-4.png"
 			],
 			"destaque": true,
-			"descricao-destaque": "A full day of adventure in the Chapada! We leave Lençóis at 8:30 towards Remanso and then paddle the Marimbus, Chapada’s “mini Pantanal”, surrounded by thriving nature and wetlands. At Fazenda Santo Antônio, a 19th‑century farmhouse, we enjoy a home‑cooked lunch before heading to Roncador Waterfalls, where natural pools and pinkish slabs guarantee an afternoon of fun. We end with a 4‑km forest trail back to the car."
+			"descricao-destaque": "A full day of adventure in Chapada! We leave Lençóis at 8:30 to Remanso, then canoe across the Marimbus—the “mini Pantanal of Chapada”—surrounded by living nature and unique flooded landscapes. At Fazenda Santo Antônio, a 19th‑century manor, we enjoy a homemade lunch before heading to Roncador Falls for natural pools and rosy rock slabs. We end with a 4 km forest trail back.",
+			"pagina-principal": true
 		},
 		{
 			"id": 7,
@@ -108,8 +109,8 @@
 			"nivel": "intenso",
 			"valor_por_pessoa": 0,
 			"duracao": 15,
-			"preview": "A demanding trail to one of Lençóis’ most beautiful falls and, on the way back, the reward of the natural slide.",
-			"descricao": "We leave Lençóis on foot at 8:30 along the Ribeirão river. The trail mixes flat shaded parts, uneven climbs and riverbed progression hopping rocks until Sossego Waterfall. After the views and a swim, return with a stop at Ribeirão do Meio for a well‑deserved slide and plunge before reaching town.",
+			"preview": "A demanding trail to one of Lençóis’ most beautiful waterfalls and, on the way back, the reward of the natural slide.",
+			"descricao": "We leave Lençóis on foot at 8:30 following the Ribeirão river. The trail mixes flat shaded sections, ascents on uneven terrain and progress over riverbed rocks to reach Sossego Waterfall. After the view and swim, we return with a stop at Ribeirão do Meio for a well‑deserved dip before heading back to town.",
 			"imagens": [
 				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-1.png",
 				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-2.png",
@@ -123,8 +124,8 @@
 			"nivel": "leve",
 			"valor_por_pessoa": 0,
 			"duracao": 18,
-			"preview": "Millenary open‑air rock art and a bath at the waterfall named after “mosquito diamonds”.",
-			"descricao": "Departure at 8:30 to the Serra das Paridas Archaeological Complex for a contemplative circuit among 8–10‑thousand‑year‑old rock‑art panels. Drive to Fazenda Mosquito and a 20‑minute walk to see the waterfall from the top and the base. Typical lunch at the farm and return to Lençóis in the late afternoon.",
+			"preview": "Millenary open‑air rock art and a dip in the waterfall named after the “mosquito diamonds”.",
+			"descricao": "Departure at 8:30 to the Serra das Paridas Archaeological Complex for a contemplative circuit among rock‑art panels 8–10 thousand years old. We continue by car to Fazenda Mosquito and walk about 20 minutes to see the falls from the top and the base. Typical lunch at the farm house and return to Lençóis late afternoon.",
 			"imagens": [
 				"img/roteiros/serra-das-paridas-mosquito/imagem-1.png",
 				"img/roteiros/serra-das-paridas-mosquito/imagem-2.png",
@@ -138,8 +139,8 @@
 			"nivel": "moderado",
 			"valor_por_pessoa": 0,
 			"duracao": 6,
-			"preview": "Across the grasslands to a natural pool at Morrão’s base — wide landscapes and river time all day long.",
-			"descricao": "Departure at 8:00, 30 km to the trailhead and 4–5 h of total hiking inside the National Park. We cross the open plains with constant views of Morrão and reach Águas Claras, a natural pool formed by the Mucugezinho river. Free time to swim, picnic and enjoy before heading back.",
+			"preview": "A walk across the highlands to a natural pool at Morrão’s base—wide views and river baths all day long.",
+			"descricao": "Departure at 8:00, 30 km to the trailhead and 4–5 h total hike inside the National Park. We cross the campos gerais with constant views of Morrão and reach Águas Claras, a natural pool formed by the Mucugezinho river. Free time to swim, snack and contemplate before returning.",
 			"imagens": [
 				"img/roteiros/aguas-claras/imagem-1.png",
 				"img/roteiros/aguas-claras/imagem-2.png",
@@ -153,8 +154,8 @@
 			"nivel": "leve",
 			"valor_por_pessoa": 0,
 			"duracao": 4,
-			"preview": "Ibicoara’s classic adventure: a narrow canyon, mandatory life‑vest swim and a 90‑m fall at the end.",
-			"descricao": "Departure at 6:00 towards Ibicoara on a longer drive. Approx. 3 km hike to the lookouts and then access inside the canyon — usually swimming with mandatory vests (provided) or walking along the wall with support. Cinematic scenery and an unforgettable bath before returning to Lençóis.",
+			"preview": "Ibicoara’s classic adventure: a narrow canyon, mandatory life‑vest swim and a 90 m drop waiting at the end.",
+			"descricao": "Departure at 6:00 towards Ibicoara on a longer drive. Approx. 3 km walk to viewpoints and then access inside the canyon—usually swimming with provided life vests or walking along the wall with support. Cinematic scenery and an unforgettable dip before returning to Lençóis.",
 			"imagens": [
 				"img/roteiros/cachoeira-do-buracao/imagem-1.png",
 				"img/roteiros/cachoeira-do-buracao/imagem-2.png",
@@ -167,7 +168,7 @@
 		{
 			"nome": "Matheus Machado",
 			"data": "2025-09-20",
-			"mensagem": "Wow, it was incredible! Chapada Diamantina exceeded all expectations. Perfect service — I’ve already recommended it to several friends and can’t wait to return!"
+			"mensagem": "Amazing! Chapada Diamantina exceeded all expectations. Perfect service, I’ve already recommended it to friends and can’t wait to come back!"
 		},
 		{
 			"nome": "Larissa Nogueira",
@@ -182,49 +183,49 @@
 		{
 			"nome": "Ana Paula",
 			"data": "2025-06-18",
-			"mensagem": "Private, tailor‑made itinerary — we enjoyed everything at our own pace. Highly recommended!"
+			"mensagem": "Private itinerary tailor‑made for us, we enjoyed everything at our own pace. Highly recommend!"
 		},
 		{
 			"nome": "João Victor",
 			"data": "2025-05-10",
-			"mensagem": "Very attentive and prepared team. Already planning the next trek!"
+			"mensagem": "Very attentive and well‑prepared team. Already planning the next crossing!"
 		},
 		{
 			"nome": "Bruna Ferreira",
 			"data": "2025-04-22",
-			"mensagem": "Authentic experience with lots of nature and stories. Worth every minute."
+			"mensagem": "Authentic experience with lots of nature and history. Worth every minute."
 		},
 		{
 			"nome": "Roberto",
 			"data": "2025-04-22",
-			"mensagem": "Authentic experience with lots of nature and stories. Worth every minute."
+			"mensagem": "Authentic experience with lots of nature and history. Worth every minute."
 		}
 	],
 	"perguntas": [
 		{
 			"id": 1,
-			"pergunta": "Do I need to be in great shape? Who can join?",
-			"resposta": "You don’t have to be an athlete. We just ask that you’re physically active, do some regular exercise and enjoy nature and hiking. On some days we may walk up to 18 km, always at your pace and with guide support."
+			"pergunta": "Do I need to be in top shape for this tour? Who can join?",
+			"resposta": "You don’t have to be an athlete. We only ask that you’re physically active, do some activity regularly and enjoy nature and hiking. Some days we may walk up to 18 km, always at your pace with the guide’s support."
 		},
 		{
 			"id": 2,
 			"pergunta": "What’s included in the tour price?",
-			"resposta": "Licensed guides, transport during the tour, entrance fees, safety gear when required and adventure insurance. Meals according to each itinerary."
+			"resposta": "Licensed guides, transportation during the tour, entrance fees, safety equipment when required and adventure insurance. Meals according to each itinerary."
 		},
 		{
 			"id": 3,
-			"pergunta": "Can I do a private tour?",
-			"resposta": "Yes. We offer private experiences with flexible times and pace adjustments. Just let us know and we’ll tailor it for you."
+			"pergunta": "Can I book a private tour?",
+			"resposta": "Yes. We offer private experiences with flexible schedules and pace adjustments. Just let us know and we’ll tailor everything."
 		},
 		{
 			"id": 4,
-			"pergunta": "How do cancellation and refunds work?",
-			"resposta": "In case of cancellation, the 30% deposit is non‑refundable. The remaining balance follows our policy informed at the time of booking."
+			"pergunta": "How do cancellations and refunds work?",
+			"resposta": "If you cancel, the 30% reservation fee is non‑refundable. The remaining amount follows our policy informed at booking."
 		},
 		{
 			"id": 5,
 			"pergunta": "What essential items should I bring?",
-			"resposta": "Proper trainers or boots, water bottle, sunscreen, hat/cap and a light windbreaker. The full list is sent after booking."
+			"resposta": "Hiking shoes, a water bottle, sunscreen, hat/cap and a light windbreaker. The complete list is sent after booking."
 		}
 	]
 }

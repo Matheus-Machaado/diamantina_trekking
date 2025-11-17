@@ -83,6 +83,25 @@
 		"cta": "Quero viver essa aventura",
 		"teaserTail": "Tá esperando o quê pra embarcar nessa?"
 	},
+	"included": {
+		"title": "O que está incluso",
+		"pickup": {
+			"title": "Saída Direto da Sua Hospedagem",
+			"text": "Vamos te buscar onde estiver hospedado(a) em Lençóis."
+		},
+		"meal": {
+			"title": "Refeição no Roteiro",
+			"text": "Inclui almoço ou lance, de acordo com a programação."
+		},
+		"tickets": {
+			"title": "Taxas de Entrada Inclusas",
+			"text": "Ingressos e autorizações quando aplicável."
+		},
+		"guide": {
+			"title": "Guia Local Experiente",
+			"text": "Condutor credenciado, segurança e interpretação ambiental."
+		}
+	},
 	"ppc": {
 		"title": "Políticas de pagamento<br>e cancelamento:",
 		"items": {
@@ -118,7 +137,13 @@
 		"seeLess": "Ver menos",
 		"people": {
 			"title": "QUANTIDADE DE PESSOAS",
-			"select": "Selecione"
+			"select": "Selecione",
+			"personOne": "pessoa",
+			"personOther": "pessoas",
+			"ageRange": "(De 05 a 90 anos)",
+			"ariaQty": "Quantidade",
+			"inc": "Aumentar",
+			"dec": "Diminuir"
 		},
 		"cta": {
 			"disabled": "Selecione data e quantidade de pessoas",
@@ -139,6 +164,8 @@
 	},
 	"drp": {
 		"title": "Início e término",
+		"tabStart": "Início",
+		"tabEnd": "Término",
 		"clear": "Limpar",
 		"apply": "Concluído",
 		"prev": "Mês anterior",

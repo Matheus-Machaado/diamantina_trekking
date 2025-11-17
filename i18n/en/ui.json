@@ -1,0 +1,162 @@
+{
+	"lang": {
+		"self": "English (GB)",
+		"currentAlt": "Current language: {name}"
+	},
+	"header": {
+		"contact": "Contact",
+		"langMenu": "Select language"
+	},
+	"nav": {
+		"home": "Home",
+		"about": "About",
+		"tours": "Tours",
+		"reviews": "Reviews",
+		"faq": "FAQ"
+	},
+	"home": {
+		"h1": {
+			"main": "Discover Chapada Diamantina",
+			"sub": "with safety and excitement"
+		},
+		"lead": "Guided hikes, multi‑day treks and authentic experiences across the valleys of Chapada",
+		"cta": {
+			"primary": "Explore our tours",
+			"secondary": "Talk to us"
+		}
+	},
+	"styles": {
+		"title": "YOUR ADVENTURE, YOUR STYLE",
+		"sub": "From easy walks to expeditions: choose your pace and Diamantina Trekking handles the rest",
+		"cards": {
+			"family": {
+				"title": "FOR FAMILIES",
+				"text": "Easy, safe outings for all ages. Short trails, accessible waterfalls and guaranteed fun.",
+				"cta": "See Tours"
+			},
+			"adventure": {
+				"title": "PURE ADVENTURE",
+				"text": "Challenging trails, epic viewpoints and abseiling. Local team and safety first.",
+				"cta": "See Tours"
+			},
+			"private": {
+				"title": "PRIVATE EXPERIENCE",
+				"text": "Tailor‑made itinerary, dedicated guide and flexible times to enjoy Chapada at your own pace.",
+				"cta": "See Tours"
+			}
+		}
+	},
+	"tours": {
+		"title": "TOURS IN CHAPADA",
+		"sub": "Trails, waterfalls and viewpoints: experience Chapada end to end",
+		"ctaAll": "See All Tours"
+	},
+	"cards": {
+		"about": "About this tour",
+		"from": "From",
+		"details": "View Details",
+		"toggleAria": "Toggle description"
+	},
+	"guide": {
+		"title": "WHO WILL GUIDE ME IN CHAPADA?",
+		"p1": "You’ll be guided by Rodrigo, a local who grew up exploring the trails of Chapada Diamantina.",
+		"p2": "He blends deep route knowledge with passion for the region, turning your hike into true immersion in Chapada’s culture, nature and spirit.",
+		"stats": {
+			"trilhas": "guided hikes",
+			"anos": "years guiding",
+			"linguas": "languages (Portuguese and English)"
+		}
+	},
+	"reviews": {
+		"title": "UNFORGETTABLE MEMORIES",
+		"sub": "Landscapes that impress, experiences that last."
+	},
+	"share": {
+		"copy": "Share this journey with someone special!",
+		"whatsappAria": "Share on WhatsApp",
+		"linkAria": "Copy link",
+		"copied": "Link copied",
+		"copyFail": "Couldn’t copy",
+		"whatsMsg": "Let’s create great memories? *{title}* looks perfect for us.\n{link}"
+	},
+	"rd": {
+		"cta": "I want this adventure",
+		"teaserTail": "What are you waiting for to jump in?"
+	},
+	"ppc": {
+		"title": "Payment<br>and cancellation policies:",
+		"items": {
+			"0": "30% upfront via PIX/bank transfer and the remaining on day 1 of the tour;",
+			"1": "PIX installments: one payment per month until the trip date;",
+			"2": "Credit or debit card in a single payment with no interest;",
+			"3": "Credit card installments with interest (check conditions);",
+			"4": "In case of cancellation, the 30% deposit is non‑refundable."
+		}
+	},
+	"faq": {
+		"title": "FREQUENTLY ASKED QUESTIONS",
+		"sub": "Answering all your questions"
+	},
+	"footer": {
+		"links": {
+			"home": "Home",
+			"about": "About",
+			"tours": "Tours",
+			"reviews": "Reviews"
+		},
+		"copy": "© Diamantina Trekking 2025 – All rights reserved.",
+		"author": "Developed by Matheus Machado"
+	},
+	"whatsapp": {
+		"button": "Online Support"
+	},
+	"rp": {
+		"priceFrom": "From",
+		"startEnd": "Start and end",
+		"descBtn": "Read Description",
+		"seeMore": "See more",
+		"seeLess": "See less",
+		"people": {
+			"title": "NUMBER OF PEOPLE",
+			"select": "Select"
+		},
+		"cta": {
+			"disabled": "Select dates and number of people",
+			"ready": "Book now"
+		},
+		"subtotalLabel": "Subtotal:",
+		"aboutTitle": "About the activity",
+		"moreTitle": "More adventures to explore",
+		"date": {
+			"placeholderStart": "dd/mm/yyyy",
+			"placeholderEnd": "dd/mm/yyyy",
+			"startAria": "Start date",
+			"endAria": "End date"
+		}
+	},
+	"gallery": {
+		"thumb": "Thumbnail {n}"
+	},
+	"drp": {
+		"title": "Start and end",
+		"clear": "Clear",
+		"apply": "Done",
+		"prev": "Previous month",
+		"next": "Next month"
+	},
+	"carousel": {
+		"prev": "Previous",
+		"next": "Next"
+	},
+	"intensity": {
+		"leve": "Easy",
+		"moderado": "Moderate",
+		"intenso": "Intense"
+	},
+	"time": {
+		"hour_one": "hour",
+		"hour_other": "hours",
+		"day_one": "Day",
+		"day_other": "Days"
+	}
+}

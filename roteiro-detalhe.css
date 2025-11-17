@@ -33,7 +33,7 @@
 .rp-lead{
 	font-size: 18px;
 	line-height: 26px;
-	color: #2f463b;
+	color: var(--descricao-verde);
 	margin-bottom: 20px;
 	text-align: justify;
 }
@@ -56,6 +56,9 @@
 
 .rp-days{
 	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .rp-days i{
@@ -459,6 +462,15 @@
 	opacity: .7;
 	cursor: not-allowed;
 }
+.rp-cta.rp-cta-ready{
+	background: var(--brand);
+	border-color: var(--brand);
+	color: #fff;
+}
+.rp-cta.rp-cta-ready:hover{
+	background: var(--hover-btn);
+	border-color: var(--hover-btn);
+}
 
 .rp-subtotal{
 	font-size: 18px;
@@ -469,6 +481,7 @@
 
 .rp-subtotal:hover{
 	background-color: white;
+	color: var(--text-green);
 }
 
 .rp-incluso{
@@ -517,7 +530,7 @@
 	display: block;
 	font-size: 20px;
 	line-height: 1.25;
-	color: #1f2f29;
+	color: var(--descricao-verde);
 }
 
 .rp-inc-list span{
@@ -542,7 +555,7 @@
 .rp-preview{
 	font-size: 18px;
 	line-height: 26px;
-	color: #2f463b;
+	color: var(--line-strong);
 	text-align: justify;
 	margin-bottom: 2px;
 }
@@ -578,7 +591,6 @@
 	overflow: hidden;
 	opacity: 0;
 	transition: grid-template-rows .28s cubic-bezier(.2,.7,.2,1), opacity .28s ease;
-	margin-top: 6px;
 }
 
 .rp-desc.is-open{
@@ -595,6 +607,10 @@
 	overflow: hidden;
 	border-radius: 12px;
 	padding: 10px;
+	padding-top: 0;
+	font-size: 18px;
+	line-height: 1.4;
+	color: var(--descricao-verde);
 }
 
 .rp-desc-inner ul{
@@ -606,10 +622,6 @@
 	list-style: disc;
 	margin: 10px 0;
 	line-height: 2;
-}
-
-.rp-desc-inner li::marker{
-	color: var(--brand);
 }
 
 .rp-desc-inner section + section{
@@ -683,7 +695,6 @@
 	margin-right: calc(-1 * var(--rg-peek));
 	padding-right: var(--rg-peek);
 	-webkit-overflow-scrolling: touch;
-	cursor: grab;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }

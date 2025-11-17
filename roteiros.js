@@ -68,15 +68,16 @@
 
 	function showPage(p){
 		page = clamp(p, 1, totalPages());
-		cardsAll.forEach(el=>{
-			el.hidden = true;
-		});
+		cardsAll.forEach(el=>{ el.hidden = true; });
 		const start = (page - 1) * PER_PAGE;
 		const end = start + PER_PAGE;
-		active.slice(start, end).forEach(el=>{
-			el.hidden = false;
-		});
+		active.slice(start, end).forEach(el=>{ el.hidden = false; });
 		buildPager();
+
+		if(window.equalizeRoteiroCardGaps){
+			window.equalizeRoteiroCardGaps(grid);
+		}
+
 		const u = new URL(location.href);
 		u.searchParams.set('p', String(page));
 		history.replaceState(null, '', u);

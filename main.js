@@ -686,7 +686,7 @@ const langMenu = (() => {
 
 (function(){
 	const floatAnchor = document.querySelector('.zap-float');
-	const DEFAULT_ZAP = 'https://wa.me/557598440434?text=' + encodeURIComponent('Olá Diamantina Trekking! Quero um atendimento online.');
+	const DEFAULT_ZAP = 'https://wa.me/5511910254958?text=' + encodeURIComponent('Olá Diamantina Trekking! Quero um atendimento online.');
 	const ZAP_URL = (floatAnchor && floatAnchor.getAttribute('href')) || DEFAULT_ZAP;
 
 	if(floatAnchor){
@@ -745,8 +745,12 @@ const langMenu = (() => {
 		return document.title.replace(/\s*\|.*$/,'').trim();
 	}
 	function pickLink(scope){
-		const a = scope.querySelector('.rd-cta, .roteiro-btn, a[href*="roteiro-detalhe"]');
-		return abs(a ? a.getAttribute('href') : location.href);
+		if(scope.closest?.('.rp') || scope.matches?.('.rp')){
+			return abs(location.href);
+		}
+		const cta = scope.querySelector?.('.rd-cta');
+		if(cta) return abs(cta.getAttribute('href') || cta.href);
+		return abs(location.href);
 	}
 	function waText(title, link){
 		return `Bora criar uma lembrança massa? *${title}* parece perfeito pra gente.\n${link}`;
@@ -777,9 +781,7 @@ const langMenu = (() => {
 		toast.textContent = text;
 		requestAnimationFrame(()=>toast.classList.add('is-visible'));
 		clearTimeout(toast._timer);
-		toast._timer = setTimeout(()=>{
-			toast.classList.remove('is-visible');
-		}, 8000);
+		toast._timer = setTimeout(()=>{ toast.classList.remove('is-visible'); }, 8000);
 	}
 	async function copyToClipboard(text){
 		try{
@@ -803,16 +805,19 @@ const langMenu = (() => {
 	function setupSharebar(bar){
 		if(!bar || bar._shareReady) return;
 		bar._shareReady = true;
+
 		const scope = bar.closest('#roteiro-destaque, .rp, body') || document;
-		const title = bar.dataset.shareTitle || pickTitle(scope);
-		const link = bar.dataset.shareUrl || pickLink(scope);
 		const btns = bar.querySelectorAll('.rd-share-btn');
 		const whats = btns[0];
 		const copy = btns[1];
+
+		const getTitle = ()=> bar.dataset.shareTitle || pickTitle(scope);
+		const getLink  = ()=> bar.dataset.shareUrl  || pickLink(scope);
+
 		if(whats){
 			whats.addEventListener('click', (e)=>{
 				e.preventDefault();
-				const msg = waText(title, link);
+				const msg = waText(getTitle(), getLink());
 				const url = 'https://wa.me/?text=' + encodeURIComponent(msg);
 				window.open(url, '_blank', 'noopener');
 			});
@@ -820,11 +825,13 @@ const langMenu = (() => {
 		if(copy){
 			copy.addEventListener('click', (e)=>{
 				e.preventDefault();
-				copyToClipboard(link);
+				copyToClipboard(getLink());
 			});
 		}
 	}
+
 	document.querySelectorAll('.rd-sharebar').forEach(setupSharebar);
+
 	const rd = document.getElementById('roteiro-destaque');
 	if(rd){
 		const mo = new MutationObserver(()=>rd.querySelectorAll('.rd-sharebar').forEach(setupSharebar));

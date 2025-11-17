@@ -1,0 +1,162 @@
+{
+	"lang": {
+		"self": "Français (FR)",
+		"currentAlt": "Langue actuelle : {name}"
+	},
+	"header": {
+		"contact": "Contact",
+		"langMenu": "Choisir la langue"
+	},
+	"nav": {
+		"home": "Accueil",
+		"about": "À propos",
+		"tours": "Circuits",
+		"reviews": "Avis",
+		"faq": "FAQ"
+	},
+	"home": {
+		"h1": {
+			"main": "Découvrez la Chapada Diamantina",
+			"sub": "avec sécurité et émotion"
+		},
+		"lead": "Randonnées guidées, traversées et expériences authentiques au cœur des vallées de la Chapada",
+		"cta": {
+			"primary": "Découvrir les circuits",
+			"secondary": "Parlez‑nous"
+		}
+	},
+	"styles": {
+		"title": "VOTRE AVENTURE, VOTRE STYLE",
+		"sub": "De la balade facile à l’expédition : choisissez votre rythme, Diamantina Trekking s’occupe du reste",
+		"cards": {
+			"family": {
+				"title": "EN FAMILLE",
+				"text": "Sorties faciles et sûres pour tous les âges. Petits sentiers, cascades accessibles et plaisir garanti.",
+				"cta": "Voir les circuits"
+			},
+			"adventure": {
+				"title": "AVENTURE PURE",
+				"text": "Sentiers exigeants, points de vue épiques et rappel. Équipe locale et sécurité d’abord.",
+				"cta": "Voir les circuits"
+			},
+			"private": {
+				"title": "EXPÉRIENCE PRIVATIVE",
+				"text": "Itinéraire sur mesure, guide dédié et horaires flexibles pour profiter de la Chapada à votre rythme.",
+				"cta": "Voir les circuits"
+			}
+		}
+	},
+	"tours": {
+		"title": "CIRCUITS À LA CHAPADA",
+		"sub": "Sentiers, cascades et belvédères : vivez la Chapada de bout en bout",
+		"ctaAll": "Voir tous les circuits"
+	},
+	"cards": {
+		"about": "À propos du circuit",
+		"from": "À partir de",
+		"details": "Voir les détails",
+		"toggleAria": "Afficher la description"
+	},
+	"guide": {
+		"title": "QUI VA ME GUIDER À LA CHAPADA ?",
+		"p1": "Vous serez accompagné par Rodrigo, guide natif qui a grandi sur les sentiers de la Chapada Diamantina.",
+		"p2": "Il allie connaissance approfondie des parcours et passion pour la région, faisant de votre marche une immersion dans la culture, la nature et l’essence de la Chapada.",
+		"stats": {
+			"trilhas": "randonnées guidées",
+			"anos": "années de guidage",
+			"linguas": "langues (portugais et anglais)"
+		}
+	},
+	"reviews": {
+		"title": "SOUVENIRS INOUBLIABLES",
+		"sub": "Des paysages marquants, des expériences qui restent."
+	},
+	"share": {
+		"copy": "Partagez cette aventure avec quelqu’un de spécial !",
+		"whatsappAria": "Partager sur WhatsApp",
+		"linkAria": "Copier le lien",
+		"copied": "Lien copié",
+		"copyFail": "Impossible de copier",
+		"whatsMsg": "On se fait un souvenir mémorable ? *{title}* semble parfait pour nous.\n{link}"
+	},
+	"rd": {
+		"cta": "Je veux cette aventure",
+		"teaserTail": "Qu’attendez‑vous pour vous lancer ?"
+	},
+	"ppc": {
+		"title": "Politiques de paiement<br>et d’annulation :",
+		"items": {
+			"0": "30 % du total par PIX/virement et le reste le 1er jour du circuit ;",
+			"1": "Paiement échelonné par PIX : une mensualité jusqu’à la date du voyage ;",
+			"2": "Carte de crédit ou de débit en une seule fois, sans intérêts ;",
+			"3": "Paiement en plusieurs fois par carte avec intérêts (consulter) ;",
+			"4": "En cas d’annulation, l’acompte de 30 % n’est pas remboursable."
+		}
+	},
+	"faq": {
+		"title": "FOIRE AUX QUESTIONS",
+		"sub": "Nous répondons à toutes vos questions"
+	},
+	"footer": {
+		"links": {
+			"home": "Accueil",
+			"about": "À propos",
+			"tours": "Circuits",
+			"reviews": "Avis"
+		},
+		"copy": "© Diamantina Trekking 2025 – Tous droits réservés.",
+		"author": "Développé par Matheus Machado"
+	},
+	"whatsapp": {
+		"button": "Assistance en ligne"
+	},
+	"rp": {
+		"priceFrom": "À partir de",
+		"startEnd": "Début et fin",
+		"descBtn": "Lire la description",
+		"seeMore": "Voir plus",
+		"seeLess": "Voir moins",
+		"people": {
+			"title": "NOMBRE DE PERSONNES",
+			"select": "Sélectionner"
+		},
+		"cta": {
+			"disabled": "Choisissez les dates et le nombre de personnes",
+			"ready": "Réserver"
+		},
+		"subtotalLabel": "Sous‑total :",
+		"aboutTitle": "À propos de l’activité",
+		"moreTitle": "D’autres aventures à explorer",
+		"date": {
+			"placeholderStart": "jj/mm/aaaa",
+			"placeholderEnd": "jj/mm/aaaa",
+			"startAria": "Date de début",
+			"endAria": "Date de fin"
+		}
+	},
+	"gallery": {
+		"thumb": "Vignette {n}"
+	},
+	"drp": {
+		"title": "Début et fin",
+		"clear": "Effacer",
+		"apply": "Terminé",
+		"prev": "Mois précédent",
+		"next": "Mois suivant"
+	},
+	"carousel": {
+		"prev": "Précédent",
+		"next": "Suivant"
+	},
+	"intensity": {
+		"leve": "Facile",
+		"moderado": "Modéré",
+		"intenso": "Intense"
+	},
+	"time": {
+		"hour_one": "heure",
+		"hour_other": "heures",
+		"day_one": "Jour",
+		"day_other": "Jours"
+	}
+}

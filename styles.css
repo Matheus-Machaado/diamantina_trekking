@@ -14,6 +14,7 @@
 	--hover-btn:#a7a7a7;
 	--line-light:#dfe7e2;
 	--line-strong: #626262;
+	--descricao-verde:#2f463b;
 	--cta:#E85C5E;
 	--cal:#F3E7D7;
 	--black-light:#2B2B2B;
@@ -664,13 +665,14 @@ section .container{
 	padding:20px 14px;
 	display:flex;
 	flex-direction:column;
-	gap:18px;
+	gap: 18px;
 }
 
 .roteiro-card-title{
 	font-size:22px;
 	font-weight:700;
 	text-align:left;
+	text-wrap: balance;
 }
 
 .roteiro-card-line{

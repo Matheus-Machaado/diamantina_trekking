@@ -424,11 +424,30 @@ async function boot(){
 	updateFlagUI()
 	await rehydrate()
 	if (typeof i18n?.apply === 'function') i18n.apply(document)
+
+	setZapPrefill() 
+
 	bindLangMenu()
 }
+
+document.addEventListener('i18n:change', () => {
+  	setZapPrefill()
+})
 
 if (document.readyState === 'loading') {
 	document.addEventListener('DOMContentLoaded', boot, { once: true });
 } else {
 	boot();
+}
+
+function setZapPrefill() {
+	const a = document.querySelector('.zap-float');
+	if (!a) return;
+	try {
+		const u = new URL(a.getAttribute('href'), location.href);
+		u.search = '';
+		const msg = i18n.t('wa.contact');
+		u.search = '?text=' + encodeURIComponent(msg);
+		a.setAttribute('href', u.href);
+	} catch (_) {}
 }

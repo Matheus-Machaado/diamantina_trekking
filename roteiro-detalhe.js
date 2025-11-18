@@ -317,11 +317,11 @@ import * as i18n from './js/i18n.js'
 		setQty(parseInt(pQty.value||'0',10))
 	})
 
-	document.getElementById('rpSubmit')?.addEventListener('click', ()=>{
-		if(cta.disabled) return
+	document.getElementById('rpSubmit')?.addEventListener('click', () => {
+		if (cta.disabled) return
 
 		const title = document.querySelector('.rp-title')?.textContent.trim() || 'Roteiro'
-		const durText = document.querySelector('.rp-days b')?.textContent.trim() || '1 ' + i18n.t('time.day_one')
+		const durText = document.querySelector('.rp-days b')?.textContent.trim() || ('1 ' + i18n.t('time.day_one'))
 		const qty = selectedQty()
 
 		const s = parseISO(document.getElementById('rpStart').value)
@@ -330,46 +330,54 @@ import * as i18n from './js/i18n.js'
 		const days = Math.max(1, parseInt(root.dataset.days || '1', 10))
 		const hours = Math.max(0, parseInt(root.dataset.hours || String(days * 24), 10))
 
-		const dataLabel = (hours < 24 || days === 1) ? 'Data' : 'Período'
-		let dataTexto = 'a combinar'
-		if(s && e){
-			if(hours < 24 || days === 1){
+		const isRange = !(hours < 24 || days === 1)
+		const lblDate = i18n.t(isRange ? 'wa.booking.labels.period' : 'wa.booking.labels.date')
+
+		let dataTexto = i18n.t('wa.booking.toArrange')
+		if (s && e) {
+			if (!isRange) {
 				dataTexto = fmtBRDate(s)
-			}else{
+			} else {
 				const nDias = Math.max(1, Math.round((e - s) / (24 * 60 * 60 * 1000)))
-				const dayWord = (nDias===1 ? i18n.t('time.day_one') : i18n.t('time.day_other')).toLowerCase()
+				const dayWord = (nDias === 1 ? i18n.t('time.day_one') : i18n.t('time.day_other')).toLowerCase()
 				dataTexto = `${fmtBRDate(s)} → ${fmtBRDate(e)} (${nDias} ${dayWord})`
 			}
 		}
 
-		const msg =
-`Olá, Diamantina Trekking!
-Quero agendar um roteiro pelo site.
+		const lblTour = i18n.t('wa.booking.labels.tour')
+		const lblDuration = i18n.t('wa.booking.labels.duration')
+		const lblPeople = i18n.t('wa.booking.labels.people')
 
-• Roteiro: ${title}
-• Duração: ${durText}
-• ${i18n.t('rp.people.title')}: ${qty}
-• ${dataLabel}: ${dataTexto}
+		const hello = i18n.t('wa.booking.hello')
+		const intro = i18n.t('wa.booking.intro')
+		const footer = i18n.t('wa.booking.footer')
 
-Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
+		const msg = [
+			`${hello}`,
+			`${intro}`,
+			'',
+			`• ${lblTour}: ${title}`,
+			`• ${lblDuration}: ${durText}`,
+			`• ${lblPeople}: ${qty}`,
+			`• ${lblDate}: ${dataTexto}`,
+			'',
+			footer
+		].join('\n')
 
-		const zapBase = (()=>{
+		const zapBase = (() => {
 			const a = document.querySelector('.zap-float')
-			if(a){
-				try{
+			if (a) {
+				try {
 					const u = new URL(a.getAttribute('href'), location.href)
 					u.search = ''
 					return u.origin + u.pathname
-				}catch(_){}
+				} catch (_) {}
 			}
 			return 'https://wa.me/5511910254958'
 		})()
 
 		const url = zapBase + '?text=' + encodeURIComponent(msg)
 		window.open(url, '_blank', 'noopener')
-
-		const inc = document.querySelector('.rp-incluso')
-		if(inc) inc.scrollIntoView({ behavior:'smooth', block:'start' })
 	})
 
 	seeMore?.addEventListener('click', ()=>{
@@ -494,8 +502,8 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 	const locale = i18n.locale()
 
 	const DAYS = parseInt(root.dataset.days || '1', 10)
-	const DUR_LABEL = document.querySelector('.rp-days b')?.textContent?.toLowerCase() || ''
-	const HOURLY = /\bhora/.test(DUR_LABEL)
+	const HOURS = parseInt(root.dataset.hours || String(DAYS * 24), 10)
+	const HOURLY = HOURS > 0 && HOURS < 24
 	const SPAN = HOURLY ? 0 : Math.max(1, DAYS)
 
 	const startBtn = document.getElementById('rpStartBtn')

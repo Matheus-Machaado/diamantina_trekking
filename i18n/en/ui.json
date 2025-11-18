@@ -201,6 +201,21 @@
 			"label": "Filter",
 			"all": "All"
 		}
+	},
+	"wa": {
+		"contact": "Hello, Diamantina Trekking! I’d like online assistance.",
+		"booking": {
+		"hello": "Hello, Diamantina Trekking!",
+		"intro": "I’d like to book a tour via the website.",
+		"labels": {
+			"tour": "Tour",
+			"duration": "Duration",
+			"people": "Number of people",
+			"date": "Date",
+			"period": "Period"
+		},
+		"toArrange": "to be arranged",
+		"footer": "Could you check availability and share the next steps? Thanks!"
+		}
 	}
-
 }

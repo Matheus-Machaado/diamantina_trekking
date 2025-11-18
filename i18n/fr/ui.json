@@ -201,5 +201,21 @@
 			"label": "Filtrer",
 			"all": "Tous"
 		}
+	},
+	"wa": {
+		"contact": "Bonjour, Diamantina Trekking ! Je souhaite une assistance en ligne.",
+		"booking": {
+		"hello": "Bonjour, Diamantina Trekking !",
+		"intro": "Je voudrais réserver une sortie via le site.",
+		"labels": {
+			"tour": "Circuit",
+			"duration": "Durée",
+			"people": "Nombre de personnes",
+			"date": "Date",
+			"period": "Période"
+		},
+		"toArrange": "à définir",
+		"footer": "Pouvez‑vous vérifier la disponibilité et m’indiquer la suite ? Merci !"
+		}
 	}
 }

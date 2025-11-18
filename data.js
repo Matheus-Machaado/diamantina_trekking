@@ -402,6 +402,7 @@ export async function hydrateDetail(){
 	const root = document.getElementById('rpGrid')
 	if(root){
 		root.dataset.days = String(r.dias||1)
+		root.dataset.hours = String(r.horas||0)
 		root.dataset.price = String(r.valor||0)
 		root.dataset.intensidade = r.nivel
 	}

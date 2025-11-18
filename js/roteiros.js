@@ -1,4 +1,4 @@
-import * as i18n from './js/i18n.js'
+import * as i18n from './i18n.js'
 
 ;(function(){
 	if('scrollRestoration' in history) history.scrollRestoration = 'manual'
@@ -75,7 +75,7 @@ import * as i18n from './js/i18n.js'
 			const text = levelLabel(level).toUpperCase()
 			const badge = document.createElement('span')
 			badge.className = 'intensity-badge intensity-'+(level||'leve')
-			badge.innerHTML = '<img src="img/icons/intensidade-icon.png" alt=""><span>'+text+'</span>'
+			badge.innerHTML = '<img src="../img/icons/intensidade-icon.png" alt=""><span>'+text+'</span>'
 			slot.insertBefore(badge, slot.firstChild)
 		})
 	}
@@ -189,6 +189,8 @@ import * as i18n from './js/i18n.js'
 	function init(){
 		applyStaticText()
 
+		cardsAll = [...grid.querySelectorAll('.roteiro-card')]
+
 		const url = new URL(location.href)
 		const ord = (url.searchParams.get('o')||'').toLowerCase()
 		applyOrdering(ord==='intenso' ? 'intenso' : '')
@@ -218,6 +220,11 @@ import * as i18n from './js/i18n.js'
 	})
 
 	init()
-
 	document.addEventListener('i18n:change', applyStaticText)
+
+	document.addEventListener('page:rehydrated', (ev)=>{
+		if (ev?.detail?.page === 'list') {
+			init()
+		}
+	})
 })()

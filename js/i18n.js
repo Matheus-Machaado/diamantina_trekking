@@ -21,7 +21,7 @@ function htmlLang(l){
 
 async function loadUI(lang){
 	try{
-		const res = await fetch(`./i18n/${lang}/ui.json`, { cache:'no-store' })
+		const res = await fetch(`../i18n/${lang}/ui.json`, { cache:'no-store' })
 		if(!res.ok) throw new Error()
 		return await res.json()
 	}catch(_){

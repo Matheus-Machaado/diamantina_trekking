@@ -1,6 +1,6 @@
 import * as i18n from './i18n.js';
 
-const root = new URL('..', import.meta.url);
+const root = new URL('.', import.meta.url);
 
 function resolveLang() {
 	const urlLang = new URL(location.href).searchParams.get('lang')
@@ -347,7 +347,7 @@ function applyStaticBindings(){
 }
 
 function updateFlagUI(){
-	const map = { pt:'img/flag-br.png', en:'img/flag-gb.png', fr:'img/flag-fr.png' };
+	const map = { pt:'../img/flag-br.png', en:'../img/flag-gb.png', fr:'../img/flag-fr.png' };
 	const lang = (localStorage.getItem('lang') || document.documentElement.lang || 'pt').toLowerCase();
 	const img = document.querySelector('#langTrigger img');
 	if(img){
@@ -357,6 +357,11 @@ function updateFlagUI(){
 	document.querySelectorAll('.lang-menu a[data-lang]').forEach(a=>{
 		a.classList.toggle('active', a.dataset.lang === lang);
 	});
+}
+function notifyRehydrated(page){
+	try {
+		document.dispatchEvent(new CustomEvent('page:rehydrated', { detail: { page } }));
+	} catch (_) {}
 }
 
 async function rehydrate(){
@@ -370,6 +375,7 @@ async function rehydrate(){
 		applyStaticBindings()
 		await rebindSharebars()
 		if (typeof i18n?.apply === 'function') i18n.apply(document)
+		notifyRehydrated('list')
 		return
 	}
 
@@ -381,6 +387,7 @@ async function rehydrate(){
 		applyStaticBindings()
 		await rebindSharebars()
 		if (typeof i18n?.apply === 'function') i18n.apply(document)
+		notifyRehydrated('detail')
 		return
 	}
 
@@ -390,6 +397,7 @@ async function rehydrate(){
 	applyStaticBindings()
 	await rebindSharebars()
 	if (typeof i18n?.apply === 'function') i18n.apply(document)
+	notifyRehydrated('home')
 }
 
 function bindLangMenu(){
@@ -441,13 +449,32 @@ if (document.readyState === 'loading') {
 }
 
 function setZapPrefill() {
-	const a = document.querySelector('.zap-float');
-	if (!a) return;
-	try {
-		const u = new URL(a.getAttribute('href'), location.href);
-		u.search = '';
-		const msg = i18n.t('wa.contact');
-		u.search = '?text=' + encodeURIComponent(msg);
-		a.setAttribute('href', u.href);
-	} catch (_) {}
+	const anchors = Array.from(document.querySelectorAll('a[data-zap="link"], a.zap-float'));
+	if (!anchors.length) return;
+
+	const base = (() => {
+		const ref = document.querySelector('.zap-float') || anchors[0];
+		try {
+			const u = new URL(ref.getAttribute('href') || 'https://wa.me/5511910254958', location.href);
+			u.search = '';
+			return u.origin + u.pathname;
+		} catch (_) {
+			return 'https://wa.me/5511910254958';
+		}
+	})();
+
+	const msg = (typeof i18n?.t === 'function') ? i18n.t('wa.contact') : 'Olá Diamantina Trekking! Quero um atendimento online.';
+	anchors.forEach(a => {
+		try {
+			const u = new URL(base, location.href);
+			u.search = '?text=' + encodeURIComponent(msg);
+			a.setAttribute('href', u.href);
+			a.setAttribute('target', '_blank');
+			a.setAttribute('rel', 'noopener');
+		} catch (_) {
+			a.setAttribute('href', base + '?text=' + encodeURIComponent(msg));
+			a.setAttribute('target', '_blank');
+			a.setAttribute('rel', 'noopener');
+		}
+	});
 }

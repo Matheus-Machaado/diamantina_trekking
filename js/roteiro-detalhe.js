@@ -1,4 +1,4 @@
-import * as i18n from './js/i18n.js'
+import * as i18n from './i18n.js'
 
 ;(function(){
 	const gal = document.getElementById('galeriaRoteiro')

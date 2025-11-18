@@ -1,4 +1,4 @@
-import * as i18n from './js/i18n.js'
+import * as i18n from './i18n.js'
 
 const DATA_URL = (typeof window !== 'undefined' && window.__DATA_URL__) || './data.json'
 
@@ -12,7 +12,7 @@ function plural(n, one, other){
 
 function dataURL(){
 	if (typeof window !== 'undefined' && window.__DATA_URL__) return window.__DATA_URL__
-	return `./i18n/${i18n.getLang()}/data.json`
+	return `../i18n/${i18n.getLang()}/data.json`
 }
 
 let __DATA_ALL__ = null
@@ -104,7 +104,7 @@ function hideById(id){
 }
 
 function cardHTML(r){
-	const capa = r.imagens[0] || 'img/roteiros/pai-inacio/imagem-1.png'
+	const capa = r.imagens[0] || '../img/roteiros/pai-inacio/imagem-1.png'
 	return `
 	<article class="roteiro-card" data-intensidade="${esc(r.nivel)}">
 		<div class="roteiro-card-img">
@@ -164,7 +164,7 @@ function ensureBadges(scope){
 		const text=(level==='intenso')?i18n.t('intensity.intenso'):(level==='moderado'?i18n.t('intensity.moderado'):i18n.t('intensity.leve'))
 		const badge=document.createElement('span')
 		badge.className='intensity-badge intensity-'+(level||'leve')
-		badge.innerHTML='<img src="img/icons/intensidade-icon.png" alt=""><span>'+esc(String(text||'').toUpperCase())+'</span>'
+		badge.innerHTML='<img src="../img/icons/intensidade-icon.png" alt=""><span>'+esc(String(text||'').toUpperCase())+'</span>'
 		slot.insertBefore(badge,slot.firstChild)
 	})
 }
@@ -333,7 +333,7 @@ export async function hydrateIndex(){
 				if(ctaEl) ctaEl.setAttribute('href','roteiro-detalhe.html?id='+destaque.id)
 				const track = rdSection.querySelector('.rd-track')
 				if(track){
-					const imgs = destaque.imagens.length ? destaque.imagens : ['img/roteiros/pai-inacio/imagem-1.png']
+					const imgs = destaque.imagens.length ? destaque.imagens : ['../img/roteiros/pai-inacio/imagem-1.png']
 					track.innerHTML = imgs.map(src=>`<li class="rd-slide"><img src="${esc(src)}" alt="${esc(destaque.titulo)}"></li>`).join('')
 				}
 			}else{
@@ -426,12 +426,12 @@ export async function hydrateDetail(){
 
 	const track = document.querySelector('.gal-track')
 	if(track){
-		const imgs = r.imagens.length ? r.imagens : ['img/roteiros/pai-inacio/imagem-1.png']
+		const imgs = r.imagens.length ? r.imagens : ['../img/roteiros/pai-inacio/imagem-1.png']
 		track.innerHTML = imgs.map(src=>`<div class="gal-slide"><img src="${esc(src)}" alt="${esc(r.titulo)}"></div>`).join('')
 	}
 	const thumbs = document.querySelector('.gal-thumbs')
 	if(thumbs){
-		const imgs = r.imagens.length ? r.imagens : ['img/roteiros/pai-inacio/imagem-1.png']
+		const imgs = r.imagens.length ? r.imagens : ['../img/roteiros/pai-inacio/imagem-1.png']
 		thumbs.innerHTML = imgs.map((src,i)=>`<button class="gal-thumb ${i===0?'is-active':''}" type="button"><img src="${esc(src)}" alt="${esc(i18n.t('gallery.thumb',{n:i+1}))}"></button>`).join('')
 	}
 

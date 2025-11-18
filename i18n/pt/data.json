@@ -14,10 +14,10 @@
 				"Banho no Poço do Diabo e retorno a Lençóis."
 			],
 			"imagens": [
-				"img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-1.png",
-				"img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-2.png",
-				"img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-3.png",
-				"img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-4.png"
+				"../img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-1.png",
+				"../img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-2.png",
+				"../img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-3.png",
+				"../img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-4.png"
 			],
 			"pagina-principal": true
 		},
@@ -30,10 +30,10 @@
 			"preview": "Cenários subterrâneos, águas cristalinas e um pôr do sol inesquecível no cartão‑postal da Chapada.",
 			"descricao": "Saída às 8h30 para a Gruta da Lapa Doce e sua travessia com salões e espeleotemas. Almoço local. Seguimos à Pratinha e à Gruta Azul para contemplar e, opcionalmente, fazer flutuação, tirolesa, canoa e outras experiências. No fim da tarde, subimos o Morro do Pai Inácio para ver o entardecer entre chapadões e vales: um clássico absoluto da Chapada Diamantina. Retorno a Lençóis ao final do dia.",
 			"imagens": [
-				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-1.png",
-				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-2.png",
-				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-3.png",
-				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-4.png"
+				"../img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-1.png",
+				"../img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-2.png",
+				"../img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-3.png",
+				"../img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-4.png"
 			],
 			"pagina-principal": true
 		},
@@ -46,10 +46,10 @@
 			"preview": "A 2ª maior queda do Brasil vista de cima e, depois, um banho revigorante nas piscinas do Riachinho.",
 			"descricao": "Saída às 8h para o Vale do Capão. Subida inicial de 1,8 km até os Gerais da Fumaça e caminhada plana até a borda do cânion: um mirante que faz a água se pulverizar ao vento e voltar como névoa. Lanche contemplando o visual e retorno pela mesma trilha. Fechamos o dia relaxando na Cachoeira do Riachinho, perfeita para recuperar as energias antes do retorno a Lençóis.",
 			"imagens": [
-				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
-				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
-				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
-				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png"
+				"../img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+				"../img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+				"../img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
+				"../img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png"
 			],
 			"pagina-principal": true
 		},
@@ -62,10 +62,10 @@
 			"preview": "Trilhas históricas a poucos passos do centro de Lençóis e a diversão no escorrega natural do Ribeirão do Meio.",
 			"descricao": "Pela manhã, caminhamos pelo Parque da Muritiba: caldeirões do Serrano, salões de areias coloridas, paradas na Cachoeirinha e na Primavera e mirante com vista de Lençóis. Após o almoço, seguimos a pé para o Ribeirão do Meio, um lajedo liso que termina em uma deliciosa piscina natural: lugar perfeito para rir e escorregar como os locais fazem há gerações.",
 			"imagens": [
-				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
-				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-2.png",
-				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-3.png",
-				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-4.png"
+				"../img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
+				"../img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-2.png",
+				"../img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-3.png",
+				"../img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-4.png"
 			],
 			"pagina-principal": true
 		},
@@ -78,10 +78,10 @@
 			"preview": "Do arco de luz hipnótico do Encantado à flutuação em águas cristalinas do Azul — um dia para se apaixonar pela Chapada subterrânea.",
 			"descricao": "Saída às 8h30 para contemplar o Poço Encantado, um lago azul‑turquesa iluminado pelos raios do sol que atravessam a caverna criando um espetáculo de luz. Em seguida, visitamos o Poço Azul, onde é possível flutuar em águas transparentes e observar as tonalidades que mudam com o sol. Almoço regional e retorno para Lençóis.",
 			"imagens": [
-				"img/roteiros/poco-encantado-poco-azul/imagem-1.png",
-				"img/roteiros/poco-encantado-poco-azul/imagem-2.png",
-				"img/roteiros/poco-encantado-poco-azul/imagem-3.png",
-				"img/roteiros/poco-encantado-poco-azul/imagem-4.png"
+				"../img/roteiros/poco-encantado-poco-azul/imagem-1.png",
+				"../img/roteiros/poco-encantado-poco-azul/imagem-2.png",
+				"../img/roteiros/poco-encantado-poco-azul/imagem-3.png",
+				"../img/roteiros/poco-encantado-poco-azul/imagem-4.png"
 			],
 			"pagina-principal": true
 		},
@@ -94,10 +94,10 @@
 			"preview": "Canoas pelos ‘pantanais’ da Chapada, almoço em fazenda histórica e banho nas quedas do Roncador.",
 			"descricao": "Saída às 8h30 para o Remanso. Embarcamos em canoas remadas por moradores da comunidade quilombola e atravessamos os Marimbus por cerca de 2 h, curtindo a vegetação alagada e a vida ribeirinha. Almoço na Fazenda Santo Antônio, casarão do século XIX. Caminhada curta até as cachoeiras do Roncador para banho nas piscinas naturais. Fechamos com uma trilha agradável de 4 km até o ponto de encontro com o carro e retorno a Lençóis.",
 			"imagens": [
-				"img/roteiros/marimbus-roncador/imagem-1.png",
-				"img/roteiros/marimbus-roncador/imagem-2.png",
-				"img/roteiros/marimbus-roncador/imagem-3.png",
-				"img/roteiros/marimbus-roncador/imagem-4.png"
+				"../img/roteiros/marimbus-roncador/imagem-1.png",
+				"../img/roteiros/marimbus-roncador/imagem-2.png",
+				"../img/roteiros/marimbus-roncador/imagem-3.png",
+				"../img/roteiros/marimbus-roncador/imagem-4.png"
 			],
 			"destaque": true,
 			"descricao-destaque": "Um dia inteiro de aventura na Chapada! Partimos de Lençóis às 8h30 rumo ao Remanso, e de lá navegamos em canoas pelos Marimbus, o “mini Pantanal da Chapada”, cercado por natureza viva e paisagens alagadas únicas. Na Fazenda Santo Antônio, um casarão do século XIX, saboreamos um almoço caseiro antes de seguir para as Cachoeiras do Roncador, onde piscinas naturais e lajedos rosados garantem uma tarde de banho e diversão. Encerramos com uma trilha de 4 km pela mata atlântica até o retorno.",
@@ -112,10 +112,10 @@
 			"preview": "Trilha desafiadora até uma das cachoeiras mais bonitas de Lençóis e, na volta, a recompensa do escorrega natural.",
 			"descricao": "Saímos a pé de Lençóis às 8h30 acompanhando o curso do rio Ribeirão. A trilha combina trechos planos e sombreados, subidas em terreno irregular e progressão por leito de rio saltando pedras até chegar à Cachoeira do Sossego. Depois do visual e banho, retornamos com parada no Ribeirão do Meio para um mergulho merecido antes de voltar à cidade.",
 			"imagens": [
-				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-1.png",
-				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-2.png",
-				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-3.png",
-				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-4.png"
+				"../img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-1.png",
+				"../img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-2.png",
+				"../img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-3.png",
+				"../img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-4.png"
 			]
 		},
 		{
@@ -127,10 +127,10 @@
 			"preview": "Pinturas rupestres milenares a céu aberto e banho na cachoeira que leva o nome dos ‘diamantes mosquito’.",
 			"descricao": "Saída às 8h30 até o Complexo Arqueológico Serra das Paridas para um circuito contemplativo entre painéis de arte rupestre com 8–10 mil anos. Seguimos de carro até a Fazenda Mosquito e caminhamos cerca de 20 minutos para ver a cachoeira por cima e por baixo. Almoço típico na sede da fazenda e retorno a Lençóis no fim da tarde.",
 			"imagens": [
-				"img/roteiros/serra-das-paridas-mosquito/imagem-1.png",
-				"img/roteiros/serra-das-paridas-mosquito/imagem-2.png",
-				"img/roteiros/serra-das-paridas-mosquito/imagem-3.png",
-				"img/roteiros/serra-das-paridas-mosquito/imagem-4.png"
+				"../img/roteiros/serra-das-paridas-mosquito/imagem-1.png",
+				"../img/roteiros/serra-das-paridas-mosquito/imagem-2.png",
+				"../img/roteiros/serra-das-paridas-mosquito/imagem-3.png",
+				"../img/roteiros/serra-das-paridas-mosquito/imagem-4.png"
 			]
 		},
 		{
@@ -142,10 +142,10 @@
 			"preview": "Caminhada pelos Gerais até uma piscina natural aos pés do Morrão — paisagens amplas e banhos de rio o dia inteiro.",
 			"descricao": "Saída às 8h, 30 km até o início da trilha e 4–5 h de caminhada total dentro do Parque Nacional. Andamos pelos campos gerais com vista constante do Morrão e chegamos às Águas Claras, uma piscina natural formada pelo rio Mucugezinho. Tempo livre para banho, lanche de trilha e contemplação antes do retorno.",
 			"imagens": [
-				"img/roteiros/aguas-claras/imagem-1.png",
-				"img/roteiros/aguas-claras/imagem-2.png",
-				"img/roteiros/aguas-claras/imagem-3.png",
-				"img/roteiros/aguas-claras/imagem-4.png"
+				"../img/roteiros/aguas-claras/imagem-1.png",
+				"../img/roteiros/aguas-claras/imagem-2.png",
+				"../img/roteiros/aguas-claras/imagem-3.png",
+				"../img/roteiros/aguas-claras/imagem-4.png"
 			]
 		},
 		{
@@ -157,10 +157,10 @@
 			"preview": "A clássica aventura de Ibicoara: cânion estreito, nado obrigatório com colete e uma queda de 90 m te esperando no fim.",
 			"descricao": "Saída às 6h rumo a Ibicoara em um deslocamento mais longo. Caminhada de aprox. 3 km até os mirantes e, depois, acesso por dentro do cânion — normalmente nadando com coletes obrigatórios (fornecidos) ou caminhando pelo paredão com apoio. Cenário cinematográfico e banho inesquecível antes do retorno a Lençóis.",
 			"imagens": [
-				"img/roteiros/cachoeira-do-buracao/imagem-1.png",
-				"img/roteiros/cachoeira-do-buracao/imagem-2.png",
-				"img/roteiros/cachoeira-do-buracao/imagem-3.png",
-				"img/roteiros/cachoeira-do-buracao/imagem-4.png"
+				"../img/roteiros/cachoeira-do-buracao/imagem-1.png",
+				"../img/roteiros/cachoeira-do-buracao/imagem-2.png",
+				"../img/roteiros/cachoeira-do-buracao/imagem-3.png",
+				"../img/roteiros/cachoeira-do-buracao/imagem-4.png"
 			]
 		}
 	],

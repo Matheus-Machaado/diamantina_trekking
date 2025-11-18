@@ -31,7 +31,7 @@ async function loadUI(lang){
 }
 
 export async function init(){
-	let saved = localStorage.getItem(STORE_KEY)
+	let saved = localStorage.getItem(STORE_KEY) || localStorage.getItem('lang')
 	if(!saved){
 		saved = norm(navigator.language || navigator.userLanguage || 'pt')
 	}
@@ -51,6 +51,7 @@ export async function setLang(lang){
 	localStorage.setItem(STORE_KEY, curLang)
 	dict = await loadUI(curLang)
 	document.documentElement.setAttribute('lang', htmlLang(curLang))
+	document.dispatchEvent(new CustomEvent('i18n:change', { detail:{ lang: curLang } }))
 }
 
 export function t(path, params){

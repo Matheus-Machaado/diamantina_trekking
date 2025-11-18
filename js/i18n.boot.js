@@ -3,14 +3,15 @@ import * as i18n from './i18n.js';
 const root = new URL('..', import.meta.url);
 
 function resolveLang() {
-	const urlLang = new URL(location.href).searchParams.get('lang');
-	const lsLang = localStorage.getItem('lang') || localStorage.getItem('dt_lang');
-	const htmlLang = document.documentElement.getAttribute('lang');
-	const lang = (urlLang || lsLang || htmlLang || 'pt').toLowerCase();
-	const norm = lang.startsWith('en') ? 'en' : (lang.startsWith('fr') ? 'fr' : 'pt');
-	document.documentElement.setAttribute('lang', norm);
-	localStorage.setItem('lang', norm);
-	return norm;
+	const urlLang = new URL(location.href).searchParams.get('lang')
+	const lsLang = localStorage.getItem('lang') || localStorage.getItem('dt.lang')
+	const htmlLang = document.documentElement.getAttribute('lang')
+	const lang = (urlLang || lsLang || htmlLang || 'pt').toLowerCase()
+	const norm = lang.startsWith('en') ? 'en' : (lang.startsWith('fr') ? 'fr' : 'pt')
+	document.documentElement.setAttribute('lang', norm)
+	localStorage.setItem('lang', norm)
+	localStorage.setItem('dt.lang', norm)
+	return norm
 }
 
 function detectPage() {
@@ -26,11 +27,12 @@ async function importRoot(path) {
 }
 
 async function applyI18n(lang) {
-	if (typeof i18n?.init === 'function') {
-		await i18n.init(lang);
-	} else if (typeof i18n?.setLang === 'function') {
-		await i18n.setLang(lang);
+	if (typeof i18n?.setLang === 'function') {
+		await i18n.setLang(lang)
+	} else if (typeof i18n?.init === 'function') {
+		await i18n.init()
 	}
+	if (typeof i18n?.apply === 'function') i18n.apply(document)
 }
 
 async function rebindSharebars() {
@@ -358,65 +360,71 @@ function updateFlagUI(){
 }
 
 async function rehydrate(){
-	const page = detectPage();
+	const page = detectPage()
 
 	if (page === 'list') {
-		const { hydrateList } = await importRoot('data.js');
-		await hydrateList();
-		await importRoot('main.js');
-		await importRoot('roteiros.js');
-		applyStaticBindings();
-		await rebindSharebars();
-		return;
+		const { hydrateList } = await importRoot('data.js')
+		await hydrateList()
+		await importRoot('main.js')
+		await importRoot('roteiros.js')
+		applyStaticBindings()
+		await rebindSharebars()
+		if (typeof i18n?.apply === 'function') i18n.apply(document)
+		return
 	}
 
 	if (page === 'detail') {
-		const { hydrateDetail } = await importRoot('data.js');
-		await hydrateDetail();
-		await importRoot('main.js');
-		await importRoot('roteiro-detalhe.js');
-		applyStaticBindings();
-		await rebindSharebars();
-		return;
+		const { hydrateDetail } = await importRoot('data.js')
+		await hydrateDetail()
+		await importRoot('main.js')
+		await importRoot('roteiro-detalhe.js')
+		applyStaticBindings()
+		await rebindSharebars()
+		if (typeof i18n?.apply === 'function') i18n.apply(document)
+		return
 	}
 
-	const { hydrateIndex } = await importRoot('data.js');
-	await hydrateIndex();
-	await importRoot('main.js');
-	applyStaticBindings();
-	await rebindSharebars();
+	const { hydrateIndex } = await importRoot('data.js')
+	await hydrateIndex()
+	await importRoot('main.js')
+	applyStaticBindings()
+	await rebindSharebars()
+	if (typeof i18n?.apply === 'function') i18n.apply(document)
 }
 
 function bindLangMenu(){
 	document.querySelectorAll('.lang-menu a[data-lang]').forEach(a=>{
 		a.addEventListener('click', async e=>{
-			e.preventDefault();
-			const next = a.dataset.lang;
-			if(!next) return;
+			e.preventDefault()
+			const next = a.dataset.lang
+			if(!next) return
 
 			if (typeof i18n?.setLang === 'function') {
-				await i18n.setLang(next);
+				await i18n.setLang(next)
 			}
-			document.documentElement.lang = next;
-			localStorage.setItem('lang', next);
+			document.documentElement.lang = next
+			localStorage.setItem('lang', next)
+			localStorage.setItem('dt.lang', next)
 
-			const dataMod = await importRoot('data.js');
+			const dataMod = await importRoot('data.js')
 			if (typeof dataMod.invalidateDataCache === 'function') {
-				dataMod.invalidateDataCache();
+				dataMod.invalidateDataCache()
 			}
 
-			updateFlagUI();
-			await rehydrate();
-		});
-	});
+			updateFlagUI()
+			await rehydrate()
+			if (typeof i18n?.apply === 'function') i18n.apply(document)
+		})
+	})
 }
 
 async function boot(){
-	const lang = resolveLang();
-	await applyI18n(lang);
-	updateFlagUI();
-	await rehydrate();
-	bindLangMenu();
+	const lang = resolveLang()
+	await applyI18n(lang)
+	updateFlagUI()
+	await rehydrate()
+	if (typeof i18n?.apply === 'function') i18n.apply(document)
+	bindLangMenu()
 }
 
 if (document.readyState === 'loading') {

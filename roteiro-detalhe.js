@@ -8,26 +8,23 @@ import * as i18n from './js/i18n.js'
 
 	const viewport = gal.querySelector('.gal-viewport')
 	const track = gal.querySelector('.gal-track')
-	const slides = [...gal.querySelectorAll('.gal-slide')]
-	const thumbs = [...gal.querySelectorAll('.gal-thumb')]
 	const tView = gal.querySelector('.gal-thumbs-viewport')
 	const prevBtn = gal.querySelector('.gal-prev')
 	const nextBtn = gal.querySelector('.gal-next')
+	const thumbsWrap = gal.querySelector('.gal-thumbs')
 
 	if(prevBtn) prevBtn.setAttribute('aria-label', t('carousel.prev'))
 	if(nextBtn) nextBtn.setAttribute('aria-label', t('carousel.next'))
 
 	let index = 0
+	let slides = []
+	let thumbs = []
 
-	function show(i){
-		if(!slides.length) return
-		index = ((i % slides.length) + slides.length) % slides.length
-		const x = viewport.clientWidth * index
-		track.style.transform = `translateX(${-x}px)`
-		thumbs.forEach((btn,ti)=>btn.classList.toggle('is-active', ti===index))
-		ensureThumbVisible(index)
-		updateArrows()
+	function updateRefs(){
+		slides = track ? [...track.querySelectorAll('.gal-slide')] : []
+		thumbs = thumbsWrap ? [...thumbsWrap.querySelectorAll('.gal-thumb')] : []
 	}
+
 	function ensureThumbVisible(i){
 		const btn = thumbs[i]
 		if(!btn || !tView) return
@@ -38,18 +35,52 @@ import * as i18n from './js/i18n.js'
 		if(left < minV) tView.scrollLeft = left - 8
 		else if(right > maxV) tView.scrollLeft = right - tView.clientWidth + 8
 	}
+
 	function updateArrows(){
 		const single = slides.length <= 1
 		if(prevBtn) prevBtn.disabled = single
 		if(nextBtn) nextBtn.disabled = single
 	}
 
-	thumbs.forEach((btn,i)=>btn.addEventListener('click', ()=>show(i)))
-	prevBtn?.addEventListener('click', ()=>show(index - 1))
-	nextBtn?.addEventListener('click', ()=>show(index + 1))
+	function show(i){
+		if(!slides.length || !viewport || !track) return
+		index = ((i % slides.length) + slides.length) % slides.length
+		const x = viewport.clientWidth * index
+		track.style.transform = `translateX(${-x}px)`
+		thumbs.forEach((btn,ti)=>{
+			btn.classList.toggle('is-active', ti===index)
+		})
+		ensureThumbVisible(index)
+		updateArrows()
+	}
+
+	function bindThumbs(){
+		thumbs.forEach((btn,i)=>{
+			btn.onclick = ()=>show(i)
+		})
+	}
+
+	function setup(initial){
+		updateRefs()
+		bindThumbs()
+		updateArrows()
+		if(initial) show(0)
+		else show(index)
+	}
+
+	if(prevBtn) prevBtn.addEventListener('click', ()=>show(index - 1))
+	if(nextBtn) nextBtn.addEventListener('click', ()=>show(index + 1))
 	window.addEventListener('resize', ()=>show(index))
 
-	show(0)
+	setup(true)
+
+	if(track){
+		const mo = new MutationObserver(()=>{
+			setup(false)
+		})
+		mo.observe(track, { childList:true })
+		if(thumbsWrap) mo.observe(thumbsWrap, { childList:true })
+	}
 })()
 
 ;(function(){
@@ -57,7 +88,6 @@ import * as i18n from './js/i18n.js'
 	if(!root) return
 
 	const t = (k,p)=>i18n.t(k,p)
-	const locale = i18n.locale()
 
 	function parsePrice(s){
 		if(s==null) return 0
@@ -82,9 +112,11 @@ import * as i18n from './js/i18n.js'
 
 	const cta = document.getElementById('rpSubmit')
 
-	function getSubtotalEl(){ return document.getElementById('rpSubtotal') }
+	function getSubtotalEl(){
+		return document.getElementById('rpSubtotal')
+	}
 
-	;(function applyStaticDetail(){
+	function applyStaticDetail(){
 		const priceSmall = document.querySelector('.rp-price small')
 		if(priceSmall) priceSmall.textContent = t('rp.priceFrom')
 
@@ -127,17 +159,17 @@ import * as i18n from './js/i18n.js'
 
 		if(pQty) pQty.setAttribute('aria-label', t('rp.people.ariaQty'))
 		if(pMinus) pMinus.setAttribute('aria-label', t('rp.people.dec'))
-		if(pPlus)  pPlus.setAttribute('aria-label', t('rp.people.inc'))
+		if(pPlus) pPlus.setAttribute('aria-label', t('rp.people.inc'))
 
 		const prev = document.getElementById('rmPrev')
 		if(prev) prev.setAttribute('aria-label', t('carousel.prev'))
 		const next = document.getElementById('rmNext')
 		if(next) next.setAttribute('aria-label', t('carousel.next'))
-	})()
+	}
 
 	function parseISO(s){
 		if(!s) return null
-		const parts = s.split("-")
+		const parts = s.split('-')
 		if(parts.length !== 3) return null
 		const y = parseInt(parts[0],10)
 		const m = parseInt(parts[1],10)
@@ -147,6 +179,7 @@ import * as i18n from './js/i18n.js'
 		dt.setHours(0,0,0,0)
 		return isNaN(+dt) ? null : dt
 	}
+
 	function fmtBRDate(d){
 		if(!d) return ''
 		const dd = String(d.getDate()).padStart(2,'0')
@@ -154,29 +187,29 @@ import * as i18n from './js/i18n.js'
 		const yy = d.getFullYear()
 		return `${dd}/${mm}/${yy}`
 	}
-	function isHourly(){
-		const label = document.querySelector('.rp-days b')?.textContent?.toLowerCase() || ''
-		return /\bhora/.test(label)
-	}
+
 	function hasDates(){
 		const s = parseISO(isoStart.value)
 		const e = parseISO(isoEnd.value)
 		if(!s || !e) return false
-		return isHourly() ? (e >= s) : (e > s)
+		return e >= s
 	}
+
 	function selectedQty(){
 		return parseInt(pQty?.value||'0',10) || 0
 	}
+
 	function formatBRL(v){
-		return (v||0).toLocaleString(locale,{ style:'currency', currency:'BRL' })
+		return (v||0).toLocaleString(i18n.locale(),{ style:'currency', currency:'BRL' })
 	}
 
 	function updateDates(){
 		const s = parseISO(isoStart.value)
 		const e = parseISO(isoEnd.value)
 		outStart.textContent = s ? fmtBRDate(s) : t('rp.date.placeholderStart')
-		outEnd.textContent   = e ? fmtBRDate(e) : t('rp.date.placeholderEnd')
+		outEnd.textContent = e ? fmtBRDate(e) : t('rp.date.placeholderEnd')
 	}
+
 	function updateCTA(){
 		const sub = getSubtotalEl()
 		if(sub) sub.textContent = formatBRL(selectedQty() * PRICE)
@@ -192,29 +225,22 @@ import * as i18n from './js/i18n.js'
 		pToggle.setAttribute('aria-expanded','true')
 		requestAnimationFrame(()=>{ pPanel.classList.add('is-open') })
 	}
+
 	function closePeople(){
 		if(!pPanel) return
 		pPanel.classList.remove('is-open')
-		const onEnd = (e)=>{
+		const onEnd = e=>{
 			if(e.target !== pPanel) return
 			pPanel.hidden = true
 			pToggle.setAttribute('aria-expanded','false')
 		}
 		pPanel.addEventListener('transitionend', onEnd, { once:true })
 	}
-	pToggle?.addEventListener('click', (e)=>{
-		e.stopPropagation()
-		pPanel.hidden ? openPeople() : closePeople()
-	})
-	document.addEventListener('click', (e)=>{
-		if(!pPanel || pPanel.hidden) return
-		if(!pPanel.contains(e.target) && !pToggle.contains(e.target)) closePeople()
-	})
-	pToggle?.addEventListener('keydown', (e)=>{
-		if(e.key==='Escape') closePeople()
-	})
 
-	function clampQty(n){ return Math.max(0, Math.min(50, n|0)) }
+	function clampQty(n){
+		return Math.max(0, Math.min(50, n|0))
+	}
+
 	function setQty(n){
 		const q = clampQty(n)
 		pQty.value = String(q)
@@ -223,9 +249,6 @@ import * as i18n from './js/i18n.js'
 		pLabel.textContent = q === 0 ? t('rp.people.select') : (q === 1 ? `1 ${one}` : `${q} ${other}`)
 		updateCTA()
 	}
-	pMinus?.addEventListener('click', ()=> setQty(parseInt(pQty.value||'0',10) - 1))
-	pPlus?.addEventListener('click', ()=> setQty(parseInt(pQty.value||'0',10) + 1))
-	pQty?.addEventListener('input', ()=> setQty(parseInt(pQty.value||'0',10)))
 
 	const aboutEl = document.querySelector('.rp-about')
 	const descEl = document.getElementById('rpDesc')
@@ -247,6 +270,7 @@ import * as i18n from './js/i18n.js'
 			(aboutEl || descEl).scrollIntoView({ behavior:'smooth', block:'start' })
 		}
 	}
+
 	function collapseAbout(){
 		if(!descEl) return
 		aboutEl?.classList.remove('is-open')
@@ -260,32 +284,58 @@ import * as i18n from './js/i18n.js'
 			seeMore?.setAttribute('aria-expanded','false')
 			openDesc?.setAttribute('aria-expanded','false')
 		}
-		descEl.addEventListener('transitionend', (e)=>{
+		descEl.addEventListener('transitionend', e=>{
 			if(e.target !== descEl) return
 			finish()
 		}, { once:true })
 		setTimeout(finish, 400)
 	}
 
-	document.getElementById('rpSubmit')?.addEventListener('click', () => {
-		if (cta.disabled) return
+	pToggle?.addEventListener('click', e=>{
+		e.stopPropagation()
+		pPanel.hidden ? openPeople() : closePeople()
+	})
 
-		const title   = document.querySelector('.rp-title')?.textContent.trim() || 'Roteiro'
+	document.addEventListener('click', e=>{
+		if(!pPanel || pPanel.hidden) return
+		if(!pPanel.contains(e.target) && !pToggle.contains(e.target)) closePeople()
+	})
+
+	pToggle?.addEventListener('keydown', e=>{
+		if(e.key === 'Escape') closePeople()
+	})
+
+	pMinus?.addEventListener('click', ()=>{
+		setQty(parseInt(pQty.value||'0',10) - 1)
+	})
+
+	pPlus?.addEventListener('click', ()=>{
+		setQty(parseInt(pQty.value||'0',10) + 1)
+	})
+
+	pQty?.addEventListener('input', ()=>{
+		setQty(parseInt(pQty.value||'0',10))
+	})
+
+	document.getElementById('rpSubmit')?.addEventListener('click', ()=>{
+		if(cta.disabled) return
+
+		const title = document.querySelector('.rp-title')?.textContent.trim() || 'Roteiro'
 		const durText = document.querySelector('.rp-days b')?.textContent.trim() || '1 ' + i18n.t('time.day_one')
-		const qty     = selectedQty()
+		const qty = selectedQty()
 
 		const s = parseISO(document.getElementById('rpStart').value)
 		const e = parseISO(document.getElementById('rpEnd').value)
 
-		const days  = Math.max(1, parseInt(root.dataset.days || '1', 10))
+		const days = Math.max(1, parseInt(root.dataset.days || '1', 10))
 		const hours = Math.max(0, parseInt(root.dataset.hours || String(days * 24), 10))
 
 		const dataLabel = (hours < 24 || days === 1) ? 'Data' : 'Período'
 		let dataTexto = 'a combinar'
-		if (s && e) {
-			if (hours < 24 || days === 1) {
+		if(s && e){
+			if(hours < 24 || days === 1){
 				dataTexto = fmtBRDate(s)
-			} else {
+			}else{
 				const nDias = Math.max(1, Math.round((e - s) / (24 * 60 * 60 * 1000)))
 				const dayWord = (nDias===1 ? i18n.t('time.day_one') : i18n.t('time.day_other')).toLowerCase()
 				dataTexto = `${fmtBRDate(s)} → ${fmtBRDate(e)} (${nDias} ${dayWord})`
@@ -303,14 +353,14 @@ Quero agendar um roteiro pelo site.
 
 Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 
-		const zapBase = (() => {
+		const zapBase = (()=>{
 			const a = document.querySelector('.zap-float')
-			if (a) {
-				try {
+			if(a){
+				try{
 					const u = new URL(a.getAttribute('href'), location.href)
 					u.search = ''
 					return u.origin + u.pathname
-				} catch (_) {}
+				}catch(_){}
 			}
 			return 'https://wa.me/5511910254958'
 		})()
@@ -319,13 +369,28 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 		window.open(url, '_blank', 'noopener')
 
 		const inc = document.querySelector('.rp-incluso')
-		if (inc) inc.scrollIntoView({ behavior: 'smooth', block: 'start' })
+		if(inc) inc.scrollIntoView({ behavior:'smooth', block:'start' })
 	})
-	seeMore?.addEventListener('click', ()=>{ (descEl && descEl.classList.contains('is-open')) ? collapseAbout() : expandAbout() })
-	seeLess?.addEventListener('click', ()=>{ collapseAbout() })
-	openDesc?.addEventListener('click', ()=>{ expandAbout({ scroll:true }) })
+
+	seeMore?.addEventListener('click', ()=>{
+		(descEl && descEl.classList.contains('is-open')) ? collapseAbout() : expandAbout()
+	})
+
+	seeLess?.addEventListener('click', ()=>{
+		collapseAbout()
+	})
+
+	openDesc?.addEventListener('click', ()=>{
+		expandAbout({ scroll:true })
+	})
 
 	document.addEventListener('rp:dates-commit', ()=>{
+		updateDates()
+		updateCTA()
+	})
+
+	document.addEventListener('i18n:change', ()=>{
+		applyStaticDetail()
 		updateDates()
 		updateCTA()
 	})
@@ -334,6 +399,7 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 		pUnit.textContent = formatBRL(PRICE)
 	}
 
+	applyStaticDetail()
 	setQty(parseInt(pQty?.value||'0',10) || 0)
 	updateDates()
 	updateCTA()
@@ -355,6 +421,7 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 		const avail = grid.clientWidth
 		return Math.max(1, Math.floor((avail + gap) / (w + gap)))
 	}
+
 	function shouldShow(){
 		const total = grid.querySelectorAll('.roteiro-card').length
 		if(total <= 1) return false
@@ -362,6 +429,7 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 		const overflow = (grid.scrollWidth - grid.clientWidth) > 1
 		return total > cols || overflow
 	}
+
 	function applyVisibility(){
 		const show = shouldShow()
 		if(arrows){
@@ -378,12 +446,14 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 		prev.disabled = grid.scrollLeft <= 0
 		next.disabled = grid.scrollLeft >= max
 	}
+
 	function step(){
 		const item = grid.querySelector('.roteiro-card')
 		if(!item) return grid.clientWidth
 		const gap = parseFloat(getComputedStyle(grid).gap) || 0
 		return item.getBoundingClientRect().width + gap
 	}
+
 	function scrollToDir(dir){
 		grid.scrollBy({ left: dir * step(), behavior:'smooth' })
 	}
@@ -401,8 +471,13 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 	let pending = imgs.length
 	if(pending){
 		imgs.forEach(img=>{
-			if(img.complete){ if(--pending===0) applyVisibility() }
-			else img.addEventListener('load', ()=>{ if(--pending===0) applyVisibility() })
+			if(img.complete){
+				if(--pending === 0) applyVisibility()
+			}else{
+				img.addEventListener('load', ()=>{
+					if(--pending === 0) applyVisibility()
+				})
+			}
 		})
 	}
 
@@ -428,7 +503,7 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 	const isoStart = document.getElementById('rpStart')
 	const isoEnd = document.getElementById('rpEnd')
 
-	const $ = (s)=>document.querySelector(s)
+	const $ = s=>document.querySelector(s)
 	const backdrop = $('#drpBackdrop')
 	const modal = $('#drpModal')
 	const monthsEl = $('#drpMonths')
@@ -447,14 +522,18 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 	const todayTime = today.getTime()
 	const MIN_VIEW = new Date(today.getFullYear(), today.getMonth(), 1)
 
-	function clearTime(d){ d.setHours(0,0,0,0) }
-	function toISO(d){
-		if(!d) return ""
-		return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0")
+	function clearTime(d){
+		d.setHours(0,0,0,0)
 	}
+
+	function toISO(d){
+		if(!d) return ''
+		return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0')
+	}
+
 	function fromISO(s){
 		if(!s) return null
-		const parts = s.split("-")
+		const parts = s.split('-')
 		if(parts.length !== 3) return null
 		const y = parseInt(parts[0],10)
 		const m = parseInt(parts[1],10)
@@ -464,13 +543,15 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 		clearTime(dt)
 		return isNaN(+dt) ? null : dt
 	}
+
 	function br(d){
 		if(!d) return t('rp.date.placeholderStart')
-		const dd = String(d.getDate()).padStart(2,"0")
-		const mm = String(d.getMonth()+1).padStart(2,"0")
+		const dd = String(d.getDate()).padStart(2,'0')
+		const mm = String(d.getMonth()+1).padStart(2,'0')
 		const yy = d.getFullYear()
-		return dd + "/" + mm + "/" + yy
+		return dd + '/' + mm + '/' + yy
 	}
+
 	function parseBR(v){
 		const m = v.match(/^(\d{2})\/(\d{2})\/(\d{4})$/)
 		if(!m) return null
@@ -478,44 +559,57 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 		clearTime(d)
 		return isNaN(+d) ? null : d
 	}
+
 	function addDays(d,n){
 		const x = new Date(d.getFullYear(), d.getMonth(), d.getDate()+n)
 		clearTime(x)
 		return x
 	}
-	function minEndDate(){ return addDays(today, SPAN) }
+
+	function minEndDate(){
+		return addDays(today, SPAN)
+	}
+
 	function commitHidden(s,e){
-		isoStart.value = s ? toISO(s) : ""
-		isoEnd.value = e ? toISO(e) : ""
-		document.dispatchEvent(new CustomEvent("rp:dates-commit"))
+		isoStart.value = s ? toISO(s) : ''
+		isoEnd.value = e ? toISO(e) : ''
+		document.dispatchEvent(new CustomEvent('rp:dates-commit'))
 	}
 
 	let viewBase = new Date(MIN_VIEW)
-	let focus = "start"
+	let focus = 'start'
 	let startSel = null
 	let endSel = null
 
 	function setFocus(f){
 		focus = f
-		tabS.classList.toggle("is-active", f === "start")
-		tabE.classList.toggle("is-active", f === "end")
-		;(f === "start" ? inpS : inpE).focus()
+		tabS.classList.toggle('is-active', f === 'start')
+		tabE.classList.toggle('is-active', f === 'end')
+		;(f === 'start' ? inpS : inpE).focus()
 	}
+
 	function mask(v){
-		let x = v.replace(/\D/g,"").slice(0,8)
-		if(x.length >= 5) return x.slice(0,2)+"/"+x.slice(2,4)+"/"+x.slice(4)
-		if(x.length >= 3) return x.slice(0,2)+"/"+x.slice(2)
+		let x = v.replace(/\D/g,'').slice(0,8)
+		if(x.length >= 5) return x.slice(0,2) + '/' + x.slice(2,4) + '/' + x.slice(4)
+		if(x.length >= 3) return x.slice(0,2) + '/' + x.slice(2)
 		return x
 	}
+
 	function setInputs(){
-		inpS.value = startSel ? br(startSel) : ""
-		inpE.value = endSel ? br(endSel) : ""
-		btnApply.disabled = !(startSel && endSel && (SPAN === 0 ? (endSel >= startSel) : (endSel > startSel)))
+		inpS.value = startSel ? br(startSel) : ''
+		inpE.value = endSel ? br(endSel) : ''
+		btnApply.disabled = !(startSel && endSel && (SPAN === 0 ? endSel >= startSel : endSel > startSel))
 	}
+
 	function monthTitle(y,m){
-		return new Date(y, m, 1).toLocaleDateString(locale, { month:"long" })
+		return new Date(y, m, 1).toLocaleDateString(locale, { month:'long' })
 	}
-	function NewDate(y,m,d){ const dt = new Date(y, m, d); clearTime(dt); return dt }
+
+	function NewDate(y,m,d){
+		const dt = new Date(y, m, d)
+		clearTime(dt)
+		return dt
+	}
 
 	const WD = Array.from({length:7}, (_,i)=>{
 		const ref = new Date(2025, 0, 5 + i)
@@ -529,10 +623,10 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 		const total = last.getDate()
 		const minEndTime = minEndDate().getTime()
 
-		let html = ""
+		let html = ''
 		html += '<div class="drp-month">'
 		html += '<div class="drp-month-title">'+monthTitle(y,m)+'</div>'
-		html += '<div class="drp-week">'+WD.map(w=>"<span>"+w+"</span>").join("")+'</div>'
+		html += '<div class="drp-week">'+WD.map(w=>'<span>'+w+'</span>').join('')+'</div>'
 		html += '<div class="drp-grid">'
 
 		for(let i=0;i<lead;i++){
@@ -543,29 +637,29 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 			const tms = dt.getTime()
 
 			const isStart = startSel && tms === startSel.getTime()
-			const isEnd   = endSel && tms === endSel.getTime()
+			const isEnd = endSel && tms === endSel.getTime()
 			const inRange = startSel && endSel && tms > startSel.getTime() && tms < endSel.getTime()
 			const atStart = isStart && endSel && endSel > startSel
-			const atEnd   = isEnd && startSel && endSel > startSel
+			const atEnd = isEnd && startSel && endSel > startSel
 
 			let disabled = false
 			if(tms < todayTime) disabled = true
-			if(focus === "end" && tms < minEndTime) disabled = true
+			if(focus === 'end' && tms < minEndTime) disabled = true
 			if(isStart || isEnd) disabled = false
 
 			const cls = [
-				"drp-cell",
-				disabled ? "disabled" : "",
-				inRange ? "in-range" : "",
-				isStart ? "is-start" : "",
-				isEnd ? "is-end" : "",
-				atStart ? "range-start" : "",
-				atEnd ? "range-end" : ""
-			].filter(Boolean).join(" ")
+				'drp-cell',
+				disabled ? 'disabled' : '',
+				inRange ? 'in-range' : '',
+				isStart ? 'is-start' : '',
+				isEnd ? 'is-end' : '',
+				atStart ? 'range-start' : '',
+				atEnd ? 'range-end' : ''
+			].filter(Boolean).join(' ')
 
 			html += '<div class="'+cls+'" data-time="'+tms+'"><div class="drp-day">'+d+'</div></div>'
 		}
-		html += "</div></div>"
+		html += '</div></div>'
 		return html
 	}
 
@@ -573,25 +667,25 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 		const cand = new Date(viewBase.getFullYear(), viewBase.getMonth() - 2, 1)
 		const allowPrev = cand.getTime() >= MIN_VIEW.getTime()
 		btnPrev.hidden = !allowPrev
-		btnPrev.style.display = allowPrev ? "inline-flex" : "none"
+		btnPrev.style.display = allowPrev ? 'inline-flex' : 'none'
 		btnPrev.disabled = !allowPrev
 		btnPrev.tabIndex = allowPrev ? 0 : -1
-		btnPrev.setAttribute("aria-hidden", allowPrev ? "false" : "true")
+		btnPrev.setAttribute('aria-hidden', allowPrev ? 'false' : 'true')
 	}
 
 	function render(){
 		const y = viewBase.getFullYear()
 		const m = viewBase.getMonth()
-		monthsEl.innerHTML = buildMonth(y,m) + buildMonth(y,m+1)
+		monthsEl.innerHTML = buildMonth(y,m) + buildMonth(y, m+1)
 		updateNav()
-		monthsEl.querySelectorAll(".drp-cell:not(.disabled) .drp-day").forEach((el)=>{
-			el.addEventListener("click", ()=>{
-				const tms = parseInt(el.parentElement.getAttribute("data-time"), 10)
+		monthsEl.querySelectorAll('.drp-cell:not(.disabled) .drp-day').forEach(el=>{
+			el.addEventListener('click', ()=>{
+				const tms = parseInt(el.parentElement.getAttribute('data-time'), 10)
 				const d = new Date(tms)
 				clearTime(d)
 				const minEnd = minEndDate().getTime()
 
-				if(focus === "start"){
+				if(focus === 'start'){
 					if(d.getTime() < todayTime) return
 					startSel = d
 					endSel = addDays(startSel, SPAN)
@@ -611,7 +705,7 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 		const s = fromISO(isoStart.value)
 		const e = fromISO(isoEnd.value)
 
-		const okRange = s && e && (SPAN === 0 ? (e >= s) : (e > s))
+		const okRange = s && e && (SPAN === 0 ? e >= s : e > s)
 		if(okRange){
 			startSel = s
 			endSel = e
@@ -643,9 +737,9 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 		backdrop.hidden = false
 		modal.hidden = false
 		requestAnimationFrame(()=>{
-			document.body.classList.add("drp-open")
-			backdrop.classList.add("is-visible")
-			modal.classList.add("is-visible")
+			document.body.classList.add('drp-open')
+			backdrop.classList.add('is-visible')
+			modal.classList.add('is-visible')
 		})
 
 		const drpTitleEl = document.getElementById('drpTitle')
@@ -665,29 +759,34 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 
 		setInputs()
 		render()
-		setFocus(active === "end" ? "end" : "start")
+		setFocus(active === 'end' ? 'end' : 'start')
 	}
 
 	function closeModal(){
-		backdrop.classList.remove("is-visible")
-		modal.classList.remove("is-visible")
+		backdrop.classList.remove('is-visible')
+		modal.classList.remove('is-visible')
 		setTimeout(()=>{
 			backdrop.hidden = true
 			modal.hidden = true
-			document.body.classList.remove("drp-open")
+			document.body.classList.remove('drp-open')
 		}, 200)
 	}
 
 	function commit(){
-		const ok = startSel && endSel && (SPAN === 0 ? (endSel >= startSel) : (endSel > startSel))
+		const ok = startSel && endSel && (SPAN === 0 ? endSel >= startSel : endSel > startSel)
 		if(ok) commitHidden(startSel, endSel)
 		closeModal()
 	}
 
-	tabS.addEventListener("click", ()=> setFocus("start"))
-	tabE.addEventListener("click", ()=> setFocus("end"))
+	tabS.addEventListener('click', ()=>{
+		setFocus('start')
+	})
 
-	inpS.addEventListener("input", ()=>{
+	tabE.addEventListener('click', ()=>{
+		setFocus('end')
+	})
+
+	inpS.addEventListener('input', ()=>{
 		inpS.value = mask(inpS.value)
 		const d = parseBR(inpS.value)
 		if(d){
@@ -698,7 +797,8 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 			render()
 		}
 	})
-	inpE.addEventListener("input", ()=>{
+
+	inpE.addEventListener('input', ()=>{
 		inpE.value = mask(inpE.value)
 		const d = parseBR(inpE.value)
 		if(d){
@@ -711,42 +811,45 @@ Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!`
 		}
 	})
 
-	btnPrev.addEventListener("click", ()=>{
+	btnPrev.addEventListener('click', ()=>{
 		const cand = new Date(viewBase.getFullYear(), viewBase.getMonth() - 2, 1)
 		if(cand < MIN_VIEW) return
 		viewBase = cand
 		render()
 	})
-	btnNext.addEventListener("click", ()=>{
+
+	btnNext.addEventListener('click', ()=>{
 		viewBase = new Date(viewBase.getFullYear(), viewBase.getMonth() + 2, 1)
 		render()
 	})
 
-	btnApply.addEventListener("click", commit)
+	btnApply.addEventListener('click', commit)
 
-	btnClear.addEventListener("click", ()=>{
+	btnClear.addEventListener('click', ()=>{
 		startSel = null
 		endSel = null
 		setInputs()
 		render()
 	})
 
-	backdrop.addEventListener("click", (e)=>{
+	backdrop.addEventListener('click', e=>{
 		if(e.target === backdrop) closeModal()
 	})
 
 	function onEsc(ev){
-		if(ev.key === "Escape"){
+		if(ev.key === 'Escape'){
 			closeModal()
-			document.removeEventListener("keydown", onEsc)
+			document.removeEventListener('keydown', onEsc)
 		}
 	}
-	startBtn?.addEventListener("click", ()=>{
-		document.addEventListener("keydown", onEsc)
-		openWithState("start")
+
+	startBtn?.addEventListener('click', ()=>{
+		document.addEventListener('keydown', onEsc)
+		openWithState('start')
 	})
-	endBtn?.addEventListener("click", ()=>{
-		document.addEventListener("keydown", onEsc)
-		openWithState("end")
+
+	endBtn?.addEventListener('click', ()=>{
+		document.addEventListener('keydown', onEsc)
+		openWithState('end')
 	})
 })()

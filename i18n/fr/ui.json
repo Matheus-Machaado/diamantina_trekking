@@ -48,8 +48,18 @@
 	},
 	"tours": {
 		"title": "CIRCUITS À LA CHAPADA",
-		"sub": "Sentiers, cascades et belvédères : vivez la Chapada de bout en bout",
-		"ctaAll": "Voir tous les circuits"
+		"sub": "Sentiers, cascades et belvédères : vivez la Chapada de bout en bout",
+		"subtitle": "Sentiers, cascades et belvédères : vivez la Chapada de bout en bout",
+		"ctaAll": "Voir tous les circuits",
+		"filter": {
+			"intensity": "Intensité",
+			"all": "Tous"
+		}
+	},
+	"levels": {
+		"leve": "Facile",
+		"moderado": "Modéré",
+		"intenso": "Intense"
 	},
 	"cards": {
 		"about": "À propos du circuit",
@@ -185,5 +195,11 @@
 		"hour_other": "heures",
 		"day_one": "Jour",
 		"day_other": "Jours"
+	},
+	"list": {
+		"filter": {
+			"label": "Filtrer",
+			"all": "Tous"
+		}
 	}
 }

@@ -491,7 +491,7 @@ section .container{
 }
 
 @media (max-width:560px){
-	.inicio-actionss .btn{width:100%;max-width:360px;}
+	.inicio-actions .btn{width:100%;max-width:360px;}
 }
 
 .estilos{min-height:auto;}

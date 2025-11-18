@@ -49,7 +49,17 @@
 	"tours": {
 		"title": "ROTEIROS NA CHAPADA",
 		"sub": "Trilhas, cachoeiras e mirantes: viva a Chapada por inteiro",
-		"ctaAll": "Ver Todos os Roteiros"
+		"subtitle": "Trilhas, cachoeiras e mirantes: viva a Chapada por inteiro",
+		"ctaAll": "Ver Todos os Roteiros",
+		"filter": {
+			"intensity": "Intensidade",
+			"all": "Todos"
+		}
+	},
+	"levels": {
+		"leve": "Leve",
+		"moderado": "Moderado",
+		"intenso": "Intenso"
 	},
 	"cards": {
 		"about": "Sobre o Roteiro",
@@ -185,5 +195,11 @@
 		"hour_other": "horas",
 		"day_one": "Dia",
 		"day_other": "Dias"
+	},
+	"list": {
+		"filter": {
+			"label": "Filtrar por",
+			"all": "Todos"
+		}
 	}
 }

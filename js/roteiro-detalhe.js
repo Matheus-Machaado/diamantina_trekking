@@ -219,6 +219,10 @@ import * as i18n from './i18n.js'
 		cta.classList.toggle('rp-cta-ready', !!ready)
 	}
 
+	function isPeopleOpen(){
+		return !!(pPanel && !pPanel.hidden && pPanel.classList.contains('is-open'))
+	}
+
 	function openPeople(){
 		if(!pPanel) return
 		pPanel.hidden = false
@@ -229,12 +233,22 @@ import * as i18n from './i18n.js'
 	function closePeople(){
 		if(!pPanel) return
 		pPanel.classList.remove('is-open')
-		const onEnd = e=>{
-			if(e.target !== pPanel) return
+
+		let done = false
+		const finish = ()=>{
+			if(done) return
+			done = true
 			pPanel.hidden = true
 			pToggle.setAttribute('aria-expanded','false')
 		}
+
+		const onEnd = e=>{
+			if(e.target !== pPanel) return
+			finish()
+		}
+
 		pPanel.addEventListener('transitionend', onEnd, { once:true })
+		setTimeout(finish, 400)
 	}
 
 	function clampQty(n){
@@ -293,11 +307,11 @@ import * as i18n from './i18n.js'
 
 	pToggle?.addEventListener('click', e=>{
 		e.stopPropagation()
-		pPanel.hidden ? openPeople() : closePeople()
+		isPeopleOpen() ? closePeople() : openPeople()
 	})
 
 	document.addEventListener('click', e=>{
-		if(!pPanel || pPanel.hidden) return
+		if(!pPanel || !isPeopleOpen()) return
 		if(!pPanel.contains(e.target) && !pToggle.contains(e.target)) closePeople()
 	})
 
@@ -499,7 +513,7 @@ import * as i18n from './i18n.js'
 	if(!root) return
 
 	const t = (k,p)=>i18n.t(k,p)
-	const locale = i18n.locale()
+	const getLocale = () => i18n.locale()
 
 	const DAYS = parseInt(root.dataset.days || '1', 10)
 	const HOURS = parseInt(root.dataset.hours || String(DAYS * 24), 10)
@@ -616,7 +630,8 @@ import * as i18n from './i18n.js'
 	}
 
 	function monthTitle(y,m){
-		return new Date(y, m, 1).toLocaleDateString(locale, { month:'long' })
+		return new Date(y, m, 1)
+			.toLocaleDateString(getLocale(), { month:'long' })
 	}
 
 	function NewDate(y,m,d){
@@ -625,10 +640,13 @@ import * as i18n from './i18n.js'
 		return dt
 	}
 
-	const WD = Array.from({length:7}, (_,i)=>{
-		const ref = new Date(2025, 0, 5 + i)
-		return new Intl.DateTimeFormat(locale, { weekday:'narrow' }).format(ref)
-	})
+	function weekdayLabels(){
+		const locale = getLocale()
+		return Array.from({length:7}, (_,i)=>{
+			const ref = new Date(2025, 0, 5 + i)
+			return new Intl.DateTimeFormat(locale, { weekday:'narrow' }).format(ref)
+		})
+	}
 
 	function buildMonth(y,m){
 		const first = NewDate(y, m, 1)
@@ -636,6 +654,8 @@ import * as i18n from './i18n.js'
 		const lead = first.getDay()
 		const total = last.getDate()
 		const minEndTime = minEndDate().getTime()
+
+		const WD = weekdayLabels()
 
 		let html = ''
 		html += '<div class="drp-month">'

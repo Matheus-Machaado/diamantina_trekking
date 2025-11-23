@@ -524,6 +524,12 @@ import * as i18n from './i18n.js'
 	const btnApply = $('#drpApply')
 	const btnClear = $('#drpClear')
 
+	const mqlSingle = window.matchMedia('(max-width: 560px)')
+
+	function monthsPerView(){
+		return mqlSingle.matches ? 1 : 2
+	}
+
 	const DAY = 86400000
 	const today = new Date()
 	today.setHours(0,0,0,0)
@@ -672,8 +678,10 @@ import * as i18n from './i18n.js'
 	}
 
 	function updateNav(){
-		const cand = new Date(viewBase.getFullYear(), viewBase.getMonth() - 2, 1)
+		const step = monthsPerView()
+		const cand = new Date(viewBase.getFullYear(), viewBase.getMonth() - step, 1)
 		const allowPrev = cand.getTime() >= MIN_VIEW.getTime()
+
 		btnPrev.hidden = !allowPrev
 		btnPrev.style.display = allowPrev ? 'inline-flex' : 'none'
 		btnPrev.disabled = !allowPrev
@@ -684,8 +692,16 @@ import * as i18n from './i18n.js'
 	function render(){
 		const y = viewBase.getFullYear()
 		const m = viewBase.getMonth()
-		monthsEl.innerHTML = buildMonth(y,m) + buildMonth(y, m+1)
+		const count = monthsPerView()
+
+		let html = ''
+		for(let i = 0; i < count; i++){
+			html += buildMonth(y, m + i)
+		}
+		monthsEl.innerHTML = html
+
 		updateNav()
+
 		monthsEl.querySelectorAll('.drp-cell:not(.disabled) .drp-day').forEach(el=>{
 			el.addEventListener('click', ()=>{
 				const tms = parseInt(el.parentElement.getAttribute('data-time'), 10)
@@ -708,6 +724,7 @@ import * as i18n from './i18n.js'
 			})
 		})
 	}
+
 
 	function openWithState(active){
 		const s = fromISO(isoStart.value)
@@ -820,14 +837,20 @@ import * as i18n from './i18n.js'
 	})
 
 	btnPrev.addEventListener('click', ()=>{
-		const cand = new Date(viewBase.getFullYear(), viewBase.getMonth() - 2, 1)
+		const step = monthsPerView()
+		const cand = new Date(viewBase.getFullYear(), viewBase.getMonth() - step, 1)
 		if(cand < MIN_VIEW) return
 		viewBase = cand
+		clearTime(viewBase)
+		viewBase.setDate(1)
 		render()
 	})
 
 	btnNext.addEventListener('click', ()=>{
-		viewBase = new Date(viewBase.getFullYear(), viewBase.getMonth() + 2, 1)
+		const step = monthsPerView()
+		viewBase = new Date(viewBase.getFullYear(), viewBase.getMonth() + step, 1)
+		clearTime(viewBase)
+		viewBase.setDate(1)
 		render()
 	})
 
@@ -850,6 +873,10 @@ import * as i18n from './i18n.js'
 			document.removeEventListener('keydown', onEsc)
 		}
 	}
+	
+	mqlSingle.addEventListener?.('change', ()=>{
+		render()
+	})
 
 	startBtn?.addEventListener('click', ()=>{
 		document.addEventListener('keydown', onEsc)

@@ -1,4 +1,5 @@
 import * as i18n from './i18n.js';
+import * as loading from './loading.js';
 
 const root = new URL('.', import.meta.url);
 
@@ -129,14 +130,39 @@ async function rebindSharebars() {
 }
 
 function applyStaticBindings(){
-	const t=(k,p)=>i18n.t(k,p)
+	const t = (k,p)=>i18n.t(k,p)
 
-	const siteNav=document.querySelector('nav.site-nav')
+	function setHeroHeading(){
+		const heroH1 = document.querySelector('#inicio h1')
+		if(!heroH1) return
+		const main = t('home.h1.main')
+		const sub = t('home.h1.sub')
+		const mq = window.matchMedia('(max-width: 560px)')
+		if(mq.matches){
+			heroH1.textContent = main
+		}else{
+			heroH1.innerHTML = `${main}<br><span class="h1-sub">${sub}</span>`
+		}
+	}
+
+	if(!window.__DT_HERO_HEADING_BOUND__){
+		window.__DT_HERO_HEADING_BOUND__ = true
+		const mqHero = window.matchMedia('(max-width: 560px)')
+		if(mqHero.addEventListener){
+			mqHero.addEventListener('change', setHeroHeading)
+		}else if(mqHero.addListener){
+			mqHero.addListener(setHeroHeading)
+		}
+		window.addEventListener('resize', setHeroHeading)
+		document.addEventListener('i18n:change', setHeroHeading)
+	}
+
+	const siteNav = document.querySelector('nav.site-nav')
 	if(siteNav){
-		const setNav=(sels,key)=>{
+		const setNav = (sels,key)=>{
 			sels.forEach(sel=>{
-				const a=siteNav.querySelector(sel)
-				if(a)a.textContent=t(key)
+				const a = siteNav.querySelector(sel)
+				if(a)a.textContent = t(key)
 			})
 		}
 		setNav(['a[href="#inicio"]','a[href="index.html#inicio"]'],'nav.home')
@@ -146,102 +172,101 @@ function applyStaticBindings(){
 		setNav(['a[href="#perguntas"]','a[href="index.html#perguntas"]'],'nav.faq')
 	}
 
-	const contact=document.querySelector('.btn-contato[data-zap="link"]')
-	if(contact)contact.textContent=t('header.contact')
+	const contact = document.querySelector('.btn-contato[data-zap="link"]')
+	if(contact)contact.textContent = t('header.contact')
 
-	const langTrigger=document.getElementById('langTrigger')
+	const langTrigger = document.getElementById('langTrigger')
 	if(langTrigger){
 		langTrigger.setAttribute('title',t('header.langMenu'))
-		const img=langTrigger.querySelector('img')
-		if(img)img.alt=t('lang.currentAlt',{name:t('lang.self')})
+		const img = langTrigger.querySelector('img')
+		if(img)img.alt = t('lang.currentAlt',{name:t('lang.self')})
 	}
-	const menu=document.getElementById('langMenu')
+	const menu = document.getElementById('langMenu')
 	if(menu)menu.setAttribute('aria-label',t('header.langMenu'))
 
-	const heroH1=document.querySelector('#inicio h1')
-	if(heroH1)heroH1.innerHTML=`${t('home.h1.main')}<br><span class="h1-sub">${t('home.h1.sub')}</span>`
-	const heroLead=document.querySelector('.inicio-lead')
-	if(heroLead)heroLead.textContent=t('home.lead')
-	const heroCta1=document.querySelector('.inicio-actions .btn-primary')
-	if(heroCta1)heroCta1.textContent=t('home.cta.primary')
-	const heroCta2=document.querySelector('.inicio-actions .btn-ghost[data-zap="link"]')
-	if(heroCta2)heroCta2.textContent=t('home.cta.secondary')
+	setHeroHeading()
+	const heroLead = document.querySelector('.inicio-lead')
+	if(heroLead)heroLead.textContent = t('home.lead')
+	const heroCta1 = document.querySelector('.inicio-actions .btn-primary')
+	if(heroCta1)heroCta1.textContent = t('home.cta.primary')
+	const heroCta2 = document.querySelector('.inicio-actions .btn-ghost[data-zap="link"]')
+	if(heroCta2)heroCta2.textContent = t('home.cta.secondary')
 
-	const stTitle=document.querySelector('#estilos .section-title')
-	if(stTitle)stTitle.textContent=t('styles.title')
-	const stSub=document.querySelector('#estilos .section-sub')
-	if(stSub)stSub.textContent=t('styles.sub')
+	const stTitle = document.querySelector('#estilos .section-title')
+	if(stTitle)stTitle.textContent = t('styles.title')
+	const stSub = document.querySelector('#estilos .section-sub')
+	if(stSub)stSub.textContent = t('styles.sub')
 
-	const styleCards=Array.from(document.querySelectorAll('#estilos .estilos-card'))
+	const styleCards = Array.from(document.querySelectorAll('#estilos .estilos-card'))
 	if(styleCards.length>=3){
-		const map=[
+		const map = [
 			{title:'styles.cards.family.title',text:'styles.cards.family.text',cta:'styles.cards.family.cta'},
 			{title:'styles.cards.adventure.title',text:'styles.cards.adventure.text',cta:'styles.cards.adventure.cta'},
 			{title:'styles.cards.private.title',text:'styles.cards.private.text',cta:'styles.cards.private.cta'}
 		]
 		styleCards.forEach((card,i)=>{
-			const h3=card.querySelector('.estilos-card-title')
-			const p=card.querySelector('.estilos-card-text')
-			const a=card.querySelector('a.btn')
-			if(h3)h3.textContent=t(map[i].title)
-			if(p)p.textContent=t(map[i].text)
-			if(a)a.textContent=t(map[i].cta)
+			const h3 = card.querySelector('.estilos-card-title')
+			const p = card.querySelector('.estilos-card-text')
+			const a = card.querySelector('a.btn')
+			if(h3)h3.textContent = t(map[i].title)
+			if(p)p.textContent = t(map[i].text)
+			if(a)a.textContent = t(map[i].cta)
 		})
 	}
 
-	const rtTitle=document.querySelector('#roteiros .section-title')
-	if(rtTitle)rtTitle.textContent=t('tours.title')
-	const rtSub=document.querySelector('#roteiros .section-sub')
-	if(rtSub)rtSub.textContent=t('tours.sub')
-	const rtAll=document.querySelector('#roteiros .roteiros-cta a')
-	if(rtAll)rtAll.textContent=t('tours.ctaAll')
+	const rtTitle = document.querySelector('#roteiros .section-title')
+	if(rtTitle)rtTitle.textContent = t('tours.title')
+	const rtSub = document.querySelector('#roteiros .section-sub')
+	if(rtSub)rtSub.textContent = t('tours.sub')
+	const rtAll = document.querySelector('#roteiros .roteiros-cta a')
+	if(rtAll)rtAll.textContent = t('tours.ctaAll')
 
-	const gTitle=document.querySelector('#guia .guia-title')
-	if(gTitle)gTitle.textContent=t('guide.title')
-	const gPs=Array.from(document.querySelectorAll('#guia .guia-copy .guia-p'))
-	if(gPs[0])gPs[0].textContent=t('guide.p1')
-	if(gPs[1])gPs[1].textContent=t('guide.p2')
-	const gLabels=Array.from(document.querySelectorAll('#guia .guia-stats .label'))
-	if(gLabels[0])gLabels[0].textContent=t('guide.stats.trilhas')
-	if(gLabels[1])gLabels[1].textContent=t('guide.stats.anos')
-	if(gLabels[2])gLabels[2].textContent=t('guide.stats.linguas')
+	const gTitle = document.querySelector('#guia .guia-title')
+	if(gTitle)gTitle.textContent = t('guide.title')
+	const gPs = Array.from(document.querySelectorAll('#guia .guia-copy .guia-p'))
+	if(gPs[0])gPs[0].textContent = t('guide.p1')
+	if(gPs[1])gPs[1].textContent = t('guide.p2')
+	const gLabels = Array.from(document.querySelectorAll('#guia .guia-stats .label'))
+	if(gLabels[0])gLabels[0].textContent = t('guide.stats.trilhas')
+	if(gLabels[1])gLabels[1].textContent = t('guide.stats.anos')
+	if(gLabels[2])gLabels[2].textContent = t('guide.stats.linguas')
 
-	const depTitle=document.querySelector('#depoimentos .section-title')
-	if(depTitle)depTitle.textContent=t('reviews.title')
-	const depSub=document.querySelector('#depoimentos .section-sub')
-	if(depSub)depSub.textContent=t('reviews.sub')
+	const depTitle = document.querySelector('#depoimentos .section-title')
+	if(depTitle)depTitle.textContent = t('reviews.title')
+	const depSub = document.querySelector('#depoimentos .section-sub')
+	if(depSub)depSub.textContent = t('reviews.sub')
 
-	const rdCopy=document.querySelector('.rd-sharecopy')
-	if(rdCopy)rdCopy.textContent=t('share.copy')
-	const rdCta=document.querySelector('.rd-cta')
-	if(rdCta)rdCta.textContent=t('rd.cta')
-	const shareBtns=document.querySelectorAll('.rd-share .rd-share-btn')
+	const rdCopy = document.querySelector('.rd-sharecopy')
+	if(rdCopy)rdCopy.textContent = t('share.copy')
+	const rdCta = document.querySelector('.rd-cta')
+	if(rdCta)rdCta.textContent = t('rd.cta')
+	const shareBtns = document.querySelectorAll('.rd-share .rd-share-btn')
 	if(shareBtns[0])shareBtns[0].setAttribute('aria-label',t('share.whatsappAria'))
 	if(shareBtns[1])shareBtns[1].setAttribute('aria-label',t('share.linkAria'))
 
-	const ppcTitle=document.querySelector('#politicas .ppc-title')
-	if(ppcTitle)ppcTitle.innerHTML=t('ppc.title')
-	const ppcItems=Array.from(document.querySelectorAll('#politicas .ppc-list li span'))
-	if(ppcItems[0])ppcItems[0].textContent=t('ppc.items.0')
-	if(ppcItems[1])ppcItems[1].textContent=t('ppc.items.1')
-	if(ppcItems[2])ppcItems[2].textContent=t('ppc.items.2')
-	if(ppcItems[3])ppcItems[3].textContent=t('ppc.items.3')
-	if(ppcItems[4])ppcItems[4].textContent=t('ppc.items.4')
+	const ppcTitle = document.querySelector('#politicas .ppc-title')
+	if(ppcTitle)ppcTitle.innerHTML = t('ppc.title')
+	const ppcItems = Array.from(document.querySelectorAll('#politicas .ppc-list li span'))
+	if(ppcItems[0])ppcItems[0].textContent = t('ppc.items.0')
+	if(ppcItems[1])ppcItems[1].textContent = t('ppc.items.1')
+	if(ppcItems[2])ppcItems[2].textContent = t('ppc.items.2')
+	if(ppcItems[3])ppcItems[3].textContent = t('ppc.items.3')
+	if(ppcItems[4])ppcItems[4].textContent = t('ppc.items.4')
 
-	const faqTitle=document.querySelector('#perguntas .section-title')
-	if(faqTitle)faqTitle.textContent=t('faq.title')
-	const faqSub=document.querySelector('#perguntas .section-sub')
-	if(faqSub)faqSub.textContent=t('faq.sub')
+	const faqTitle = document.querySelector('#perguntas .section-title')
+	if(faqTitle)faqTitle.textContent = t('faq.title')
+	const faqSub = document.querySelector('#perguntas .section-sub')
+	if(faqSub)faqSub.textContent = t('faq.sub')
 
-	const zapLabel=document.querySelector('.zap-float .zap-float-label')
-	if(zapLabel)zapLabel.textContent=t('whatsapp.button')
+	const zapLabel = document.querySelector('.zap-float .zap-float-label')
+	if(zapLabel)zapLabel.textContent = t('whatsapp.button')
 
-	const foot=document.querySelector('.foot-nav')
+	const foot = document.querySelector('.foot-nav')
 	if(foot){
-		const setFoot=(sels,key)=>{
+		const setFoot = (sels,key)=>{
 			sels.forEach(sel=>{
-				const a=foot.querySelector(sel)
-				if(a)a.textContent=t(key)
+				const a = foot.querySelector(sel)
+				if(a)a.textContent = t(key)
 			})
 		}
 		setFoot(['a[href="#inicio"]','a[href="index.html#inicio"]'],'footer.links.home')
@@ -249,101 +274,101 @@ function applyStaticBindings(){
 		setFoot(['a[href="#roteiros"]','a[href="index.html#roteiros"]','a[href="roteiros.html"]'],'footer.links.tours')
 		setFoot(['a[href="#depoimentos"]','a[href="index.html#depoimentos"]'],'footer.links.reviews')
 	}
-	const footCopy=document.querySelector('.foot-copy')
-	if(footCopy)footCopy.textContent=t('footer.copy')
-	const footAuthor=document.querySelector('.foot-author')
-	if(footAuthor)footAuthor.textContent=t('footer.author')
+	const footCopy = document.querySelector('.foot-copy')
+	if(footCopy)footCopy.textContent = t('footer.copy')
+	const footAuthor = document.querySelector('.foot-author')
+	if(footAuthor)footAuthor.textContent = t('footer.author')
 
-	const priceSmall=document.querySelector('.rp-price small')
-	if(priceSmall)priceSmall.textContent=t('rp.priceFrom')
+	const priceSmall = document.querySelector('.rp-price small')
+	if(priceSmall)priceSmall.textContent = t('rp.priceFrom')
 
-	const rpLabel=document.querySelector('.rp-label')
-	if(rpLabel)rpLabel.textContent=t('rp.startEnd')
+	const rpLabel = document.querySelector('.rp-label')
+	if(rpLabel)rpLabel.textContent = t('rp.startEnd')
 
-	const pplTitle=document.querySelector('.rp-people-title')
-	if(pplTitle)pplTitle.textContent=t('rp.people.title')
-	const pplSub=document.getElementById('rpPeopleLabel')
-	if(pplSub)pplSub.textContent=t('rp.people.select')
+	const pplTitle = document.querySelector('.rp-people-title')
+	if(pplTitle)pplTitle.textContent = t('rp.people.title')
+	const pplSub = document.getElementById('rpPeopleLabel')
+	if(pplSub)pplSub.textContent = t('rp.people.select')
 
-	const pplRowTitle=document.querySelector('.rp-c-title')
-	if(pplRowTitle)pplRowTitle.textContent=t('rp.people.personOne')
-	const pplRowSub=document.querySelector('.rp-c-sub')
-	if(pplRowSub)pplRowSub.textContent=t('rp.people.ageRange')
+	const pplRowTitle = document.querySelector('.rp-c-title')
+	if(pplRowTitle)pplRowTitle.textContent = t('rp.people.personOne')
+	const pplRowSub = document.querySelector('.rp-c-sub')
+	if(pplRowSub)pplRowSub.textContent = t('rp.people.ageRange')
 
-	const qtyInput=document.getElementById('rpQty')
+	const qtyInput = document.getElementById('rpQty')
 	if(qtyInput)qtyInput.setAttribute('aria-label',t('rp.people.ariaQty'))
-	const minusBtn=document.getElementById('rpMinus')
+	const minusBtn = document.getElementById('rpMinus')
 	if(minusBtn)minusBtn.setAttribute('aria-label',t('rp.people.dec'))
-	const plusBtn=document.getElementById('rpPlus')
+	const plusBtn = document.getElementById('rpPlus')
 	if(plusBtn)plusBtn.setAttribute('aria-label',t('rp.people.inc'))
 
-	const cta=document.getElementById('rpSubmit')
-	if(cta&&cta.disabled)cta.textContent=t('rp.cta.disabled')
+	const cta = document.getElementById('rpSubmit')
+	if(cta&&cta.disabled)cta.textContent = t('rp.cta.disabled')
 
-	const subBox=document.querySelector('.rp-subtotal')
-	const subVal=document.getElementById('rpSubtotal')?.textContent||''
-	if(subBox)subBox.innerHTML=`${t('rp.subtotalLabel')} <b id="rpSubtotal">${subVal}</b>`
+	const subBox = document.querySelector('.rp-subtotal')
+	const subVal = document.getElementById('rpSubtotal')?.textContent || ''
+	if(subBox)subBox.innerHTML = `${t('rp.subtotalLabel')} <b id="rpSubtotal">${subVal}</b>`
 
-	const readBtn=document.getElementById('rpDescBtn')
-	if(readBtn)readBtn.innerHTML=`<i class="bx bxs-book" aria-hidden="true"></i> ${t('rp.descBtn')}`
+	const readBtn = document.getElementById('rpDescBtn')
+	if(readBtn)readBtn.innerHTML = `<i class="bx bxs-book" aria-hidden="true"></i> ${t('rp.descBtn')}`
 
-	const incTitle=document.querySelector('.rp-incluso .rp-subtitle')
-	if(incTitle)incTitle.textContent=t('included.title')
-	const incItems=Array.from(document.querySelectorAll('.rp-inc-list li'))
+	const incTitle = document.querySelector('.rp-incluso .rp-subtitle')
+	if(incTitle)incTitle.textContent = t('included.title')
+	const incItems = Array.from(document.querySelectorAll('.rp-inc-list li'))
 	if(incItems.length>=4){
-		const map=[
+		const map = [
 			['included.pickup.title','included.pickup.text'],
 			['included.meal.title','included.meal.text'],
 			['included.tickets.title','included.tickets.text'],
 			['included.guide.title','included.guide.text']
 		]
 		incItems.slice(0,4).forEach((li,i)=>{
-			const b=li.querySelector('div > b')
-			const s=li.querySelector('div > span')
-			if(b)b.textContent=t(map[i][0])
-			if(s)s.textContent=t(map[i][1])
+			const b = li.querySelector('div > b')
+			const s = li.querySelector('div > span')
+			if(b)b.textContent = t(map[i][0])
+			if(s)s.textContent = t(map[i][1])
 		})
 	}
 
-	const aboutTitle=document.querySelector('.rp-about .rp-subtitle')
-	if(aboutTitle)aboutTitle.textContent=t('rp.aboutTitle')
-	const seeMore=document.getElementById('rpSeeMore')
-	if(seeMore)seeMore.innerHTML=`${t('rp.seeMore')} <i class="bx bx-chevron-down"></i>`
-	const seeLess=document.getElementById('rpSeeLess')
-	if(seeLess)seeLess.innerHTML=`${t('rp.seeLess')} <i class="bx bx-chevron-up"></i>`
+	const aboutTitle = document.querySelector('.rp-about .rp-subtitle')
+	if(aboutTitle)aboutTitle.textContent = t('rp.aboutTitle')
+	const seeMore = document.getElementById('rpSeeMore')
+	if(seeMore)seeMore.innerHTML = `${t('rp.seeMore')} <i class="bx bx-chevron-down"></i>`
+	const seeLess = document.getElementById('rpSeeLess')
+	if(seeLess)seeLess.innerHTML = `${t('rp.seeLess')} <i class="bx bx-chevron-up"></i>`
 
-	const moreTitle=document.querySelector('.rp-more .rp-subtitle')
-	if(moreTitle)moreTitle.textContent=t('rp.moreTitle')
+	const moreTitle = document.querySelector('.rp-more .rp-subtitle')
+	if(moreTitle)moreTitle.textContent = t('rp.moreTitle')
 
-	const galPrev=document.querySelector('.gal-prev')
+	const galPrev = document.querySelector('.gal-prev')
 	if(galPrev)galPrev.setAttribute('aria-label',t('carousel.prev'))
-	const galNext=document.querySelector('.gal-next')
+	const galNext = document.querySelector('.gal-next')
 	if(galNext)galNext.setAttribute('aria-label',t('carousel.next'))
 
-	const drpTitle=document.getElementById('drpTitle')
-	if(drpTitle)drpTitle.textContent=t('drp.title')
-	const tabStartLbl=document.querySelector('#drpTabStart .drp-tab-label')
-	if(tabStartLbl)tabStartLbl.textContent=t('drp.tabStart')
-	const tabEndLbl=document.querySelector('#drpTabEnd .drp-tab-label')
-	if(tabEndLbl)tabEndLbl.textContent=t('drp.tabEnd')
-	const inpS=document.getElementById('drpInputStart')
-	const inpE=document.getElementById('drpInputEnd')
+	const drpTitle = document.getElementById('drpTitle')
+	if(drpTitle)drpTitle.textContent = t('drp.title')
+	const tabStartLbl = document.querySelector('#drpTabStart .drp-tab-label')
+	if(tabStartLbl)tabStartLbl.textContent = t('drp.tabStart')
+	const tabEndLbl = document.querySelector('#drpTabEnd .drp-tab-label')
+	if(tabEndLbl)tabEndLbl.textContent = t('drp.tabEnd')
+	const inpS = document.getElementById('drpInputStart')
+	const inpE = document.getElementById('drpInputEnd')
 	if(inpS){
-		inpS.placeholder=t('rp.date.placeholderStart')
+		inpS.placeholder = t('rp.date.placeholderStart')
 		inpS.setAttribute('aria-label',t('rp.date.startAria'))
 	}
 	if(inpE){
-		inpE.placeholder=t('rp.date.placeholderEnd')
+		inpE.placeholder = t('rp.date.placeholderEnd')
 		inpE.setAttribute('aria-label',t('rp.date.endAria'))
 	}
-	const prevBtn=document.querySelector('.drp-prev')
+	const prevBtn = document.querySelector('.drp-prev')
 	if(prevBtn)prevBtn.setAttribute('aria-label',t('drp.prev'))
-	const nextBtn=document.querySelector('.drp-next')
+	const nextBtn = document.querySelector('.drp-next')
 	if(nextBtn)nextBtn.setAttribute('aria-label',t('drp.next'))
-	const drpClear=document.getElementById('drpClear')
-	if(drpClear)drpClear.textContent=t('drp.clear')
-	const drpApply=document.getElementById('drpApply')
-	if(drpApply)drpApply.textContent=t('drp.apply')
+	const drpClear = document.getElementById('drpClear')
+	if(drpClear)drpClear.textContent = t('drp.clear')
+	const drpApply = document.getElementById('drpApply')
+	if(drpApply)drpApply.textContent = t('drp.apply')
 }
 
 function updateFlagUI(){
@@ -403,39 +428,47 @@ async function rehydrate(){
 function bindLangMenu(){
 	document.querySelectorAll('.lang-menu a[data-lang]').forEach(a=>{
 		a.addEventListener('click', async e=>{
-			e.preventDefault()
-			const next = a.dataset.lang
-			if(!next) return
+			e.preventDefault();
+			const next = a.dataset.lang;
+			if(!next) return;
+
+			loading.show('lang-change');
 
 			if (typeof i18n?.setLang === 'function') {
-				await i18n.setLang(next)
+				await i18n.setLang(next);
 			}
-			document.documentElement.lang = next
-			localStorage.setItem('lang', next)
-			localStorage.setItem('dt.lang', next)
+			document.documentElement.lang = (next === 'pt' ? 'pt-br' : next);
+			localStorage.setItem('lang', next);
+			localStorage.setItem('dt.lang', next);
 
-			const dataMod = await importRoot('data.js')
+			const dataMod = await importRoot('data.js');
 			if (typeof dataMod.invalidateDataCache === 'function') {
-				dataMod.invalidateDataCache()
+				dataMod.invalidateDataCache();
 			}
 
-			updateFlagUI()
-			await rehydrate()
-			if (typeof i18n?.apply === 'function') i18n.apply(document)
-		})
-	})
+			updateFlagUI();
+			await rehydrate();
+			if (typeof i18n?.apply === 'function') i18n.apply(document);
+			
+			loading.hide();
+		});
+	});
 }
 
 async function boot(){
 	const lang = resolveLang()
-	await applyI18n(lang)
-	updateFlagUI()
-	await rehydrate()
-	if (typeof i18n?.apply === 'function') i18n.apply(document)
-
-	setZapPrefill() 
-
-	bindLangMenu()
+	loading.show('boot')
+	try{
+		await applyI18n(lang)
+		updateFlagUI()
+		await rehydrate()
+		if (typeof i18n?.apply === 'function') i18n.apply(document)
+		setZapPrefill()
+		bindLangMenu()
+		loading.bindNavigationLoading()
+	}finally{
+		loading.hide()
+	}
 }
 
 document.addEventListener('i18n:change', () => {

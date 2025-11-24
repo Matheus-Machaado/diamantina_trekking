@@ -7,7 +7,7 @@
 	<meta name="description" content="Viva o pôr do sol mais famoso da Chapada Diamantina no Morro do Pai Inácio. Subida curta e panorâmica, ideal para todas as idades."/>
 	<link rel="stylesheet" href="../css/styles.css">
 	<link rel="stylesheet" href="../css/roteiro-detalhe.css">
-	<link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 	<link rel="shortcut icon" href="../img/fav_icon.png" type="image/x-icon">
 </head>
 <body>
@@ -74,8 +74,12 @@
 						<div class="rp-sharebar rd-sharebar">
 							<p class="rd-sharecopy">Curtiu o roteiro? Compartilha essa jornada com alguém especial!</p>
 							<div class="rd-share">
-								<a class="rd-share-btn" href="#" aria-label="Compartilhar por WhatsApp"><img src="../img/icons/whatsapp-icon.png" alt=""></a>
-								<a class="rd-share-btn" href="#" aria-label="Copiar link"><img src="../img/icons/link-icon.png" alt=""></a>
+								<a class="rd-share-btn rd-share-btn-wa" href="#" aria-label="Compartilhar por WhatsApp">
+									<i class="bx bxl-whatsapp" aria-hidden="true"></i>
+								</a>
+								<a class="rd-share-btn rd-share-btn-link" href="#" aria-label="Copiar link">
+									<i class="bx bx-link-alt" aria-hidden="true"></i>
+								</a>
 							</div>
 						</div>
 
@@ -214,8 +218,12 @@
 				<a class="foot-tel" data-zap="link">+55 75 9844-0434</a>
 				<a class="foot-mail" href="mailto:diamantinatrekking@gmail.com">diamantinatrekking@gmail.com</a>
 				<div class="foot-social">
-					<a class="ft-social-btn" href="#" aria-label="Instagram"><img src="../img/icons/instagram-white-icon.png" alt=""></a>
-					<a class="ft-social-btn" href="#" aria-label="Facebook"><img src="../img/icons/facebook-white-icon.png" alt=""></a>
+					<a class="ft-social-btn ft-social-btn-instagram" href="#" aria-label="Instagram">
+						<i class="bx bxl-instagram" aria-hidden="true"></i>
+					</a>
+					<a class="ft-social-btn ft-social-btn-facebook" href="#" aria-label="Facebook">
+						<i class="bx bxl-facebook" aria-hidden="true"></i>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -226,12 +234,11 @@
 		</div>
 	</footer>
 
-	<a href="https://wa.me/5511910254958"
-		class="zap-float" target="_blank" rel="noopener" aria-label="Atendimento Online pelo WhatsApp">
-		<img src="../img/icons/whatsapp-white-icon.png" alt="" class="zap-float-icon">
+	<a href="https://wa.me/5511910254958" class="zap-float" target="_blank" rel="noopener" aria-label="Atendimento Online pelo WhatsApp">
+		<i class="bx bxl-whatsapp zap-float-icon" aria-hidden="true"></i>
 		<span class="zap-float-label">Atendimento Online</span>
 	</a>
-	
+
 	<div id="drpBackdrop" class="drp-backdrop" hidden></div>
 	<div id="drpModal" class="drp-modal" hidden role="dialog" aria-modal="true" aria-labelledby="drpTitle">
 		<div class="drp-head">

@@ -558,18 +558,24 @@ const langMenu = (() => {
 	const copy = section.querySelector('.rd-copy');
 	const viewport = section.querySelector('.rd-viewport');
 	const track = section.querySelector('.rd-track');
+	if(!media || !copy || !viewport || !track) return;
+
 	const slides = Array.from(track.children);
-	if (!slides.length) return;
+	if(!slides.length) return;
+
 	const dotsBox = section.querySelector('.rd-dots');
 	const sharebar = section.querySelector('.rd-sharebar');
 	const mqlStack = window.matchMedia('(max-width: 984px)');
 
 	function m(el){
+		if(!el) return 0;
 		const cs = getComputedStyle(el);
 		return (parseFloat(cs.marginTop)||0) + (parseFloat(cs.marginBottom)||0);
 	}
 	function extras(){
-		return dotsBox.offsetHeight + m(dotsBox) + sharebar.offsetHeight + m(sharebar);
+		const d = dotsBox ? dotsBox.offsetHeight + m(dotsBox) : 0;
+		const s = sharebar ? sharebar.offsetHeight + m(sharebar) : 0;
+		return d + s;
 	}
 
 	let raf = null;
@@ -586,8 +592,6 @@ const langMenu = (() => {
 				return;
 			}
 
-			const prevV = viewport.style.height;
-			const prevM = media.style.height;
 			viewport.style.height = '';
 			media.style.height = '';
 
@@ -613,6 +617,7 @@ const langMenu = (() => {
 		return viewport.getBoundingClientRect().width;
 	}
 	function buildDots(){
+		if(!dotsBox) return;
 		dotsBox.innerHTML = '';
 		dots = slides.map((_,i)=>{
 			const d = document.createElement('span');
@@ -630,6 +635,7 @@ const langMenu = (() => {
 		dots.forEach((d,i)=>d.classList.toggle('is-active', i===index));
 	}
 	function goTo(i){
+		if(!slides.length) return;
 		index = ((i % slides.length) + slides.length) % slides.length;
 		const x = stepWidth() * index;
 		track.style.transform = `translateX(${-x}px)`;
@@ -644,30 +650,38 @@ const langMenu = (() => {
 	window.addEventListener('resize', recalc);
 	mqlStack.addEventListener?.('change', recalc);
 
-	const ro = new ResizeObserver(syncHeights);
-	ro.observe(copy);
-	ro.observe(dotsBox);
-	ro.observe(sharebar);
+	if(typeof ResizeObserver === 'function'){
+		const ro = new ResizeObserver(syncHeights);
+		if(copy) ro.observe(copy);
+		if(dotsBox) ro.observe(dotsBox);
+		if(sharebar) ro.observe(sharebar);
+	}
 
 	const imgs = section.querySelectorAll('.rd-slide img');
 	let loaded = 0;
 
-	imgs.forEach(img=>{
-		if(img.complete){
-			if(++loaded===imgs.length) syncHeights();
-		}else{
-			img.addEventListener('load', ()=>{
+	if(imgs.length){
+		imgs.forEach(img=>{
+			if(img.complete){
 				if(++loaded===imgs.length) syncHeights();
-			});
-		}
-	});
+			}else{
+				img.addEventListener('load', ()=>{
+					if(++loaded===imgs.length) syncHeights();
+				});
+			}
+		});
+	}else{
+		syncHeights();
+	}
 
 	const AUTO_MS = 5000;
 	let timer = null;
 
 	function startAuto(){
 		stopAuto();
-		timer = setInterval(()=>goTo(index+1), AUTO_MS);
+		if(slides.length > 1){
+			timer = setInterval(()=>goTo(index+1), AUTO_MS);
+		}
 	}
 	function stopAuto(){
 		if(timer){
@@ -682,8 +696,10 @@ const langMenu = (() => {
 
 	viewport.addEventListener('mouseenter', stopAuto);
 	viewport.addEventListener('mouseleave', startAuto);
-	dotsBox.addEventListener('mouseenter', stopAuto);
-	dotsBox.addEventListener('mouseleave', startAuto);
+	if(dotsBox){
+		dotsBox.addEventListener('mouseenter', stopAuto);
+		dotsBox.addEventListener('mouseleave', startAuto);
+	}
 	section.addEventListener('focusin', stopAuto);
 	section.addEventListener('focusout', startAuto);
 	document.addEventListener('visibilitychange', ()=>{

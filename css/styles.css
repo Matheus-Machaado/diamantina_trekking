@@ -412,7 +412,7 @@ header.is-hidden{
 	}
 }
 
-@media (max-width:405px){
+@media (max-width:360px){
 	.header-inner{
 		justify-content:space-between;
 		gap:0;

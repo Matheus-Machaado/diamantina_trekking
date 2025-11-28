@@ -159,7 +159,7 @@ const langMenu = (() => {
 			moveContatoBack();
 			return;
 		}
-		if(w <= 405){
+		if(w <= 360){
 			moveLangToTopbar();
 		}else{
 			moveLangBack();

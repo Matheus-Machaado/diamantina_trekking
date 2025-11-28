@@ -107,9 +107,6 @@ body{
 	text-decoration:none;
 	transition:.2s ease-in-out;
 }
-.zap-float:hover{
-	box-shadow:0 10px 20px rgba(0,0,0,.22);
-}
 .zap-float-label{
 	font-size:calc(20px * var(--font-scale));
 	white-space:nowrap;
@@ -229,8 +226,6 @@ header.is-hidden{
 	transition:transform .25s ease;
 }
 
-.site-nav ul li a:hover::after,
-.site-nav ul li a:focus-visible::after,
 .site-nav ul li a[aria-current="page"]::after{
 	transform:scaleX(1);
 }
@@ -439,12 +434,6 @@ header.is-hidden{
 	text-align:center;
 }
 
-.btn:hover,
-.zap-float:hover{
-	background-color:var(--hover-btn);
-	color:white;
-}
-
 .btn-contato{
 	background-color:var(--brand);
 	font-size:calc(18px * var(--font-scale));
@@ -471,10 +460,6 @@ header.is-hidden{
 	padding:4px 6px;
 	border-radius:6px;
 	transition:.2s ease-in-out;
-}
-
-.lingua-slect:hover{
-	background-color:var(--brand);
 }
 
 .lingua-slect .lang-caret{
@@ -525,10 +510,6 @@ header.is-hidden{
 	height:14px;
 	border-radius:2px;
 	object-fit:cover;
-}
-
-.lang-menu li a:hover{
-	background:rgba(255,255,255,.08);
 }
 
 .lang-menu li a.active{
@@ -585,11 +566,6 @@ section .container{
 	background:#fff;
 	color:var(--brand);
 	border:2px solid var(--brand);
-}
-
-.btn-ghost:hover{
-	color:#fff;
-	border:2px solid var(--hover-btn);
 }
 
 .btn-cta{
@@ -780,12 +756,6 @@ section .container{
 	font-weight:700;
 	font-size:calc(20px * var(--font-scale));
 	padding:8px 10px;
-}
-
-.estilos-card:hover{
-	transform:translateY(-2px);
-	box-shadow:0 8px 22px rgba(0,0,0,.10);
-	transition:.18s ease;
 }
 
 @media (max-width:1024px){
@@ -1034,26 +1004,22 @@ section .container{
 	margin-top:24px;
 }
 
-.guia-social-btn, .ft-social-btn{
+.guia-social-btn,
+.ft-social-btn{
 	width:50px;
 	height:50px;
 	display:inline-flex;
 	align-items:center;
 	justify-content:center;
 	transition:.2s ease-in-out;
-	background-color: var(--text-green);
-	color: white;
+	background-color:var(--text-green);
+	color:white;
 	border-radius:999px;
 }
 
-.guia-social-btn i, .ft-social-btn i{
+.guia-social-btn i,
+.ft-social-btn i{
 	font-size:calc(28px * var(--font-scale));
-}
-
-.guia-social-btn:hover,
-.rd-share-btn:hover,
-.ft-social-btn:hover{
-	transform:translateY(-2px);
 }
 
 .guia-media{
@@ -1155,10 +1121,6 @@ section .container{
 	cursor:pointer;
 	transition:.2s ease-in-out;
 	color:#fff;
-}
-
-.depo-nav:hover{
-	background-color:var(--hover-btn);
 }
 
 .depo-nav i{
@@ -1357,8 +1319,8 @@ depo-card time{
 	height:44px;
 	border-radius:999px;
 	transition:.2s ease-in-out;
-	background-color: var(--text-green);
-	color: white;
+	background-color:var(--text-green);
+	color:white;
 }
 .rd-share-btn i{
 	font-size:calc(25px * var(--font-scale));
@@ -1572,7 +1534,7 @@ depo-card time{
 	}
 
 	.faq-a p{
-		text-align: justify;
+		text-align:justify;
 	}
 }
 
@@ -1612,9 +1574,6 @@ depo-card time{
 	font-size:calc(18px * var(--font-scale));
 	transition:opacity .18s ease;
 }
-.foot-nav a:hover{
-	opacity:.85;
-}
 
 .foot-contacts{
 	display:grid;
@@ -1636,9 +1595,9 @@ depo-card time{
 	margin-top:6px;
 }
 .ft-social-btn{
-	background-color: white;
-	color: var(--text-green);
-	font-weight: bold;
+	background-color:white;
+	color:var(--text-green);
+	font-weight:bold;
 }
 
 .foot-sep{
@@ -1676,6 +1635,57 @@ depo-card time{
 @media (max-width:400px){
 	.foot-nav{
 		display:none;
+	}
+}
+
+@media (min-width:561px){
+	.zap-float:hover{
+		box-shadow:0 10px 20px rgba(0,0,0,.22);
+		background-color:var(--hover-btn);
+		color:#fff;
+	}
+
+	.btn:hover{
+		background-color:var(--hover-btn);
+		color:white;
+	}
+
+	.lingua-slect:hover{
+		background-color:var(--brand);
+	}
+
+	.lang-menu li a:hover{
+		background:rgba(255,255,255,.08);
+	}
+
+	.site-nav ul li a:hover::after,
+	.site-nav ul li a:focus-visible::after{
+		transform:scaleX(1);
+	}
+
+	.estilos-card:hover{
+		transform:translateY(-2px);
+		box-shadow:0 8px 22px rgba(0,0,0,.10);
+		transition:.18s ease;
+	}
+
+	.depo-nav:hover{
+		background-color:var(--hover-btn);
+	}
+
+	.guia-social-btn:hover,
+	.rd-share-btn:hover,
+	.ft-social-btn:hover{
+		transform:translateY(-2px);
+	}
+
+	.btn-ghost:hover{
+		color:#fff;
+		border:2px solid var(--hover-btn);
+	}
+
+	.foot-nav a:hover{
+		opacity:.85;
 	}
 }
 
@@ -1748,5 +1758,15 @@ depo-card time{
 	[data-reveal="fade-right"]{
 		--reveal-x:0;
 		--reveal-y:16px;
+	}
+}
+
+@media (max-width:560px){
+	[data-reveal],
+	[data-reveal-stagger] > *{
+		transition:none!important;
+		opacity:1!important;
+		transform:none!important;
+		filter:none!important;
 	}
 }

@@ -121,7 +121,7 @@ function cardHTML(r){
 			<p class="roteiro-desc">${esc(r.preview)}</p>
 			<div class="roteiro-meta">
 				<span class="roteiro-meta-left">
-					<i class="bxrds bxs-clock-4" aria-hidden="true"></i>${esc(r.duracao)}
+					<i class="bx bxs-time"></i>${esc(r.duracao)}
 				</span>
 				<span class="roteiro-meta-right">
 					<small>${esc(i18n.t('cards.from'))}</small> <b>${money(r.valor)}</b>

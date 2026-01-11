@@ -233,13 +233,13 @@ const langMenu = (() => {
 	});
 
 	mql.addEventListener?.('change', e => {
-		if(!e.matches){           
-			closeNav();          
+		if(!e.matches){
+			closeNav();
 		} else {
-			moveToggleBack();     
+			moveToggleBack();
 		}
-		syncContactPlacement();   
-		syncHeaderVars();       
+		syncContactPlacement();
+		syncHeaderVars();
 	});
 
 	mqlMobile.addEventListener?.('change', syncContactPlacement);
@@ -623,6 +623,7 @@ const langMenu = (() => {
 			const d = document.createElement('span');
 			d.className = 'depo-dot' + (i===index ? ' is-active' : '');
 			d.addEventListener('click', ()=>{
+				holdAutoplay();
 				goTo(i);
 				restartAuto();
 			});
@@ -676,23 +677,69 @@ const langMenu = (() => {
 
 	const AUTO_MS = 5000;
 	let timer = null;
+	let holdUntil = 0;
+	let interacting = false;
+
+	function holdAutoplay(ms = AUTO_MS){
+		holdUntil = Date.now() + ms;
+	}
+
+	function stopAuto(){
+		if(timer){
+			clearTimeout(timer);
+			timer = null;
+		}
+	}
+
+	function nextDelay(){
+		const now = Date.now();
+		return holdUntil > now ? (holdUntil - now) : AUTO_MS;
+	}
+
+	function tick(){
+		if(interacting) holdAutoplay();
+		const now = Date.now();
+
+		if(now < holdUntil){
+			stopAuto();
+			timer = setTimeout(tick, holdUntil - now);
+			return;
+		}
+
+		goTo(index + 1);
+
+		stopAuto();
+		timer = setTimeout(tick, AUTO_MS);
+	}
 
 	function startAuto(){
 		stopAuto();
 		if(slides.length > 1){
-			timer = setInterval(()=>goTo(index+1), AUTO_MS);
+			timer = setTimeout(tick, nextDelay());
 		}
 	}
-	function stopAuto(){
-		if(timer){
-			clearInterval(timer);
-			timer = null;
-		}
-	}
+
 	function restartAuto(){
-		stopAuto();
 		startAuto();
 	}
+
+	viewport.addEventListener('touchstart', (e)=>{
+		interacting = true;
+		holdAutoplay();
+	}, { passive:true });
+
+	viewport.addEventListener('touchmove', (e)=>{
+		interacting = true;
+		holdAutoplay();
+	}, { passive:true });
+
+	viewport.addEventListener('touchend', (e)=>{
+		interacting = false;
+	}, { passive:true });
+
+	viewport.addEventListener('touchcancel', (e)=>{
+		interacting = false;
+	}, { passive:true });
 
 	viewport.addEventListener('mouseenter', stopAuto);
 	viewport.addEventListener('mouseleave', startAuto);
@@ -724,7 +771,7 @@ const langMenu = (() => {
 		ans.style.height = 'auto';
 		const h = ans.scrollHeight;
 		ans.style.height = '0px';
-		void ans.offsetHeight; 
+		void ans.offsetHeight;
 		ans.style.height = h + 'px';
 
 		item.classList.add('is-open');

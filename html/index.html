@@ -71,8 +71,24 @@
 
 	<section id="inicio" class="inicio">
 		<picture class="inicio-bg" aria-hidden="true">
-			<source srcset="../img/hero-1280.png 1280w, ../img/hero-1920.png 1920w, ../img/hero-2560.png 2560w, ../img/hero-3840.png 3840w" sizes="100vw" type="image/png">
-			<img src="../img/hero-1920.png" alt="" loading="eager" fetchpriority="high">
+			<source
+				srcset="../img/hero-1280.png 1280w,
+						../img/hero-1920.png 1920w,
+						../img/hero-2560.png 2560w,
+						../img/hero-3840.png 3840w"
+				sizes="100vw"
+				type="image/png">
+
+			<img
+				src="../img/hero-1920.png"
+				srcset="../img/hero-1280.png 1280w,
+						../img/hero-1920.png 1920w,
+						../img/hero-2560.png 2560w,
+						../img/hero-3840.png 3840w"
+				sizes="100vw"
+				alt=""
+				loading="eager"
+				fetchpriority="high">
 		</picture>
 
 		<div class="inicio-content flex container" data-reveal="fade">

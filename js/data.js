@@ -111,7 +111,7 @@ function cardHTML(r){
 			<img src="${esc(capa)}" alt="${esc(r.titulo)}">
 		</div>
 		<div class="roteiro-card-body">
-			<h3 class="roteiro-card-title">${esc(r.titulo)}</h3>
+			<h3 class="roteiro-card-title" title="${esc(r.titulo)}">${esc(r.titulo)}</h3>
 			<div class="roteiro-card-line" tabindex="0">
 				<span>${esc(i18n.t('cards.about'))}</span>
 				<button class="roteiro-toggle" type="button" aria-expanded="false" aria-label="${esc(i18n.t('cards.toggleAria'))}">

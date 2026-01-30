@@ -19,6 +19,7 @@ import * as i18n from './i18n.js'
 	let index = 0
 	let slides = []
 	let thumbs = []
+	let dragBound = false
 
 	function updateRefs(){
 		slides = track ? [...track.querySelectorAll('.gal-slide')] : []
@@ -60,10 +61,92 @@ import * as i18n from './i18n.js'
 		})
 	}
 
+	function attachDragForGallery(){
+		if(dragBound) return
+		if(!viewport || !track) return
+		dragBound = true
+
+		let isDown = false
+		let startX = 0
+		let lastX = 0
+		let moved = false
+
+		function start(clientX){
+			if(!slides.length) return
+			isDown = true
+			moved = false
+			startX = clientX
+			lastX = clientX
+			track.style.transition = 'none'
+			viewport.classList.add('is-dragging')
+		}
+
+		function move(clientX){
+			if(!isDown) return
+			const dx = clientX - startX
+			lastX = clientX
+			if(Math.abs(dx) > 4) moved = true
+			const width = viewport.clientWidth || 1
+			const base = width * index
+			track.style.transform = `translateX(${-(base - dx)}px)`
+		}
+
+		function end(){
+			if(!isDown) return
+			isDown = false
+			viewport.classList.remove('is-dragging')
+			track.style.transition = ''
+			const dx = lastX - startX
+			const width = viewport.clientWidth || 1
+			const threshold = width * 0.18
+
+			if(!moved || Math.abs(dx) < threshold){
+				show(index)
+				return
+			}
+			if(dx < 0) show(index + 1)
+			else show(index - 1)
+		}
+
+		function onMouseDown(e){
+			if(e.button !== 0) return
+			e.preventDefault()
+			start(e.clientX)
+		}
+		function onMouseMove(e){
+			move(e.clientX)
+		}
+		function onMouseUp(){
+			end()
+		}
+		function onTouchStart(e){
+			const t = e.touches[0]
+			if(!t) return
+			start(t.clientX)
+		}
+		function onTouchMove(e){
+			const t = e.touches[0]
+			if(!t) return
+			move(t.clientX)
+		}
+		function onTouchEnd(){
+			end()
+		}
+
+		viewport.addEventListener('mousedown', onMouseDown)
+		window.addEventListener('mousemove', onMouseMove)
+		window.addEventListener('mouseup', onMouseUp)
+		viewport.addEventListener('touchstart', onTouchStart, { passive:true })
+		viewport.addEventListener('touchmove', onTouchMove, { passive:true })
+		viewport.addEventListener('touchend', onTouchEnd)
+		viewport.addEventListener('touchcancel', onTouchEnd)
+	}
+
 	function setup(initial){
 		updateRefs()
 		bindThumbs()
 		updateArrows()
+		attachDragForGallery()
 		if(initial) show(0)
 		else show(index)
 	}

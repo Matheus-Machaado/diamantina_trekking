@@ -47,11 +47,6 @@
 	transition:border-color .18s ease, box-shadow .18s ease, transform .06s ease;
 }
 
-.select-wrap select:hover{
-	border-color:rgba(0,0,0,.12);
-	box-shadow:0 8px 22px rgba(0,0,0,.08);
-}
-
 .select-wrap select:focus{
 	outline:0;
 }
@@ -147,7 +142,9 @@
 	transition:transform .12s ease, background .18s ease, color .18s ease, border-color .18s ease;
 }
 
-.rt-btn:active{transform:translateY(1px);}
+.rt-btn:active{
+	transform:translateY(1px);
+}
 
 .rt-btn[aria-current="page"]{
 	background:var(--brand);
@@ -177,4 +174,11 @@
 @media (max-width:640px){
 	.rlist-controls{justify-content:space-between;}
 	.select-wrap select{width:100%;}
+}
+
+@media (min-width:561px){
+	.select-wrap select:hover{
+		border-color:rgba(0,0,0,.12);
+		box-shadow:0 8px 22px rgba(0,0,0,.08);
+	}
 }

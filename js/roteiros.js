@@ -75,7 +75,7 @@ import * as i18n from './i18n.js'
 			const text = levelLabel(level).toUpperCase()
 			const badge = document.createElement('span')
 			badge.className = 'intensity-badge intensity-'+(level||'leve')
-			badge.innerHTML = '<img src="../img/icons/intensidade-icon.png" alt=""><span>'+text+'</span>'
+			badge.innerHTML = '<img src="img/icons/intensidade-icon.png" alt=""><span>'+text+'</span>'
 			slot.insertBefore(badge, slot.firstChild)
 		})
 	}

@@ -14,10 +14,10 @@
 				"Baignade à la Piscine du Diable et retour à Lençóis."
 			],
 			"imagens": [
-				"../img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-1.png",
-				"../img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-2.png",
-				"../img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-3.png",
-				"../img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-4.png"
+				"img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-1.png",
+				"img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-2.png",
+				"img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-3.png",
+				"img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-4.png"
 			],
 			"pagina-principal": true
 		},
@@ -30,10 +30,10 @@
 			"preview": "Paysages souterrains, eaux cristallines et coucher de soleil inoubliable sur le belvédère emblématique de la Chapada.",
 			"descricao": "Départ à 8h30 pour la grotte de Lapa Doce et sa traversée entre salles et spéléothèmes. Déjeuner local. Puis Pratinha et la Grotte Bleue pour contempler et, en option, faire de la flottaison, tyrolienne, canoë et autres activités. En fin de journée, montée au Morro do Pai Inácio pour le coucher du soleil entre plateaux et vallées. Retour à Lençóis en soirée.",
 			"imagens": [
-				"../img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-1.png",
-				"../img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-2.png",
-				"../img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-3.png",
-				"../img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-4.png"
+				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-1.png",
+				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-2.png",
+				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-3.png",
+				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-4.png"
 			],
 			"pagina-principal": true
 		},
@@ -46,10 +46,10 @@
 			"preview": "La 2ᵉ plus haute chute du Brésil vue d’en haut et, ensuite, un bain revigorant dans les piscines de Riachinho.",
 			"descricao": "Départ à 8h pour la vallée du Capão. Montée initiale de 1,8 km jusqu’aux plateaux de Fumaça, puis marche plane jusqu’au bord du canyon où l’eau se pulvérise au vent. En‑cas avec vue et retour par le même sentier. Fin de journée à la cascade de Riachinho avant de rentrer à Lençóis.",
 			"imagens": [
-				"../img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
-				"../img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
-				"../img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
-				"../img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png"
+				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
+				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png"
 			],
 			"pagina-principal": true
 		},
@@ -62,10 +62,10 @@
 			"preview": "Sentiers historiques à deux pas du centre de Lençóis et toboggan naturel à Ribeirão do Meio.",
 			"descricao": "Le matin, balade dans le parc de Muritiba : vasques de Serrano, sables colorés, arrêts à Cachoeirinha et Primavera et belvédère sur Lençóis. Après le déjeuner, marche jusqu’à Ribeirão do Meio, grande dalle lisse aboutissant à une délicieuse piscine naturelle : l’endroit parfait pour glisser comme les locaux.",
 			"imagens": [
-				"../img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
-				"../img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-2.png",
-				"../img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-3.png",
-				"../img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-4.png"
+				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
+				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-2.png",
+				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-3.png",
+				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-4.png"
 			],
 			"pagina-principal": true
 		},
@@ -78,10 +78,10 @@
 			"preview": "Du faisceau lumineux hypnotique de l’Enchanté à la flottaison dans les eaux cristallines du Bleu — on tombe amoureux de la Chapada souterraine.",
 			"descricao": "Départ à 8h30 pour contempler le Lac Enchanté, d’un bleu turquoise éclairé par les rayons du soleil pénétrant la grotte. Ensuite, visite du Lac Bleu où l’on peut flotter dans des eaux transparentes et observer les teintes changer avec le soleil. Déjeuner régional et retour à Lençóis.",
 			"imagens": [
-				"../img/roteiros/poco-encantado-poco-azul/imagem-1.png",
-				"../img/roteiros/poco-encantado-poco-azul/imagem-2.png",
-				"../img/roteiros/poco-encantado-poco-azul/imagem-3.png",
-				"../img/roteiros/poco-encantado-poco-azul/imagem-4.png"
+				"img/roteiros/poco-encantado-poco-azul/imagem-1.png",
+				"img/roteiros/poco-encantado-poco-azul/imagem-2.png",
+				"img/roteiros/poco-encantado-poco-azul/imagem-3.png",
+				"img/roteiros/poco-encantado-poco-azul/imagem-4.png"
 			],
 			"pagina-principal": true
 		},
@@ -94,10 +94,10 @@
 			"preview": "Canoës dans le « pantanal » de la Chapada, déjeuner dans une ferme historique et baignades aux chutes de Roncador.",
 			"descricao": "Départ à 8h30 vers Remanso. Canoës manœuvrées par des habitants de la communauté quilombola pour traverser les Marimbus pendant env. 2 h, au milieu de la végétation inondée et de la vie riveraine. Déjeuner à la Fazenda Santo Antônio, manoir du XIXᵉ siècle. Courte marche jusqu’aux chutes de Roncador pour des piscines naturelles. Retour par un agréable sentier de 4 km jusqu’au véhicule et à Lençóis.",
 			"imagens": [
-				"../img/roteiros/marimbus-roncador/imagem-1.png",
-				"../img/roteiros/marimbus-roncador/imagem-2.png",
-				"../img/roteiros/marimbus-roncador/imagem-3.png",
-				"../img/roteiros/marimbus-roncador/imagem-4.png"
+				"img/roteiros/marimbus-roncador/imagem-1.png",
+				"img/roteiros/marimbus-roncador/imagem-2.png",
+				"img/roteiros/marimbus-roncador/imagem-3.png",
+				"img/roteiros/marimbus-roncador/imagem-4.png"
 			],
 			"destaque": true,
 			"descricao-destaque": "Journée entière d’aventure dans la Chapada ! Départ de Lençóis à 8h30 vers Remanso, puis traversée en canoë des Marimbus — le « mini Pantanal de la Chapada » — entourés d’une nature vivante et de paysages inondés. À la Fazenda Santo Antônio, manoir du XIXᵉ siècle, déjeuner maison avant de rejoindre les chutes de Roncador pour des piscines naturelles et des dalles rosées. Fin par un sentier de 4 km en forêt jusqu’au retour.",
@@ -112,10 +112,10 @@
 			"preview": "Sentier exigeant vers l’une des plus belles cascades de Lençóis et, au retour, la récompense du toboggan naturel.",
 			"descricao": "Départ à pied de Lençóis à 8h30 en suivant le Ribeirão. Alternance de tronçons plats ombragés, montées sur terrain irrégulier et progression sur le lit de la rivière jusqu’à la cascade du Sossego. Après la vue et le bain, retour avec arrêt à Ribeirão do Meio pour une baignade méritée avant de rentrer en ville.",
 			"imagens": [
-				"../img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-1.png",
-				"../img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-2.png",
-				"../img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-3.png",
-				"../img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-4.png"
+				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-1.png",
+				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-2.png",
+				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-3.png",
+				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-4.png"
 			]
 		},
 		{
@@ -127,10 +127,10 @@
 			"preview": "Art rupestre millénaire à ciel ouvert et bain dans la cascade qui porte le nom des « diamants moustiques ».",
 			"descricao": "Départ à 8h30 pour le Complexe Archéologique Serra das Paridas, circuit contemplatif parmi des panneaux d’art rupestre âgés de 8–10 000 ans. Puis route jusqu’à la Fazenda Mosquito et marche d’env. 20 min pour voir la cascade d’en haut et d’en bas. Déjeuner typique à la ferme et retour à Lençóis en fin d’après‑midi.",
 			"imagens": [
-				"../img/roteiros/serra-das-paridas-mosquito/imagem-1.png",
-				"../img/roteiros/serra-das-paridas-mosquito/imagem-2.png",
-				"../img/roteiros/serra-das-paridas-mosquito/imagem-3.png",
-				"../img/roteiros/serra-das-paridas-mosquito/imagem-4.png"
+				"img/roteiros/serra-das-paridas-mosquito/imagem-1.png",
+				"img/roteiros/serra-das-paridas-mosquito/imagem-2.png",
+				"img/roteiros/serra-das-paridas-mosquito/imagem-3.png",
+				"img/roteiros/serra-das-paridas-mosquito/imagem-4.png"
 			]
 		},
 		{
@@ -142,10 +142,10 @@
 			"preview": "Marche à travers les hautes‑terres jusqu’à une piscine naturelle au pied du Morrão — grands paysages et bains de rivière toute la journée.",
 			"descricao": "Départ à 8h, 30 km jusqu’au départ du sentier et 4–5 h de marche au total dans le parc national. Traversée des campos gerais avec vue constante sur le Morrão jusqu’à Águas Claras, piscine naturelle formée par la rivière Mucugezinho. Temps libre pour se baigner, collation et contemplation avant le retour.",
 			"imagens": [
-				"../img/roteiros/aguas-claras/imagem-1.png",
-				"../img/roteiros/aguas-claras/imagem-2.png",
-				"../img/roteiros/aguas-claras/imagem-3.png",
-				"../img/roteiros/aguas-claras/imagem-4.png"
+				"img/roteiros/aguas-claras/imagem-1.png",
+				"img/roteiros/aguas-claras/imagem-2.png",
+				"img/roteiros/aguas-claras/imagem-3.png",
+				"img/roteiros/aguas-claras/imagem-4.png"
 			]
 		},
 		{
@@ -157,10 +157,10 @@
 			"preview": "L’aventure classique d’Ibicoara : canyon étroit, nage obligatoire avec gilet et chute de 90 m au bout.",
 			"descricao": "Départ à 6h en direction d’Ibicoara par une route plus longue. Environ 3 km de marche jusqu’aux belvédères puis accès à l’intérieur du canyon — généralement à la nage avec gilets fournis ou en longeant la paroi avec appui. Décor cinématographique et bain inoubliable avant le retour à Lençóis.",
 			"imagens": [
-				"../img/roteiros/cachoeira-do-buracao/imagem-1.png",
-				"../img/roteiros/cachoeira-do-buracao/imagem-2.png",
-				"../img/roteiros/cachoeira-do-buracao/imagem-3.png",
-				"../img/roteiros/cachoeira-do-buracao/imagem-4.png"
+				"img/roteiros/cachoeira-do-buracao/imagem-1.png",
+				"img/roteiros/cachoeira-do-buracao/imagem-2.png",
+				"img/roteiros/cachoeira-do-buracao/imagem-3.png",
+				"img/roteiros/cachoeira-do-buracao/imagem-4.png"
 			]
 		}
 	],

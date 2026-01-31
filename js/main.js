@@ -380,7 +380,7 @@ const langMenu = (() => {
 				b = document.createElement('span');
 				b.className = 'intensity-badge';
 				const ic = document.createElement('img');
-				ic.src = '../img/icons/intensidade-icon.png';
+				ic.src = 'img/icons/intensidade-icon.png';
 				ic.alt = '';
 				ic.setAttribute('aria-hidden','true');
 				const t = document.createElement('span');

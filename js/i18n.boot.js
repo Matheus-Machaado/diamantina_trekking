@@ -1,5 +1,6 @@
 import * as i18n from './i18n.js';
 import * as loading from './loading.js';
+import './seo.js';
 
 const root = new URL('.', import.meta.url);
 
@@ -372,7 +373,7 @@ function applyStaticBindings(){
 }
 
 function updateFlagUI(){
-	const map = { pt:'../img/flag-br.png', en:'../img/flag-gb.png', fr:'../img/flag-fr.png' };
+	const map = { pt:'img/flag-br.png', en:'img/flag-gb.png', fr:'img/flag-fr.png' };
 	const lang = (localStorage.getItem('lang') || document.documentElement.lang || 'pt').toLowerCase();
 	const img = document.querySelector('#langTrigger img');
 	if(img){

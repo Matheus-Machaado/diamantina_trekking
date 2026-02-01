@@ -2,7 +2,7 @@
  * Injects the correct deploy URL (Netlify) into sitemap.xml and robots.txt.
  *
  * Usage (Netlify build):
- *   node scripts/inject-base-url.js
+ *   node script/inject-base-url.js
  *
  * It replaces occurrences of "__BASE_URL__" with the deploy base URL.
  */

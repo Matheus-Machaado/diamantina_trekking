@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Base URL is injected during Netlify build (see scripts/inject-base-url.js). -->
+<!-- Base URL is injected during Netlify build (see script/inject-base-url.js). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>__BASE_URL__/index.html</loc>

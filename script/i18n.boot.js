@@ -489,11 +489,11 @@ function setZapPrefill() {
 	const base = (() => {
 		const ref = document.querySelector('.zap-float') || anchors[0];
 		try {
-			const u = new URL(ref.getAttribute('href') || 'https://wa.me/5511910254958', location.href);
+			const u = new URL(ref.getAttribute('href') || 'https://wa.me/557598440434', location.href);
 			u.search = '';
 			return u.origin + u.pathname;
 		} catch (_) {
-			return 'https://wa.me/5511910254958';
+			return 'https://wa.me/557598440434';
 		}
 	})();
 

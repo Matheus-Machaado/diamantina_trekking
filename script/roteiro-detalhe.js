@@ -470,7 +470,7 @@ import * as i18n from './i18n.js'
 					return u.origin + u.pathname
 				} catch (_) {}
 			}
-			return 'https://wa.me/5511910254958'
+			return 'https://wa.me/557598440434'
 		})()
 
 		const url = zapBase + '?text=' + encodeURIComponent(msg)

@@ -870,7 +870,7 @@ const langMenu = (() => {
 
 (function(){
 	const floatAnchor = document.querySelector('.zap-float');
-	const DEFAULT_ZAP = 'https://wa.me/5511910254958?text=' + encodeURIComponent('Olá Diamantina Trekking! Quero um atendimento online.');
+	const DEFAULT_ZAP = 'https://wa.me/557598440434?text=' + encodeURIComponent('Olá Diamantina Trekking! Quero um atendimento online.');
 	const ZAP_URL = (floatAnchor && floatAnchor.getAttribute('href')) || DEFAULT_ZAP;
 
 	if(floatAnchor){

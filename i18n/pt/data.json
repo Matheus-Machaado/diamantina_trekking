@@ -1,231 +1,317 @@
 {
-	"roteiros": [
-		{
-			"id": 1,
-			"titulo": "Cachoeira do Mosquito & Poço do Diabo",
-			"nivel": "moderado",
-			"valor_por_pessoa": 10,
-			"duracao": 1,
-			"preview": "Do impacto de uma queda de 50m à energia do Poço do Diabo: um dia com banho de cachoeira, trilhas curtas e almoço típico na Fazenda Mosquito.",
-			"descricao": [
-				"Saída às 8h30 rumo à Fazenda Mosquito.",
-				"Visita à cachoeira por cima e por baixo.",
-				"Almoço caseiro na fazenda.",
-				"Banho no Poço do Diabo e retorno a Lençóis."
-			],
-			"imagens": [
-				"img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-1.png",
-				"img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-2.png",
-				"img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-3.png",
-				"img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-4.png"
-			],
-			"pagina-principal": true
-		},
-		{
-			"id": 2,
-			"titulo": "Grutas Azul, Pratinha e Lapa Doce + Morro do Pai Inácio",
-			"nivel": "leve",
-			"valor_por_pessoa": 0,
-			"duracao": 24,
-			"preview": "Cenários subterrâneos, águas cristalinas e um pôr do sol inesquecível no cartão‑postal da Chapada.",
-			"descricao": "Saída às 8h30 para a Gruta da Lapa Doce e sua travessia com salões e espeleotemas. Almoço local. Seguimos à Pratinha e à Gruta Azul para contemplar e, opcionalmente, fazer flutuação, tirolesa, canoa e outras experiências. No fim da tarde, subimos o Morro do Pai Inácio para ver o entardecer entre chapadões e vales: um clássico absoluto da Chapada Diamantina. Retorno a Lençóis ao final do dia.",
-			"imagens": [
-				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-1.png",
-				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-2.png",
-				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-3.png",
-				"img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-4.png"
-			],
-			"pagina-principal": true
-		},
-		{
-			"id": 3,
-			"titulo": "Fumaça & Riachinho",
-			"nivel": "moderado",
-			"valor_por_pessoa": 0,
-			"duracao": 48,
-			"preview": "A 2ª maior queda do Brasil vista de cima e, depois, um banho revigorante nas piscinas do Riachinho.",
-			"descricao": "Saída às 8h para o Vale do Capão. Subida inicial de 1,8 km até os Gerais da Fumaça e caminhada plana até a borda do cânion: um mirante que faz a água se pulverizar ao vento e voltar como névoa. Lanche contemplando o visual e retorno pela mesma trilha. Fechamos o dia relaxando na Cachoeira do Riachinho, perfeita para recuperar as energias antes do retorno a Lençóis.",
-			"imagens": [
-				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
-				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
-				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
-				"img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png"
-			],
-			"pagina-principal": true
-		},
-		{
-			"id": 4,
-			"titulo": "Muritiba & Ribeirão do Meio",
-			"nivel": "moderado",
-			"valor_por_pessoa": 0,
-			"duracao": 8,
-			"preview": "Trilhas históricas a poucos passos do centro de Lençóis e a diversão no escorrega natural do Ribeirão do Meio.",
-			"descricao": "Pela manhã, caminhamos pelo Parque da Muritiba: caldeirões do Serrano, salões de areias coloridas, paradas na Cachoeirinha e na Primavera e mirante com vista de Lençóis. Após o almoço, seguimos a pé para o Ribeirão do Meio, um lajedo liso que termina em uma deliciosa piscina natural: lugar perfeito para rir e escorregar como os locais fazem há gerações.",
-			"imagens": [
-				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
-				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-2.png",
-				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-3.png",
-				"img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-4.png"
-			],
-			"pagina-principal": true
-		},
-		{
-			"id": 5,
-			"titulo": "Poço Encantado & Poço Azul",
-			"nivel": "leve",
-			"valor_por_pessoa": 0,
-			"duracao": 10,
-			"preview": "Do arco de luz hipnótico do Encantado à flutuação em águas cristalinas do Azul — um dia para se apaixonar pela Chapada subterrânea.",
-			"descricao": "Saída às 8h30 para contemplar o Poço Encantado, um lago azul‑turquesa iluminado pelos raios do sol que atravessam a caverna criando um espetáculo de luz. Em seguida, visitamos o Poço Azul, onde é possível flutuar em águas transparentes e observar as tonalidades que mudam com o sol. Almoço regional e retorno para Lençóis.",
-			"imagens": [
-				"img/roteiros/poco-encantado-poco-azul/imagem-1.png",
-				"img/roteiros/poco-encantado-poco-azul/imagem-2.png",
-				"img/roteiros/poco-encantado-poco-azul/imagem-3.png",
-				"img/roteiros/poco-encantado-poco-azul/imagem-4.png"
-			],
-			"pagina-principal": true
-		},
-		{
-			"id": 6,
-			"titulo": "Marimbus & Roncador",
-			"nivel": "leve",
-			"valor_por_pessoa": 0,
-			"duracao": 12,
-			"preview": "Canoas pelos ‘pantanais’ da Chapada, almoço em fazenda histórica e banho nas quedas do Roncador.",
-			"descricao": "Saída às 8h30 para o Remanso. Embarcamos em canoas remadas por moradores da comunidade quilombola e atravessamos os Marimbus por cerca de 2 h, curtindo a vegetação alagada e a vida ribeirinha. Almoço na Fazenda Santo Antônio, casarão do século XIX. Caminhada curta até as cachoeiras do Roncador para banho nas piscinas naturais. Fechamos com uma trilha agradável de 4 km até o ponto de encontro com o carro e retorno a Lençóis.",
-			"imagens": [
-				"img/roteiros/marimbus-roncador/imagem-1.png",
-				"img/roteiros/marimbus-roncador/imagem-2.png",
-				"img/roteiros/marimbus-roncador/imagem-3.png",
-				"img/roteiros/marimbus-roncador/imagem-4.png"
-			],
-			"destaque": true,
-			"descricao-destaque": "Um dia inteiro de aventura na Chapada! Partimos de Lençóis às 8h30 rumo ao Remanso, e de lá navegamos em canoas pelos Marimbus, o “mini Pantanal da Chapada”, cercado por natureza viva e paisagens alagadas únicas. Na Fazenda Santo Antônio, um casarão do século XIX, saboreamos um almoço caseiro antes de seguir para as Cachoeiras do Roncador, onde piscinas naturais e lajedos rosados garantem uma tarde de banho e diversão. Encerramos com uma trilha de 4 km pela mata atlântica até o retorno.",
-			"pagina-principal": true
-		},
-		{
-			"id": 7,
-			"titulo": "Sossego & Ribeirão do Meio",
-			"nivel": "intenso",
-			"valor_por_pessoa": 0,
-			"duracao": 15,
-			"preview": "Trilha desafiadora até uma das cachoeiras mais bonitas de Lençóis e, na volta, a recompensa do escorrega natural.",
-			"descricao": "Saímos a pé de Lençóis às 8h30 acompanhando o curso do rio Ribeirão. A trilha combina trechos planos e sombreados, subidas em terreno irregular e progressão por leito de rio saltando pedras até chegar à Cachoeira do Sossego. Depois do visual e banho, retornamos com parada no Ribeirão do Meio para um mergulho merecido antes de voltar à cidade.",
-			"imagens": [
-				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-1.png",
-				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-2.png",
-				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-3.png",
-				"img/roteiros/cachoeira-do-sossego-ribeirao-do-meio/imagem-4.png"
-			]
-		},
-		{
-			"id": 8,
-			"titulo": "Serra das Paridas & Cachoeira do Mosquito",
-			"nivel": "leve",
-			"valor_por_pessoa": 0,
-			"duracao": 18,
-			"preview": "Pinturas rupestres milenares a céu aberto e banho na cachoeira que leva o nome dos ‘diamantes mosquito’.",
-			"descricao": "Saída às 8h30 até o Complexo Arqueológico Serra das Paridas para um circuito contemplativo entre painéis de arte rupestre com 8–10 mil anos. Seguimos de carro até a Fazenda Mosquito e caminhamos cerca de 20 minutos para ver a cachoeira por cima e por baixo. Almoço típico na sede da fazenda e retorno a Lençóis no fim da tarde.",
-			"imagens": [
-				"img/roteiros/serra-das-paridas-mosquito/imagem-1.png",
-				"img/roteiros/serra-das-paridas-mosquito/imagem-2.png",
-				"img/roteiros/serra-das-paridas-mosquito/imagem-3.png",
-				"img/roteiros/serra-das-paridas-mosquito/imagem-4.png"
-			]
-		},
-		{
-			"id": 9,
-			"titulo": "Águas Claras (Morrão)",
-			"nivel": "moderado",
-			"valor_por_pessoa": 0,
-			"duracao": 6,
-			"preview": "Caminhada pelos Gerais até uma piscina natural aos pés do Morrão — paisagens amplas e banhos de rio o dia inteiro.",
-			"descricao": "Saída às 8h, 30 km até o início da trilha e 4–5 h de caminhada total dentro do Parque Nacional. Andamos pelos campos gerais com vista constante do Morrão e chegamos às Águas Claras, uma piscina natural formada pelo rio Mucugezinho. Tempo livre para banho, lanche de trilha e contemplação antes do retorno.",
-			"imagens": [
-				"img/roteiros/aguas-claras/imagem-1.png",
-				"img/roteiros/aguas-claras/imagem-2.png",
-				"img/roteiros/aguas-claras/imagem-3.png",
-				"img/roteiros/aguas-claras/imagem-4.png"
-			]
-		},
-		{
-			"id": 10,
-			"titulo": "Cachoeira do Buracão",
-			"nivel": "leve",
-			"valor_por_pessoa": 0,
-			"duracao": 4,
-			"preview": "A clássica aventura de Ibicoara: cânion estreito, nado obrigatório com colete e uma queda de 90 m te esperando no fim.",
-			"descricao": "Saída às 6h rumo a Ibicoara em um deslocamento mais longo. Caminhada de aprox. 3 km até os mirantes e, depois, acesso por dentro do cânion — normalmente nadando com coletes obrigatórios (fornecidos) ou caminhando pelo paredão com apoio. Cenário cinematográfico e banho inesquecível antes do retorno a Lençóis.",
-			"imagens": [
-				"img/roteiros/cachoeira-do-buracao/imagem-1.png",
-				"img/roteiros/cachoeira-do-buracao/imagem-2.png",
-				"img/roteiros/cachoeira-do-buracao/imagem-3.png",
-				"img/roteiros/cachoeira-do-buracao/imagem-4.png"
-			]
-		}
-	],
-	"memorias": [
-		{
-			"nome": "Matheus Machado",
-			"data": "2025-09-20",
-			"mensagem": "Nossa, foi incrível! A Chapada Diamantina superou todas as expectativas. Atendimento perfeito, já indiquei pra vários amigos e quero voltar em breve!"
-		},
-		{
-			"nome": "Larissa Nogueira",
-			"data": "2025-08-12",
-			"mensagem": "Guias excelentes, trilhas seguras e paisagens únicas. Experiência completa do início ao fim!"
-		},
-		{
-			"nome": "Felipe Souza",
-			"data": "2025-07-03",
-			"mensagem": "Organização impecável. O pôr do sol no Pai Inácio foi algo que nunca vou esquecer!"
-		},
-		{
-			"nome": "Ana Paula",
-			"data": "2025-06-18",
-			"mensagem": "Roteiro privativo sob medida, deu pra curtir no nosso ritmo. Recomendo demais!"
-		},
-		{
-			"nome": "João Victor",
-			"data": "2025-05-10",
-			"mensagem": "Equipe muito atenciosa e preparada. Já planejando a próxima travessia!"
-		},
-		{
-			"nome": "Bruna Ferreira",
-			"data": "2025-04-22",
-			"mensagem": "Experiência autêntica, com muita história e natureza. Vale cada minuto."
-		},
-		{
-			"nome": "Roberto",
-			"data": "2025-04-22",
-			"mensagem": "Experiência autêntica, com muita história e natureza. Vale cada minuto."
-		}
-	],
-	"perguntas": [
-		{
-			"id": 1,
-			"pergunta": "Precisa ser muito bem condicionado para fazer esse roteiro? quem pode fazer?",
-			"resposta": "Não precisa ser nenhum atleta. Pedimos apenas que você seja ativo fisicamente, pratique atividades com alguma regularidade e curta natureza e caminhada. Em alguns dias podemos fazer até 18km, mas sempre no seu ritmo e com apoio do guia."
-		},
-		{
-			"id": 2,
-			"pergunta": "O que está incluso no valor do roteiro?",
-			"resposta": "Guias credenciados, transporte durante o roteiro, taxas de acesso, equipamentos de segurança quando necessário e seguro aventura. Alimentação conforme cada roteiro."
-		},
-		{
-			"id": 3,
-			"pergunta": "Posso fazer o passeio em formato privativo?",
-			"resposta": "Sim. Temos experiências privativas com horários flexíveis e ajustes de ritmo. É só avisar no contato que montamos tudo sob medida."
-		},
-		{
-			"id": 4,
-			"pergunta": "Como funciona o cancelamento e reembolso?",
-			"resposta": "Em caso de cancelamento, a taxa de reserva de 30% não é reembolsável. O restante segue nossa política informada no momento da contratação."
-		},
-		{
-			"id": 5,
-			"pergunta": "Quais itens essenciais devo levar?",
-			"resposta": "Tênis ou bota adequada, garrafa de água, protetor solar, chapéu/boné e um corta-vento leve. A lista completa é enviada após a reserva."
-		}
-	]
+  "roteiros": [
+    {
+      "id": 1,
+      "titulo": "Cachoeira do Mosquito + Poço do Diabo",
+      "nivel": "leve",
+      "valor_por_pessoa": 1000,
+      "duracao": 9,
+      "preview": "Um dia de clássicos em Lençóis: banho exclusivo na queda de 40m da Cachoeira do Mosquito e, depois, trilha leve até o Poço do Diabo.",
+      "descricao": "Saída de Lençóis às 8h30 em veículo, com cerca de 1h de deslocamento até a entrada da Cachoeira do Mosquito.\n\nTrilha leve (aprox. 30 min) até a base da cachoeira, com tempo para banho embaixo da queda d’água de cerca de 40 metros.\n\nPausa para almoço com comida regional da Chapada Diamantina (almoço não incluso, conforme opção do dia).\n\nApós o almoço, seguimos de carro por aproximadamente 40 min até o Poço do Diabo, um dos atrativos mais bonitos da região de Lençóis.\n\nCaminhada leve (aprox. 30 min) até a cachoeira e o poço, com tempo para banho e contemplação.\n\nRetorno para Lençóis com previsão de chegada por volta das 17h.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Lençóis → Entrada da Cachoeira do Mosquito",
+        "Trilha leve → Banho na Cachoeira do Mosquito",
+        "Almoço regional",
+        "Deslocamento → Poço do Diabo",
+        "Trilha leve → Banho no Poço do Diabo",
+        "Retorno a Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-1.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-2.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-3.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-4.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 2,
+      "titulo": "Grutas Azul, Pratinha e Lapa Doce + Morro do Pai Inácio",
+      "nivel": "leve",
+      "valor_por_pessoa": 1000,
+      "duracao": 10,
+      "preview": "Cavernas e águas cristalinas em Iraquara, com pôr do sol 360° no Morro do Pai Inácio — um bate-volta completo saindo de Lençóis.",
+      "descricao": "Saída de Lençóis às 8h30 com destino a Iraquara, região conhecida por suas cavernas e rios de águas transparentes.\n\nPrimeira parada na Gruta da Lapa Doce: caminhada guiada pelos salões e corredores, observando formações naturais como estalactites e estalagmites e cenários subterrâneos impressionantes.\n\nEm seguida, visita à Fazenda Pratinha: tempo para nadar nas águas cristalinas do Rio Pratinha e contemplar a famosa Gruta Azul, conhecida pela coloração intensa em dias de boa luminosidade.\n\nNo local, há atividades opcionais (pagas à parte), como tirolesa, caiaque, flutuação e fotos subaquáticas — ideais para quem quer turbinar a experiência.\n\nFinal de tarde no Morro do Pai Inácio, em Palmeiras: subida curta e vista panorâmica de 360° para fechar o dia com um pôr do sol inesquecível.\n\nRetorno para Lençóis com previsão de chegada por volta das 18h.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Lençóis → Iraquara (Gruta da Lapa Doce)",
+        "Iraquara (Fazenda Pratinha + Gruta Azul)",
+        "Palmeiras (Morro do Pai Inácio)",
+        "Retorno a Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-1.png",
+        "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-2.png",
+        "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-3.png",
+        "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-4.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 3,
+      "titulo": "Cachoeira da Fumaça + Cachoeira do Riachinho",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 11,
+      "preview": "Trilha clássica no Vale do Capão: subida inicial, mirante da Cachoeira da Fumaça (uma das maiores do Brasil) e banho no Riachinho para fechar o dia.",
+      "descricao": "Saída de Lençóis às 8h em direção ao Vale do Capão (aprox. 1h30 de carro) até o início da trilha.\n\nTrilha de 12 km (6 km ida + 6 km volta). Os primeiros 2 km são de subida mais puxada, com visual amplo do Parque Nacional da Chapada Diamantina.\n\nChegada ao topo para contemplar a Cachoeira da Fumaça por cima, um dos mirantes mais impactantes da Chapada — aqui a experiência é principalmente de observação e fotos.\n\nNa volta, parada na Cachoeira do Riachinho: caminhada curta (cerca de 10 min) até as quedas e o poço, perfeito para o banho e para relaxar no fim da tarde.\n\nRetorno com previsão de chegada em Lençóis por volta das 18h30.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Lençóis → Vale do Capão (início da trilha)",
+        "Subida inicial + travessia até o mirante",
+        "Contemplação da Cachoeira da Fumaça (por cima)",
+        "Retorno + banho na Cachoeira do Riachinho",
+        "Volta para Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 4,
+      "titulo": "Mirante do Pati (bate-volta)",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 10,
+      "preview": "Um dos visuais mais famosos da Chapada em um dia: subida ao primeiro mirante e caminhada até o Mirante do Pati, com paisagens abertas e vento nos Gerais.",
+      "descricao": "Saída de Lençóis às 8h em direção ao Aleixo (aprox. 2h de carro), ponto de início da trilha.\n\nCaminhada total com cerca de 5,5 km até o mirante (aprox. 11 km ida e volta). Os primeiros 2 km são de subida até o primeiro mirante, já com uma vista privilegiada das montanhas e vilas da região.\n\nApós a subida inicial, a trilha segue em trechos mais planos, aproveitando a vegetação típica, brisa e paisagens amplas até o destino final.\n\nChegada ao Mirante do Pati: momento para contemplação e fotos de um dos cenários mais lindos da Chapada Diamantina.\n\nRetorno pelo mesmo caminho e volta para Lençóis, com previsão de chegada por volta das 18h.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Lençóis → Aleixo (início da trilha)",
+        "Subida ao primeiro mirante",
+        "Travessia pelos Gerais até o Mirante do Pati",
+        "Retorno ao Aleixo",
+        "Volta para Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png"
+      ],
+      "pagina-principal": false
+    },
+    {
+      "id": 5,
+      "titulo": "Poço Encantado + Poço Azul",
+      "nivel": "leve",
+      "valor_por_pessoa": 1000,
+      "duracao": 9,
+      "preview": "A luz azul do Poço Encantado para fotos e, depois, banho nas águas transparentes do Poço Azul — dia leve e perfeito para quem ama cavernas.",
+      "descricao": "Saída de Lençóis às 8h30 em direção ao Poço Encantado (aprox. 2h de carro).\n\nVisita ao Poço Encantado: caverna de águas cristalinas azuladas, ideal para observação e fotografias. Por ser um atrativo de preservação, o passeio aqui é de contemplação.\n\nApós a visita, seguimos por cerca de 1h de carro até o Poço Azul.\n\nNo Poço Azul, é possível entrar na água e aproveitar o banho na caverna de tonalidade azulada, com tempo para relaxar e curtir o visual.\n\nAlmoço na própria fazenda (conforme logística do dia) e retorno para Lençóis, com previsão de chegada por volta das 17h.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Lençóis → Poço Encantado (visitação + fotos)",
+        "Deslocamento → Poço Azul",
+        "Banho no Poço Azul + almoço na fazenda",
+        "Retorno a Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/poco-encantado-poco-azul/imagem-1.png",
+        "img/roteiros/poco-encantado-poco-azul/imagem-2.png",
+        "img/roteiros/poco-encantado-poco-azul/imagem-3.png",
+        "img/roteiros/poco-encantado-poco-azul/imagem-4.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 6,
+      "titulo": "Marimbus (mini pantanal) + Roncador",
+      "nivel": "leve",
+      "valor_por_pessoa": 1000,
+      "duracao": 9,
+      "preview": "Passeio de barco pelos Marimbus, almoço em casarão do século XIX e banho nas cachoeiras do Roncador — cultura quilombola e natureza no mesmo dia.",
+      "descricao": "Saída de Lençóis às 8h30, com cerca de 40 min de carro até a comunidade quilombola do Remanso.\n\nInício do passeio de barco pelos Marimbus, conhecidos como o “mini Pantanal baiano”: navegação tranquila por aproximadamente 1h30, cercada por natureza viva e paisagens alagadas únicas.\n\nParada para almoço em um casarão histórico do século XIX (comidas típicas da região, conforme logística do dia).\n\nApós o almoço, seguimos para o Rio Roncador: caminhada leve (aprox. 30 min) até as cachoeiras e poços para banho.\n\nRetorno atravessando uma mata bem preservada, com mistura de biomas e clima de Chapada raiz.\n\nChegada prevista em Lençóis por volta das 17h.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Lençóis → Remanso",
+        "Passeio de barco pelos Marimbus",
+        "Almoço em casarão histórico",
+        "Caminhada leve → Cachoeiras do Roncador",
+        "Retorno a Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/marimbus-roncador/imagem-1.png",
+        "img/roteiros/marimbus-roncador/imagem-2.png",
+        "img/roteiros/marimbus-roncador/imagem-3.png",
+        "img/roteiros/marimbus-roncador/imagem-4.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 7,
+      "titulo": "Cachoeira do Sossego + Ribeirão do Meio",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 10,
+      "preview": "Trilha a pé com desafios pelo leito do rio até a Cachoeira do Sossego e, na volta, o tobogã natural do Ribeirão do Meio — aventura completa em Lençóis.",
+      "descricao": "Início às 8h30, saindo a pé do centro de Lençóis (não é necessário carro).\n\nTrilha com cerca de 7 km até a cachoeira (aprox. 14 km no total, ida e volta), com trechos pelo leito do rio: saltando pedras, passando por baixo de grandes rochas e atravessando pequenos cânions.\n\nChegada à Cachoeira do Sossego: queda majestosa de cerca de 50 metros e poço para banho, com profundidade que pode chegar a aproximadamente 6 metros.\n\nNo retorno, visita ao Ribeirão do Meio, o famoso tobogã natural: rochas polidas pela natureza onde é possível escorregar até um poço de cerca de 5 metros de profundidade (sempre com orientação do guia e atenção às condições do dia).\n\nPrevisão de término por volta das 18h.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Centro de Lençóis → início da trilha",
+        "Travessia pelo leito do rio até a Cachoeira do Sossego",
+        "Banho e descanso na cachoeira",
+        "Volta → Ribeirão do Meio (tobogã natural)",
+        "Retorno ao centro de Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-2.png",
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-3.png",
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-4.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 8,
+      "titulo": "Cachoeira da Fumacinha (expedição com pernoite)",
+      "nivel": "intenso",
+      "valor_por_pessoa": 1000,
+      "duracao": 48,
+      "preview": "Trekking avançado em cânion: 18 km entre pedras e rios até a Cachoeira da Fumacinha (100m). Expedição exige preparo e pernoite em Ibicoara.",
+      "descricao": "Expedição indicada para quem tem bom condicionamento e gosta de aventura: a trilha acontece em ambiente de cânion, com trechos de pedras, cruzamento de rios e terreno irregular.\n\nSaída às 8h a partir de Ibicoara (por isso, recomenda-se pernoite na cidade para garantir o início cedo e com segurança).\n\nTrilha de aproximadamente 18 km (ida e volta), caminhando sobre o cânion e avançando por trechos pouco explorados, com fauna e flora marcantes.\n\nChegada à Cachoeira da Fumacinha: queda de cerca de 100 metros, com mirantes e passagens que exigem habilidade e atenção redobrada.\n\nNo caminho, há pontos para banho em outras cachoeiras e poços (quando as condições do dia permitem), tornando a jornada ainda mais completa.\n\nRetorno com previsão de chegada por volta das 18h.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Ibicoara → início da trilha",
+        "Avanço pelo cânion (pedras + rios)",
+        "Cachoeira da Fumacinha (mirantes + contemplação)",
+        "Retorno por trechos de banho (quando possível)",
+        "Chegada em Ibicoara"
+      ],
+      "imagens": [
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png"
+      ],
+      "pagina-principal": false
+    },
+    {
+      "id": 9,
+      "titulo": "Trilha das Águas Claras",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 9,
+      "preview": "18 km de caminhada por rios e montanhas até piscinas naturais de águas cristalinas — um dos roteiros mais cênicos do Parque Nacional.",
+      "descricao": "Saída de Lençóis às 8h30, com cerca de 30 min de carro até o início da trilha.\n\nCaminhada de aproximadamente 18 km (ida e volta), atravessando boa parte do Parque Nacional da Chapada Diamantina: rios, campos abertos e trechos entre montanhas.\n\nDurante o percurso, a trilha passa por paisagens amplas e pontos com algumas das vistas mais bonitas da Chapada, incluindo a travessia pelo Vale dos 3 Irmãos.\n\nChegada ao ponto de banho: cachoeira e poço de águas cristalinas, com profundidade que pode chegar a cerca de 3 metros, ideal para relaxar e se refrescar.\n\nRetorno para Lençóis com previsão de chegada por volta das 17h.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Lençóis → início da trilha",
+        "Travessia pelos Gerais + rios + Vale dos 3 Irmãos",
+        "Banho em águas claras",
+        "Retorno e chegada em Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/marimbus-roncador/imagem-1.png",
+        "img/roteiros/marimbus-roncador/imagem-2.png",
+        "img/roteiros/marimbus-roncador/imagem-3.png",
+        "img/roteiros/marimbus-roncador/imagem-4.png"
+      ],
+      "pagina-principal": false
+    },
+    {
+      "id": 10,
+      "titulo": "Cachoeira do Buracão",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 14,
+      "preview": "Dia longo e inesquecível: trilha, cânion e travessia a nado (com colete) até ficar de frente para a queda de 90m da Cachoeira do Buracão.",
+      "descricao": "Saída bem cedo: 6h da manhã a partir de Lençóis, com deslocamento de cerca de 4h até a região de Ibicoara, onde começa a trilha.\n\nCaminhada de aproximadamente 6 km (ida e volta) até o cânion. O percurso total de trilha leva em torno de 1h (variando com o ritmo do grupo).\n\nChegada ao cânion: travessia a nado em trecho obrigatório, utilizando coletes salva-vidas, até alcançar o ponto de observação mais impressionante do roteiro.\n\nFrente a frente com a Cachoeira do Buracão: queda de cerca de 90 metros em um poço profundo, com cenário de paredes altas e natureza exuberante.\n\nRetorno para Lençóis com previsão de chegada por volta das 20h.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Lençóis → Ibicoara (deslocamento)",
+        "Trilha → entrada do cânion",
+        "Travessia a nado (com colete) → Buracão",
+        "Contemplação + fotos + banho (conforme condição do dia)",
+        "Retorno e chegada em Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-1.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-2.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-3.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-4.png"
+      ],
+      "pagina-principal": false
+    },
+    {
+      "id": 11,
+      "titulo": "Vale do Pati - 3 dias",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 72,
+      "preview": "Três dias no coração da Chapada: Gerais do Rio Preto, Mirante do Pati, Morro do Castelo, Cachoeira do Funil e Cachoeirão por cima com pernoites na casa de moradores locais.",
+      "descricao": "Expedição de 3 dias para conhecer o Vale do Pati com calma, dormindo em casas de moradores locais e caminhando por alguns dos cenários mais emblemáticos da Chapada Diamantina.\n\nDia 1 — Saída de Lençóis às 7h de carro até o Aleixo (início da trilha). Subida de cerca de 2 km até o topo e primeiro mirante; travessia pelos Gerais do Rio Preto, com pausa para banho nas águas escuras e limpas do Rio Preto. Seguimos até o Mirante do Pati e descemos para a casa dos nativos. Chegada prevista por volta das 17h (cerca de 10 km caminhados no dia).\n\nDia 2 — Saída às 8h para o Morro do Castelo: subida íngreme até a Gruta da Lapinha e continuidade até mirantes. Lanche no caminho e, em seguida, trilha para a Cachoeira do Funil para banho. Retorno para a casa dos nativos para jantar e descanso. (cerca de 12 km caminhados no dia, com retorno por volta das 18h).\n\nDia 3 — Após o café da manhã, trilha até o Cachoeirão por cima (mirante). Em épocas favoráveis, é possível ver diversas quedas d’água e, dependendo da estação, aproveitar um banho em poços no caminho. Depois, seguimos por outro caminho para a descida do Aleixo. Saída por volta das 8h e chegada prevista às 18h (cerca de 18 km caminhados no dia).\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Primeiro dia: Lençóis → Aleixo → Gerais do Rio Preto → Mirante do Pati → pernoite com moradores",
+        "Segundo dia: Morro do Castelo + Gruta da Lapinha → Cachoeira do Funil → pernoite com moradores",
+        "Terceiro dia: Cachoeirão por cima (mirante) → descida ao Aleixo → retorno"
+      ],
+      "imagens": [
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+        "img/roteiros/marimbus-roncador/imagem-3.png",
+        "img/roteiros/marimbus-roncador/imagem-4.png"
+      ],
+      "pagina-principal": false
+    }
+  ],
+  "memorias": [
+    {
+      "nome": "Matheus Machado",
+      "data": "2025-09-20",
+      "mensagem": "Nossa, foi incrível! A Chapada Diamantina superou todas as expectativas. Atendimento perfeito, já indiquei pra vários amigos e quero voltar em breve!"
+    },
+    {
+      "nome": "Larissa Nogueira",
+      "data": "2025-08-12",
+      "mensagem": "Guias excelentes, trilhas seguras e paisagens únicas. Experiência completa do início ao fim!"
+    },
+    {
+      "nome": "Felipe Souza",
+      "data": "2025-07-03",
+      "mensagem": "Organização impecável. O pôr do sol no Pai Inácio foi algo que nunca vou esquecer!"
+    },
+    {
+      "nome": "Ana Paula",
+      "data": "2025-06-18",
+      "mensagem": "Roteiro privativo sob medida, deu pra curtir no nosso ritmo. Recomendo demais!"
+    },
+    {
+      "nome": "João Victor",
+      "data": "2025-05-10",
+      "mensagem": "Equipe muito atenciosa e preparada. Já planejando a próxima travessia!"
+    },
+    {
+      "nome": "Bruna Ferreira",
+      "data": "2025-04-22",
+      "mensagem": "Experiência autêntica, com muita história e natureza. Vale cada minuto."
+    },
+    {
+      "nome": "Roberto",
+      "data": "2025-04-22",
+      "mensagem": "Experiência autêntica, com muita história e natureza. Vale cada minuto."
+    }
+  ],
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Precisa ser muito bem condicionado para fazer esse roteiro? quem pode fazer?",
+      "resposta": "Não precisa ser nenhum atleta. Pedimos apenas que você seja ativo fisicamente, pratique atividades com alguma regularidade e curta natureza e caminhada. Em alguns dias podemos fazer até 18km, mas sempre no seu ritmo e com apoio do guia."
+    },
+    {
+      "id": 2,
+      "pergunta": "O que está incluso no valor do roteiro?",
+      "resposta": "Guias credenciados, transporte durante o roteiro, taxas de acesso, equipamentos de segurança quando necessário e seguro aventura. Alimentação conforme cada roteiro."
+    },
+    {
+      "id": 3,
+      "pergunta": "Posso fazer o passeio em formato privativo?",
+      "resposta": "Sim. Temos experiências privativas com horários flexíveis e ajustes de ritmo. É só avisar no contato que montamos tudo sob medida."
+    },
+    {
+      "id": 4,
+      "pergunta": "Como funciona o cancelamento e reembolso?",
+      "resposta": "Em caso de cancelamento, a taxa de reserva de 30% não é reembolsável. O restante segue nossa política informada no momento da contratação."
+    },
+    {
+      "id": 5,
+      "pergunta": "Quais itens essenciais devo levar?",
+      "resposta": "Tênis ou bota adequada, garrafa de água, protetor solar, chapéu/boné e um corta-vento leve. A lista completa é enviada após a reserva."
+    }
+  ]
 }

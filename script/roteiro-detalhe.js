@@ -192,6 +192,7 @@ import * as i18n from './i18n.js'
 	const pPlus = document.getElementById('rpPlus')
 	const pQty = document.getElementById('rpQty')
 	const pUnit = document.getElementById('rpPeoplePrice')
+	const pOff = document.getElementById('rpPeopleOff')
 
 	const cta = document.getElementById('rpSubmit')
 
@@ -286,6 +287,47 @@ import * as i18n from './i18n.js'
 		return (v||0).toLocaleString(i18n.locale(),{ style:'currency', currency:'BRL' })
 	}
 
+	function discountTier(q){
+		if(q >= 12) return { rate:0.15, min:12 }
+		if(q >= 8) return { rate:0.10, min:8 }
+		if(q >= 5) return { rate:0.05, min:5 }
+		return { rate:0, min:0 }
+	}
+
+	function discountTitle(tier){
+		const people = t('rp.people.personOther')
+		const pct = Math.round((tier.rate || 0) * 100)
+		return t('rp.discount.title', { min: tier.min, people, pct })
+	}
+
+
+	function calcUnit(q){
+		const tier = discountTier(q)
+		const unit = Math.round(PRICE * (1 - tier.rate) * 100) / 100
+		return { tier, unit }
+	}
+
+	function updatePriceUI(){
+		const q = selectedQty()
+		const { tier, unit } = calcUnit(q)
+		if(pUnit) pUnit.textContent = formatBRL(unit)
+		if(pOff){
+			const pct = Math.round((tier.rate || 0) * 100)
+			if(pct > 0){
+				pOff.style.display = ''
+				pOff.textContent = `${pct}% OFF`
+				pOff.title = discountTitle(tier)
+			}else{
+				pOff.style.display = 'none'
+				pOff.textContent = ''
+				pOff.title = ''
+			}
+		}
+		const sub = getSubtotalEl()
+		if(sub) sub.textContent = formatBRL(q * unit)
+	}
+
+
 	function updateDates(){
 		const s = parseISO(isoStart.value)
 		const e = parseISO(isoEnd.value)
@@ -294,8 +336,7 @@ import * as i18n from './i18n.js'
 	}
 
 	function updateCTA(){
-		const sub = getSubtotalEl()
-		if(sub) sub.textContent = formatBRL(selectedQty() * PRICE)
+		updatePriceUI()
 		const ready = selectedQty() > 0 && hasDates()
 		cta.disabled = !ready
 		cta.textContent = ready ? t('rp.cta.ready') : t('rp.cta.disabled')

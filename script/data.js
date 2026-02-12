@@ -30,13 +30,22 @@ function normalizeRoteiro(r){
 		duracaoTexto = dias + ' ' + (dias===1 ? i18n.t('time.day_one') : i18n.t('time.day_other'))
 	}
 	const rawDesc = r.descricao
+	const rawTexto = r['descricao-texto'] ?? r.descricao_texto ?? r.descricaoTexto
+	const rawLista = r['descricao-lista'] ?? r.descricao_lista ?? r.descricaoLista
 	let descTexto = ''
 	let descLista = null
+	if(rawTexto != null){
+		descTexto = String(rawTexto||'').trim()
+	}
+	if(Array.isArray(rawLista)){
+		descLista = rawLista.map(x => String(x||'').trim()).filter(x => x.length > 0)
+	}
 	if(Array.isArray(rawDesc)){
-		descLista = rawDesc.map(x => String(x||'').trim()).filter(x => x.length > 0)
-		descTexto = descLista.join('\n')
+		const legacy = rawDesc.map(x => String(x||'').trim()).filter(x => x.length > 0)
+		if(!descLista) descLista = legacy
+		if(!descTexto) descTexto = ''
 	}else{
-		descTexto = String(rawDesc||'').trim()
+		if(!descTexto) descTexto = String(rawDesc||'').trim()
 	}
 	return {
 		id: Number(r.id),
@@ -440,14 +449,20 @@ export async function hydrateDetail(){
 
 	const descInner = document.querySelector('#rpDesc .rp-desc-inner')
 	if(descInner){
+		const parts = []
+		const texto = String(r.descricao||'').trim()
+		if(texto){
+			const blocks = texto.split(/\n{2,}/).map(p=>`<p>${esc(p)}</p>`).join('')
+			if(blocks) parts.push(blocks)
+		}
 		if(Array.isArray(r.descricaoLista) && r.descricaoLista.length){
 			const items = r.descricaoLista.map(txt=>`<li>${esc(txt)}</li>`).join('')
-			descInner.innerHTML = `<ul>${items}</ul>`
-		}else{
-			const texto = r.descricao || r.preview
-			const blocks = texto.split(/\n{2,}/).map(p=>`<p>${esc(p)}</p>`).join('')
-			descInner.innerHTML = blocks || `<p>${esc(r.preview)}</p>`
+			parts.push(`<ul>${items}</ul>`)
 		}
+		if(!parts.length){
+			parts.push(`<p>${esc(r.preview)}</p>`)
+		}
+		descInner.innerHTML = parts.join('')
 	}
 
 	const moreGrid = document.getElementById('carrosselRoteiros')

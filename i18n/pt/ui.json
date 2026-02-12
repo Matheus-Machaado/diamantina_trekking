@@ -1,221 +1,224 @@
 {
-	"lang": {
-		"self": "Português (BR)",
-		"currentAlt": "Idioma atual: {name}"
-	},
-	"header": {
-		"contact": "Contato",
-		"langMenu": "Selecionar idioma"
-	},
-	"nav": {
-		"home": "Início",
-		"about": "Sobre",
-		"tours": "Roteiros",
-		"reviews": "Depoimentos",
-		"faq": "Perguntas"
-	},
-	"home": {
-		"h1": {
-			"main": "Descubra a Chapada Diamantina",
-			"sub": "com segurança e emoção"
-		},
-		"lead": "Trilhas guiadas, travessias e experiências autênticas nos vales da Chapada",
-		"cta": {
-			"primary": "Conheça os roteiros",
-			"secondary": "Fale conosco"
-		}
-	},
-	"styles": {
-		"title": "SUA AVENTURA, SEU ESTILO",
-		"sub": "Do passeio leve à expedição: escolha seu ritmo e a Diamantina Trekking cuida do resto",
-		"cards": {
-			"family": {
-				"title": "PARA FAMÍLIA",
-				"text": "Passeios leves e seguros para todas as idades. Trilhas curtas, cachoeiras acessíveis e diversão garantida.",
-				"cta": "Ver Roteiros"
-			},
-			"adventure": {
-				"title": "PURA AVENTURA",
-				"text": "Trilhas intensas, mirantes épicos e rapel. Desafios com equipe local e segurança em primeiro lugar.",
-				"cta": "Ver Roteiros"
-			},
-			"private": {
-				"title": "EXPERIÊNCIA PRIVATIVA",
-				"text": "Roteiro sob medida, guia exclusivo e horários flexíveis para viver a Chapada no seu próprio ritmo.",
-				"cta": "Ver Roteiros"
-			}
-		}
-	},
-	"tours": {
-		"title": "ROTEIROS NA CHAPADA",
-		"sub": "Trilhas, cachoeiras e mirantes: viva a Chapada por inteiro",
-		"subtitle": "Trilhas, cachoeiras e mirantes: viva a Chapada por inteiro",
-		"ctaAll": "Ver Todos os Roteiros",
-		"filter": {
-			"intensity": "Intensidade",
-			"all": "Todos"
-		}
-	},
-	"levels": {
-		"leve": "Leve",
-		"moderado": "Moderado",
-		"intenso": "Intenso"
-	},
-	"cards": {
-		"about": "Sobre o Roteiro",
-		"from": "A partir de",
-		"details": "Ver Detalhes",
-		"toggleAria": "Mostrar descrição"
-	},
-	"guide": {
-		"title": "COM QUEM VOU EXPLORAR A CHAPADA?",
-		"p1": "Você será acompanhado por Rodrigo, guia nativo que cresceu explorando as trilhas da Chapada Diamantina.",
-		"p2": "Ele une conhecimento profundo do roteiro à paixão pela região, tornando sua caminhada muito mais do que um passeio: uma verdadeira imersão na cultura, natureza e essência da Chapada.",
-		"stats": {
-			"trilhas": "trilhas conduzidas",
-			"anos": "anos guiando",
-			"linguas": "línguas (português e inglês)"
-		}
-	},
-	"reviews": {
-		"title": "MEMÓRIAS INESQUECÍVEIS",
-		"sub": "Paisagens que marcam, experiências que ficam."
-	},
-	"share": {
-		"copy": "Compartilha essa jornada com alguém especial!",
-		"whatsappAria": "Compartilhar por WhatsApp",
-		"linkAria": "Copiar link",
-		"copied": "Link copiado",
-		"copyFail": "Não foi possível copiar",
-		"whatsMsg": "Bora criar uma lembrança massa? *{title}* parece perfeito pra gente.\n{link}"
-	},
-	"rd": {
-		"cta": "Quero viver essa aventura",
-		"teaserTail": "Tá esperando o quê pra embarcar nessa?"
-	},
-	"included": {
-		"title": "O que está incluso",
-		"pickup": {
-			"title": "Saída Direto da Sua Hospedagem",
-			"text": "Vamos te buscar onde estiver hospedado(a) em Lençóis."
-		},
-		"meal": {
-			"title": "Refeição no Roteiro",
-			"text": "Inclui almoço ou lance, de acordo com a programação."
-		},
-		"tickets": {
-			"title": "Taxas de Entrada Inclusas",
-			"text": "Ingressos e autorizações quando aplicável."
-		},
-		"guide": {
-			"title": "Guia Local Experiente",
-			"text": "Condutor credenciado, segurança e interpretação ambiental."
-		}
-	},
-	"ppc": {
-		"title": "Políticas de pagamento<br>e cancelamento:",
-		"items": {
-			"0": "30% do valor total via PIX ou transferência e o restante no 1º dia de roteiro;",
-			"1": "Parcelamento no PIX: uma parcela a cada mês até a data da viagem;",
-			"2": "Cartão de crédito ou débito à vista sem juros;",
-			"3": "Parcelamento no cartão de crédito com juros (consultar);",
-			"4": "Em caso de cancelamento, os 30% da reserva não são reembolsáveis."
-		}
-	},
-	"faq": {
-		"title": "PERGUNTAS FREQUENTES",
-		"sub": "Tirando todas as suas dúvidas"
-	},
-	"footer": {
-		"links": {
-			"home": "Início",
-			"about": "Sobre",
-			"tours": "Roteiros",
-			"reviews": "Depoimentos"
-		},
-		"copy": "© Diamantina Trekking 2025 - Todos os direitos reservados.",
-		"author": "Desenvolvido por Matheus Machado"
-	},
-	"whatsapp": {
-		"button": "Atendimento Online"
-	},
-	"rp": {
-		"priceFrom": "A partir de",
-		"startEnd": "Início e término",
-		"descBtn": "Ler Descrição",
-		"seeMore": "Ver mais",
-		"seeLess": "Ver menos",
-		"people": {
-			"title": "QUANTIDADE DE PESSOAS",
-			"select": "Selecione",
-			"personOne": "pessoa",
-			"personOther": "pessoas",
-			"ageRange": "(De 05 a 90 anos)",
-			"ariaQty": "Quantidade",
-			"inc": "Aumentar",
-			"dec": "Diminuir"
-		},
-		"cta": {
-			"disabled": "Selecione data e quantidade de pessoas",
-			"ready": "Reservar agora"
-		},
-		"subtotalLabel": "Subtotal:",
-		"aboutTitle": "Sobre a atividade",
-		"moreTitle": "Mais aventuras para explorar",
-		"date": {
-			"placeholderStart": "dd/mm/aaaa",
-			"placeholderEnd": "dd/mm/aaaa",
-			"startAria": "Data de início",
-			"endAria": "Data de término"
-		}
-	},
-	"gallery": {
-		"thumb": "Miniatura {n}"
-	},
-	"drp": {
-		"title": "Início e término",
-		"tabStart": "Início",
-		"tabEnd": "Término",
-		"clear": "Limpar",
-		"apply": "Concluído",
-		"prev": "Mês anterior",
-		"next": "Próximo mês"
-	},
-	"carousel": {
-		"prev": "Anterior",
-		"next": "Próximo"
-	},
-	"intensity": {
-		"leve": "Leve",
-		"moderado": "Moderado",
-		"intenso": "Intenso"
-	},
-	"time": {
-		"hour_one": "hora",
-		"hour_other": "horas",
-		"day_one": "Dia",
-		"day_other": "Dias"
-	},
-	"list": {
-		"filter": {
-			"label": "Filtrar por",
-			"all": "Todos"
-		}
-	},
-	"wa": {
-		"contact": "Olá, Diamantina Trekking! Quero um atendimento online.",
-		"booking": {
-		"hello": "Olá, Diamantina Trekking!",
-		"intro": "Quero agendar um roteiro pelo site.",
-		"labels": {
-			"tour": "Roteiro",
-			"duration": "Duração",
-			"people": "Quantidade de pessoas",
-			"date": "Data",
-			"period": "Período"
-		},
-		"toArrange": "a combinar",
-		"footer": "Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!"
-		}
-	}
+  "lang": {
+    "self": "Português (BR)",
+    "currentAlt": "Idioma atual: {name}"
+  },
+  "header": {
+    "contact": "Contato",
+    "langMenu": "Selecionar idioma"
+  },
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "tours": "Roteiros",
+    "reviews": "Depoimentos",
+    "faq": "Perguntas"
+  },
+  "home": {
+    "h1": {
+      "main": "Descubra a Chapada Diamantina",
+      "sub": "com segurança e emoção"
+    },
+    "lead": "Trilhas guiadas, travessias e experiências autênticas nos vales da Chapada",
+    "cta": {
+      "primary": "Conheça os roteiros",
+      "secondary": "Fale conosco"
+    }
+  },
+  "styles": {
+    "title": "SUA AVENTURA, SEU ESTILO",
+    "sub": "Do passeio leve à expedição: escolha seu ritmo e a Diamantina Trekking cuida do resto",
+    "cards": {
+      "family": {
+        "title": "PARA FAMÍLIA",
+        "text": "Passeios leves e seguros para todas as idades. Trilhas curtas, cachoeiras acessíveis e diversão garantida.",
+        "cta": "Ver Roteiros"
+      },
+      "adventure": {
+        "title": "PURA AVENTURA",
+        "text": "Trilhas intensas, mirantes épicos e rapel. Desafios com equipe local e segurança em primeiro lugar.",
+        "cta": "Ver Roteiros"
+      },
+      "private": {
+        "title": "EXPERIÊNCIA PRIVATIVA",
+        "text": "Roteiro sob medida, guia exclusivo e horários flexíveis para viver a Chapada no seu próprio ritmo.",
+        "cta": "Ver Roteiros"
+      }
+    }
+  },
+  "tours": {
+    "title": "ROTEIROS NA CHAPADA",
+    "sub": "Trilhas, cachoeiras e mirantes: viva a Chapada por inteiro",
+    "subtitle": "Trilhas, cachoeiras e mirantes: viva a Chapada por inteiro",
+    "ctaAll": "Ver Todos os Roteiros",
+    "filter": {
+      "intensity": "Intensidade",
+      "all": "Todos"
+    }
+  },
+  "levels": {
+    "leve": "Leve",
+    "moderado": "Moderado",
+    "intenso": "Intenso"
+  },
+  "cards": {
+    "about": "Sobre o Roteiro",
+    "from": "A partir de",
+    "details": "Ver Detalhes",
+    "toggleAria": "Mostrar descrição"
+  },
+  "guide": {
+    "title": "COM QUEM VOU EXPLORAR A CHAPADA?",
+    "p1": "Você será acompanhado por Rodrigo, guia nativo que cresceu explorando as trilhas da Chapada Diamantina.",
+    "p2": "Ele une conhecimento profundo do roteiro à paixão pela região, tornando sua caminhada muito mais do que um passeio: uma verdadeira imersão na cultura, natureza e essência da Chapada.",
+    "stats": {
+      "trilhas": "trilhas conduzidas",
+      "anos": "anos guiando",
+      "linguas": "línguas (português e inglês)"
+    }
+  },
+  "reviews": {
+    "title": "MEMÓRIAS INESQUECÍVEIS",
+    "sub": "Paisagens que marcam, experiências que ficam."
+  },
+  "share": {
+    "copy": "Compartilha essa jornada com alguém especial!",
+    "whatsappAria": "Compartilhar por WhatsApp",
+    "linkAria": "Copiar link",
+    "copied": "Link copiado",
+    "copyFail": "Não foi possível copiar",
+    "whatsMsg": "Bora criar uma lembrança massa? *{title}* parece perfeito pra gente.\n{link}"
+  },
+  "rd": {
+    "cta": "Quero viver essa aventura",
+    "teaserTail": "Tá esperando o quê pra embarcar nessa?"
+  },
+  "included": {
+    "title": "O que está incluso",
+    "pickup": {
+      "title": "Saída Direto da Sua Hospedagem",
+      "text": "Vamos te buscar onde estiver hospedado(a) em Lençóis."
+    },
+    "meal": {
+      "title": "Refeição no Roteiro",
+      "text": "Inclui almoço ou lance, de acordo com a programação."
+    },
+    "tickets": {
+      "title": "Taxas de Entrada Inclusas",
+      "text": "Ingressos e autorizações quando aplicável."
+    },
+    "guide": {
+      "title": "Guia Local Experiente",
+      "text": "Condutor credenciado, segurança e interpretação ambiental."
+    }
+  },
+  "ppc": {
+    "title": "Políticas de pagamento<br>e cancelamento:",
+    "items": {
+      "0": "30% do valor total via PIX ou transferência e o restante no 1º dia de roteiro;",
+      "1": "Parcelamento no PIX: uma parcela a cada mês até a data da viagem;",
+      "2": "Cartão de crédito ou débito à vista sem juros;",
+      "3": "Parcelamento no cartão de crédito com juros (consultar);",
+      "4": "Em caso de cancelamento, os 30% da reserva não são reembolsáveis."
+    }
+  },
+  "faq": {
+    "title": "PERGUNTAS FREQUENTES",
+    "sub": "Tirando todas as suas dúvidas"
+  },
+  "footer": {
+    "links": {
+      "home": "Início",
+      "about": "Sobre",
+      "tours": "Roteiros",
+      "reviews": "Depoimentos"
+    },
+    "copy": "© Diamantina Trekking 2025 - Todos os direitos reservados.",
+    "author": "Desenvolvido por Matheus Machado"
+  },
+  "whatsapp": {
+    "button": "Atendimento Online"
+  },
+  "rp": {
+    "priceFrom": "A partir de",
+    "startEnd": "Início e término",
+    "descBtn": "Ler Descrição",
+    "seeMore": "Ver mais",
+    "seeLess": "Ver menos",
+    "people": {
+      "title": "QUANTIDADE DE PESSOAS",
+      "select": "Selecione",
+      "personOne": "pessoa",
+      "personOther": "pessoas",
+      "ageRange": "(De 05 a 90 anos)",
+      "ariaQty": "Quantidade",
+      "inc": "Aumentar",
+      "dec": "Diminuir"
+    },
+    "cta": {
+      "disabled": "Selecione data e quantidade de pessoas",
+      "ready": "Reservar agora"
+    },
+    "subtotalLabel": "Subtotal:",
+    "aboutTitle": "Sobre a atividade",
+    "moreTitle": "Mais aventuras para explorar",
+    "date": {
+      "placeholderStart": "dd/mm/aaaa",
+      "placeholderEnd": "dd/mm/aaaa",
+      "startAria": "Data de início",
+      "endAria": "Data de término"
+    },
+    "discount": {
+      "title": "A partir de {min} {people}: desconto de {pct}%"
+    }
+  },
+  "gallery": {
+    "thumb": "Miniatura {n}"
+  },
+  "drp": {
+    "title": "Início e término",
+    "tabStart": "Início",
+    "tabEnd": "Término",
+    "clear": "Limpar",
+    "apply": "Concluído",
+    "prev": "Mês anterior",
+    "next": "Próximo mês"
+  },
+  "carousel": {
+    "prev": "Anterior",
+    "next": "Próximo"
+  },
+  "intensity": {
+    "leve": "Leve",
+    "moderado": "Moderado",
+    "intenso": "Intenso"
+  },
+  "time": {
+    "hour_one": "hora",
+    "hour_other": "horas",
+    "day_one": "Dia",
+    "day_other": "Dias"
+  },
+  "list": {
+    "filter": {
+      "label": "Filtrar por",
+      "all": "Todos"
+    }
+  },
+  "wa": {
+    "contact": "Olá, Diamantina Trekking! Quero um atendimento online.",
+    "booking": {
+      "hello": "Olá, Diamantina Trekking!",
+      "intro": "Quero agendar um roteiro pelo site.",
+      "labels": {
+        "tour": "Roteiro",
+        "duration": "Duração",
+        "people": "Quantidade de pessoas",
+        "date": "Data",
+        "period": "Período"
+      },
+      "toArrange": "a combinar",
+      "footer": "Pode verificar disponibilidade e me passar os próximos passos? Obrigado(a)!"
+    }
+  }
 }

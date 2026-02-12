@@ -469,6 +469,19 @@
 	font-size:calc(16px * var(--font-scale));
 }
 
+.rp-people-off{
+	display:inline-block;
+	margin-left:8px;
+	padding:2px 8px;
+	border-radius:999px;
+	border:1px solid var(--line-strong);
+	font-size:calc(12px * var(--font-scale));
+	font-weight:800;
+	color:var(--text-green);
+	line-height:1.1;
+	cursor:help;
+}
+
 .rp-cta,
 .rp-subtotal{
 	width:100%;

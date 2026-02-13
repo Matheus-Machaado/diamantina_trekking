@@ -2,6 +2,7 @@
   "roteiros": [
     {
       "id": 1,
+<<<<<<< HEAD
       "titulo": "Mosquito Waterfall & Devil’s Pool",
       "nivel": "moderado",
       "valor_por_pessoa": 1000,
@@ -12,6 +13,21 @@
         "Visit the waterfall from the top and the base.",
         "Homemade lunch at the farm.",
         "Swim at Devil’s Pool and return to Lençóis."
+=======
+      "titulo": "Mosquito Waterfall + Devil’s Pool",
+      "nivel": "leve",
+      "valor_por_pessoa": 1000,
+      "duracao": 9,
+      "preview": "A classic day in Lençóis: swim under the 40‑meter Mosquito Waterfall, then an easy hike to Devil’s Pool.",
+      "descricao": "Departure from Lençóis at 8:30 a.m. by vehicle, with about a 1-hour drive to the trailhead of Mosquito Waterfall.\n\nEasy hike (approx. 30 min) to the base of the waterfall, with time to swim under the roughly 40‑meter drop.\n\nLunch break with regional Chapada Diamantina food (lunch not included, depending on the option of the day).\n\nAfter lunch, we drive about 40 min to Devil’s Pool (Poço do Diabo), one of the most beautiful attractions around Lençóis.\n\nEasy walk (approx. 30 min) to the waterfall and the pool, with time for swimming and contemplation.\n\nReturn to Lençóis with expected arrival around 5:00 p.m.\n\nItinerary summary (step by step):",
+      "descricao_lista": [
+        "Lençóis → Mosquito Waterfall trailhead",
+        "Easy hike → Swim at Mosquito Waterfall",
+        "Regional lunch",
+        "Drive → Devil’s Pool",
+        "Easy walk → Swim at Devil’s Pool",
+        "Return to Lençóis"
+>>>>>>> 9a9a3dd (Att descricoes e links)
       ],
       "imagens": [
         "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-1.png",
@@ -26,9 +42,21 @@
       "titulo": "Blue Cave, Pratinha and Lapa Doce + Pai Inácio Hill",
       "nivel": "leve",
       "valor_por_pessoa": 1000,
+<<<<<<< HEAD
       "duracao": 24,
       "preview": "Subterranean scenery, crystal‑clear waters and an unforgettable sunset at Chapada’s postcard viewpoint.",
       "descricao": "Departure at 8:30 to Lapa Doce Cave for a traverse through chambers and speleothems. Local lunch. We continue to Pratinha and the Blue Cave to contemplate and optionally do floating, zipline, canoe and other activities. Late afternoon, we climb Pai Inácio Hill for sunset among plateaus and valleys. Return to Lençóis by the end of the day.",
+=======
+      "duracao": 10,
+      "preview": "Caves and crystal-clear waters in Iraquara, capped with a 360° sunset at Pai Inácio Hill — a full day trip from Lençóis.",
+      "descricao": "Departure from Lençóis at 8:30 a.m. towards Iraquara, a region known for its caves and transparent-water rivers.\n\nFirst stop at Lapa Doce Cave: a guided walk through chambers and corridors, observing natural formations such as stalactites, stalagmites and impressive underground scenery.\n\nNext, we visit Pratinha Farm: time to swim in the crystal‑clear waters of the Pratinha River and contemplate the famous Blue Cave, known for its intense color on days with good lighting.\n\nOn site, there are optional activities (paid separately) such as zipline, kayaking, floating/snorkeling and underwater photos — perfect if you want to boost the experience.\n\nWe end the day at Pai Inácio Hill, in Palmeiras: a short climb and a 360° panoramic view to close with an unforgettable sunset.\n\nReturn to Lençóis with expected arrival around 6:00 p.m.\n\nItinerary summary (step by step):",
+      "descricao_lista": [
+        "Lençóis → Iraquara (Lapa Doce Cave)",
+        "Iraquara (Pratinha Farm + Blue Cave)",
+        "Palmeiras (Pai Inácio Hill)",
+        "Return to Lençóis"
+      ],
+>>>>>>> 9a9a3dd (Att descricoes e links)
       "imagens": [
         "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-1.png",
         "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-2.png",
@@ -39,12 +67,28 @@
     },
     {
       "id": 3,
+<<<<<<< HEAD
       "titulo": "Fumaça Overlook & Riachinho",
       "nivel": "moderado",
       "valor_por_pessoa": 1000,
       "duracao": 48,
       "preview": "Brazil’s 2nd tallest waterfall seen from above and, afterwards, a refreshing bath in Riachinho’s pools.",
       "descricao": "Departure at 8:00 to Vale do Capão. Initial ascent of 1.8 km to Fumaça’s highlands, then a flat walk to the canyon edge where the water atomizes in the wind. Snack with a view and return on the same trail. We end the day relaxing at Riachinho Waterfall before heading back to Lençóis.",
+=======
+      "titulo": "Fumaça Waterfall + Riachinho Waterfall",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 11,
+      "preview": "A classic hike in Vale do Capão: an initial ascent, the Fumaça Waterfall viewpoint (one of Brazil’s largest) and a swim at Riachinho to end the day.",
+      "descricao": "Departure from Lençóis at 8:00 a.m. towards Vale do Capão (approx. 1h30 by car) to the start of the trail.\n\nHike of 12 km (6 km out + 6 km back). The first 2 km are a steeper climb, with wide views of the Chapada Diamantina National Park and local vegetation.\n\nAt the top, we reach the viewpoint of Fumaça Waterfall (from above), one of Chapada’s most impressive panoramas — here the experience is mainly contemplation and photos.\n\nOn the way back, we stop at Riachinho Waterfall: a short walk (about 10 min) to the falls and the pool, perfect for a swim and to relax at the end of the afternoon.\n\nReturn to Lençóis with expected arrival around 6:30 p.m.\n\nItinerary summary (step by step):",
+      "descricao_lista": [
+        "Lençóis → Vale do Capão (trailhead)",
+        "Initial ascent + crossing to the viewpoint",
+        "View Fumaça Waterfall (from above)",
+        "Return + swim at Riachinho Waterfall",
+        "Back to Lençóis"
+      ],
+>>>>>>> 9a9a3dd (Att descricoes e links)
       "imagens": [
         "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
         "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
@@ -55,6 +99,7 @@
     },
     {
       "id": 4,
+<<<<<<< HEAD
       "titulo": "Muritiba Park & Ribeirão do Meio",
       "nivel": "moderado",
       "valor_por_pessoa": 1000,
@@ -77,6 +122,43 @@
       "duracao": 10,
       "preview": "From the hypnotic light beam of the Enchanted to floating in the crystal‑clear Blue—fall in love with Chapada’s underground.",
       "descricao": "Departure at 8:30 to admire the Enchanted Pool, a turquoise lake lit by sunbeams that cross the cave. Then we visit Blue Pool, where you can float in transparent waters and watch tones shift with sunlight. Regional lunch and return to Lençóis.",
+=======
+      "titulo": "Pati Viewpoint (day trip)",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 10,
+      "preview": "One of Chapada’s most famous views in a day: climb to the first viewpoint and hike to Pati Viewpoint, with wide-open landscapes and wind across the Gerais.",
+      "descricao": "Departure from Lençóis at 8:00 a.m. towards Aleixo (approx. 2h by car), the starting point of the trail.\n\nTotal hike of about 5.5 km to the viewpoint (approx. 11 km round trip). The first 2 km are a climb to the first viewpoint, already with a privileged view of the mountains and villages in the region.\n\nAfter the initial climb, the trail continues on flatter sections, enjoying the typical vegetation, breeze and wide landscapes until the final destination.\n\nArrival at Pati Viewpoint: time for contemplation and photos of one of the most beautiful landscapes in Chapada Diamantina.\n\nReturn by the same route and back to Lençóis, with expected arrival around 6:00 p.m.\n\nItinerary summary (step by step):",
+      "descricao_lista": [
+        "Lençóis → Aleixo (trailhead)",
+        "Climb to the first viewpoint",
+        "Cross the Gerais to Pati Viewpoint",
+        "Return to Aleixo",
+        "Back to Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png"
+      ],
+      "pagina-principal": false
+    },
+    {
+      "id": 5,
+      "titulo": "Poço Encantado + Poço Azul",
+      "nivel": "leve",
+      "valor_por_pessoa": 1000,
+      "duracao": 9,
+      "preview": "Blue light at Poço Encantado for photos, then a swim in the clear waters of Poço Azul — an easy day perfect for cave lovers.",
+      "descricao": "Departure from Lençóis at 8:30 a.m. towards Poço Encantado (approx. 2h by car).\n\nVisit Poço Encantado: a cave with crystal‑clear bluish waters, ideal for contemplation and photos. As it is a preserved attraction, the visit here is for observation.\n\nAfter the visit, we drive for about 1 hour to Poço Azul.\n\nAt Poço Azul, it’s possible to get into the water and enjoy a swim in the blue‑toned cave, with time to relax and take in the scenery.\n\nLunch at the farm (depending on the day’s logistics) and return to Lençóis, with expected arrival around 5:00 p.m.\n\nItinerary summary (step by step):",
+      "descricao_lista": [
+        "Lençóis → Poço Encantado (visit + photos)",
+        "Drive → Poço Azul",
+        "Swim at Poço Azul + lunch at the farm",
+        "Return to Lençóis"
+      ],
+>>>>>>> 9a9a3dd (Att descricoes e links)
       "imagens": [
         "img/roteiros/poco-encantado-poco-azul/imagem-1.png",
         "img/roteiros/poco-encantado-poco-azul/imagem-2.png",
@@ -87,18 +169,35 @@
     },
     {
       "id": 6,
+<<<<<<< HEAD
       "titulo": "Marimbus Wetlands & Roncador Falls",
       "nivel": "leve",
       "valor_por_pessoa": 1000,
       "duracao": 12,
       "preview": "Canoes through Chapada’s “pantanal”, lunch in a historic farm and swims at Roncador’s cascades.",
       "descricao": "Departure at 8:30 to Remanso. We board canoes rowed by members of the local quilombola community and cross the Marimbus for about 2 hours, enjoying flooded vegetation and riverside life. Lunch at Fazenda Santo Antônio, a 19th‑century manor. Short walk to Roncador waterfalls to swim in natural pools. We finish with a pleasant 4 km trail to the car meeting point and return to Lençóis.",
+=======
+      "titulo": "Marimbus (mini Pantanal) + Roncador",
+      "nivel": "leve",
+      "valor_por_pessoa": 1000,
+      "duracao": 9,
+      "preview": "Boat ride through the Marimbus wetlands, lunch in a 19th‑century manor and a swim at Roncador — quilombola culture and nature in the same day.",
+      "descricao": "Departure from Lençóis at 8:30 a.m., with about a 40-minute drive to the quilombola community of Remanso.\n\nWe start a boat tour through the Marimbus wetlands, known as the “mini Pantanal of Bahia”: a calm navigation for about 1h30, surrounded by lively nature and unique flooded landscapes.\n\nStop for lunch in a 19th‑century manor house (regional dishes, depending on the day’s logistics).\n\nAfter lunch, we head to Roncador River: an easy walk (approx. 30 min) to the waterfalls and natural pools for swimming.\n\nReturn through a well-preserved forest, with a mix of biomes and that authentic Chapada feeling.\n\nReturn to Lençóis with expected arrival around 5:00 p.m.\n\nItinerary summary (step by step):",
+      "descricao_lista": [
+        "Lençóis → Remanso",
+        "Boat through the Marimbus (1h30)",
+        "Lunch in a historic manor house",
+        "Easy walk → Roncador waterfalls",
+        "Return to Lençóis"
+      ],
+>>>>>>> 9a9a3dd (Att descricoes e links)
       "imagens": [
         "img/roteiros/marimbus-roncador/imagem-1.png",
         "img/roteiros/marimbus-roncador/imagem-2.png",
         "img/roteiros/marimbus-roncador/imagem-3.png",
         "img/roteiros/marimbus-roncador/imagem-4.png"
       ],
+<<<<<<< HEAD
       "destaque": true,
       "descricao-destaque": "A full day of adventure in Chapada! We leave Lençóis at 8:30 to Remanso, then canoe across the Marimbus—the “mini Pantanal of Chapada”—surrounded by living nature and unique flooded landscapes. At Fazenda Santo Antônio, a 19th‑century manor, we enjoy a homemade lunch before heading to Roncador Falls for natural pools and rosy rock slabs. We end with a 4 km forest trail back.",
       "pagina-principal": true
@@ -147,10 +246,84 @@
         "img/roteiros/aguas-claras/imagem-3.png",
         "img/roteiros/aguas-claras/imagem-4.png"
       ]
+=======
+      "pagina-principal": true,
+      "destaque": true,
+      "descricao-destaque": "A full day of adventure in Chapada! We leave Lençóis at 8:30 to Remanso, then canoe across the Marimbus—the “mini Pantanal of Chapada”—surrounded by living nature and unique flooded landscapes. At Fazenda Santo Antônio, a 19th‑century manor, we enjoy a homemade lunch before heading to Roncador Falls for natural pools and rosy rock slabs. We end with a 4 km forest trail back."
+    },
+    {
+      "id": 7,
+      "titulo": "Sossego Waterfall + Ribeirão do Meio",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 10,
+      "preview": "A riverbed hike full of challenges to Sossego Waterfall and, on the way back, the natural rock slide at Ribeirão do Meio — a full adventure in Lençóis.",
+      "descricao": "Start at 8:30 a.m., leaving on foot from downtown Lençóis (no car needed).\n\nHike of about 7 km to the waterfall (approx. 14 km round trip), with sections along the riverbed: hopping rocks, passing under large boulders and crossing small canyons until reaching the waterfall.\n\nArrival at Sossego Waterfall: a majestic drop of about 50 meters and a swimming pool that can reach roughly 6 meters deep.\n\nOn the way back, we visit Ribeirão do Meio, the famous natural rock slide of Chapada Diamantina: you can climb up and slide down polished rocks into a pool about 5 meters deep (always with guide guidance and depending on the day’s conditions).\n\nFinish around 6:00 p.m.\n\nItinerary summary (step by step):",
+      "descricao_lista": [
+        "Downtown Lençóis → start of the trail",
+        "Riverbed crossing to Sossego Waterfall",
+        "Swim and rest at the waterfall",
+        "Return → Ribeirão do Meio (natural rock slide)",
+        "Back to downtown Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-2.png",
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-3.png",
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-4.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 8,
+      "titulo": "Fumacinha Waterfall (overnight expedition)",
+      "nivel": "intenso",
+      "valor_por_pessoa": 1000,
+      "duracao": 48,
+      "preview": "Advanced canyon trekking: 18 km over rocks and rivers to Fumacinha Waterfall (100 m). Requires fitness and an overnight in Ibicoara.",
+      "descricao": "Expedition recommended for those with good conditioning and who enjoy adventure: the trail runs through a canyon environment, with rocks, river crossings and uneven terrain.\n\nDeparture at 8:00 a.m. from Ibicoara (for this reason, an overnight stay in Ibicoara is recommended).\n\nHike of approximately 18 km (out and back), walking along the canyon and through less explored sections, with remarkable flora and fauna.\n\nArrival at Fumacinha Waterfall: a drop of about 100 meters, with viewpoints and passages that require skill and extra attention.\n\nAlong the way, there may be spots to swim in other waterfalls and pools on the return (when conditions allow), making the journey even more complete.\n\nReturn with expected arrival around 6:00 p.m.\n\nItinerary summary (step by step):",
+      "descricao_lista": [
+        "Ibicoara → start of the trail",
+        "Canyon trekking (rocks + rivers)",
+        "Fumacinha Waterfall (viewpoints + contemplation)",
+        "Return with swim stops (when possible)",
+        "Back to Ibicoara"
+      ],
+      "imagens": [
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png"
+      ],
+      "pagina-principal": false
+    },
+    {
+      "id": 9,
+      "titulo": "Águas Claras Trail",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 9,
+      "preview": "An 18 km hike across rivers and mountains to crystal-clear natural pools — one of the National Park’s most scenic routes.",
+      "descricao": "Departure from Lençóis at 8:30 a.m., with about a 30-minute drive to the start of the trail.\n\nHike of approximately 18 km (out and back), crossing a good part of the Chapada Diamantina National Park, with rivers and mountains along the way.\n\nDuring the route, the trail crosses wide landscapes and some of the most beautiful views in Chapada, including the passage through the Vale dos 3 Irmãos.\n\nArrival at the swimming spot: a waterfall and a crystal‑clear pool that can reach about 3 meters deep — perfect to cool off and relax.\n\nReturn to Lençóis with expected arrival around 5:00 p.m.\n\nItinerary summary (step by step):",
+      "descricao_lista": [
+        "Lençóis → trailhead (30 min drive)",
+        "Cross the Gerais + rivers + Vale dos 3 Irmãos",
+        "Swim at Águas Claras",
+        "Return and arrive in Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/marimbus-roncador/imagem-1.png",
+        "img/roteiros/marimbus-roncador/imagem-2.png",
+        "img/roteiros/marimbus-roncador/imagem-3.png",
+        "img/roteiros/marimbus-roncador/imagem-4.png"
+      ],
+      "pagina-principal": false
+>>>>>>> 9a9a3dd (Att descricoes e links)
     },
     {
       "id": 10,
       "titulo": "Buracão Waterfall",
+<<<<<<< HEAD
       "nivel": "leve",
       "valor_por_pessoa": 1000,
       "duracao": 4,
@@ -162,6 +335,48 @@
         "img/roteiros/cachoeira-do-buracao/imagem-3.png",
         "img/roteiros/cachoeira-do-buracao/imagem-4.png"
       ]
+=======
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 14,
+      "preview": "A long, unforgettable day: trail, canyon and a swim crossing (with a life jacket) to stand face-to-face with the 90 m Buracão Waterfall.",
+      "descricao": "Very early departure: 6:00 a.m. from Lençóis, with about a 4-hour drive to the region of Ibicoara, where the trail starts.\n\nHike of approximately 6 km (out and back) to the canyon. The total hiking time is around 1 hour (depending on the group’s pace).\n\nAt the canyon, there is a required swim crossing using life jackets, until reaching the most impressive viewpoint.\n\nFace-to-face with Buracão Waterfall: a drop of about 90 meters into a deep pool, surrounded by tall walls and lush nature.\n\nReturn to Lençóis with expected arrival around 8:00 p.m.\n\nItinerary summary (step by step):",
+      "descricao_lista": [
+        "Lençóis (6:00 a.m.) → Ibicoara (transfer)",
+        "Hike → canyon entrance",
+        "Swim crossing (life jacket) → Buracão",
+        "Contemplation + photos + swim (depending on conditions)",
+        "Return and arrive in Lençóis (8:00 p.m.)"
+      ],
+      "imagens": [
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-1.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-2.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-3.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-4.png"
+      ],
+      "pagina-principal": false
+    },
+    {
+      "id": 11,
+      "titulo": "Vale do Pati – 3 days",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 72,
+      "preview": "Three days in the heart of Chapada: Gerais do Rio Preto, Pati Viewpoint, Morro do Castelo, Funil Waterfall and Cachoeirão from above, with overnight stays at locals’ homes.",
+      "descricao": "3-day expedition to experience Vale do Pati at a calmer pace, sleeping in locals’ houses and hiking through some of Chapada Diamantina’s most emblematic landscapes.\n\nDay 1 — Departure from Lençóis at 7:00 a.m. by car to Aleixo (start of the trail). Climb of about 2 km to the top and the first viewpoint. We cross the Gerais do Rio Preto, with a stop to swim in the dark, clean waters of Rio Preto, then continue to Pati Viewpoint. We descend the first slope to the locals’ house, where we have dinner with the residents. Arrival around 5:00 p.m. (about 10 km walked on day 1).\n\nDay 2 — Departure at 8:00 a.m. to Morro do Castelo: a steep climb to Gruta da Lapinha and then on to a viewpoint. Snack prepared by the guides, then we hike to Funil Waterfall for a swim and return to the locals’ house for dinner and rest (about 12 km, returning around 6:00 p.m.).\n\nDay 3 — After breakfast, we head to Cachoeirão from above (viewpoint), where it’s possible to see multiple waterfalls over a 300‑meter cliff; depending on the season, you may also swim in a beautiful pool before reaching the falls. We then take another route down to Aleixo after a hike of about 18 km. Departure around 8:00 a.m. and arrival around 6:00 p.m.\n\nItinerary summary (step by step):",
+      "descricao_lista": [
+        "Day 1: Lençóis → Aleixo → Gerais do Rio Preto → Pati Viewpoint → overnight with locals",
+        "Day 2: Morro do Castelo + Gruta da Lapinha → Funil Waterfall → overnight with locals",
+        "Day 3: Cachoeirão from above (viewpoint) → descent to Aleixo → return"
+      ],
+      "imagens": [
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+        "img/roteiros/marimbus-roncador/imagem-3.png",
+        "img/roteiros/marimbus-roncador/imagem-4.png"
+      ],
+      "pagina-principal": false
+>>>>>>> 9a9a3dd (Att descricoes e links)
     }
   ],
   "memorias": [
@@ -228,4 +443,8 @@
       "resposta": "Hiking shoes, a water bottle, sunscreen, hat/cap and a light windbreaker. The complete list is sent after booking."
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9a9a3dd (Att descricoes e links)

@@ -2,6 +2,7 @@
   "roteiros": [
     {
       "id": 1,
+<<<<<<< HEAD
       "titulo": "Cascade Mosquito & « Piscine du Diable »",
       "nivel": "moderado",
       "valor_por_pessoa": 1000,
@@ -12,6 +13,21 @@
         "Vue de la cascade d’en haut et d’en bas.",
         "Déjeuner maison à la ferme.",
         "Baignade à la Piscine du Diable et retour à Lençóis."
+=======
+      "titulo": "Cachoeira do Mosquito + Poço do Diabo",
+      "nivel": "leve",
+      "valor_por_pessoa": 1000,
+      "duracao": 9,
+      "preview": "Une journée incontournable à Lençóis : baignade sous la chute de 40 m de la Cachoeira do Mosquito, puis marche facile jusqu’au Poço do Diabo.",
+      "descricao": "Départ de Lençóis à 8h30 en véhicule, avec environ 1h de route jusqu’à l’entrée de la Cachoeira do Mosquito.\n\nMarche facile (env. 30 min) jusqu’à la base de la cascade, avec du temps pour se baigner au pied de la chute d’environ 40 mètres.\n\nPause déjeuner avec une cuisine régionale de la Chapada Diamantina (déjeuner non inclus, selon l’option du jour).\n\nAprès le déjeuner, nous roulons environ 40 min jusqu’au Poço do Diabo, l’un des plus beaux attraits de la région de Lençóis.\n\nMarche facile (env. 30 min) jusqu’à la cascade et au bassin, avec du temps pour la baignade et la contemplation.\n\nRetour à Lençóis, arrivée prévue vers 17h.\n\nRésumé de l’itinéraire (pas à pas) :",
+      "descricao_lista": [
+        "Lençóis → Entrée de la Cachoeira do Mosquito",
+        "Marche facile → Baignade à la Cachoeira do Mosquito",
+        "Déjeuner régional",
+        "Trajet → Poço do Diabo",
+        "Marche facile → Baignade au Poço do Diabo",
+        "Retour à Lençóis"
+>>>>>>> 9a9a3dd (Att descricoes e links)
       ],
       "imagens": [
         "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-1.png",
@@ -23,12 +39,27 @@
     },
     {
       "id": 2,
+<<<<<<< HEAD
       "titulo": "Grotte Bleue, Pratinha et Lapa Doce + Morro do Pai Inácio",
       "nivel": "leve",
       "valor_por_pessoa": 1000,
       "duracao": 24,
       "preview": "Paysages souterrains, eaux cristallines et coucher de soleil inoubliable sur le belvédère emblématique de la Chapada.",
       "descricao": "Départ à 8h30 pour la grotte de Lapa Doce et sa traversée entre salles et spéléothèmes. Déjeuner local. Puis Pratinha et la Grotte Bleue pour contempler et, en option, faire de la flottaison, tyrolienne, canoë et autres activités. En fin de journée, montée au Morro do Pai Inácio pour le coucher du soleil entre plateaux et vallées. Retour à Lençóis en soirée.",
+=======
+      "titulo": "Gruta Azul, Pratinha et Lapa Doce + Morro do Pai Inácio",
+      "nivel": "leve",
+      "valor_por_pessoa": 1000,
+      "duracao": 10,
+      "preview": "Grottes et eaux cristallines à Iraquara, avec un coucher de soleil à 360° au Morro do Pai Inácio — une journée complète au départ de Lençóis.",
+      "descricao": "Départ de Lençóis à 8h30 en direction d’Iraquara, région connue pour ses grottes et ses rivières aux eaux transparentes.\n\nPremière halte à la Gruta da Lapa Doce : visite guidée à travers les salles et couloirs, en observant des formations naturelles comme les stalactites, les stalagmites et des paysages souterrains impressionnants.\n\nEnsuite, visite de la Fazenda Pratinha : temps pour nager dans les eaux cristallines du Rio Pratinha et contempler la célèbre Gruta Azul, connue pour sa couleur intense les jours de bonne luminosité.\n\nSur place, il existe des activités optionnelles (payantes séparément) comme la tyrolienne, le kayak, la flottaison/snorkeling et les photos sous‑marines — idéal pour enrichir l’expérience.\n\nFin d’après‑midi au Morro do Pai Inácio, à Palmeiras : courte montée et vue panoramique à 360° pour terminer la journée avec un coucher de soleil inoubliable.\n\nRetour à Lençóis, arrivée prévue vers 18h.\n\nRésumé de l’itinéraire (pas à pas) :",
+      "descricao_lista": [
+        "Lençóis → Iraquara (Gruta da Lapa Doce)",
+        "Iraquara (Fazenda Pratinha + Gruta Azul)",
+        "Palmeiras (Morro do Pai Inácio)",
+        "Retour à Lençóis"
+      ],
+>>>>>>> 9a9a3dd (Att descricoes e links)
       "imagens": [
         "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-1.png",
         "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-2.png",
@@ -39,12 +70,28 @@
     },
     {
       "id": 3,
+<<<<<<< HEAD
       "titulo": "Belvédère de Fumaça & Riachinho",
       "nivel": "moderado",
       "valor_por_pessoa": 1000,
       "duracao": 48,
       "preview": "La 2ᵉ plus haute chute du Brésil vue d’en haut et, ensuite, un bain revigorant dans les piscines de Riachinho.",
       "descricao": "Départ à 8h pour la vallée du Capão. Montée initiale de 1,8 km jusqu’aux plateaux de Fumaça, puis marche plane jusqu’au bord du canyon où l’eau se pulvérise au vent. En‑cas avec vue et retour par le même sentier. Fin de journée à la cascade de Riachinho avant de rentrer à Lençóis.",
+=======
+      "titulo": "Cachoeira da Fumaça + Cachoeira do Riachinho",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 11,
+      "preview": "Randonnée classique au Vale do Capão : montée initiale, mirante de la Cachoeira da Fumaça (l’une des plus grandes du Brésil) et baignade au Riachinho pour finir la journée.",
+      "descricao": "Départ de Lençóis à 8h en direction du Vale do Capão (env. 1h30 de route) jusqu’au début du sentier.\n\nRandonnée de 12 km (6 km aller + 6 km retour). Les 2 premiers km sont en montée plus soutenue, avec de larges vues sur le Parc National de la Chapada Diamantina et sa végétation.\n\nArrivée au sommet pour contempler la Cachoeira da Fumaça par le haut, l’un des mirants les plus impressionnants — ici, l’expérience est surtout de contemplation et de photos.\n\nAu retour, arrêt à la Cachoeira do Riachinho : courte marche (env. 10 min) jusqu’aux chutes et au bassin, parfait pour la baignade et pour se détendre en fin d’après‑midi.\n\nRetour à Lençóis, arrivée prévue vers 18h30.\n\nRésumé de l’itinéraire (pas à pas) :",
+      "descricao_lista": [
+        "Lençóis → Vale do Capão (départ du sentier)",
+        "Montée initiale + traversée jusqu’au mirante",
+        "Contemplation de la Cachoeira da Fumaça (par le haut)",
+        "Retour + baignade à la Cachoeira do Riachinho",
+        "Retour à Lençóis"
+      ],
+>>>>>>> 9a9a3dd (Att descricoes e links)
       "imagens": [
         "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
         "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
@@ -55,6 +102,7 @@
     },
     {
       "id": 4,
+<<<<<<< HEAD
       "titulo": "Parc de Muritiba & Ribeirão do Meio",
       "nivel": "moderado",
       "valor_por_pessoa": 1000,
@@ -77,6 +125,43 @@
       "duracao": 10,
       "preview": "Du faisceau lumineux hypnotique de l’Enchanté à la flottaison dans les eaux cristallines du Bleu — on tombe amoureux de la Chapada souterraine.",
       "descricao": "Départ à 8h30 pour contempler le Lac Enchanté, d’un bleu turquoise éclairé par les rayons du soleil pénétrant la grotte. Ensuite, visite du Lac Bleu où l’on peut flotter dans des eaux transparentes et observer les teintes changer avec le soleil. Déjeuner régional et retour à Lençóis.",
+=======
+      "titulo": "Mirante do Pati (aller-retour)",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 10,
+      "preview": "L’un des panoramas les plus célèbres de la Chapada en une journée : montée au premier mirante puis marche jusqu’au Mirante do Pati, paysages ouverts et brise sur les Gerais.",
+      "descricao": "Départ de Lençóis à 8h en direction d’Aleixo (env. 2h de route), point de départ de la randonnée.\n\nMarche totale d’environ 5,5 km jusqu’au mirante (env. 11 km aller‑retour). Les 2 premiers km sont en montée jusqu’au premier mirante, déjà avec une vue privilégiée sur les montagnes et les villages de la région.\n\nAprès la montée initiale, le sentier continue sur des tronçons plus plats, en profitant de la végétation typique, de la brise et des grands paysages jusqu’à la destination finale.\n\nArrivée au Mirante do Pati : temps de contemplation et de photos de l’un des plus beaux paysages de la Chapada Diamantina.\n\nRetour par le même chemin et retour à Lençóis, arrivée prévue vers 18h.\n\nRésumé de l’itinéraire (pas à pas) :",
+      "descricao_lista": [
+        "Lençóis → Aleixo (départ du sentier)",
+        "Montée jusqu’au premier mirante",
+        "Traversée des Gerais jusqu’au Mirante do Pati",
+        "Retour vers Aleixo",
+        "Retour à Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png"
+      ],
+      "pagina-principal": false
+    },
+    {
+      "id": 5,
+      "titulo": "Poço Encantado + Poço Azul",
+      "nivel": "leve",
+      "valor_por_pessoa": 1000,
+      "duracao": 9,
+      "preview": "La lumière bleue du Poço Encantado pour les photos, puis baignade dans les eaux transparentes du Poço Azul — une journée facile, parfaite pour les amoureux de grottes.",
+      "descricao": "Départ de Lençóis à 8h30 en direction du Poço Encantado (env. 2h de route).\n\nVisite du Poço Encantado : grotte aux eaux cristallines bleutées, idéale pour la contemplation et les photos. Comme il s’agit d’un site préservé, la visite ici est essentiellement d’observation.\n\nAprès la visite, nous roulons environ 1h jusqu’au Poço Azul.\n\nAu Poço Azul, il est possible d’entrer dans l’eau et de profiter d’une baignade dans la grotte aux tons bleus, avec du temps pour se détendre et admirer le paysage.\n\nDéjeuner à la fazenda (selon la logistique du jour) et retour à Lençóis, arrivée prévue vers 17h.\n\nRésumé de l’itinéraire (pas à pas) :",
+      "descricao_lista": [
+        "Lençóis → Poço Encantado (visite + photos)",
+        "Trajet → Poço Azul",
+        "Baignade au Poço Azul + déjeuner à la fazenda",
+        "Retour à Lençóis"
+      ],
+>>>>>>> 9a9a3dd (Att descricoes e links)
       "imagens": [
         "img/roteiros/poco-encantado-poco-azul/imagem-1.png",
         "img/roteiros/poco-encantado-poco-azul/imagem-2.png",
@@ -87,18 +172,35 @@
     },
     {
       "id": 6,
+<<<<<<< HEAD
       "titulo": "Marimbus & Chutes de Roncador",
       "nivel": "leve",
       "valor_por_pessoa": 1000,
       "duracao": 12,
       "preview": "Canoës dans le « pantanal » de la Chapada, déjeuner dans une ferme historique et baignades aux chutes de Roncador.",
       "descricao": "Départ à 8h30 vers Remanso. Canoës manœuvrées par des habitants de la communauté quilombola pour traverser les Marimbus pendant env. 2 h, au milieu de la végétation inondée et de la vie riveraine. Déjeuner à la Fazenda Santo Antônio, manoir du XIXᵉ siècle. Courte marche jusqu’aux chutes de Roncador pour des piscines naturelles. Retour par un agréable sentier de 4 km jusqu’au véhicule et à Lençóis.",
+=======
+      "titulo": "Marimbus (mini pantanal) + Roncador",
+      "nivel": "leve",
+      "valor_por_pessoa": 1000,
+      "duracao": 9,
+      "preview": "Balade en bateau sur les Marimbus, déjeuner dans un casarão du XIXe siècle et baignade au Roncador — culture quilombola et nature en une journée.",
+      "descricao": "Départ de Lençóis à 8h30, avec environ 40 min de route jusqu’à la communauté quilombola de Remanso.\n\nDébut de la balade en bateau dans les Marimbus, surnommés le « mini Pantanal bahianais » : navigation tranquille d’environ 1h30, au milieu d’une nature vivante et de paysages inondés uniques.\n\nArrêt déjeuner dans un casarão historique du XIXe siècle (plats régionaux, selon la logistique du jour).\n\nAprès le déjeuner, nous partons vers le Rio Roncador : marche facile (env. 30 min) jusqu’aux cascades et bassins naturels pour la baignade.\n\nRetour à travers une forêt bien préservée, avec un mélange de biomes et une ambiance Chapada authentique.\n\nRetour à Lençóis, arrivée prévue vers 17h.\n\nRésumé de l’itinéraire (pas à pas) :",
+      "descricao_lista": [
+        "Lençóis → Remanso",
+        "Bateau dans les Marimbus (1h30)",
+        "Déjeuner dans un casarão historique",
+        "Marche facile → cascades du Roncador",
+        "Retour à Lençóis"
+      ],
+>>>>>>> 9a9a3dd (Att descricoes e links)
       "imagens": [
         "img/roteiros/marimbus-roncador/imagem-1.png",
         "img/roteiros/marimbus-roncador/imagem-2.png",
         "img/roteiros/marimbus-roncador/imagem-3.png",
         "img/roteiros/marimbus-roncador/imagem-4.png"
       ],
+<<<<<<< HEAD
       "destaque": true,
       "descricao-destaque": "Journée entière d’aventure dans la Chapada ! Départ de Lençóis à 8h30 vers Remanso, puis traversée en canoë des Marimbus — le « mini Pantanal de la Chapada » — entourés d’une nature vivante et de paysages inondés. À la Fazenda Santo Antônio, manoir du XIXᵉ siècle, déjeuner maison avant de rejoindre les chutes de Roncador pour des piscines naturelles et des dalles rosées. Fin par un sentier de 4 km en forêt jusqu’au retour.",
       "pagina-principal": true
@@ -162,6 +264,123 @@
         "img/roteiros/cachoeira-do-buracao/imagem-3.png",
         "img/roteiros/cachoeira-do-buracao/imagem-4.png"
       ]
+=======
+      "pagina-principal": true,
+      "destaque": true,
+      "descricao-destaque": "Journée entière d’aventure dans la Chapada ! Départ de Lençóis à 8h30 vers Remanso, puis traversée en canoë des Marimbus — le « mini Pantanal de la Chapada » — entourés d’une nature vivante et de paysages inondés. À la Fazenda Santo Antônio, manoir du XIXᵉ siècle, déjeuner maison avant de rejoindre les chutes de Roncador pour des piscines naturelles et des dalles rosées. Fin par un sentier de 4 km en forêt jusqu’au retour."
+    },
+    {
+      "id": 7,
+      "titulo": "Cachoeira do Sossego + Ribeirão do Meio",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 10,
+      "preview": "Randonnée avec défis dans le lit de la rivière jusqu’à la Cachoeira do Sossego et, au retour, le toboggan naturel du Ribeirão do Meio — aventure complète à Lençóis.",
+      "descricao": "Départ à 8h30, à pied depuis le centre de Lençóis (pas besoin de voiture).\n\nRandonnée d’environ 7 km jusqu’à la cascade (env. 14 km aller‑retour), avec des passages dans le lit de la rivière : sauts de pierres, passages sous de grands rochers et traversée de petits canyons jusqu’à atteindre la cascade.\n\nArrivée à la Cachoeira do Sossego : chute majestueuse d’environ 50 mètres et bassin de baignade, dont la profondeur peut atteindre environ 6 mètres.\n\nAu retour, visite du Ribeirão do Meio, le célèbre toboggan naturel : il est possible de monter puis de glisser sur des roches polies par la nature jusqu’à un bassin d’environ 5 mètres de profondeur (toujours avec l’orientation du guide et selon les conditions du jour).\n\nFin prévue vers 18h.\n\nRésumé de l’itinéraire (pas à pas) :",
+      "descricao_lista": [
+        "Centre de Lençóis → début du sentier",
+        "Traversée dans le lit de la rivière jusqu’à la Cachoeira do Sossego",
+        "Baignade et pause à la cascade",
+        "Retour → Ribeirão do Meio (toboggan naturel)",
+        "Retour au centre de Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-2.png",
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-3.png",
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-4.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 8,
+      "titulo": "Cachoeira da Fumacinha (expédition avec nuitée)",
+      "nivel": "intenso",
+      "valor_por_pessoa": 1000,
+      "duracao": 48,
+      "preview": "Trekking avancé en canyon : 18 km entre rochers et rivières jusqu’à la Cachoeira da Fumacinha (100 m). Exige une bonne condition et une nuit à Ibicoara.",
+      "descricao": "Expédition recommandée à ceux qui ont une bonne condition physique et aiment l’aventure : le sentier se déroule dans un environnement de canyon, avec des rochers, des traversées de rivière et un terrain irrégulier.\n\nDépart à 8h depuis Ibicoara (pour cette raison, une nuit sur place est recommandée).\n\nRandonnée d’environ 18 km (aller‑retour), en progressant dans le canyon et sur des sections peu explorées, avec une faune et une flore marquantes.\n\nArrivée à la Cachoeira da Fumacinha : chute d’environ 100 mètres, avec des mirants et des passages qui exigent de l’habileté et une attention redoublée.\n\nEn chemin, il peut y avoir des points de baignade dans d’autres cascades et bassins au retour (selon les conditions), rendant l’aventure encore plus complète.\n\nRetour prévu vers 18h.\n\nRésumé de l’itinéraire (pas à pas) :",
+      "descricao_lista": [
+        "Ibicoara → départ du sentier",
+        "Trekking en canyon (rochers + rivières)",
+        "Cachoeira da Fumacinha (mirants + contemplation)",
+        "Retour avec arrêts baignade (si possible)",
+        "Retour à Ibicoara"
+      ],
+      "imagens": [
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png"
+      ],
+      "pagina-principal": false
+    },
+    {
+      "id": 9,
+      "titulo": "Trilha das Águas Claras",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 9,
+      "preview": "18 km de marche entre rivières et montagnes jusqu’à des bassins naturels aux eaux cristallines — l’un des itinéraires les plus scénographiques du Parc National.",
+      "descricao": "Départ de Lençóis à 8h30, avec environ 30 min de route jusqu’au début du sentier.\n\nRandonnée d’environ 18 km (aller‑retour), traversant une bonne partie du Parc National, avec rivières et montagnes au long du chemin.\n\nPendant le parcours, le sentier passe par de grands paysages et certaines des plus belles vues de la Chapada, incluant la traversée du Vale dos 3 Irmãos.\n\nArrivée au point de baignade : cascade et bassin aux eaux cristallines, dont la profondeur peut atteindre environ 3 mètres — idéal pour se rafraîchir et se détendre.\n\nRetour à Lençóis, arrivée prévue vers 17h.\n\nRésumé de l’itinéraire (pas à pas) :",
+      "descricao_lista": [
+        "Lençóis → début du sentier (30 min de route)",
+        "Traversée des Gerais + rivières + Vale dos 3 Irmãos",
+        "Baignade à Águas Claras",
+        "Retour et arrivée à Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/marimbus-roncador/imagem-1.png",
+        "img/roteiros/marimbus-roncador/imagem-2.png",
+        "img/roteiros/marimbus-roncador/imagem-3.png",
+        "img/roteiros/marimbus-roncador/imagem-4.png"
+      ],
+      "pagina-principal": false
+    },
+    {
+      "id": 10,
+      "titulo": "Cachoeira do Buracão",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 14,
+      "preview": "Une journée longue et inoubliable : sentier, canyon et traversée à la nage (avec gilet) pour se retrouver face à la chute de 90 m de la Cachoeira do Buracão.",
+      "descricao": "Départ très tôt : 6h du matin depuis Lençóis, avec environ 4h de route jusqu’à la région d’Ibicoara, où commence le sentier.\n\nRandonnée d’environ 6 km (aller‑retour) jusqu’au canyon. La durée totale de marche est d’environ 1h (selon le rythme du groupe).\n\nDans le canyon, une traversée à la nage est obligatoire, avec des gilets de sauvetage, jusqu’à atteindre le point de vue le plus impressionnant.\n\nFace à face avec la Cachoeira do Buracão : chute d’environ 90 mètres dans un bassin profond, entouré de hautes parois et d’une nature luxuriante.\n\nRetour à Lençóis, arrivée prévue vers 20h.\n\nRésumé de l’itinéraire (pas à pas) :",
+      "descricao_lista": [
+        "Lençóis (6h) → Ibicoara (trajet)",
+        "Randonnée → entrée du canyon",
+        "Traversée à la nage (gilet) → Buracão",
+        "Contemplation + photos + baignade (selon les conditions)",
+        "Retour et arrivée à Lençóis (20h)"
+      ],
+      "imagens": [
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-1.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-2.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-3.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-4.png"
+      ],
+      "pagina-principal": false
+    },
+    {
+      "id": 11,
+      "titulo": "Vale do Pati – 3 jours",
+      "nivel": "moderado",
+      "valor_por_pessoa": 1000,
+      "duracao": 72,
+      "preview": "Trois jours au cœur de la Chapada : Gerais do Rio Preto, Mirante do Pati, Morro do Castelo, Cachoeira do Funil et Cachoeirão par le haut, avec nuitées chez l’habitant.",
+      "descricao": "Expédition de 3 jours pour découvrir le Vale do Pati tranquillement, en dormant chez des habitants et en marchant à travers certains des paysages les plus emblématiques de la Chapada Diamantina.\n\nJour 1 — Départ de Lençóis à 7h en voiture jusqu’à Aleixo (début du sentier). Montée d’environ 2 km jusqu’au sommet et au premier mirante. Traversée des Gerais do Rio Preto, avec une pause baignade dans les eaux sombres et propres du Rio Preto, puis continuation jusqu’au Mirante do Pati. Descente vers la maison des habitants, où nous dînons avec les locaux. Arrivée vers 17h (environ 10 km de marche le jour 1).\n\nJour 2 — Départ à 8h pour le Morro do Castelo : montée raide jusqu’à la Gruta da Lapinha puis continuation jusqu’au mirante. Collation préparée par les guides, puis randonnée jusqu’à la Cachoeira do Funil pour la baignade et retour à la maison des habitants pour dîner et se reposer (environ 12 km, retour vers 18h).\n\nJour 3 — Après le petit-déjeuner, randonnée jusqu’au Cachoeirão par le haut (mirante), où il est possible de voir plusieurs chutes d’eau sur une falaise d’environ 300 mètres ; selon la saison, baignade possible dans un beau bassin avant d’arriver aux chutes. Ensuite, nous empruntons un autre chemin pour la descente vers Aleixo, après environ 18 km de marche. Départ vers 8h et arrivée vers 18h.\n\nRésumé de l’itinéraire (pas à pas) :",
+      "descricao_lista": [
+        "Jour 1 : Lençóis → Aleixo → Gerais do Rio Preto → Mirante do Pati → nuit chez l’habitant",
+        "Jour 2 : Morro do Castelo + Gruta da Lapinha → Cachoeira do Funil → nuit chez l’habitant",
+        "Jour 3 : Cachoeirão par le haut (mirante) → descente vers Aleixo → retour"
+      ],
+      "imagens": [
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+        "img/roteiros/marimbus-roncador/imagem-3.png",
+        "img/roteiros/marimbus-roncador/imagem-4.png"
+      ],
+      "pagina-principal": false
+>>>>>>> 9a9a3dd (Att descricoes e links)
     }
   ],
   "memorias": [
@@ -228,4 +447,8 @@
       "resposta": "Chaussures de randonnée, gourde, crème solaire, chapeau/casquette et coupe‑vent léger. La liste complète est envoyée après la réservation."
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9a9a3dd (Att descricoes e links)

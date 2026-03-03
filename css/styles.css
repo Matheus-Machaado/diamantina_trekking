@@ -38,17 +38,26 @@
 	}
 }
 
-@media (max-width:1920px){
+/*
+	Ajuste fino para monitores desktop menores (ex.: 24" Full HD).
+	A ideia é manter o layout "premium" em 2K/4K, mas reduzir um pouco
+	a sensação de tudo muito grande/solto em 1080p.
+*/
+@media (max-width:1920px) and (min-width:1025px){
 	:root{
-		--font-scale:.98;
-		--ui-scale:.98;
+		--font-scale:.90;
+		--ui-scale:.92;
+		--container-pad:22px;
+		--header-h:70px;
 	}
 }
 
-@media (max-width:1440px){
+@media (max-width:1440px) and (min-width:1025px){
 	:root{
-		--font-scale:.95;
-		--ui-scale:.96;
+		--font-scale:.88;
+		--ui-scale:.90;
+		--container-pad:20px;
+		--header-h:68px;
 	}
 }
 
@@ -1770,5 +1779,68 @@ depo-card time{
 		opacity:1!important;
 		transform:none!important;
 		filter:none!important;
+	}
+}
+
+/* ==============================
+   Desktop compacto (ex.: 1080p)
+   ============================== */
+
+@media (max-width:1920px) and (min-width:1025px){
+	/* Header menos alto */
+	header .container{
+		padding-top:18px;
+		padding-bottom:18px;
+	}
+
+	/* Seções um pouco menos "soltas" */
+	section{
+		padding:52px 0;
+	}
+	section .container{
+		gap:44px;
+	}
+
+	/* Hero: título e texto um pouco menores para evitar sensação de exagero em Full HD */
+	.inicio h1{
+		font-size:calc(clamp(30px,5.6vw,54px) * var(--font-scale));
+	}
+	.inicio-lead{
+		font-size:calc(clamp(15px,2.0vw,23px) * var(--font-scale));
+	}
+
+	/* Grid de roteiros um pouco mais compacto */
+	.roteiros-grid{
+		gap:40px;
+	}
+
+	/* Área do guia menos espaçada */
+	.guia-grid{
+		gap:32px;
+	}
+}
+
+@media (max-width:1440px) and (min-width:1025px){
+	header .container{
+		padding-top:16px;
+		padding-bottom:16px;
+	}
+	section{
+		padding:48px 0;
+	}
+	section .container{
+		gap:38px;
+	}
+	.inicio h1{
+		font-size:calc(clamp(28px,5.8vw,52px) * var(--font-scale));
+	}
+	.inicio-lead{
+		font-size:calc(clamp(15px,2.0vw,22px) * var(--font-scale));
+	}
+	.roteiros-grid{
+		gap:32px;
+	}
+	.guia-grid{
+		gap:28px;
 	}
 }

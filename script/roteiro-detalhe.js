@@ -178,7 +178,8 @@ import * as i18n from './i18n.js'
 		const n = parseFloat(str)
 		return isNaN(n) ? 0 : n
 	}
-	const PRICE = parsePrice(root.dataset.price || '0')
+	const HAS_PRICE = String(root.dataset.hasPrice || '').toLowerCase() === '1' || String(root.dataset.hasPrice || '').toLowerCase() === 'true'
+	const PRICE = HAS_PRICE ? parsePrice(root.dataset.price || '0') : 0
 
 	const isoStart = document.getElementById('rpStart')
 	const isoEnd = document.getElementById('rpEnd')
@@ -201,8 +202,17 @@ import * as i18n from './i18n.js'
 	}
 
 	function applyStaticDetail(){
-		const priceSmall = document.querySelector('.rp-price small')
-		if(priceSmall) priceSmall.textContent = t('rp.priceFrom')
+		const priceWrap = document.querySelector('.rp-price')
+		const pplPriceBox = document.querySelector('.rp-people-price')
+		if(!HAS_PRICE){
+			if(priceWrap){ priceWrap.hidden = true; priceWrap.style.display = 'none' }
+			if(pplPriceBox){ pplPriceBox.hidden = true; pplPriceBox.style.display = 'none' }
+		}else{
+			if(priceWrap){ priceWrap.hidden = false; priceWrap.style.display = '' }
+			if(pplPriceBox){ pplPriceBox.hidden = false; pplPriceBox.style.display = '' }
+			const priceSmall = document.querySelector('.rp-price small')
+			if(priceSmall) priceSmall.textContent = t('rp.priceFrom')
+		}
 
 		const rpLabel = document.querySelector('.rp-label')
 		if(rpLabel) rpLabel.textContent = t('rp.startEnd')
@@ -239,7 +249,16 @@ import * as i18n from './i18n.js'
 
 		const subBox = document.querySelector('.rp-subtotal')
 		const curVal = getSubtotalEl()?.textContent || ''
-		if(subBox) subBox.innerHTML = `${t('rp.subtotalLabel')} <b id="rpSubtotal">${curVal}</b>`
+		if(subBox){
+			if(!HAS_PRICE){
+				subBox.hidden = true
+				subBox.style.display = 'none'
+			}else{
+				subBox.hidden = false
+				subBox.style.display = ''
+				subBox.innerHTML = `${t('rp.subtotalLabel')} <b id="rpSubtotal">${curVal}</b>`
+			}
+		}
 
 		if(pQty) pQty.setAttribute('aria-label', t('rp.people.ariaQty'))
 		if(pMinus) pMinus.setAttribute('aria-label', t('rp.people.dec'))
@@ -308,6 +327,7 @@ import * as i18n from './i18n.js'
 	}
 
 	function updatePriceUI(){
+		if(!HAS_PRICE) return
 		const q = selectedQty()
 		const { tier, unit } = calcUnit(q)
 		if(pUnit) pUnit.textContent = formatBRL(unit)
@@ -336,7 +356,7 @@ import * as i18n from './i18n.js'
 	}
 
 	function updateCTA(){
-		updatePriceUI()
+		if(HAS_PRICE) updatePriceUI()
 		const ready = selectedQty() > 0 && hasDates()
 		cta.disabled = !ready
 		cta.textContent = ready ? t('rp.cta.ready') : t('rp.cta.disabled')
@@ -541,7 +561,7 @@ import * as i18n from './i18n.js'
 		updateCTA()
 	})
 
-	if(pUnit){
+	if(HAS_PRICE && pUnit){
 		pUnit.textContent = formatBRL(PRICE)
 	}
 

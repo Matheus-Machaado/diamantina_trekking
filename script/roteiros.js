@@ -57,8 +57,16 @@ import * as i18n from './i18n.js'
 
 	function sortCards(list){
 		return list
-			.map((el,idx)=>({ el, idx, inten:(el.dataset.intensidade||'').toLowerCase() }))
+			.map((el,idx)=>({
+				el,
+				idx,
+				inten:(el.dataset.intensidade||'').toLowerCase(),
+				hasPrice: parseInt(el.dataset.hasPrice||'0',10) || 0
+			}))
 			.sort((a,b)=>{
+				// Pacotes/roteiros com preço (novos) primeiro
+				if(a.hasPrice !== b.hasPrice) return b.hasPrice - a.hasPrice
+				// Depois, respeita a ordenação por intensidade escolhida na página
 				const wa = (ORDER[a.inten] ?? 99)
 				const wb = (ORDER[b.inten] ?? 99)
 				if(wa !== wb) return wa - wb

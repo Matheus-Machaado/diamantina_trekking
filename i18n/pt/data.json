@@ -4,7 +4,6 @@
       "id": 1,
       "titulo": "Cachoeira do Mosquito + Poço do Diabo",
       "nivel": "leve",
-      "valor_por_pessoa": 1000,
       "duracao": 9,
       "preview": "Um dia de clássicos em Lençóis: banho exclusivo na queda de 40m da Cachoeira do Mosquito e, depois, trilha leve até o Poço do Diabo.",
       "descricao": "Saída de Lençóis às 8h30 em veículo, com cerca de 1h de deslocamento até a entrada da Cachoeira do Mosquito.\n\nTrilha leve (aprox. 30 min) até a base da cachoeira, com tempo para banho embaixo da queda d’água de cerca de 40 metros.\n\nPausa para almoço com comida regional da Chapada Diamantina (almoço não incluso, conforme opção do dia).\n\nApós o almoço, seguimos de carro por aproximadamente 40 min até o Poço do Diabo, um dos atrativos mais bonitos da região de Lençóis.\n\nCaminhada leve (aprox. 30 min) até a cachoeira e o poço, com tempo para banho e contemplação.\n\nRetorno para Lençóis com previsão de chegada por volta das 17h.\n\nRoteiro resumido (passo a passo):",
@@ -28,7 +27,6 @@
       "id": 2,
       "titulo": "Grutas Azul, Pratinha e Lapa Doce + Morro do Pai Inácio",
       "nivel": "leve",
-      "valor_por_pessoa": 1000,
       "duracao": 10,
       "preview": "Cavernas e águas cristalinas em Iraquara, com pôr do sol 360° no Morro do Pai Inácio — um bate-volta completo saindo de Lençóis.",
       "descricao": "Saída de Lençóis às 8h30 com destino a Iraquara, região conhecida por suas cavernas e rios de águas transparentes.\n\nPrimeira parada na Gruta da Lapa Doce: caminhada guiada pelos salões e corredores, observando formações naturais como estalactites e estalagmites e cenários subterrâneos impressionantes.\n\nEm seguida, visita à Fazenda Pratinha: tempo para nadar nas águas cristalinas do Rio Pratinha e contemplar a famosa Gruta Azul, conhecida pela coloração intensa em dias de boa luminosidade.\n\nNo local, há atividades opcionais (pagas à parte), como tirolesa, caiaque, flutuação e fotos subaquáticas — ideais para quem quer turbinar a experiência.\n\nFinal de tarde no Morro do Pai Inácio, em Palmeiras: subida curta e vista panorâmica de 360° para fechar o dia com um pôr do sol inesquecível.\n\nRetorno para Lençóis com previsão de chegada por volta das 18h.\n\nRoteiro resumido (passo a passo):",
@@ -50,7 +48,6 @@
       "id": 3,
       "titulo": "Cachoeira da Fumaça + Cachoeira do Riachinho",
       "nivel": "moderado",
-      "valor_por_pessoa": 1000,
       "duracao": 11,
       "preview": "Trilha clássica no Vale do Capão: subida inicial, mirante da Cachoeira da Fumaça (uma das maiores do Brasil) e banho no Riachinho para fechar o dia.",
       "descricao": "Saída de Lençóis às 8h em direção ao Vale do Capão (aprox. 1h30 de carro) até o início da trilha.\n\nTrilha de 12 km (6 km ida + 6 km volta). Os primeiros 2 km são de subida mais puxada, com visual amplo do Parque Nacional da Chapada Diamantina.\n\nChegada ao topo para contemplar a Cachoeira da Fumaça por cima, um dos mirantes mais impactantes da Chapada — aqui a experiência é principalmente de observação e fotos.\n\nNa volta, parada na Cachoeira do Riachinho: caminhada curta (cerca de 10 min) até as quedas e o poço, perfeito para o banho e para relaxar no fim da tarde.\n\nRetorno com previsão de chegada em Lençóis por volta das 18h30.\n\nRoteiro resumido (passo a passo):",
@@ -73,7 +70,6 @@
       "id": 4,
       "titulo": "Mirante do Pati (bate-volta)",
       "nivel": "moderado",
-      "valor_por_pessoa": 1000,
       "duracao": 10,
       "preview": "Um dos visuais mais famosos da Chapada em um dia: subida ao primeiro mirante e caminhada até o Mirante do Pati, com paisagens abertas e vento nos Gerais.",
       "descricao": "Saída de Lençóis às 8h em direção ao Aleixo (aprox. 2h de carro), ponto de início da trilha.\n\nCaminhada total com cerca de 5,5 km até o mirante (aprox. 11 km ida e volta). Os primeiros 2 km são de subida até o primeiro mirante, já com uma vista privilegiada das montanhas e vilas da região.\n\nApós a subida inicial, a trilha segue em trechos mais planos, aproveitando a vegetação típica, brisa e paisagens amplas até o destino final.\n\nChegada ao Mirante do Pati: momento para contemplação e fotos de um dos cenários mais lindos da Chapada Diamantina.\n\nRetorno pelo mesmo caminho e volta para Lençóis, com previsão de chegada por volta das 18h.\n\nRoteiro resumido (passo a passo):",
@@ -96,7 +92,6 @@
       "id": 5,
       "titulo": "Poço Encantado + Poço Azul",
       "nivel": "leve",
-      "valor_por_pessoa": 1000,
       "duracao": 9,
       "preview": "A luz azul do Poço Encantado para fotos e, depois, banho nas águas transparentes do Poço Azul — dia leve e perfeito para quem ama cavernas.",
       "descricao": "Saída de Lençóis às 8h30 em direção ao Poço Encantado (aprox. 2h de carro).\n\nVisita ao Poço Encantado: caverna de águas cristalinas azuladas, ideal para observação e fotografias. Por ser um atrativo de preservação, o passeio aqui é de contemplação.\n\nApós a visita, seguimos por cerca de 1h de carro até o Poço Azul.\n\nNo Poço Azul, é possível entrar na água e aproveitar o banho na caverna de tonalidade azulada, com tempo para relaxar e curtir o visual.\n\nAlmoço na própria fazenda (conforme logística do dia) e retorno para Lençóis, com previsão de chegada por volta das 17h.\n\nRoteiro resumido (passo a passo):",
@@ -118,7 +113,6 @@
       "id": 6,
       "titulo": "Marimbus (mini pantanal) + Roncador",
       "nivel": "leve",
-      "valor_por_pessoa": 1000,
       "duracao": 9,
       "preview": "Passeio de barco pelos Marimbus, almoço em casarão do século XIX e banho nas cachoeiras do Roncador — cultura quilombola e natureza no mesmo dia.",
       "descricao": "Saída de Lençóis às 8h30, com cerca de 40 min de carro até a comunidade quilombola do Remanso.\n\nInício do passeio de barco pelos Marimbus, conhecidos como o “mini Pantanal baiano”: navegação tranquila por aproximadamente 1h30, cercada por natureza viva e paisagens alagadas únicas.\n\nParada para almoço em um casarão histórico do século XIX (comidas típicas da região, conforme logística do dia).\n\nApós o almoço, seguimos para o Rio Roncador: caminhada leve (aprox. 30 min) até as cachoeiras e poços para banho.\n\nRetorno atravessando uma mata bem preservada, com mistura de biomas e clima de Chapada raiz.\n\nChegada prevista em Lençóis por volta das 17h.\n\nRoteiro resumido (passo a passo):",
@@ -141,7 +135,6 @@
       "id": 7,
       "titulo": "Cachoeira do Sossego + Ribeirão do Meio",
       "nivel": "moderado",
-      "valor_por_pessoa": 1000,
       "duracao": 10,
       "preview": "Trilha a pé com desafios pelo leito do rio até a Cachoeira do Sossego e, na volta, o tobogã natural do Ribeirão do Meio — aventura completa em Lençóis.",
       "descricao": "Início às 8h30, saindo a pé do centro de Lençóis (não é necessário carro).\n\nTrilha com cerca de 7 km até a cachoeira (aprox. 14 km no total, ida e volta), com trechos pelo leito do rio: saltando pedras, passando por baixo de grandes rochas e atravessando pequenos cânions.\n\nChegada à Cachoeira do Sossego: queda majestosa de cerca de 50 metros e poço para banho, com profundidade que pode chegar a aproximadamente 6 metros.\n\nNo retorno, visita ao Ribeirão do Meio, o famoso tobogã natural: rochas polidas pela natureza onde é possível escorregar até um poço de cerca de 5 metros de profundidade (sempre com orientação do guia e atenção às condições do dia).\n\nPrevisão de término por volta das 18h.\n\nRoteiro resumido (passo a passo):",
@@ -164,7 +157,6 @@
       "id": 8,
       "titulo": "Cachoeira da Fumacinha (expedição com pernoite)",
       "nivel": "intenso",
-      "valor_por_pessoa": 1000,
       "duracao": 48,
       "preview": "Trekking avançado em cânion: 18 km entre pedras e rios até a Cachoeira da Fumacinha (100m). Expedição exige preparo e pernoite em Ibicoara.",
       "descricao": "Expedição indicada para quem tem bom condicionamento e gosta de aventura: a trilha acontece em ambiente de cânion, com trechos de pedras, cruzamento de rios e terreno irregular.\n\nSaída às 8h a partir de Ibicoara (por isso, recomenda-se pernoite na cidade para garantir o início cedo e com segurança).\n\nTrilha de aproximadamente 18 km (ida e volta), caminhando sobre o cânion e avançando por trechos pouco explorados, com fauna e flora marcantes.\n\nChegada à Cachoeira da Fumacinha: queda de cerca de 100 metros, com mirantes e passagens que exigem habilidade e atenção redobrada.\n\nNo caminho, há pontos para banho em outras cachoeiras e poços (quando as condições do dia permitem), tornando a jornada ainda mais completa.\n\nRetorno com previsão de chegada por volta das 18h.\n\nRoteiro resumido (passo a passo):",
@@ -187,7 +179,6 @@
       "id": 9,
       "titulo": "Trilha das Águas Claras",
       "nivel": "moderado",
-      "valor_por_pessoa": 1000,
       "duracao": 9,
       "preview": "18 km de caminhada por rios e montanhas até piscinas naturais de águas cristalinas — um dos roteiros mais cênicos do Parque Nacional.",
       "descricao": "Saída de Lençóis às 8h30, com cerca de 30 min de carro até o início da trilha.\n\nCaminhada de aproximadamente 18 km (ida e volta), atravessando boa parte do Parque Nacional da Chapada Diamantina: rios, campos abertos e trechos entre montanhas.\n\nDurante o percurso, a trilha passa por paisagens amplas e pontos com algumas das vistas mais bonitas da Chapada, incluindo a travessia pelo Vale dos 3 Irmãos.\n\nChegada ao ponto de banho: cachoeira e poço de águas cristalinas, com profundidade que pode chegar a cerca de 3 metros, ideal para relaxar e se refrescar.\n\nRetorno para Lençóis com previsão de chegada por volta das 17h.\n\nRoteiro resumido (passo a passo):",
@@ -209,7 +200,6 @@
       "id": 10,
       "titulo": "Cachoeira do Buracão",
       "nivel": "moderado",
-      "valor_por_pessoa": 1000,
       "duracao": 14,
       "preview": "Dia longo e inesquecível: trilha, cânion e travessia a nado (com colete) até ficar de frente para a queda de 90m da Cachoeira do Buracão.",
       "descricao": "Saída bem cedo: 6h da manhã a partir de Lençóis, com deslocamento de cerca de 4h até a região de Ibicoara, onde começa a trilha.\n\nCaminhada de aproximadamente 6 km (ida e volta) até o cânion. O percurso total de trilha leva em torno de 1h (variando com o ritmo do grupo).\n\nChegada ao cânion: travessia a nado em trecho obrigatório, utilizando coletes salva-vidas, até alcançar o ponto de observação mais impressionante do roteiro.\n\nFrente a frente com a Cachoeira do Buracão: queda de cerca de 90 metros em um poço profundo, com cenário de paredes altas e natureza exuberante.\n\nRetorno para Lençóis com previsão de chegada por volta das 20h.\n\nRoteiro resumido (passo a passo):",
@@ -232,7 +222,6 @@
       "id": 11,
       "titulo": "Vale do Pati - 3 dias",
       "nivel": "moderado",
-      "valor_por_pessoa": 1000,
       "duracao": 72,
       "preview": "Três dias no coração da Chapada: Gerais do Rio Preto, Mirante do Pati, Morro do Castelo, Cachoeira do Funil e Cachoeirão por cima com pernoites na casa de moradores locais.",
       "descricao": "Expedição de 3 dias para conhecer o Vale do Pati com calma, dormindo em casas de moradores locais e caminhando por alguns dos cenários mais emblemáticos da Chapada Diamantina.\n\nDia 1 — Saída de Lençóis às 7h de carro até o Aleixo (início da trilha). Subida de cerca de 2 km até o topo e primeiro mirante; travessia pelos Gerais do Rio Preto, com pausa para banho nas águas escuras e limpas do Rio Preto. Seguimos até o Mirante do Pati e descemos para a casa dos nativos. Chegada prevista por volta das 17h (cerca de 10 km caminhados no dia).\n\nDia 2 — Saída às 8h para o Morro do Castelo: subida íngreme até a Gruta da Lapinha e continuidade até mirantes. Lanche no caminho e, em seguida, trilha para a Cachoeira do Funil para banho. Retorno para a casa dos nativos para jantar e descanso. (cerca de 12 km caminhados no dia, com retorno por volta das 18h).\n\nDia 3 — Após o café da manhã, trilha até o Cachoeirão por cima (mirante). Em épocas favoráveis, é possível ver diversas quedas d’água e, dependendo da estação, aproveitar um banho em poços no caminho. Depois, seguimos por outro caminho para a descida do Aleixo. Saída por volta das 8h e chegada prevista às 18h (cerca de 18 km caminhados no dia).\n\nRoteiro resumido (passo a passo):",
@@ -248,6 +237,188 @@
         "img/roteiros/marimbus-roncador/imagem-4.png"
       ],
       "pagina-principal": false
+    },
+    {
+      "id": 12,
+      "titulo": "Roteiro de 3 dias para relaxar",
+      "nivel": "leve",
+      "valor_por_pessoa": 1900,
+      "duracao": 72,
+      "preview": "Três dias leves e bem completos em Lençóis: parques, grutas, mirantes e cachoeiras clássicas — tudo sem correria, no ritmo de relaxar.",
+      "descricao": "Um roteiro pensado para quem quer curtir a Chapada Diamantina com tranquilidade: trilhas leves, banhos em rios e cachoeiras, grutas impressionantes e um pôr do sol inesquecível.\n\nDia 1 — Parque da Muritiba + Ribeirão do Meio: começamos com um passeio gostoso em Lençóis, caminhando pelo Parque Municipal da Muritiba, com paradas para contemplar poços, pequenas quedas e a natureza ao redor. Seguimos para o Ribeirão do Meio, famoso pelo “tobogã natural” — uma laje de pedra lisa onde a água corre formando um escorregador natural (banho conforme as condições do dia e sempre com orientação do guia). Tarde livre para descansar e aproveitar a vila.\n\nDia 2 — Gruta da Lapa Doce + Fazenda Pratinha + Mirante do Camelo: saída para a região de Iraquara. Visitamos a Gruta da Lapa Doce em caminhada guiada por salões e galerias, observando formações como estalactites e estalagmites. Depois, seguimos para a Fazenda Pratinha, com tempo para banho nas águas cristalinas do Rio Pratinha e contemplação da famosa Gruta Azul (a coloração varia conforme a luminosidade). Finalizamos o dia com o Mirante do Camelo, um dos visuais mais bonitos da região, ideal para fotos.\n\nDia 3 — Cachoeira do Mosquito + Poço do Diabo + Morro do Pai Inácio: pela manhã, trilha leve até a base da Cachoeira do Mosquito, com tempo de banho no poço aos pés da queda d’água. Em seguida, visita ao Poço do Diabo para mais um banho refrescante. No fim da tarde, subimos o Morro do Pai Inácio para fechar com vista panorâmica 360° e pôr do sol.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Dia 1: Parque da Muritiba + Ribeirão do Meio (tobogã natural)",
+        "Dia 2: Gruta da Lapa Doce + Fazenda Pratinha (Rio Pratinha/Gruta Azul) + Mirante do Camelo",
+        "Dia 3: Cachoeira do Mosquito + Poço do Diabo + pôr do sol no Morro do Pai Inácio"
+      ],
+      "imagens": [
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
+        "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-2.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-3.png",
+        "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-4.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 13,
+      "titulo": "Vale do Pati — 3 dias",
+      "nivel": "moderado",
+      "valor_por_pessoa": 2000,
+      "duracao": 72,
+      "preview": "3 dias no trekking mais famoso do Brasil: gerais, mirantes e vales gigantes, com pernoites em casas de nativos e experiência raiz na Chapada.",
+      "descricao": "O Vale do Pati é considerado um dos trekkings mais bonitos do Brasil. Neste roteiro de 3 dias, exploramos os principais mirantes e caminhos do vale, com pernoites em casas de moradores (experiência tradicional da região).\n\nDia 1 — Gerais do Rio Preto + Mirante do Pati: saída cedo de Lençóis em direção ao ponto de início da trilha. Subida até os gerais e caminhada por campos abertos, com visual amplo das montanhas. Parada para banho no Rio Preto (quando as condições permitem) e seguimos até o Mirante do Pati. Descemos para o vale e pernoite em casa de nativos.\n\nDia 2 — Morro do Castelo + Cachoeira do Funil: após o café, seguimos para a subida do Morro do Castelo (trecho mais exigente do roteiro), passando pela Gruta da Lapinha e chegando a mirantes incríveis. Depois, caminhamos até a Cachoeira do Funil para banho e descanso. Retorno para pernoite.\n\nDia 3 — Cachoeirão por cima + retorno: saímos para o Cachoeirão por cima, um mirante impressionante que, em épocas de chuva, revela várias quedas d’água. Em seguida, iniciamos o caminho de volta pelos gerais e descida, retornando para Lençóis no fim do dia.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Dia 1: Início da trilha → Gerais do Rio Preto → Mirante do Pati → pernoite no vale",
+        "Dia 2: Morro do Castelo + Gruta da Lapinha → Cachoeira do Funil → pernoite",
+        "Dia 3: Cachoeirão por cima → retorno pelos gerais → chegada em Lençóis"
+      ],
+      "imagens": [
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-3.png",
+        "img/roteiros/marimbus-roncador/imagem-3.png",
+        "img/roteiros/marimbus-roncador/imagem-4.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 14,
+      "titulo": "Trilhas em Lençóis — 5 dias",
+      "nivel": "moderado",
+      "valor_por_pessoa": 3100,
+      "duracao": 120,
+      "preview": "Cinco dias para viver Lençóis e arredores: cachoeiras clássicas, grutas, rios e o mini pantanal dos Marimbus, com ritmo equilibrado entre aventura e descanso.",
+      "descricao": "Pacote de 5 dias com as trilhas e atrativos mais clássicos saindo de Lençóis. Perfeito para quem quer variedade: rios, cachoeiras, mirantes e paisagens únicas.\n\nDia 1 — Parque da Muritiba: passeio leve em Lençóis para abrir o roteiro no clima certo, caminhando pelo parque e conhecendo pontos de banho e contemplação.\n\nDia 2 — Cachoeira do Sossego: trilha mais aventureira pelo leito do rio até uma queda imponente e poço para banho. Retorno com parada no Ribeirão do Meio (quando encaixar na logística e condições do dia).\n\nDia 3 — Cachoeira do Mosquito + Poço do Diabo: dia de trilhas leves e banhos garantidos em dois dos atrativos mais queridos da região de Lençóis.\n\nDia 4 — Cachoeira da Fumaça + Riachinho: saída para o Vale do Capão. Trilha até o mirante da Cachoeira da Fumaça (vista por cima) e, no retorno, banho na Cachoeira do Riachinho para fechar o dia.\n\nDia 5 — Marimbus + Rio Roncador: passeio de barco pelos Marimbus (o “mini pantanal” da Chapada), com almoço regional e, depois, caminhada leve para banho nas cachoeiras e poços do Roncador.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Dia 1: Parque da Muritiba (Lençóis)",
+        "Dia 2: Cachoeira do Sossego (trilha) + Ribeirão do Meio (quando possível)",
+        "Dia 3: Cachoeira do Mosquito + Poço do Diabo",
+        "Dia 4: Cachoeira da Fumaça (mirante) + Cachoeira do Riachinho",
+        "Dia 5: Marimbus (barco) + Rio Roncador"
+      ],
+      "imagens": [
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-4.png",
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-1.png",
+        "img/roteiros/marimbus-roncador/imagem-1.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 15,
+      "titulo": "Chapada Cachoeiras — 6 dias",
+      "nivel": "intenso",
+      "valor_por_pessoa": 4500,
+      "duracao": 144,
+      "preview": "Seis dias com uma seleção de cachoeiras e paisagens icônicas: Fumaça, Sossego, Marimbus, Mosquito e Águas Claras — um pacote completo para quem quer natureza todos os dias.",
+      "descricao": "Roteiro de 6 dias para quem quer “colecionar cachoeiras” na Chapada Diamantina, com trilhas clássicas e paisagens marcantes.\n\nDia 1 — Parque da Muritiba + City Tour em Lençóis: caminhada leve para conhecer o Parque da Muritiba e, depois, um city tour pelo centrinho histórico de Lençóis (igreja, ruas de pedra, mirantes e curiosidades locais).\n\nDia 2 — Cachoeira do Sossego + Ribeirão do Meio: trilha pela beira/ leito do rio até a Cachoeira do Sossego. No retorno, parada no Ribeirão do Meio para descansar e curtir o tobogã natural.\n\nDia 3 — Cachoeira da Fumaça + Riachinho: trilha no Vale do Capão até o mirante da Fumaça e, no retorno, banho no Riachinho.\n\nDia 4 — Marimbus + Rio Roncador: passeio de barco no Marimbus, almoço regional e, depois, trilha leve para banho no Roncador.\n\nDia 5 — Cachoeira do Mosquito + Poço do Diabo: dia mais leve para recuperar as pernas, com banho em dois pontos imperdíveis.\n\nDia 6 — Águas Claras + Trilha do Morro do Morão: caminhada em área de parque nacional, passando por paisagens abertas, poços e trechos de rio. Fechamos com a trilha do Morão (conforme condições do dia), um visual amplo para encerrar a semana.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Dia 1: Parque da Muritiba + City Tour em Lençóis",
+        "Dia 2: Cachoeira do Sossego + Ribeirão do Meio",
+        "Dia 3: Cachoeira da Fumaça + Riachinho",
+        "Dia 4: Marimbus + Rio Roncador",
+        "Dia 5: Cachoeira do Mosquito + Poço do Diabo",
+        "Dia 6: Águas Claras + Trilha do Morão"
+      ],
+      "imagens": [
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-2.png",
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-3.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/marimbus-roncador/imagem-2.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 16,
+      "titulo": "Chapada Flutuar — 2 dias",
+      "nivel": "leve",
+      "valor_por_pessoa": 1750,
+      "duracao": 48,
+      "preview": "Dois dias focados em águas cristalinas: grutas e a Pratinha no primeiro dia, e Poço Azul + Poço Encantado no segundo — perfeito para fotos e contemplação.",
+      "descricao": "Um pacote curto para quem ama grutas e águas transparentes. Ideal para ir sem pressa, com muita contemplação e experiências de água.\n\nDia 1 — Gruta da Lapa Doce + Fazenda Pratinha: exploramos a Lapa Doce com guia (salões e formações naturais) e depois seguimos para a Fazenda Pratinha para banho no Rio Pratinha e visita/observação da Gruta Azul. Atividades opcionais no local (pagas à parte) podem incluir flutuação, caiaque e tirolesa, dependendo da operação do dia.\n\nDia 2 — Poço Azul + Poço Encantado: dia de cavernas com águas surreais. No Poço Azul, normalmente é possível entrar na água para banho (conforme regras e condições). No Poço Encantado, a visita é de contemplação e fotografia, com o famoso “raio de luz” em épocas específicas do ano.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Dia 1: Gruta da Lapa Doce (visita guiada) + Fazenda Pratinha (banho + Gruta Azul)",
+        "Dia 2: Poço Azul (banho) + Poço Encantado (contemplação e fotos)"
+      ],
+      "imagens": [
+        "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-1.png",
+        "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-2.png",
+        "img/roteiros/poco-encantado-poco-azul/imagem-3.png",
+        "img/roteiros/poco-encantado-poco-azul/imagem-1.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 17,
+      "titulo": "Chapada Sul — 3 dias",
+      "nivel": "intenso",
+      "valor_por_pessoa": 2100,
+      "duracao": 72,
+      "preview": "Três dias na Chapada Sul: Buracão, Fumacinha e os poços mais famosos da região — um pacote forte e inesquecível para quem quer grandes quedas e cânions.",
+      "descricao": "Roteiro para conhecer o melhor da Chapada Sul (região de Ibicoara e Itaetê), com cachoeiras gigantes e paisagens de cânion.\n\nDia 1 — Cachoeira do Buracão: saída cedo para a região de Ibicoara. Trilha até o cânion e travessia a nado com colete salva‑vidas (obrigatória) para chegar ao ponto mais impressionante, de frente para a queda do Buracão.\n\nDia 2 — Cachoeira da Fumacinha: trilha em ambiente de cânion, com pedras, rios e terreno irregular. É um dos roteiros mais exigentes, indicado para quem tem bom condicionamento.\n\nDia 3 — Poço Encantado + Poço Azul: fechamos com cavernas e águas cristalinas. No Poço Encantado, visita contemplativa; no Poço Azul, tempo para banho (conforme regras/condições).\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Dia 1: Cachoeira do Buracão (cânion + travessia a nado com colete)",
+        "Dia 2: Cachoeira da Fumacinha (trekking em cânion)",
+        "Dia 3: Poço Encantado (fotos) + Poço Azul (banho)"
+      ],
+      "imagens": [
+        "img/roteiros/mosquito-mucugezinho-poco-diabo/imagem-4.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-2.png",
+        "img/roteiros/poco-encantado-poco-azul/imagem-2.png",
+        "img/roteiros/poco-encantado-poco-azul/imagem-4.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 18,
+      "titulo": "Chapada Hits — 6 dias",
+      "nivel": "intenso",
+      "valor_por_pessoa": 5000,
+      "duracao": 144,
+      "preview": "Os “hits” da Chapada em um único pacote: Vale do Pati (3 dias), Buracão, Fumacinha e Poço Encantado + Poço Azul — para quem quer as experiências mais marcantes.",
+      "descricao": "Um pacote para quem quer marcar a Chapada Diamantina na memória: combinamos o trekking do Vale do Pati com os atrativos mais impressionantes da Chapada Sul.\n\nDias 1 a 3 — Vale do Pati (3 dias): trekking com pernoites em casas de nativos, passando por gerais, mirantes e caminhos clássicos do vale (Mirante do Pati, Morro do Castelo, Cachoeirão por cima, conforme roteiro e condições).\n\nDia 4 — Cachoeira do Buracão: trilha até o cânion e travessia a nado com colete salva‑vidas para ver a queda de perto.\n\nDia 5 — Cachoeira da Fumacinha: um dos trekkings mais exigentes e mais bonitos, em cenário de cânion.\n\nDia 6 — Poço Encantado + Poço Azul: encerramento com cavernas e águas cristalinas, perfeito para contemplar e relaxar depois dos dias de trilha.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Dias 1–3: Vale do Pati (trekking + pernoites com nativos)",
+        "Dia 4: Cachoeira do Buracão",
+        "Dia 5: Cachoeira da Fumacinha",
+        "Dia 6: Poço Encantado + Poço Azul"
+      ],
+      "imagens": [
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-1.png",
+        "img/roteiros/cachoeira-da-fumaca-riachinho/imagem-4.png",
+        "img/roteiros/poco-encantado-poco-azul/imagem-1.png",
+        "img/roteiros/poco-encantado-poco-azul/imagem-3.png"
+      ],
+      "pagina-principal": true
+    },
+    {
+      "id": 19,
+      "titulo": "Chapada Completa — 10 dias",
+      "nivel": "intenso",
+      "valor_por_pessoa": 7500,
+      "duracao": 240,
+      "preview": "Dez dias para viver a Chapada Diamantina de ponta a ponta: Lençóis, grutas, Marimbus, Fumaça, Águas Claras, Mosquito, Pai Inácio e a Chapada Sul com Buracão, Fumacinha e os poços azuis.",
+      "descricao": "O pacote mais completo: 10 dias para conhecer os principais atrativos da Chapada Diamantina, combinando Lençóis, região de Iraquara, Vale do Capão, Marimbus e a Chapada Sul.\n\nDia 1 — Parque da Muritiba: aclimatação em Lençóis com trilha leve e pontos de banho.\n\nDia 2 — Cachoeira do Sossego + Ribeirão do Meio: trilha pelo leito do rio até a queda e banho no poço; retorno com parada no tobogã natural.\n\nDia 3 — Gruta da Lapa Doce + Mirante do Camelo + Vale das Piscinas: dia de cavernas e mirantes na região de Iraquara, com paisagens amplas e paradas para fotos.\n\nDia 4 — Marimbus + Rio Roncador: passeio de barco e banho em poços e cachoeiras.\n\nDia 5 — Cachoeira da Fumaça + Riachinho: trilha no Vale do Capão até o mirante da Fumaça e banho no Riachinho.\n\nDia 6 — Águas Claras + Trilha do Morão: caminhada com paisagens abertas, rios e poços — um dos dias mais cênicos.\n\nDia 7 — Cachoeira do Mosquito + Poço do Diabo + Morro do Pai Inácio: banho em cachoeira, poço e pôr do sol 360°.\n\nDia 8 — Cachoeira do Buracão: trilha e cânion com travessia a nado (colete obrigatório).\n\nDia 9 — Cachoeira da Fumacinha: trekking em cânion (dia forte).\n\nDia 10 — Poço Encantado + Poço Azul: encerramento contemplativo e banho em águas cristalinas.\n\nRoteiro resumido (passo a passo):",
+      "descricao_lista": [
+        "Dia 1: Parque da Muritiba",
+        "Dia 2: Cachoeira do Sossego + Ribeirão do Meio",
+        "Dia 3: Gruta da Lapa Doce + Mirante do Camelo + Vale das Piscinas",
+        "Dia 4: Marimbus + Rio Roncador",
+        "Dia 5: Cachoeira da Fumaça + Riachinho",
+        "Dia 6: Águas Claras + Trilha do Morão",
+        "Dia 7: Cachoeira do Mosquito + Poço do Diabo + Morro do Pai Inácio",
+        "Dia 8: Cachoeira do Buracão",
+        "Dia 9: Cachoeira da Fumacinha",
+        "Dia 10: Poço Encantado + Poço Azul"
+      ],
+      "imagens": [
+        "img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png",
+        "img/roteiros/grutas-pratinha-lapa-doce-pai-inacio/imagem-1.png",
+        "img/roteiros/marimbus-roncador/imagem-2.png",
+        "img/roteiros/poco-encantado-poco-azul/imagem-1.png"
+      ],
+      "pagina-principal": true,
+      "destaque": true,
+      "descricao-destaque": "10 dias para viver a Chapada completa: Lençóis, trilhas clássicas, Vale do Pati e o sul com Buracão e Fumacinha."
     }
   ],
   "memorias": [

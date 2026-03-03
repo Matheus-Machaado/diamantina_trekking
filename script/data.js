@@ -29,6 +29,11 @@ function normalizeRoteiro(r){
 	}else{
 		duracaoTexto = dias + ' ' + (dias===1 ? i18n.t('time.day_one') : i18n.t('time.day_other'))
 	}
+
+	const rawValor = r.valor_por_pessoa ?? r.valor
+	const valorNum = Number(rawValor)
+	const temValor = rawValor !== undefined && rawValor !== null && rawValor !== '' && Number.isFinite(valorNum) && valorNum > 0
+
 	const rawDesc = r.descricao
 	const rawTexto = r['descricao-texto'] ?? r.descricao_texto ?? r.descricaoTexto
 	const rawLista = r['descricao-lista'] ?? r.descricao_lista ?? r.descricaoLista
@@ -51,7 +56,8 @@ function normalizeRoteiro(r){
 		id: Number(r.id),
 		titulo: String(r.titulo||'').trim(),
 		nivel: (nivel==='moderado'||nivel==='intenso') ? nivel : 'leve',
-		valor: Number(r.valor_por_pessoa ?? r.valor ?? 0),
+		valor: temValor ? valorNum : 0,
+		temValor,
 		duracao: duracaoTexto,
 		dias: dias,
 		horas: horas,
@@ -63,6 +69,19 @@ function normalizeRoteiro(r){
 		destaque: !!r.destaque,
 		descricaoDestaque: String(r['descricao-destaque'] ?? r.descricao_destaque ?? '').trim()
 	}
+}
+
+function sortRoteiros(a,b){
+	const va = a.temValor ? 1 : 0
+	const vb = b.temValor ? 1 : 0
+	if(va !== vb) return vb - va
+	const da = a.destaque ? 1 : 0
+	const db = b.destaque ? 1 : 0
+	if(da !== db) return db - da
+	const pa = a.paginaPrincipal ? 1 : 0
+	const pb = b.paginaPrincipal ? 1 : 0
+	if(pa !== pb) return pb - pa
+	return a.id - b.id
 }
 
 function toISODate(d){
@@ -113,9 +132,12 @@ function hideById(id){
 }
 
 function cardHTML(r){
-	const capa = r.imagens[0] || 'img/roteiros/pai-inacio/imagem-1.png'
+	const capa = r.imagens[0] || 'img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png'
+	const priceHTML = r.temValor ? `<span class=\"roteiro-meta-right\">
+					<small>${esc(i18n.t('cards.from'))}</small> <b>${money(r.valor)}</b>
+				</span>` : ''
 	return `
-	<article class="roteiro-card" data-intensidade="${esc(r.nivel)}">
+	<article class="roteiro-card" data-intensidade="${esc(r.nivel)}" data-has-price="${r.temValor ? '1' : '0'}">
 		<div class="roteiro-card-img">
 			<img src="${esc(capa)}" alt="${esc(r.titulo)}">
 		</div>
@@ -132,9 +154,7 @@ function cardHTML(r){
 				<span class="roteiro-meta-left">
 					<i class="bx bxs-time"></i>${esc(r.duracao)}
 				</span>
-				<span class="roteiro-meta-right">
-					<small>${esc(i18n.t('cards.from'))}</small> <b>${money(r.valor)}</b>
-				</span>
+				${priceHTML}
 			</div>
 			<a href="roteiro-detalhe.html?id=${r.id}" class="btn btn-primary roteiro-btn">${esc(i18n.t('cards.details'))}</a>
 		</div>
@@ -266,7 +286,7 @@ async function loadData(){
 		const flist = Array.isArray(raw.perguntas) ? raw.perguntas : []
 		const mlist = Array.isArray(raw.memorias) ? raw.memorias : []
 		__DATA_ALL__ = {
-			roteiros: rlist.map(normalizeRoteiro).sort((a,b)=>a.id-b.id),
+			roteiros: rlist.map(normalizeRoteiro).sort(sortRoteiros),
 			perguntas: flist.map(normalizePergunta),
 			memorias: mlist.map(normalizeMemoria)
 		}
@@ -282,7 +302,7 @@ async function loadData(){
 					const flist = Array.isArray(raw.perguntas) ? raw.perguntas : []
 					const mlist = Array.isArray(raw.memorias) ? raw.memorias : []
 					__DATA_ALL__ = {
-						roteiros: rlist.map(normalizeRoteiro).sort((a,b)=>a.id-b.id),
+						roteiros: rlist.map(normalizeRoteiro).sort(sortRoteiros),
 						perguntas: flist.map(normalizePergunta),
 						memorias: mlist.map(normalizeMemoria)
 					}
@@ -321,8 +341,17 @@ export async function hydrateIndex(){
 	}else{
 		const grid = document.querySelector('#roteiros .roteiros-grid')
 		if(grid){
-			const home = roteiros.filter(r=>r.paginaPrincipal).slice(0,6)
-			const items = home.length ? home : roteiros.slice(0,6)
+			const HOME_COUNT = 9
+			const home = roteiros.filter(r=>r.paginaPrincipal).slice(0,HOME_COUNT)
+			let items = home.length ? home : roteiros.slice(0,HOME_COUNT)
+			// Se por algum motivo tiver menos itens marcados para a Home, completa com os próximos roteiros
+			// (mantendo a ordem já normalizada/ordenada).
+			if(items.length < HOME_COUNT){
+				const extra = roteiros
+					.filter(r => !items.some(x => x.id === r.id))
+					.slice(0, HOME_COUNT - items.length)
+				items = items.concat(extra)
+			}
 			grid.innerHTML = items.map(cardHTML).join('')
 			ensureBadges(grid)
 			bindRoteiroToggles(grid)
@@ -342,7 +371,7 @@ export async function hydrateIndex(){
 				if(ctaEl) ctaEl.setAttribute('href','roteiro-detalhe.html?id='+destaque.id)
 				const track = rdSection.querySelector('.rd-track')
 				if(track){
-					const imgs = destaque.imagens.length ? destaque.imagens : ['img/roteiros/pai-inacio/imagem-1.png']
+					const imgs = destaque.imagens.length ? destaque.imagens : ['img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png']
 					track.innerHTML = imgs.map(src=>`<li class="rd-slide"><img src="${esc(src)}" alt="${esc(destaque.titulo)}"></li>`).join('')
 				}
 			}else{
@@ -412,7 +441,8 @@ export async function hydrateDetail(){
 	if(root){
 		root.dataset.days = String(r.dias||1)
 		root.dataset.hours = String(r.horas||0)
-		root.dataset.price = String(r.valor||0)
+		root.dataset.price = String(r.temValor ? r.valor : 0)
+		root.dataset.hasPrice = r.temValor ? '1' : '0'
 		root.dataset.intensidade = r.nivel
 	}
 
@@ -421,7 +451,10 @@ export async function hydrateDetail(){
 	const daysWrap = document.querySelector('.rp-days')
 	let daysB = daysWrap?.querySelector('b')
 	const clockIcon = daysWrap?.querySelector('i')
-	const priceB = document.querySelector('.rp-price b')
+	const priceWrap = document.querySelector('.rp-price')
+	const priceB = priceWrap ? priceWrap.querySelector('b') : null
+	const subtotalBox = document.querySelector('.rp-subtotal')
+	const pplPriceBox = document.querySelector('.rp-people-price')
 
 	if(titleEl) titleEl.textContent = r.titulo
 	if(leadEl) leadEl.textContent = r.preview
@@ -431,16 +464,29 @@ export async function hydrateDetail(){
 		daysWrap.appendChild(daysB)
 	}
 	if(daysB) daysB.textContent = r.duracao
-	if(priceB) priceB.textContent = money(r.valor)
+	if(priceWrap){
+		if(r.temValor){
+			priceWrap.hidden = false
+			priceWrap.style.display = ''
+			if(priceB) priceB.textContent = money(r.valor)
+			if(subtotalBox){ subtotalBox.hidden = false; subtotalBox.style.display = '' }
+			if(pplPriceBox){ pplPriceBox.hidden = false; pplPriceBox.style.display = '' }
+		}else{
+			priceWrap.hidden = true
+			priceWrap.style.display = 'none'
+			if(subtotalBox){ subtotalBox.hidden = true; subtotalBox.style.display = 'none' }
+			if(pplPriceBox){ pplPriceBox.hidden = true; pplPriceBox.style.display = 'none' }
+		}
+	}
 
 	const track = document.querySelector('.gal-track')
 	if(track){
-		const imgs = r.imagens.length ? r.imagens : ['img/roteiros/pai-inacio/imagem-1.png']
+		const imgs = r.imagens.length ? r.imagens : ['img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png']
 		track.innerHTML = imgs.map(src=>`<div class="gal-slide"><img src="${esc(src)}" alt="${esc(r.titulo)}"></div>`).join('')
 	}
 	const thumbs = document.querySelector('.gal-thumbs')
 	if(thumbs){
-		const imgs = r.imagens.length ? r.imagens : ['img/roteiros/pai-inacio/imagem-1.png']
+		const imgs = r.imagens.length ? r.imagens : ['img/roteiros/parque-muritiba-ribeirao-do-meio/imagem-1.png']
 		thumbs.innerHTML = imgs.map((src,i)=>`<button class="gal-thumb ${i===0?'is-active':''}" type="button"><img src="${esc(src)}" alt="${esc(i18n.t('gallery.thumb',{n:i+1}))}"></button>`).join('')
 	}
 
